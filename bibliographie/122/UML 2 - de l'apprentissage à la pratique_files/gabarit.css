@@ -1,0 +1,647 @@
+body {
+	margin: 0px;
+	background: #293A4E;
+	font-family: Verdana, sans-serif;
+}
+
+img {
+	border: 0;
+}
+
+/* #gabarit_b1 = première barre du haut */
+
+#gabarit_b1 {
+	background: #293a4e;
+	height: 30px;
+}
+
+/* #gabarit-new-logo = logo */
+
+#gabarit-new-logo {
+	position:absolute;
+	top:0;
+	left:0;
+	width:200px;
+	background-color:#345976;
+}
+
+#gabarit-new-logo img {
+	position:relative;
+	z-index:20;
+	top:4px;
+}
+
+#gabarit-new-logo span.dvp {
+	display:block;
+	position:absolute;
+	top:5px;
+	left:40px;
+	color:#fff;
+	font-weight:bold;
+	font-size:.9rem;
+	content: ' ';
+	width:130px;
+	height:20px;
+	background: transparent url(/template/images/developpez.com.png) no-repeat center center;
+}
+
+#gabarit-new-logo span.triangle {
+	position:absolute;
+	top:0;
+	right:0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0 30px 6px;
+	border-color: transparent transparent #293a4e transparent;
+}
+
+/* #gabarit_superieur = la barre du haut qui donne accès aux différentes parties du site */
+
+#gabarit_superieur {
+	width: 830px;
+	height: inherit;
+	margin: 0 auto 0 170px;
+	font-weight: bold;
+}
+
+#gabarit_superieur ul {
+	font-size: .8rem;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align:center;
+	background-color:#293a4e;
+}
+
+@media screen and (max-width: 1066px) {
+	#gabarit_superieur { position: relative; right: 0; top: 0; margin:0; }
+	#gabarit_superieur ul { padding-left:45px; }
+}
+
+#gabarit_superieur ul li {
+	display: inline;
+	line-height: 33px;
+	margin-right: 5px;
+	transition: background-color .2s linear;
+	background-color: #293a4e;
+	display: inline-block;
+	margin:0;
+	text-transform: uppercase;
+	transform: skew(-11deg);
+}
+
+#gabarit_superieur ul li a {
+	position:relative;
+	top:-2px;
+	font-size: .7rem;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	padding: 0 10px;
+}
+
+#gabarit_superieur ul li:hover {
+	background-color: #345976;
+	cursor:pointer;
+}
+
+#gabarit_superieur a:hover {
+	text-decoration: none;
+}
+
+/* #gabarit_recherche = recherche personnalisée Google */
+
+#gabarit_recherche {
+	position:absolute;
+	z-index:14;
+	top:1px;
+	right:0;
+	width: auto;
+	background-color:#293a4e;
+	height:30px;
+	padding:0 6px;
+}
+
+#gabarit_recherche input[type=text] {
+	width: 140px;
+}
+
+#gabarit_recherche input[type=submit] {
+	font-size: 8pt;
+	color: #577F99;
+	background: #ACBFCB;
+	border: 1px solid #5a7f97;
+	position: relative;
+	top: -2px;
+	width: 80px;
+}
+
+#gabarit_recherche .gabarit-btn-menu {
+	display:inline-block;
+	width:36px;
+	height:26px;
+	background-image: url(/template/images/gabarit-icons.png);
+	background-repeat:no-repeat;
+	background-color:transparent;
+	cursor:pointer;
+	position:relative;
+	top:3px;
+	z-index:12;
+	margin-left:4px;
+}
+
+#gabarit_recherche .gabarit-btn-menu.contacts { background-position:-98px 0px; }
+#gabarit_recherche .gabarit-btn-menu.contacts:hover { background-position:-245px 0px; }
+
+#gabarit_recherche .gabarit-btn-menu.recherche { background-position:-49px 0px; }
+#gabarit_recherche .gabarit-btn-menu.recherche:hover, #gabarit_recherche .gabarit-btn-menu.recherche.open { background-position:-196px 0px; }
+
+#gabarit_recherche .gabarit-btn-menu.profil { background-position:0px 0px; }
+#gabarit_recherche .gabarit-btn-menu.profil:hover { background-position:-147px 0px; }
+
+#gabarit-barreRecherche {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color:#293a4e;
+	border: 1px solid #293a4e;
+	width: calc(100% - 244px);
+	margin-left:200px;
+	height: 30px;
+	z-index: 14;
+}
+
+#gabarit-barreRecherche form {
+	padding:0 10px;
+}
+
+#gabarit-barreRecherche form div {
+	position: relative;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	vertical-align: middle;
+	width:100%;
+}
+
+#gabarit-barreRecherche form input[type="text"] {
+	display: block;
+	width: 100%;
+	padding: 0.375rem 0.75rem;
+	margin-top:3px;
+	font-size: .8rem;
+	height:10px;
+	line-height: 30px;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: 0.25rem 0 0 0.25rem;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#gabarit-barreRecherche form input[type="submit"] {
+	font-size: .8rem;
+	line-height: 21px;
+	border-radius: 0 .25rem .25rem 0;
+	margin-top:3px;
+	border:0;
+	background-color:#5789b0;
+	color:#fff;
+	width:170px;
+	cursor:pointer;
+}
+
+/* #gabarit_pub0, #gabarit_pub1, #gabarit_pub3 = libellé pub */
+
+#gabarit_pub0 {
+	display: none;
+	width: 6px;
+	height: 90px;
+	margin-right: 5px;
+	background-image: url(/template/images/pub728.png);
+}
+
+#gabarit_pub1, #gabarit_pub3 {
+	display: none;
+	width: 81px;
+	height: 7px;
+	margin-left: 109px;
+	margin-top: 5px;
+	background-image: url(/template/images/pub300.png);
+}
+
+#gabarit_pub4 {
+	display: none;
+	width: 81px;
+	height: 7px;
+	margin-left: 40px;
+	margin-top: 5px;
+	background-image: url(/template/images/pub300.png);
+}
+
+/* #gabarit_menu = barre de menus */
+
+#gabarit_menu {
+	clear: both;
+	background-color: #5789b0;
+	border-top:2px solid #293a4e;
+	height: 28px;
+	margin: 0;
+	position:relative;
+	z-index:10;
+	display:flex;
+}
+
+#gabarit_menu a {
+	text-decoration: none;
+}
+
+#gabarit_menu > li {
+	position: relative;
+	float: left;
+	display: block;
+	font-size: .7rem;
+	height: 28px;
+	line-height: 28px;
+	margin:0;
+	white-space:nowrap;
+}
+
+#gabarit_menu > li:first-child {
+	border: 0;
+}
+
+#gabarit_menu > li > a {
+	display: block;
+	height: 100%;
+	padding: 0 10px;
+	color: white;
+}
+
+#gabarit_menu > li a div#gabarit_home {
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position:0 0;
+	background-image: url(/template/images/gabarit-home.png);
+	width: 36px;
+	height: 28px;
+}
+
+
+#gabarit_menu > li a.gabarit_selection {
+	background: #eaf5f8;
+	background: -moz-linear-gradient(top,  #eaf5f8 0%, #d8e6ec 37%, #aed1dd 100%);
+	background: -webkit-linear-gradient(top,  #eaf5f8 0%,#d8e6ec 37%,#aed1dd 100%);
+	background: linear-gradient(to bottom, #eaf5f8 0%,#d8e6ec 37%,#aed1dd 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaf5f8', endColorstr='#aed1dd',GradientType=0 );
+	color:#000;
+}
+
+#gabarit_menu > li a.gabarit_selection div#gabarit_home {
+	background-position:-72px 0;
+}
+
+#gabarit_menu > li a.gabarit_selection:hover, #gabarit_menu > li > a:hover, #gabarit_menu > li:hover > a {
+	background: #345976;
+	color: #fff;
+}
+
+#gabarit_menu > li a.gabarit_selection:hover div#gabarit_home, #gabarit_menu > li a:hover div#gabarit_home {
+	background-position:-36px 0;
+}
+
+/* .gabarit_tooltip = infobulle au survol des méga-rubriques */
+
+.gabarit_tooltip {
+	display: none;
+}
+
+#gabarit_menu > li > a:hover > .gabarit_tooltip {
+	display: block;
+	position: absolute;
+	width: auto;
+	white-space:nowrap;
+	height: 30px;
+	top: -30px;
+	left: 0;
+	background: #000;
+	color: #fff;
+	font-size: .7rem;
+	font-weight: bold;
+	line-height: 30px;
+	padding: 0 20px;
+}
+
+#gabarit_menu > li:last-child > a:hover > .gabarit_tooltip {
+	left: auto;
+	right:0;
+}
+
+
+/* .gabarit_sousmenu = les menus déroulants */
+
+#gabarit_menu li:hover .gabarit_sousmenu {
+	display: block;
+}
+
+.gabarit_sousmenu {
+	display: none;
+	position: absolute;
+	border: solid 3px #345976;
+	-webkit-border-radius: 0 .25rem .25rem .25rem;
+	border-radius: 0 0 .25rem .25rem;
+	padding: 0px;
+	background-color: #fff;
+	z-index: 1100;
+	min-width:150px;
+}
+
+.gabarit_menu li:hover .gabarit_sousmenu, .gabarit_menu a:hover .gabarit_sousmenu {
+	display: block;
+}
+
+#gabarit_menu > li:last-child .gabarit_sousmenu {
+	left: -84px;
+}
+
+.gabarit_sousmenu li {
+	display: block;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+	height: 28px;
+}
+
+.gabarit_sousmenu li a {
+	display: block;
+	white-space: nowrap;
+	color: #293a4e;
+	padding: 0 10px;
+	font-size: 10px;
+	line-height: 28px;
+}
+
+.gabarit_sousmenu li a:hover {
+	color: #fff;
+	background-color: #345976;
+	transition: background-color 0.1s linear;
+}
+
+/* #gabarit_barre1 = première barre de boutons, #gabarit_barre2 = deuxième barre de boutons */
+
+#gabarit_barre1 {
+	background-color: #426c8c;
+	margin: 0;
+	list-style: none;
+	text-align: center;
+	border-top: 2px solid #293a4e;
+	height: 25px;
+	overflow:hidden;
+}
+
+#gabarit_barre2 {
+	background-color: #345976;
+	border-width: 2px 0;
+	border-color: #293a4e;
+	border-style: solid;
+	padding: 0 10px;
+	height:24px;
+	overflow:hidden;
+}
+
+#gabarit_barre2 ul {
+	font-size: .8rem;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-align: center;
+	height:inherit;
+}
+
+#gabarit_barre1 a, #gabarit_barre2 ul a {
+	display:inline-block;
+	position:relative;
+	top:-2px;
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+}
+
+#gabarit_barre1 a {
+	font-size: .65rem;
+	padding: 0 10px;
+}
+
+#gabarit_barre2 ul a {
+	font-size: .65rem;
+	padding: 0 8px;
+}
+
+#gabarit_barre1 li, #gabarit_barre2 li {
+	display: inline-block;
+	margin:0;
+}
+
+#gabarit_barre1 li {
+	line-height: 25px;
+}
+
+#gabarit_barre2 li {
+	line-height: 26px;
+}
+
+#gabarit_barre1 li.gabarit_selection {
+	background: #eaf5f8;
+	background: -moz-linear-gradient(top,  #eaf5f8 0%, #d8e6ec 37%, #aed1dd 100%);
+	background: -webkit-linear-gradient(top,  #eaf5f8 0%,#d8e6ec 37%,#aed1dd 100%);
+	background: linear-gradient(to bottom, #eaf5f8 0%,#d8e6ec 37%,#aed1dd 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaf5f8', endColorstr='#aed1dd',GradientType=0 );
+}
+
+#gabarit_barre1 li.gabarit_selection:hover, #gabarit_barre1 li:hover {
+	background: #10436b;
+}
+
+#gabarit_barre1 li.gabarit_selection a {
+	color:#293a4e;
+}
+
+#gabarit_barre2 li:hover {
+	background-color: #10334f;
+}
+
+#gabarit_barre2 li.gabarit_selection {
+	background-color: #0e2d46;
+}
+
+#gabarit_barre1 li:hover a, #gabarit_barre2 li:hover a {
+	color: #fff;
+}
+
+@-moz-document url-prefix() {
+	#gabarit_barre2 li { min-width: 50px; }
+	#gabarit_barre1 li a, #gabarit_barre2 li a { display: block; position: relative; top: 0; line-height:inherit; }
+}
+
+.gabarit_social {
+	display: block;
+	position: relative;
+	float: right;
+	margin: 5px 0 0 5px;
+	background-image: none;
+	cursor: pointer;
+	z-index: 0;
+	width: 16px;
+	height: 16px;
+	background-image: url(/template/images/social.png);
+}
+
+.gabarit_facebook {
+	background-position: 0px 0px;
+}
+
+.gabarit_rss {
+	background-position: 16px 0px;
+}
+
+.gabarit_linkedin {
+	background-position: 32px 0px;
+}
+
+.gabarit_twitter {
+	background-position: 48px 0px;
+}
+
+/* gabarit_pubBB = emplacement Big banner */
+#gabarit_pubBB {
+	position: relative;
+	width: 100%;
+	height:90px;
+	background-color: #fff;
+	padding:10px 0;
+	text-align: center;
+}
+
+/* .contenuPage = tout l'espace utile du site, entre l'en-tête gabarit et le pied du gabarit */
+
+.contenuPage {
+	font-size: 10pt;
+	padding: 0 .5em 1em;
+	background: white;
+}
+
+/* #gabarit_responsable = zone où est indiqué qui est responsable de cette rubrique */
+
+#gabarit_responsable {
+	padding: 5px 0;
+	background-color: #293a4e;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	border-width: 1px 0 1px 0;
+	border-color: #5a7f97;
+	border-style: solid;
+}
+
+#gabarit_responsable a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#gabarit_responsable a:hover {
+	text-decoration: underline;
+}
+
+/* #gabarit_pied = pied de page */
+
+#gabarit_pied {
+	text-align: center;
+	list-style-type: none;
+	margin: 5px 0 0 0;
+	padding: 0;
+	font-size: 8pt;
+	color: #fff;
+}
+
+#gabarit_pied li {
+	display: inline-block;
+	margin: 0 10px;
+	padding: 0;
+}
+
+#gabarit_pied a {
+	text-decoration: none;
+	color: #fff;
+}
+
+#gabarit_pied a:hover {
+	text-decoration: underline;
+}
+
+#gabarit_copyright, #gabarit_pied_mobile {
+	text-align: center;
+	color: #7292a7;
+	font-weight: bold;
+	text-align: center;
+	font-size: 8pt;
+	margin: 5px 0;
+}
+
+#gabarit_copyright {
+	margin:0;
+	padding:5px 0;
+}
+
+#gabarit_mobile_connexion, #connexionMobile, #gabarit_mobile, #gabarit_menu_mobile, #gabarit_pied_mobile {
+	display: none;
+}
+
+#gabarit_cnilcookie {
+	position: fixed;
+	font-size: 10pt;
+	border: 1px solid black;
+	color: black;
+	background: #ffe;
+	padding: 1em;
+	right: 5px;
+	bottom: 5px;
+	cursor: pointer;
+}
+
+.pubtuto {
+	border: 0 !important;
+	background-color: #fff !important;
+}
+
+.pubtuto div:first-child {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.pubtuto div:last-child {
+	border: 1px solid #ddd;
+	border-radius: 7px;
+	background-color: rgba(155, 177, 188, 0.1);
+}
+
+.pubtuto #gabarit_pub1 {
+	margin: 0 auto;
+	border: 0;
+}
+
+@media screen and (max-width: 1270px) {
+	.pubtuto div:first-child { display: none; }
+}
+
+#div-gpt-ad-1407836094815-0 {
+	position: relative;
+	top: -4px;
+}
+
+#div-gpt-ad-1407836209633-0 {
+	position: relative;
+	top: -3px;
+}

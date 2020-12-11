@@ -1,0 +1,6 @@
+Vous devez ici déposer vos deux fichiers de code réalisés lors du contrôle TP :
+
+    Votre code modifié pour afficher les positions d'échec et les décalages, nommé Prenom_NOM.cc (noté sur 5 points)
+    La version  qui n'exécute que BM2 et n'affiche plus que le nombre de comparaison de caractères effectuées et le nombre d'occurrences trouvées, nommée Prenom_NOM_BM2.cc (noté sur 2 points)
+
+Dupliquez votre fichier de code avant de faire les modifications demandées. Vous devriez avoir dans votre répertoire de travail votre code original et les deux versions modifiées.

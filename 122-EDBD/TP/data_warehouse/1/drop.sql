@@ -1,0 +1,16 @@
+DROP TABLE Abonne ;
+DROP TABLE Aime ;
+DROP TABLE Album ;
+DROP TABLE Commentaire ;
+DROP TABLE Contient ;
+DROP TABLE Galerie ;
+DROP TABLE CollectionPhotos ;
+DROP TABLE Discussion ;
+DROP TABLE Photographie ;
+DROP TABLE Tag ;
+DROP TABLE Configuration ;
+DROP TABLE Appareil ;
+DROP TABLE Dates;
+DROP TABLE Lieu ;
+DROP TABLE Utilisateur ;
+DROP TABLE ContenuNumerique ;

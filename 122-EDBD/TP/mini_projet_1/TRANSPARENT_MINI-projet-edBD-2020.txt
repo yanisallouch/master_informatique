@@ -1,0 +1,152 @@
+SANOFI
+Theme : Pharmaceuticals
+HMIN 122M - EDBDQuentin Yeche & Yanis Allouch
+1
+
+Plan de la présentation
+2
+5
+Estimation de taille
+3
+Requêtes Analytique
+1
+Présentation de l’entreprise
+4
+Data-mart
+2
+Modélisation
+Yanis:
+On suit le cheminement du rapport
+
+Présentation de l’entreprise
+4 Global Business Unit (GBU) :
+Médecine générale
+Médecine de spécialité
+Vaccins
+Santé Grand Public
+Cycle de vie :
+R&D
+Processus réglementaire : tests, démarches admin.
+Fabrication
+Vente
+Marketing
+3
+Objectifs stratégiques (2019)
+Se concentrer sur la croissance.
+
+Accélérer l’innovation.
+
+Accroître l'efficacité opérationnelle.
+Quelques chiffres:
+100k collaborateurs
+Produits vendus dans 172 pays
+172 pays
+73 sites industriels
+36 G€ de CA en 2019
+USA + Europe ~> 60% du CA
+Moitie 1 Yanis
+Moitie 2 Quenitn
+
+une entreprise pharmaceutique française multinationale
+
+Leader mondial 
+	On comment les chiffres
+36,126 milliards d’euros. Amérique du Nord 35% ;— Europe 24,5% ;— Amérique latine 7,5% ;— Eurasie 3,5% ;— Reste du monde 29,5%.
+
+Puis GBU :
+	Médecine Générale : diabète, cardio-vasculaire
+Médecine de Spécialité : sclérose en plaques, neurologie, autres maladies inflammatoires et immunologie, maladies rares, oncologie et maladies hématologiques rare ;
+Vaccins ;
+Grand Public : allergies, santé digestive, compléments alimentaire, antidouleurs,etc.
+
+	General + spécial = 76%
+
+	Cycle de vie
+	R&D pas concerné par du DATA	Marketing -> problématique avec les régulations
+
+	Objectifs stratégique
+		On se concentre sur l’efficacité opérationnelle
+
+	
+	
+
+
+Modélisation: Actions principales
+4
+Ventes
+Deux types de client:
+Grossiste-répartiteur
+Pharmacies
+Productions
+Gestion des coûts:
+Fabrication
+Transit et livraison
+Stockage en entrepôt
+Pertes (péremption)
+Stocks
+Mouvements de stocks:
+Livraison entrante depuis une usine ou un autre entrepôt, 
+Livraison sortante pour livrer un client/autre entrepôt
+Quentin:
+
+Requetes Analytiques
+5
+5
+Productions
+Quelle est la moyenne de livraisons par jour, semaine, mois et par ville, région, pays, continent ?
+
+Quels sont les taux d’incidence de pertes?
+Quel est, pour chaque produit, le coût moyen associé à la production d’une unité ?
+Stocks
+Quels sont les produits dont les stocks connaissent de fortes variations (des produits dont l’approvisionnement est fragile) ?
+Quel est, pour chaque produit, le temps moyen passé dans un entrepôt pour une unité ?
+Yanis:
+
+DATA MART: Productions
+6
+﻿
+Quentin: 
+Une ligne de la table de faits -> une étape dans la vie d’un objet (plus exactement une quantité d’objets)
+
+Challenge >> sur perte
+
+DATA MART : Stocks
+7
+Yanis:
+Table de snapshots classiques
+Les dimensions viennent du grain et non pas des questions nécessairement
+Expliquer quantiteSortie qui permet de gérer les questions sur la demande/ On obtient les flux
+
+Estimations des tailles (12 mois)
+8
+Tables de faits
+
+Stocks           2 600 000 000 lignes
+Productions:      4 600 000 lignes
+
+Dimensions
+
+Dates:            14 640 lignes
+Produits        10 000 lignes
+Entrepôts        5 000 lignes
+Lieux:              5 100 lignes
+Prestataires     2 000 lignes
+Dates: représentation classiques 20 ans dans le passé, 20 dans le futur (brevet pharmaceutique : 20 ans)
+Produits: moins de 1000 gammes, 10 variantes maximum (dosage présentations soit 10 000 grand maximum
+Entrepot 100 pays -> 50 max par pays / 100 000 collaborateurs
+Lieux: Entrepôt est une sous-table de Lieux donc on récupère les 5 000 lignes.  On ajoute 100 lignes qui correspondent aux usines (72 sites de production mentionnés)
+Prestataires: 180 pays pour la vente, maximum 10 par pays, + une centaine pour le transport/transit international
+
+Faits:
+Stocks 10 000 produits, 5 000 entrepôts, 52 semaines -> 2,6 milliards
+Productions: CA annuel certaines gammes qui représentent 70% du CA  + prix unitiare, on a trouvé 230 millions de produits vendus. On multiplie par 2 pour gérer le reste du CA et on estime une quantité moyenne de produits par ligne de 100 -> 4.6 millions
+
+
+Bibliographie
+9
+Jensen, C. S.,Pedersen, T. B. et Thomsen, C.Multidimensional Databases and Data Warehousing (Synthesis Lectures on Data Management). Morgan et Claypool Publishers, 2010
+Kimball, R. etRoss, M.The Datawarehouse Toolkit. Wiley 3rd ed, 2013.
+Sanofi. Rapport financier Semestriel Edition 2020. https://www.sanofi.com/-/media/Project/One-Sanofi-Web/Websites/Global/Sanofi-COM/Home/fr/investisseurs/docs/2020_07_29_HY_financial_report_FR.pdf (en date du : 22.10.2020)
+Sanofi : un leader mondial de la santé. https://www.sanofi.com/fr/nous-connaitre/sanofi-en-bref (en date du : 22.10.2020).
+Stratégie : Sanofi. https://www.sanofi.com/fr/investisseurs/connaitre-sanofi/strategie (en date du : 22.10.2020).
+Je suis 5

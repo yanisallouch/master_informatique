@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html class=" briattynv idc0_325"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+   <title>Introduction à la Programmation Orientée Agent</title>
+    <link href="Introduction%20%C3%A0%20la%20Programmation%20Orient%C3%A9e%20Agent_files/netlogo.css" rel="stylesheet" type="text/css">
+<script>try {
+                        Object.defineProperty(screen, "availTop", { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availLeft", { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availWidth", { value: 1920 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availHeight", { value: 1080 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "colorDepth", { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "pixelDepth", { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "hardwareConcurrency", { value: 8 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "appVersion", { value: "5.0 (Windows)" });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "doNotTrack", { value: "unspecified" });
+                    } catch (e) {}
+                    
+            try {
+                window.screenY = 1072
+            } catch (e) { }
+        
+            try {
+                window.screenTop = 1072
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerHeight = window.screen.height
+            } catch (e) { }
+        
+            try {
+                window.screenX = 1912
+            } catch (e) { }
+        
+            try {
+                window.screenLeft = 1912
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerWidth = window.screen.width
+            } catch (e) { }
+        </script></head>
+<body cz-shortcut-listen="true" bgcolor="white">
+<h1>Introduction à la Programmation Orientée Agent</h1>
+<h3><br>proposé par <a href="mailto:suro@lirmm.fr">François Suro</a> - Janvier 2018</h3>
+<h3>adapé de contenus proposé par <a href="mailto:ferber@lirmm.fr">Jacques Ferber</a></h3>
+<p>Netlogo se trouve à l'adresse: <a href="http://ccl.northwestern.edu/netlogo/index.shtml">ccl.northwestern.edu/netlogo</a>. Le manuel de l'utilisateur se trouve à l'adresse: <a href="http://ccl.northwestern.edu/netlogo/docs/">http://ccl.northwestern.edu/netlogo/docs/</a></p>
+<p>Si vous êtes sous Linux des salles machines de la fac de Montpellier 
+II, il faut lancer NetLogo à partir du menu Education&gt;Netlogo sous 
+Xubuntu</p>
+<p>Pour avoir des exemples de modèles (c'est à dire, dans le jargon 
+NetLogo, les projets NetLogo existants), il suffit d'aller dans 
+Fichier&gt;Bibliothèques de modèles (ou ctrl + M).</p>
+<h2>1. Primitives NetLogo</h2>
+Le lien suivant vous amènera au <a href="http://ccl.northwestern.edu/netlogo/docs/dictionary.html">dictionaire de NetLogo</a> (aussi disponible par Help&gt;NetLogo dictionary).<br>Le
+ dictionaire contient toutes les primitives NetLogo, il est très facile 
+d'obtenir toutes les informations dont vous aurez besoin, soit par 
+l'index , soit par ctrl + F.<br><br>Quelques éléments pour démarrer : <br>
+<h4>1.1. Déclarations du modèle</h4>
+En tete du fichier, hors de toute procédure<br><br>Pour déclarer des variables globales:<br>
+<pre>globals[variable1 variable2 ....]</pre>
+Les turtles sont les agents de base de NetLogo, le nom de la superclass 
+des agents. il est possible de déclarer des sous classes de turtles, 
+afin par exemple de leur donner des attributs différents. Ces sous 
+classes sont apellées des Breeds, et se déclarent avec le nom de la 
+breed au pluriel suivi du nom au singulier (ex: wolves wolf) :<br>
+<pre>breed [humans human]</pre>
+Les agents (turtles et breeds) ainsi que les patches peuvent posséder des attributs qui se déclarent comme il suit :<br>
+<pre>humans-own [fear desire]<br>patches-own [grass]</pre>
+<h4>1.2. Procédure</h4>
+Pour déclarer une procédure (fonction NetLogo):<br>
+<pre>to nomProcedure<br> ;; du code
+end
+</pre>
+Procédure avec des paramètres (ici stock la somme des paramètres dans une variable locale):<br>
+<pre>to nomProcedure [param1 param2]<br> let somme param1 + param2
+end
+</pre>
+Procédure avec valeure de retour (ici retourne la somme des paramètres):<br>
+<pre>to-report nomProcedure [param1 param2]<br> report param1 + param2
+end
+</pre>
+<h4>1.3. Variables et attributs</h4>
+Pour déclarer une varibale locale (et initialiser):<br>
+<pre>let variable valeureInitialisation
+</pre>
+Modifier une variable ou attribut (ici, incrémenter):<br>
+<pre>set variable variable + 1</pre>
+<h4>1.4. Structures de controle</h4>
+If (si le patch est jaune, exécuter la procédure pick-up-chip):<br>
+<pre>if pcolor = yellow<br>[pick-up-chip]
+</pre>
+If Else (si le patch est noir, exécuter la procédure put-down-chip puis wiggle, sinon exécuter la procédure wiggle):<br>
+<pre>ifelse pcolor = black<br>[put-down-chip wiggle]<br>[wiggle]
+</pre>
+<p>Demander a un agent ou un patche d'éxécuter des procédures (demande 
+au patch sur lequel l'agent se trouve de décrémenter son attribut 
+grass):</p>
+<pre>ask patch-here [set grass grass - 1]</pre>
+<h4>1.5. Primitives agents</h4>
+Tourner à droite (Right Turn), tourner à gauche (Left Turn), avancer (ForwarD):<br>
+<pre>rt angleEnDegrés<br>lt angleEnDegrés
+fd distanceNombreRéel</pre>
+S'orienter vers un agent ou un patch (s'orienter vers l'agent contenu 
+dans la variable agentCible, s'orienter vers le patche aux coordonées 0 
+0):
+<pre>face agentCible<br>face patch-at 0 0 </pre>
+<h2>2. Prise en main</h2>
+<p>Utilisez le programme <a href="https://www.lirmm.fr/~suro/courses/TP-IntroMAS/simple_aleatoire1.nlogo">simple_aleatoire1</a>
+ qui permet de démarrer. (attention, il faut que vous téléchargiez ce 
+fichier (click droit de souris &gt; save) et non que vous fassiez un 
+copier-coller avec ce programme).</p>
+<ul>
+<li>Clickez le bouton Setup, Puis le bouton Go, ajustez le slider de vitesse de simulation en haut de la fenetre. Observez.</li>
+<li>Changer la forme des tortues (commande set-default-shape et le nom 
+des formes se trouve dans l'éditeur de formes (shapes) accessible depuis
+ le menu 'tools'.</li>
+<li>Changer la couleur du fond: note, pour cela il faut demander à tous 
+les patches de prendre une certaine couleur (ask patches [set pcolor 
+green])</li>
+<li>Ajouter des comportements spécifiques: faites en sorte que les 
+tortues avancent de manière carrée ou bien en faisant des polygones.. 
+Attention: les coordonnées sont polaires. <tt>rt x</tt> signifie que la tortue tourne à droite de <tt>x</tt>
+ degrés. (attention: si le comportement va très vite on peut avoir 
+l'impression que les tortues n'ont pas bougées). Les tortues peuvent 
+laisser une marque sur le sol en bougeant(commande <tt>pen-down</tt> pour que le "pinceau" associé à la tortue se pose et <tt>pen-up</tt>
+ pour qu'il se relève.. Il est levé par défaut). Faites en sorte que les
+ tortues dessinent des spirales (vous trouverez le code un peu partout 
+pour logo: l'idée générale est de décrire un polygone dont les segments 
+sont un peu plus long à chaque tour).</li>
+</ul>
+<h2>3. Construction d'une termitière</h2>
+Utilisez le programme <a href="https://www.lirmm.fr/~suro/courses/TP-IntroMAS/Termites-base.nlogo">Termites-base</a>
+ qui permet de démarrer. On souhaite que les agents, des termites, 
+constuisent une termitière en regroupant des brindilles ensemble (chips 
+en anglais, symbolisé par la couleur jaune sur un patch). Les termites 
+ont une perception très limité, pour représenter cela on considére 
+qu'elle ne peuvent percevoir que le patch sur lequel elle sont situés.<br><br>L'algorithme est le suivant:<br>
+<ul>
+<li>L'agent cherche une brindille en se déplaçant aléatoirement, si il 
+trouve une brindille (c'est à dire, si il est sur un patche jaune) il la
+ ramasse.</li>
+<li>L'agent s'éloigne du lieu ou il a trouvé la brindille.</li>
+<li>L'agent cherche une autre brindille à coté de laquelle déposer la 
+brindille qu'il porte en se déplaçant aléatoirement (on considére que 
+l'agent a trouvé si il est sur un patche jaune)</li>
+<li>L'agent cherche un espace libre (c'est a dire un patch de couleur 
+noire) à coté de l'endroit qu'il a trouvé pour déposer la brindille 
+qu'il porte en se déplaçant aléatoirement. Quand il a trouvé un espace 
+libre, il dépose la brindille.</li>
+<li>L'agent s'éloigne du lieu ou il a posé la brindille.</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>: tous les agents de NetLogo possèdent un attribut de couleur:</p>
+<pre>color
+</pre>
+<p>L'attribut de couleur des patches:</p>
+<pre>pcolor
+</pre>
+<p>Les agents possèdent aussi l'attribut pcolor comme raccourcit vers la
+ couleur du patch sur lequel ils se situent. Ceci permet à l'agent 
+d'utiliser la couleur du patch sans avoir recours à la fonction ask:</p>
+<pre>set pcolor green
+</pre>
+</blockquote>
+<h2>3b. (Optionel) Tri collectif par des termites</h2>
+<p>Selon le temps à votre disposition et votre préférence, vous pouvez 
+faire cet exercice qui explore un peu plus les algorithmes agent ou 
+passer directement à la partie 4 qui se concentre sur l'aplication de la
+ programation agent aux simulations.<br><br>Supposons maintenant qu'il 
+existe deux types de brindilles (chips en anglais), des jaunes (celles 
+qui sont déjà intégrées au programme) et des vertes. Modifier le 
+programme Termites pour qu'il s'appelle maintenant "tri collectif", et 
+faites en sorte que quand une termite porte une brindille jaune, elle 
+l'ajoute à un tas de brindilles jaunes, et si elle porte une brindille 
+verte elle l'ajoute à un tas de brindilles vertes.</p>
+<p>Dans ce cas, vous verrez la construction de deux tas: le tas des 
+"jaunes" et le tas des "vertes".. Vous avez ainsi réalisé un programme 
+de tri distribué...</p>
+<p><strong>Attention</strong>: il y a un petit "truc" pour faire en sorte que les tas ne soient pas trop mélangés....<br><br></p>
+<h2>4. Simulation de populations</h2>
+<p>Nous allons essayer de modéliser un système de gestion de ressources en NetLogo.</p>
+<h4>4.1. Faire évoluer l'environnement</h4>
+<p>a) Dans un premier temps on va faire "pousser" des ressources dans un
+ environnement.. Pour cela on va supposer que les patches peuvent faire 
+pousser de l'herbe...</p>
+<p>On supposera que chaque parcelle de terrain (représentée par un 
+patch) peut être soit pleine d'herbe (verte), soit déserte (noir). On va
+ supposer que l'herbe repousse naturellement chaque patch disposant de 
+sa propre vitesse de croissance.</p>
+<p>Dans un premier temps, on suppose que les patches n'ont que deux 
+états: l'état 'plein d'herbes' et l'état 'désert'. Mais le temps de 
+passage de l'état désert à l'état 'herbe' dépend d'un compteur de temps 
+'cpt-temps', propre à chaque patch, qui indiquera le temps qu'il lui 
+reste à attendre avant de passer de l'état 'désert' à l'état 'herbeux' 
+et inversement.</p>
+<p>Ce compteur est initialisé à une valeur 'cpt-temps-init' laquelle est
+ définie de manière aléatoire pour chaque patch par une valeur entre 1 
+et 'temps-croissance-max' qui sera associé à un slider.</p>
+<p>Le principe est le suivant:</p>
+<ul>
+<li>à l'initialisation, le patche est dans l'état <tt>'desert'</tt> 
+(couleur noire). On calcule une valeur initiale pour cpt-temps-init. 
+Puis on met cette valeur initiale dans cpt-temps. A chaque pas on 
+décrémente le compteur cpt-temps.</li>
+<li>Lorsque cpt-temps est à zéro on change l'état du patch (qui passe alors à <tt>'prairie'</tt>), puis on réaffecte la valeur <tt>cpt-temps-init</tt> à la variable <tt>cpt-temps</tt> et on continue.</li>
+<li>Lorsque <tt>cpt-temps</tt> arrive à zéro, le patche passe dans l'état <tt>'desert'</tt>, etc..</li>
+</ul>
+<p>Implémentez de tels patches</p>
+<blockquote>
+<p><strong>Note</strong>: dans la version 5 de NetLogo il est important de mettre une instruction '<tt>clear-all</tt>' au début et un 'reset-ticks' à la fin de votre procédure d'initialisation (<tt>setup</tt>). Cela donne donc ceci:</p>
+<pre>to setup
+ clear-all
+ ... ;; initialisation
+ ...;; du programme
+ reset-ticks
+end
+to go
+ ..;; la procedure qui sera appelee a céquà cycle...
+ tick
+end</pre>
+</blockquote>
+<p>b) On supposera maintenant qu'il n'y a plus deux états possibles, 
+mais une variable continue qui caractérise la quantité de plantes qu'il y
+ a sur un patch (attribut <tt>taille-plante</tt>). Cet attribut sera incrémenté à chaque fois que le compteur <tt>cpt-temps</tt> revient à zéro.</p>
+<p>On attribuera une valeur maximum pour la taille des plantes (<tt>taille-plante-max</tt>) qui sera associée à un slider (par exemple entre 50 et 200)</p>
+<p>Pour visualiser la taille des plantes, on pourra utiliser la fonction <tt>scale-color</tt> de NetLogo qui retourne une couleur proportionnelle à une valeur (aller regarder sa définition dans le manuel de <a href="http://ccl.northwestern.edu/netlogo/docs/">programmation de NetLogo</a>). Par exemple, pour mettre la couleur d'un patche en correspondance avec la valeur de l'attribut '<tt>taille-plante</tt>',
+ quelque chose comme cela devrait faire l'affaire (Attention: c'est 
+juste une proposition: essayez avec d'autres valeurs que 70 et faites en
+ sorte ensuite que le gradient de couleur soit relié à la taille 
+maximale des plantes (<tt>taille-plante-max</tt>) tout en conservant une belle couleur verte sur les patches.</p>
+<pre>set pcolor scale-color green taille-plante 0 70</pre>
+<p>Visualisez ainsi des patches qui poussent et croissent à partir de 
+valeurs aléatoires initiales. On supposera que lorsque la valeur de 
+l'attribut <tt>taille-plante</tt> est à taille-plante-max le patch voit 
+la taille des plante décroire, et quand elle arrive à zéro (ou négatif),
+ le patch devient désert et il recontinue sa croissance ensuite.</p>
+<h4>4.2. Créer des consommateurs de ressources</h4>
+<p>On fait maintenant venir des vaches qui viennent brouter l'herbe. On suppose qu'une vache prend un peu de la valeur de <tt>taille-plante</tt>,
+ c'est à dire qu'elle diminue la quantité d'herbe qui se trouve sur un 
+patche.. Chaque fois qu'une vache tombe sur un patche vert, elle diminue
+ sa valeur taille-plante d'une valeur <tt>consommation-vache</tt> qui est définie de manière globale (c'est un paramètre auquel on associe un slider). Evidemment l'herbe repousse ensuite.</p>
+<p>Faites en sorte que les vaches se déplacent aléatoirement et 
+broutent.. Voyez ce qui se passe en fonction des paramètres 
+temps-croissance et consommation-vache.. Qui va gagner de l'herbe ou des
+ vaches?</p>
+<p>Visualiser la quantité totale de vaches et d'herbe à l'aide d'un moniteur d'interface de type 'plot'.</p>
+<blockquote>
+<p><strong>Note</strong>: pour visualiser une courbe sous NetLogo : à la fin de la procédure to go, ajouter la ligne suivante:</p>
+<pre> update-plots</pre>
+<p>Et créez un "plot" (comme on crée un bouton) et dans le pen (le 
+crayon) "default" (dont vous pouvez changer le nom en "herbe" par 
+exemple), écrivez l'expression suivante</p>
+<pre> sum [taille-plante] of patches
+</pre>
+<p>Cela signifie qu'à chaque tour, il affiche dans le "plot", pour la 
+courbe "herbe", la totalité d'herbe qui existe dans votre terrain..</p>
+<p>Pour plus d'informations sur la manière de visualiser une courbe sous NetLogo, voir la <a href="http://ccl.northwestern.edu/netlogo/docs/">documentation de l'interface de NetLogo</a>.</p>
+</blockquote>
+<h4>4.3. Troupeaux de vaches</h4>
+<p>Faites en sorte que vos vaches se déplacent en troupeau. Faites un "taureau" et un ensemble de vaches qui le suivent. <br><br>Une
+ vache avance de manière aléatoire jusqu'à ce qu'elle rencontre un 
+taureau située à une certaine distance de perception (paramètre qui peut
+ être mise sous la forme d'un slider) qu'elle se mettra à suivre.<br><br>En
+ même temps qu'elles avencent et suivent le taureau, elles se repaissent
+ de l'herbe qu'elles croisent. Voyez l'évolution de votre terrain en 
+fonction du déplacement des vaches.</p>
+<blockquote>
+<p><strong>Note</strong>: <tt>in-radius n</tt> retourne un <em>agentset</em> qui contient tous les agents situés à une distance de n de la tortue (ou patch) courant. Cela s'utilise avec un filtre:</p>
+<pre>turtles in-radius n</pre>
+<p>retourne toutes les tortues à une distance n</p>
+<pre>taureaux in-radius n</pre>
+<p>retourne touts les taureaux à une distance n. Pour n'en retourner qu'un, faire:</p>
+<pre>one-of taureaux in-radius n</pre>
+<p>s'il n'y en a pas, cela retourne <tt>nobody</tt>.. Pour aller vers une chose on peut écrire s<tt>et heading towards x</tt> où <tt>x</tt> est l'entité (tortue ou patche)</p>
+</blockquote>
+<h4>4.4. Prédateurs</h4>
+<p>a) On crée maintenant un ensemble de prédateurs, des lions, qui 
+viennent manger les vaches (ils ne mangent pas les taureaux!!). Ces 
+lions avancent de manière aléatoire, et dès qu'ils repèrent une vache 
+dans un certain rayon de perception (de 3 à 20 par exemple, mettre cela 
+aussi sous la forme d'un paramètre et d'un slider), ils lui foncent 
+dessus, et s'il se trouve sur le même patche que la vache, il la mange 
+(En NetLogo, le code <tt>other &lt;breed&gt;-here</tt> retourne toutes 
+les tortues de type &lt;breed&gt; qui se trouvent sur le même patch, la 
+tortue courante ayant été omise. Attention, même s'il y a plusieurs 
+vaches sur le même patch, il ne doit en manger qu'une!! Regardez dans la
+ doc la définition de <tt>other </tt>et de <tt>turtles-here</tt>).</p>
+<blockquote>
+<p><strong>Note:</strong> La primitive pour tuer un agent est 'die'. Si l'agent se "tue" lui-même, il suffit de faire</p>
+<pre>die </pre>
+<p>Si on demande à un autre agent de se tuer, on peut le faire en utilisant la commande:</p>
+<pre>ask &lt;agent&gt; [die] </pre>
+<p>Pour retourner la distance entre l'agent courant et un agent cible:</p>
+<pre>distance agentCible </pre>
+<p>Récupérer un agent parmis un agentSet dont une charactéristique est 
+minimum (ici, retourne l'agent parmis tous les agents de la simulation 
+dont l'identifiant (commande who) est le plus petit):</p>
+<pre>min-one-of turtles [who] </pre>
+</blockquote>
+<p>Regardez ce qui se passe en fonction du nombre initial de lions et de vaches.</p>
+<p>b) On donne maintenant des capacités de reproduction aux lions et aux
+ vaches. On suppose d'abord qu'ils disposent tous les deux d'une 
+variable énergie qui est décrémentée à chaque tick (à chaque pas de 
+temps). Cette valeur est incrémentée lorsque les vaches mangent l'herbe 
+(elles prennent un certain quota d'énergie à chaque fois qu'elles 
+prennent de l'herbe) et lorsque les lions mangent les vaches (les lions 
+prennent un certain quota d'énergie à chaque fois qu'ils mangent une 
+vache). Ces quotas d'énergie correspondent à des paramètres <tt>gain-brouter</tt> pour les vaches et <tt>gain-devorer</tt> pour les lions. Leur attribut énergétique s'exprime alors sous la forme:</p>
+<pre> set energie energie + gain-brouter </pre>
+<p>pour la vache chaque fois qu'elle broute et idem pour le lion à chaque fois qu'il mange une vache (avec la valeur<tt> gain-devore</tt>r dans ce cas). On suppose qu'ils se reproduisent de manière aléatoire, ce nombre aléatoire étant pris dans l'étendue <tt>0..reproduction-vaches</tt>
+ pour la reproduction des vaches (et de la même manière pour les lions).
+ On suppose aussi que la valeur énergétique d'un animal est divisée par 
+deux lorsqu'il se reproduit.</p>
+<blockquote>
+<p><strong>Note:</strong> En NetLogo, la commande</p>
+<pre>hatch 1 [&lt;code exécuté par l'enfant à l'initialisation&gt;]</pre>
+<p>permet de créer une copie de la tortue courante, l'enfant se trouvant au même endroit que le parent.</p>
+</blockquote>
+<p>Jouez un peu avec les variables et observez l'évolution de votre 
+monde dans lequel de l'herbe pousse, des vaches et des lions évoluent...
+ A l'école des dieux, savez vous créer un monde qui perdure?<br><br><br><br><br></p>
+</body></html>

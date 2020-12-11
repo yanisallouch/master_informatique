@@ -1,0 +1,16 @@
+Apache Hadoop is a collection of open-source software utilities that facilitate using a network of many computers to solve problems involving massive amounts of data and computation. It provides a software framework for distributed storage and processing of big data using the MapReduce programming model. Originally designed for computer clusters built from commodity hardware[3]—still the common use—it has also found use on clusters of higher-end hardware.[4][5] All the modules in Hadoop are designed with a fundamental assumption that hardware failures are common occurrences and should be automatically handled by the framework.[2]
+
+The core of Apache Hadoop consists of a storage part, known as Hadoop Distributed File System (HDFS), and a processing part which is a MapReduce programming model. Hadoop splits files into large blocks and distributes them across nodes in a cluster. It then transfers packaged code into nodes to process the data in parallel. This approach takes advantage of data locality,[6] where nodes manipulate the data they have access to. This allows the dataset to be processed faster and more efficiently than it would be in a more conventional supercomputer architecture that relies on a parallel file system where computation and data are distributed via high-speed networking.[7][8]
+
+The base Apache Hadoop framework is composed of the following modules:
+
+    Hadoop Common – contains libraries and utilities needed by other Hadoop modules;
+    Hadoop Distributed File System (HDFS) – a distributed file-system that stores data on commodity machines, providing very high aggregate bandwidth across the cluster;
+    Hadoop YARN – introduced in 2012 is a platform responsible for managing computing resources in clusters and using them for scheduling users' applications;[9][10]
+    Hadoop MapReduce – an implementation of the MapReduce programming model for large-scale data processing.
+
+The term Hadoop has come to refer not just to the aforementioned base modules and sub-modules, but also to the ecosystem,[11] or collection of additional software packages that can be installed on top of or alongside Hadoop, such as Apache Pig, Apache Hive, Apache HBase, Apache Phoenix, Apache Spark, Apache ZooKeeper, Cloudera Impala, Apache Flume, Apache Sqoop, Apache Oozie, and Apache Storm.[12]
+
+Apache Hadoop's MapReduce and HDFS components were inspired by Google papers on their MapReduce and Google File System.[13]
+
+The Hadoop framework itself is mostly written in the Java programming language, with some native code in C and command line utilities written as shell scripts. Though MapReduce Java code is common, any programming language can be used with "Hadoop Streaming" to implement the "map" and "reduce" parts of the user's program.[14] Other projects in the Hadoop ecosystem expose richer user interfaces. 

@@ -1,0 +1,11 @@
+id,idlieu,nom,designationinterne,airedestockageeffectifentrepot,nbtotalpalettestockable,typelieu,hemisphere,continent,pays,region,departement,ville,codepostal,numadresse,adresse,indicationsupplementaire,addressecomplete,nbpersonnel
+1,9,Jenkins Inc,Vb6AAj-ZrASIf-O39Dpw,866,53,'entrepot','nord',South America,China,,,Huangzhuang,,74,North,,10556 Quincy Alley,41
+2,6,Douglas-McClure,tYoHNB-osJSWT-hEBeSZ,90,42,'usine','sud',Asia,Kosovo,,,Isniq,,94,Reinke,,63372 Golf Course Drive,67
+3,50,Deckow and Sons,LAZPcD-id9iK6-Xt3gZB,291,53,'usine','sud',Africa,Poland,,,Gierłoż,01-517,79577,Towne,,2 Troy Pass,72
+4,77,Walsh-Medhurst,ftVKsa-T3xtpc-dZhT5D,6,86,'non-defini','sud',Europe,United States,Arkansas,,North Little Rock,72199,82,Mifflin,AR,4934 Norway Maple Park,95
+5,85,Streich and Sons,6Z0JGJ-zB9iaE-STwErD,224,42,'non-defini','sud',Asia,Kyrgyzstan,,,Tokmok,,1078,Mendota,,1049 Sutteridge Hill,49
+6,75,Bechtelar and Sons,EpOw1u-0TIXKj-o0F2Lq,206,79,'usine','sud',Asia,Tunisia,,,Ben Arous,,29065,Derek,,33 Pierstorff Hill,68
+7,69,Boyle-Beatty,6SmWD6-P6LNyI-MYrnet,674,86,'non-defini','sud',Europe,Philippines,,,Lurugan,8722,4,Cardinal,,82 Sunbrook Street,20
+8,92,"Lehner, Rippin and Thompson",a2WdbJ-FCa7Wl-yJuBss,911,57,'usine','sud',North America,Poland,,,Sonina,37-112,51,Forster,,7 Donald Crossing,43
+9,80,Crona LLC,AciOtS-qyWtaF-V6gqKc,489,36,'entrepot','nord',North America,France,Île-de-France,,Wissous,91324 CEDEX,39,Cody,A8,9216 Reinke Alley,97
+10,10,Ondricka-Streich,EVh0tE-XwizVX-5f2hbC,809,12,'non-defini','nord',North America,Indonesia,,,Klutuk,,6,Oak,,2877 Mifflin Drive,42

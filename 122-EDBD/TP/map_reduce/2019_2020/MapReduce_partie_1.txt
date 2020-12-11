@@ -1,0 +1,123 @@
+TP Hadoop / Map-Reduce - Partie 1
+
+Avant de commencer : la programmation en Map-Reduce utilise le langage Java - avec ses avantages et inconvénients.  Il est ainsi indispensable d'effectuer ce travail en binômes, de rester bien concentrés pour bien comprendre la cause des bogues (souvent ce seront des problèmes de typage ou nommage des ressources) et ne pas perdre du temps.
+Il est vivement conseillé d'utiliser l'IDE Eclipse pour réaliser ce TP. L'archive dont vous disposerez à été pensée pour être facilement intégré avec cet environnement de développement. Nous détaillerons la procédure de préparation de votre environnement pour cet IDE.
+
+
+Télécharger l'archive TP_HMIN122M-hadoop.zip
+
+https://drive.google.com/file/d/1H19c5eykwrBY7ZHGd7B9hsmI34Wnllaz/view?usp=sharing
+
+
+MapReduce avec Eclipse
+
+Voici les étapes pour configurer Eclipse afin de pouvoir utiliser Map-Reduce :
+
+    Décompressez l'archive en conservant le dossier racine TP_HMIN122M-hadoop/
+
+    Dans le menu file, créez un nouveau «java projet» (dans java).
+
+    Décochez la case "Use default location".
+    Dans le champ "location" sélectionnez le chemin vers votre dossier TP_HMIN122M-hadoop/
+    Cliquez sur "next".
+
+    Puis cliquez sur l'onglet «Libraries», et assurez vous qu'Eclipse détecte bien 7 librairies en .jar dans "Classpath".
+
+    Si ce n'est pas le cas cliquez  sur «Add external JARs» et naviguez pour vous rendre dans le dossier TP_HMIN122M-hadoop/lib-dev, puis ajoutez y tous les .jar qui y sont présents.
+
+    Cliquez sur «finish» pour créer le projet.
+
+    Maintenant, vous pouvez tester le programme src/WordCount.java à partir de Eclipse (voir le menu "Run", ou faire CTRL+F11 pour exécuter le fichier source courant, il est possible de lancer le debugguer avec F11)
+
+    Après chaque exécution, les résultats sont enregistrés dans des sous-dossiers output/wordCount-xxxx. En cliquant sur «Refresh» (ou F5 dans le Package Explorer) vous pouvez voir les fichiers de résultats dans Eclipse. Vous pouvez aussi les voir en allant explorer directement le dossier via l'explorateur de fichier du système.
+
+
+FAQ
+
+    Le log dans la sortie standard est illisible. Je ne comprends pas ce que fait mon programme Map-Reduce --> le programme lit les fichiers contenus dans le répertoire input-wordCount/, puis effectue un comptage des mots (vérifiez-le !)
+
+    Où sont les résultats de mon programme Map-Reduce --> voir le répertoire output/wordCount-xxxx
+
+    Y a-t-il de la parallélisation à l'état actuel --> non, on utilisera Hadoop en mode Standalone pour ce TP (mais les plus courageux pourront essayer la version "pseudo-distributed"; pour la version "fully-distributed" on aurait besoin d'un cluster).
+
+    Qu'est ce qu'on fait maintenant ? L'idée est de modifier les programmes fournis afin d'implémenter les traitements ci-dessous. Il faut donc d'abord chercher à comprendre le code.
+
+    Important : comment puis-je débugger mon programme. Vous disposez d'un logger via la variable de classe 'LOG' qui permet d'envoyer des messages d'erreurs en console. Ces messages d'erreurs seront aussi enregistrés dans le fichier TP_HMIN122M-hadoop/out.log. De plus, Eclipse fournit un puissant debugger (Run/Debug ou F11) qui permet d’exécuter pas à pas le programme et de vérifier les valeurs des différentes variables à l'exécution.
+
+
+Exercice 1 - WordCount
+
+Tester le programme WordCount sur l'une des trois pages :
+
+    http://www.lemonde.fr
+    http://www.midilibre.fr
+    https://www.lequipe.fr
+
+Récupérer l'HTML de chaque page et modifier le programme WordCount afin que les balises HTML ne soient pas prises en compte dans le comptage.
+
+
+Exercice 2 - WordCount-Filter
+Modifier la fonction reduce du programme WordCount.java afin que seulement les mots dont le nombre d’occurrences est supérieur ou égal à trois soient affichés.
+
+
+Exercice 3 - Group-By
+
+Vous devez compléter le code dans la classe GroupBy.java qui est fournie afin d'implémenter un opérateur de regroupement sur l'attribut Customer-ID du fichier de données fourni dans le répertoire input-groupBy. Il s'agit d'un fichier .csv dont les lignes contiennent des valeurs pour les attributs suivants :
+
+Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country,City,State,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
+
+Voici un exemple de données :
+
+1,CA-2016-152156,11/8/16,11/11/16,Second Class,CG-12520,Claire Gute,Consumer,United States,Henderson,Kentucky,42420,South,FUR-BO-10001798,Furniture,Bookcases,Bush Somerset Collection Bookcase,261.96,2,0,41.9136
+
+La valeur du profit peut être négative si les produits on été vendus à perte.
+
+
+Le programme doit calculer le montant total des achats faits par chaque client (colonne Profit)
+
+Attention au typage des variables lorsque vous manipulez des objets de type Text, String, Float, WritableInt, etc. C'est le point de difficulté majeur. Utilisez une variable de type float pour calculer la somme des profits. Il s'agit de vraies données, il se peut donc que parmi les valeurs numériques se cachent des caractères.
+
+
+Les méthodes Map et Reduce de WordCount.java demandent de spécifier le type des clés-valeurs en entrée (2 types) et en sortie (2 types).
+
+Mapper<LongWritable, Text, Text, IntWritable>
+
+Lire : Map prend en entrée une clé de type LongWritable et une valeur de type Text (= le contenu d'une ligne du fichier) et génère des couples clé-valeur dont la clé est de type Text (en effet, ce sera un mot de la phrase) et la valeur est de type IntWritable (la valeur 1 représentant l'occurrence du mot).
+
+Comme l'entrée du Reducer est la sortie du Mapper, on retrouvera ces deux derniers types dans la méthode Reducer.
+
+Reducer<Text, IntWritable, Text, IntWritable>
+
+On a bien sûr le droit de changer les signatures des méthodes. Pour voir un exemple, comparez la classe WordCount.java avec GroupBy.java.
+
+
+Exercice 4 - Group-By
+Modifier le programme précédent afin de calculer le montant des ventes par Date et State.
+
+Calculer le montant des ventes par Date et Category.
+
+
+Exercice 5 - Join
+
+Maintenant c'est à vous ! Sur la base des programmes WordCount.java et GroupBy.java, définir une classe Join.java permettant de joindre les lignes concernant les informations des clients et des commandes contenus dans le répertoire input-join.
+
+La jointure doit être réalisée sur l'attribut custkey. Voici le schéma des relations dont les lignes sont extraites :
+
+ORDERS(orderkey,custkey,orderstatuts,totalprice,orderdate,orderpriority,clerk,ship-priority,comment)
+
+CUSTOMERS(custkey,name,address,nationkey,phone,acctbal,mktsegment,comment)
+
+Le programme doit restituer des couples (CUSTOMERS.name,ORDERS.comment)
+
+
+
+Exercice 6 - GroupBy + Join
+
+Modifiez le programme précédent afin de calculer le montant total des achats faits par chaque client.
+
+Le programme doit restituer des couples (CUSTOMERS.name, SUM(totalprice))
+
+
+Exercice 7 - Suppression des doublons (DISTINCT)
+
+Donner la liste des clients (sans doublons) présents dans le dataset du répertoire input-groupBy

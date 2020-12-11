@@ -1,0 +1,11 @@
+idproduit,idlieudepart,idlieuarrivee,idprestataire,iddatedebut,iddatefin,typeoperation,quantitedeproduit,coutoperation
+1,8,6,4,5,6,'non-defini',282,14314
+2,3,2,4,7,2,'livraison',116,58887
+3,1,3,10,2,2,'perte',498,13075
+4,3,7,5,9,5,'livraison',680,1493
+5,3,7,8,1,10,'non-defini',658,24006
+6,4,8,5,2,3,'transit',873,67651
+7,9,8,10,3,1,'fabrication',952,17753
+8,8,8,4,8,9,'non-defini',566,67733
+9,2,3,2,3,5,'perte',763,41047
+10,6,4,10,3,4,'entrepot',826,87360
