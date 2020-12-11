@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<FILMS>
+<FILM>
+<TITRE>Vertigo</TITRE>
+<ANNEE>1958</ANNEE><GENRE>Drame</GENRE><PAYS/><MES idref="3"/>
+<ROLES>
+<ROLE idref="15">John Ferguson</ROLE><ROLE idref="16">Madeleine Elster</ROLE></ROLES>
+</FILM>
+<FILM>
+<TITRE>Alien</TITRE>
+<ANNEE>1979</ANNEE><GENRE>Science-fiction</GENRE><PAYS/><MES idref="4"/>
+<ROLES>
+<ROLE idref="5">Ripley</ROLE></ROLES>
+<RESUME>Près d'un vaisseau spatial échoué sur une lointaine planète, des Terriens en mission découvrent
+ de bien étranges "oeufs". Ils en ramènent un à bord, ignorant qu'ils viennent d'introduire parmi
+ eux un huitième passager particulièrement féroce et meurtrier. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Titanic</TITRE>
+<ANNEE>1997</ANNEE><GENRE>Drame</GENRE><PAYS/><MES idref="6"/>
+<ROLES>
+<ROLE idref="109">Rose DeWitt Bukater</ROLE><ROLE idref="110">Jack Dawson</ROLE></ROLES>
+<RESUME>Conduite par Brock Lovett, une expédition américaine fouillant l'épave du Titanic remonte à la
+ surface le croquis d'une femme nue. Alertée par les médias la dame en question, Rose DeWitt
+ Bukater, aujourd'hui centenaire, rejoint les lieux du naufrage, d'où elle entreprend de conter le
+ récit de son fascinant, étrange et tragique voyage... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Sacrifice</TITRE>
+<ANNEE>1986</ANNEE><GENRE>Drame</GENRE><PAYS/><MES idref="9"/>
+<ROLES>
+</ROLES>
+<RESUME/>
+</FILM>
+<FILM>
+<TITRE>Volte/Face</TITRE>
+<ANNEE>1997</ANNEE><GENRE>Action</GENRE><PAYS/><MES idref="10"/>
+<ROLES>
+<ROLE idref="11">Sean Archer/Castor Troy</ROLE><ROLE idref="12">Castor Troy/Sean Archer</ROLE></ROLES>
+<RESUME>Directeur d'une unité anti-terroriste, Sean Archer recherche Castor Troy, un criminel responsable de la
+ mort de son fils six ans plus tôt. Il parvient à l'arrêter mais apprend que Troy a caché une bombe au Palais
+ des Congrès de Los Angeles. Seul le frère de Troy peut la désamorcer et, pour l'approcher, Archer se fait
+ greffer le visage de Troy. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Sleepy Hollow</TITRE>
+<ANNEE>1999</ANNEE><GENRE>Fantastique</GENRE><PAYS/><MES idref="13"/>
+<ROLES>
+<ROLE idref="14">Constable Ichabod Crane</ROLE><ROLE idref="96">Katrina Anne Van Tassel</ROLE><ROLE idref="97">Le cavalier</ROLE></ROLES>
+<RESUME>Nouvelle Angleterre, 1799. A Sleepy Hollow, plusieurs cadavres sont retrouvés décapités. La
+                                      rumeur attribue ces meurtres à un cavalier lui-même sans tête. Mais le fin limier
+                                      new-yorkais Ichabod Crane ne croit pas en ses aberrations. Tombé sous le charme de la
+                                      vénéneuse Katrina, il mène son enquête au coeur des sortilèges de Sleepy Hollow.. </RESUME>
+</FILM>
+<FILM>
+<TITRE>American Beauty</TITRE>
+<ANNEE>1999</ANNEE><GENRE>Comédie</GENRE><PAYS/><MES idref="17"/>
+<ROLES>
+<ROLE idref="18">Lester Burnham</ROLE><ROLE idref="19">Carolyn Burnham</ROLE></ROLES>
+<RESUME>Lester Burnham, sa femme Carolyn et leur fille Jane mènent apparemment une vie des plus
+ heureuses dans leur belle banlieue. Mais derrière cette respectable façade se tisse une étrange
+ et grinçante tragi-comédie familiale où désirs inavoués, frustrations et violences refoulées
+ conduiront inexorablement un homme vers la mort. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Impitoyable</TITRE>
+<ANNEE>1992</ANNEE><GENRE>Western</GENRE><PAYS/><MES idref="20"/>
+<ROLES>
+<ROLE idref="20">William Munny</ROLE><ROLE idref="21">Little Bill Dagget</ROLE><ROLE idref="22">Ned Logan</ROLE></ROLES>
+<RESUME>Légendaire hors-la-loi, William Munny s'est reconverti depuis onze ans en paisible fermier. Il
+ reprend néanmoins les armes pour traquer deux tueurs en compagnie de son vieil ami Ned
+ Logan. Mais ce dernier est capturé, puis éxécute. L'honneur et l'amitié imposent dès lors à
+ Munny de redevenir une dernière fois le héros qu'il fut jadis... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Gladiator</TITRE>
+<ANNEE>2000</ANNEE><GENRE>Drame</GENRE><PAYS/><MES idref="4"/>
+<ROLES>
+<ROLE idref="23">Maximus</ROLE></ROLES>
+<RESUME>Le général romain Maximus est le plus fidèle
+                    soutien de l'empereur Marc Aurèle, qu'il a
+                    conduit de victoire en victoire avec une
+                    bravoure et un dévouement exemplaires.
+                    Jaloux du prestige de Maximus, et plus
+                    encore de l'amour que lui voue l'empereur,
+                    le fils de Marc-Aurèle, Commode, s'arroge
+                    brutalement le pouvoir, puis ordonne
+                    l'arrestation du général et son exécution.
+                    Maximus échappe à ses assassins mais ne peut
+                    empêcher le massacre de sa famille. Capturé
+                    par un marchand d'esclaves, il devient
+                    gladiateur et prépare sa vengeance.</RESUME>
+</FILM>
+<FILM>
+<TITRE>Blade Runner</TITRE>
+<ANNEE>1982</ANNEE><GENRE>Action</GENRE><PAYS/><MES idref="4"/>
+<ROLES>
+<ROLE idref="24">Deckard</ROLE><ROLE idref="25">Batty</ROLE></ROLES>
+<RESUME>En 2019, lors de la décadence de Los Angeles, des êtres synthétiques, sans pensée, sans
+ émotions, suffisent aux différents travaux d'entretien. Leur durée de vie n'excède pas 4 années.
+ Un jour, ces ombres humaines se révoltent et on charge les tueurs, appelés Blade Runner, de
+ les abattre... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Piège de cristal</TITRE>
+<ANNEE>1988</ANNEE><GENRE>Action</GENRE><PAYS/><MES idref="26"/>
+<ROLES>
+<ROLE idref="27">McClane</ROLE></ROLES>
+<RESUME>John Mc Clane, policier new-yorkais, vient passer Noel a Los Angeles aupres de sa femme.
+ Dans le building ou elle travaille, il se retrouve temoin de la prise en otage de tout le personnel
+ par 12 terroristes. Objectif de ces derniers, vider les coffres de la societe. Cache mais isole, il
+ entreprend de prevenir l'exterieur...</RESUME>
+</FILM>
+<FILM>
+<TITRE>58 minutes pour vivre</TITRE>
+<ANNEE>1990</ANNEE><GENRE>Action</GENRE><PAYS/><MES idref="28"/>
+<ROLES>
+<ROLE idref="27">McLane</ROLE></ROLES>
+<RESUME>
+
+
+
+
+
+
+
+ Venu attendre sa femme a l'aéroport, le policier John McClane remarque la présence de
+ terroristes qui ont pris le contrôle des pistes, empêchant tout avion d'atterrir et menaçant de
+ laisser les appareils en vol tourner jusqu'à épuisement de leur kérosène. John n'a devant lui que
+ 58 minutes pour éviter la catastrophe... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Van Gogh</TITRE>
+<ANNEE>1990</ANNEE><GENRE>Drame</GENRE><PAYS/><MES idref="29"/>
+<ROLES>
+<ROLE idref="30">Van Gogh</ROLE></ROLES>
+<RESUME>Les derniers jours de la vie de Vincent Van Gogh, réfugié à Auvers-sur-Oise, près de chez son
+ ami et protecteur le docteur Gachet, un ami de son frère Théo. Ce peintre maudit, que les
+ villageois surnommaient "le fou", n'avait alors plus que deux mois à vivre, qu'il passa en
+ peignant un tableau par jour. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Seven</TITRE>
+<ANNEE>1995</ANNEE><GENRE>Policier</GENRE><PAYS/><MES idref="31"/>
+<ROLES>
+<ROLE idref="18">Doe</ROLE><ROLE idref="22">Somerset</ROLE><ROLE idref="32">Mills</ROLE></ROLES>
+<RESUME>A New York, un criminel anonyme a décidé de commettre 7 meurtres basés sur les 7 pêchés
+ capitaux énoncés dans la Bible : gourmandise, avarice, paresse, orgueil, luxure, envie et colère.
+ Vieux flic blasé à 7 jours de la retraite, l'inspecteur Somerset mène l'enquête tout en formant
+ son remplaçant, l'ambitieux inspecteur David Mills... </RESUME>
+</FILM>
+<FILM>
+<TITRE>L'armée des douze singes</TITRE>
+<ANNEE>1995</ANNEE><GENRE>Science-fiction</GENRE><PAYS/><MES idref="33"/>
+<ROLES>
+<ROLE idref="27">Cole</ROLE></ROLES>
+<RESUME/>
+</FILM>
+<FILM>
+<TITRE>Le nom de la rose</TITRE>
+<ANNEE>1986</ANNEE><GENRE>Policier</GENRE><PAYS/><MES idref="34"/>
+<ROLES>
+<ROLE idref="35">Baskerville</ROLE><ROLE idref="36">de Melk</ROLE></ROLES>
+<RESUME>En l'an 1327, dans une abbaye bénédictine, le moine franciscain Guillaume de Baskerville,
+ accompagné de son jeune novice Adso, enquête sur de mystérieuses morts qui frappent la
+ confrérie. Le secret semble résider dans la bibliothèque, où le vieux Jorge garde jalousement un
+ livre jugé maudit. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Pulp fiction</TITRE>
+<ANNEE>1994</ANNEE><GENRE>Action</GENRE><PAYS/><MES idref="37"/>
+<ROLES>
+<ROLE idref="11">Vincent Vega</ROLE><ROLE idref="27">Butch Coolidge</ROLE><ROLE idref="38">Jules Winnfield</ROLE><ROLE idref="39">Jody</ROLE><ROLE idref="40">Mia Wallace</ROLE><ROLE idref="98">Winston Wolf</ROLE><ROLE idref="99">Pumpkin</ROLE></ROLES>
+<RESUME>Pulp Fiction décrit l'odyssée sanglante et burlesque de petits malfrats dans la jungle de
+ Hollywood, ou s'entrecroisent les destins de deux petits tueurs, d'un dangereux gangster marié
+ à une camée, d'un boxeur roublard, de prêteurs sur gages sadiques, d'un caïd élégant et
+ dévoué, d'un dealer bon mari et de deux tourtereaux à la gachette facile... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Mary à tout prix</TITRE>
+<ANNEE>1998</ANNEE><GENRE>Comédie</GENRE><PAYS/><MES idref="41"/>
+<ROLES>
+<ROLE idref="42">Mary Jensen Matthews</ROLE><ROLE idref="43">Pat Healy</ROLE></ROLES>
+<RESUME>Pour retrouver l'amour de sa jeunesse, la belle Mary, Ted-le-looser engage Pat Healy, un
+ privé. Subjugé par la jeune femme, ce dernier tente de la séduire en se faisant passer pour un
+ architecte. Il cache la vérité à Ted et fait cause commune avec Tucker, un autre prétendant,
+ pour se débarrasser de l'encombrant Ted... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Terminator</TITRE>
+<ANNEE>1984</ANNEE><GENRE>Science-fiction</GENRE><PAYS/><MES idref="6"/>
+<ROLES>
+<ROLE idref="44">Terminator</ROLE></ROLES>
+<RESUME>Deux creatures venues du futur debarquent sur terre. L'une d'entre elles, le Terminator, doit
+ eliminer une certaine Sarah Connor, qui doit enfanter celui qui sera le chef d'un groupe de
+ resistants. L'autre, Kyle Reese, est charge par les rebelles de defendre Sarah... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Les dents de la mer</TITRE>
+<ANNEE>1975</ANNEE><GENRE>Horreur</GENRE><PAYS/><MES idref="45"/>
+<ROLES>
+<ROLE idref="46">Martin Brody</ROLE><ROLE idref="47">Quint</ROLE><ROLE idref="48">Matt Hooper</ROLE></ROLES>
+<RESUME>Dans la station balnéaire d'Amityville, un requin géant frappe à plusieurs reprises. Soucieux
+ d'une bonne saison touristique, le maire interdit au sherif Brody de fermer les plages. Une prime
+ est offerte et le célèbre chasseur de requin Quint se lance avec Brody et l'ichtyologue Hooper à
+ la poursuite du monstre... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Le silence des agneaux</TITRE>
+<ANNEE>1990</ANNEE><GENRE>Policier</GENRE><PAYS/><MES idref="49"/>
+<ROLES>
+<ROLE idref="50">Dr. Hannibal Lecter</ROLE><ROLE idref="51">Clarice Starling</ROLE></ROLES>
+<RESUME>Afin de retrouver la piste d'un tueur surnommé Buffalo Bill car il scalpe les femmes qu'il
+ assassine, la jeune stagiaire du FBI Clarice Starling est dépêchée auprès d'Hannibal Lecter,
+ prisonnier pour avoir dévoré ses victimes. La coopération de ce dernier devrait permettre à
+ Clarice de saisir et d'anticiper le comportement de Buffalo... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Le prince d'Egypte</TITRE>
+<ANNEE>1998</ANNEE><GENRE>Dessin animé</GENRE><PAYS/><MES idref="52"/>
+<ROLES>
+<ROLE idref="53">Moise</ROLE><ROLE idref="54">Ramses</ROLE><ROLE idref="55">
+</ROLE><ROLE idref="56">Miriam</ROLE><ROLE idref="57">Aaron</ROLE></ROLES>
+<RESUME/>
+</FILM>
+<FILM>
+<TITRE>Godzilla</TITRE>
+<ANNEE>1998</ANNEE><GENRE>Action</GENRE><PAYS/><MES idref="58"/>
+<ROLES>
+<ROLE idref="59">Dr. Nikos Tatopoulos</ROLE><ROLE idref="60">Philippe Roaché</ROLE></ROLES>
+<RESUME>Issu des radiations atomiques engendrées par les essais nucléaires en Polynésie, un monstre
+ gigantesque, aussi haut qu'un building, se dirige vers New York, semant le chaos sur son
+ passage. Pour tenter de stopper cette créature destructrice, l'armée s'associe à une équipe de
+ scientifiques américains et à un énigmatique enquêteur français... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Matrix</TITRE>
+<ANNEE>1999</ANNEE><GENRE>Science-fiction</GENRE><PAYS/><MES idref="61"/>
+<ROLES>
+<ROLE idref="62">Neo</ROLE><ROLE idref="63">Morpheus</ROLE></ROLES>
+<RESUME>Dans un monde où tout ce qui semble réel est en fait élaboré par l'univers électronique baptisé
+ la Matrice, Néo, un programmeur, est contacté par un certain Morpheus. D'après lui, Néo
+ serait le Libérateur tant attendu, le seul capable de mettre en échec l'omnipotence de la
+ Matrice et rendre ses droits à la réalité... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Mission: Impossible</TITRE>
+<ANNEE>1996</ANNEE><GENRE>Action</GENRE><PAYS/><MES idref="64"/>
+<ROLES>
+<ROLE idref="60">Franz Krieger</ROLE><ROLE idref="65">Ethan Hunt</ROLE><ROLE idref="66">Jim Phelps</ROLE><ROLE idref="67">Claire Phelps</ROLE></ROLES>
+<RESUME>Chargé d'une nouvelle mission, l'agent du contre espionnage Ethan Hunt tombe avec son
+ équipe dans un piège sanglant. Seul survivant avec Claire, la jeune épouse de son regretté chef
+ Jim Phelps, Ethan se retrouve accusé de trahison. En fuite, il prépare sa contre-attaque,
+ recrutant l'homme de main Krieger et le pirate informatique Luther... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Kagemusha</TITRE>
+<ANNEE>1980</ANNEE><GENRE>Guerre</GENRE><PAYS/><MES idref="68"/>
+<ROLES>
+</ROLES>
+<RESUME>Au XVIe siecle, Takeda, grand seigneur trouble par les guerres civiles de son pays, fait appel a
+ un Kagemusha pour l'aider dans ses batailles. Takeda est blesse et avant de mourir, il exige que
+ sa mort soit tenue secrete pendant trois ans afin d'eviter un eclatement du clan. Le Kagemusha
+ devra le remplacer... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Les pleins pouvoirs</TITRE>
+<ANNEE>1997</ANNEE><GENRE>Policier</GENRE><PAYS/><MES idref="20"/>
+<ROLES>
+<ROLE idref="20">Luther Whitney</ROLE><ROLE idref="21">Le président Richmond</ROLE><ROLE idref="69">Seth Frank</ROLE></ROLES>
+<RESUME>Luther Whitney est l'as des cambrioleurs. Occupé à vider le coffre de l'influent Walter Sullivan,
+ il est témoin d'un meurtre sadique impliquant le Président des Etats-Unis et les services
+ secrets. Soupçonné par la police d'en être l'auteur, il se retrouve également traqué par les
+ tueurs, qui ont compris qu'ils ont été observés.</RESUME>
+</FILM>
+<FILM>
+<TITRE>Le gendarme et les extra-terrestres</TITRE>
+<ANNEE>1978</ANNEE><GENRE>Comédie</GENRE><PAYS/><MES idref="71"/>
+<ROLES>
+<ROLE idref="72">Inspecteur Cruchot</ROLE><ROLE idref="73">Adjudant Gerber</ROLE></ROLES>
+<RESUME>En anglais: Gendarme and the Creatures from Outer Space !
+</RESUME>
+</FILM>
+<FILM>
+<TITRE>Les frères pétards</TITRE>
+<ANNEE>1986</ANNEE><GENRE>Comédie</GENRE><PAYS/><MES idref="74"/>
+<ROLES>
+<ROLE idref="73">Momo's Father</ROLE><ROLE idref="75">Aline</ROLE><ROLE idref="76">Une policière</ROLE><ROLE idref="77">Manu</ROLE><ROLE idref="78">Momo</ROLE></ROLES>
+<RESUME/>
+</FILM>
+<FILM>
+<TITRE>Le monde perdu</TITRE>
+<ANNEE>1997</ANNEE><GENRE>Horreur</GENRE><PAYS/><MES idref="45"/>
+<ROLES>
+<ROLE idref="57">Dr. Ian Malcolm</ROLE></ROLES>
+<RESUME/>
+</FILM>
+<FILM>
+<TITRE>Rain Man</TITRE>
+<ANNEE>1988</ANNEE><GENRE>Drame</GENRE><PAYS/><MES idref="79"/>
+<ROLES>
+<ROLE idref="65">Charlie Babbitt</ROLE><ROLE idref="80">Raymond Babbitt</ROLE></ROLES>
+<RESUME>A la mort de son père, Charlie se voit déposséder de son héritage par un frère dont il ignorait
+ l'existence, Raymond. Celui-ci est autiste et vit dans un hôpital psychiatrique. Charlie enlève
+ Raymond afin de prouver qu'il est capable de s'en occuper et de toucher l'héritage. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Top Gun</TITRE>
+<ANNEE>1986</ANNEE><GENRE>Action</GENRE><PAYS/><MES idref="81"/>
+<ROLES>
+<ROLE idref="53">Iceman</ROLE><ROLE idref="65">Lt. Pete 'Maverick' Mitchell</ROLE><ROLE idref="82">Charlotte Blackwood</ROLE></ROLES>
+<RESUME>
+ Pilote de chasse émérite mais casse-cou Maverick Mitchell est admis à Top Gun, l'école de
+ l'élite de l'aéronavale. Son manque de prudence lui attire les foudres de ses supérieurs et la
+ haine de certains coéquipiers. Il perd subitement la foi et confiance en lui quand son ami de
+ toujours meurt en vol et qu'il s'en croit responsable... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Les bronzés font du ski</TITRE>
+<ANNEE>1979</ANNEE><GENRE>Comédie</GENRE><PAYS/><MES idref="83"/>
+<ROLES>
+<ROLE idref="75">Nathalie Morin</ROLE><ROLE idref="76">Christiane</ROLE><ROLE idref="84">Jean-Claude Dus</ROLE><ROLE idref="85">Jérôme</ROLE><ROLE idref="86">Popeye</ROLE></ROLES>
+<RESUME>Apres avoir passe des vacances d'ete ensemble, Bernard, Nathalie, Gigi, Jerome, Popeye,
+ Jean-Claude et Christiane se retrouvent aux sports d'hiver. Tous ont leurs problemes de coeur
+ ou d'argent, mais il faut bien vivre avec. Avant de se separer, se perdre dans la montagne leur
+ permet de gouter aux joies de la "vraie vie" paysanne... </RESUME>
+</FILM>
+<FILM>
+<TITRE>MICROCOSMOS</TITRE>
+<ANNEE>1996</ANNEE><GENRE>Documentaire</GENRE><PAYS/><MES idref="87"/>
+<ROLES>
+</ROLES>
+<RESUME> 
+
+Une heure quinze sur une planète inconnue : la Terre, redécouverte à l'echelle du centimètre. Ses habitants,
+ des créatures fantastiques : les insectes et autres animaux de l'herbe et de l'eau. Ses paysages : les forêts
+ impenétrables que sont les touffes d'herbe, ou des gouttes de rosée grosses comme des ballons... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Psychose</TITRE>
+<ANNEE>1960</ANNEE><GENRE>Thriller</GENRE><PAYS/><MES idref="3"/>
+<ROLES>
+<ROLE idref="88">Norman Bates</ROLE><ROLE idref="89">Lila Crane</ROLE><ROLE idref="90">Marion Crane</ROLE></ROLES>
+<RESUME>Après avoir volé 40 000 dollars, Marion Crane se rend dans un motel tenu par Norman Bates. Elle est
+ poignardée sous sa douche par une femme. Norman fait disparaitre le corps et les affaires de la jeune
+ femme. Mais Sam, le fiancé de Marion, inquiet de ne pas avoir de nouvelles, engage un détective pour la
+ retrouver... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Le retour du Jedi</TITRE>
+<ANNEE>1983</ANNEE><GENRE>Science-fiction</GENRE><PAYS/><MES idref="91"/>
+<ROLES>
+<ROLE idref="24">Han Solo</ROLE><ROLE idref="92">Luke Skywalker</ROLE><ROLE idref="93">Princesse Leia</ROLE></ROLES>
+<RESUME>Luke Skywalker s'introduit chez Jabba pour delivrer Han Solo et la princesse Leia, tandis que l'Empire
+ reconstruit une deuxieme "Etoile de la Mort". Luke se rend ensuite au chevet de Yoda qui est mourant. Il lui
+ apprend que Leia est sa soeur. Luke forme un commando pour attaquer l'Etoile, tandis qu'il affronte son
+ pere, Darth Vador... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Les oiseaux</TITRE>
+<ANNEE>1963</ANNEE><GENRE>Horreur</GENRE><PAYS/><MES idref="3"/>
+<ROLES>
+<ROLE idref="94">Mitch Brenner</ROLE><ROLE idref="95">Melanie Daniels</ROLE></ROLES>
+<RESUME>Melanie Daniels se rend à Bodega Bay pour offrir deux perruches en cage à Cathy, la soeur de l'avocat
+ Mitch Brenner. Attaquée par une mouette, Melanie reste chez les Brenner pour la nuit. Mais d'autres
+ évènements étranges se produisent: des enfants sont blessés par des corbeaux et la maison de Mitch est
+ envahie par des milliers d'oiseaux. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Reservoir dogs</TITRE>
+<ANNEE>1992</ANNEE><GENRE>Policier</GENRE><PAYS/><MES idref="37"/>
+<ROLES>
+<ROLE idref="37">Mr. Brown</ROLE><ROLE idref="98">Mr. White/Larry</ROLE><ROLE idref="99">Freddy Newendyke/Mr. Orange</ROLE><ROLE idref="100">Nice Guy Eddie</ROLE></ROLES>
+<RESUME>
+
+
+
+
+
+
+
+ Voleurs de profession, Joe Cabot et son fils Eddie engagent un groupe de six criminels pour le cambriolage
+ d'un diamantaire. Malgré toutes les précautions prises, la police est sur place le jour J, et l'opération se
+ solde par un massacre. Les survivants du gang se réunissent pour règler leurs comptes, chacun
+ soupçonnant l'autre d'avoir trahi. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Eyes Wide Shut</TITRE>
+<ANNEE>1999</ANNEE><GENRE>Thriller</GENRE><PAYS/><MES idref="101"/>
+<ROLES>
+<ROLE idref="65">Docteur William "Bill" Harford</ROLE><ROLE idref="102">Alice Harford</ROLE></ROLES>
+<RESUME>Un couple de bourgeois, cédant à la jalousie et à l'obsession sexuelle, entreprend un voyage psychologique
+ à la recherche de son identité. Le mari, au bout de son périple nocturne, revenu de ses désirs, ne trouvera
+ finalement auprès de son épouse qu'un compromis banal mais complice, les yeux ouverts à tout jamais sur
+ un rêve impossible. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Shining</TITRE>
+<ANNEE>1980</ANNEE><GENRE>Horreur</GENRE><PAYS/><MES idref="101"/>
+<ROLES>
+<ROLE idref="103">Jack Torrance</ROLE></ROLES>
+<RESUME>Jack Torrance s'installe avec sa femme et son fils Danny dans un hôtel fermé à la morte saison afin d'écrire
+ un roman. Il apprend que le gardien précédent a tué sa femme et ses deux filles avant de se suicider. Très
+ vite, Jack va s'apercevoir que des choses étranges se passent autour de lui et que son fils a des pouvoirs
+ extrasensoriels... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Pas de printemps pour Marnie</TITRE>
+<ANNEE>1964</ANNEE><GENRE>Thriller</GENRE><PAYS/><MES idref="3"/>
+<ROLES>
+<ROLE idref="35">
+                       Mark R</ROLE><ROLE idref="95">Marnie Edgar</ROLE></ROLES>
+<RESUME>Marnie est engagée comme secrétaire chez un editeur, Mark Rutland. Celui-ci amoureux d'elle, découvre
+ qu'elle est kleptomane et l'oblige à l'épouser en la menaçant de la dénoncer. En s'apercevant que Marnie a
+ la phobie de la cou leur rouge, Mark tente de remonter dans le passé de la jeune femme afin de comprendre
+ les raisons de sa névrose. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Fenêtre sur cour</TITRE>
+<ANNEE>1954</ANNEE><GENRE>Suspense</GENRE><PAYS/><MES idref="3"/>
+<ROLES>
+</ROLES>
+<RESUME>En repos forcé à cause d'une jambe plâtrée, le reporter L.B. Jefferies observe au téléobjectif les voisins de
+ l'immeuble d'en face. C'est ainsi qu'il remarque le curieux manège d'un représentant de commerce, M.
+ Thorwald, qu'il soupconne très vite d'avoir assassiné sa femme... </RESUME>
+</FILM>
+<FILM>
+<TITRE>La mort aux trousses</TITRE>
+<ANNEE>1959</ANNEE><GENRE>Suspense</GENRE><PAYS/><MES idref="3"/>
+<ROLES>
+<ROLE idref="105">Roger O. Thornhill</ROLE><ROLE idref="106">Eve Kendall</ROLE><ROLE idref="107">Philipp Vandamm</ROLE></ROLES>
+<RESUME>Roger Thornhill, publiciste, est pris dans le hall de son hôtel pour un certain Kaplan, un espion. Deux
+ hommes tentent de le tuer et quand il retrouve l'un de ses agresseurs, celui-ci est assassiné devant ses
+ yeux. Pris pour un meurtrier, il est obligé de fuir vers Chicago... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Jeanne d'Arc</TITRE>
+<ANNEE>1999</ANNEE><GENRE>Guerre</GENRE><PAYS/><MES idref="111"/>
+<ROLES>
+<ROLE idref="80"/><ROLE idref="112">Jeanne d'Arc</ROLE><ROLE idref="113">Yolande d'Aragon</ROLE><ROLE idref="114">Charles VII</ROLE><ROLE idref="115">Dunois</ROLE></ROLES>
+<RESUME/>
+</FILM>
+<FILM>
+<TITRE>Le cinquième élément</TITRE>
+<ANNEE>1997</ANNEE><GENRE>Science-fiction</GENRE><PAYS/><MES idref="111"/>
+<ROLES>
+<ROLE idref="27">Major Korben Dalla</ROLE><ROLE idref="112">Leeloo</ROLE><ROLE idref="116">Jean-Baptiste Emmanuel Zorg</ROLE><ROLE idref="117">Vito Cornelius</ROLE></ROLES>
+<RESUME>Au XXIIIème siècle, dans un univers étrange et coloré, où tout espoir de survie est impossible sans la
+ découverte du Cinquième Elément, un héros peu ordinaire affronte le mal pour sauver l'humanité. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Léon</TITRE>
+<ANNEE>1994</ANNEE><GENRE>Action</GENRE><PAYS/><MES idref="111"/>
+<ROLES>
+<ROLE idref="60">Léon</ROLE><ROLE idref="116">Norman Stansfield</ROLE><ROLE idref="118">Mathilda</ROLE></ROLES>
+<RESUME>"Léon est un tueur. Un de la pire espèce. Il est introuvable, indétectable, pire qu'un sous-marin. Son ombre
+ est comme une menace de danger permanent sur New York. Indestructible Léon ? Oui, jusqu'à ce qu'une
+ petite souris pénètre son univers. Une toute petite souris aux yeux immenses..." </RESUME>
+</FILM>
+<FILM>
+<TITRE>Nikita</TITRE>
+<ANNEE>1990</ANNEE><GENRE>Thriller</GENRE><PAYS/><MES idref="111"/>
+<ROLES>
+<ROLE idref="115">Bob</ROLE><ROLE idref="119">Nikita</ROLE><ROLE idref="120">Marco</ROLE></ROLES>
+<RESUME>Nikita, droguée et violente, est prise en mains par des psychiatres qui la rééduquent, la conditionnent, afin
+ d'en faire une tueuse à la botte des Services Secrets. Plus tard, réalisant ce qu'elle est devenue, un pion
+ sans vie privée que l'on manipule, elle tente d'échapper à ses commanditaires. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Le grand bleu</TITRE>
+<ANNEE>1988</ANNEE><GENRE>Drame</GENRE><PAYS/><MES idref="111"/>
+<ROLES>
+<ROLE idref="39">Johanna</ROLE><ROLE idref="60">Enzo Molinari</ROLE><ROLE idref="121">Jacques Mayol</ROLE></ROLES>
+<RESUME>Jacques Mayol et Enzo Molinari se connaissent depuis l'enfance. Tous deux experts en apnée, s'affrontent
+ continuellement pour obtenir le record du monde de plongée. Toujours en rivalité, les deux hommes
+ descendent de plus en plus profond, au risque de leurs vies. Le film est ressorti en janvier 89 en version
+ longue d'une durée de 2h40. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Le roi de New York</TITRE>
+<ANNEE>1990</ANNEE><GENRE>Action</GENRE><PAYS/><MES idref="122"/>
+<ROLES>
+<ROLE idref="97">Frank White</ROLE><ROLE idref="123">Dennis Giley</ROLE><ROLE idref="124">Thomas Flanigan</ROLE></ROLES>
+<RESUME>A sa sortie de prison, le gangster Frank White entreprend de reconquérir son territoire du Bronx. Protégé
+ par son avocat, il finance même un hôpital, ce qui lui vaut le titre de "roi de New York". Mais ses méthodes
+ déplaisent à un groupe de policiers, mené par Bishop qui est prêt à tout pour avoir la peau de Frank... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Bad lieutenant</TITRE>
+<ANNEE>1992</ANNEE><GENRE>Policier</GENRE><PAYS/><MES idref="122"/>
+<ROLES>
+<ROLE idref="98">Le lieutenant</ROLE></ROLES>
+<RESUME>Le Bad Lieutenant est un flic vicieux et véreux, doublé d'un mauvais père de famille. Le jour où une jeune et
+ belle religieuse est violée, il se lance a la recherche des coupables. Son enquête devient vite une tentative
+ désespérée pour sonder les profondeurs du péché et le pouvoir de la pitié. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Nos funérailles</TITRE>
+<ANNEE>1996</ANNEE><GENRE>Drame</GENRE><PAYS/><MES idref="122"/>
+<ROLES>
+<ROLE idref="97">Ray</ROLE><ROLE idref="100">Chez</ROLE><ROLE idref="125">Jeanette</ROLE><ROLE idref="126">Clara</ROLE><ROLE idref="127">Johnny</ROLE></ROLES>
+<RESUME>New York, années 30. Le jeune gangster Johnny Tempio est abattu de 3 balles dans la poitrine. Chez les
+ Tempio, l'heure est au recueillement, avant la vengeance. Johnny était en confrontation directe avec
+ Spoglia, le boss de la famille rivale. Pour Ray, son frère aîné, il faut s'attaquer aux Spoglia, même si toute la
+ famille doit en pâtir. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Dancer in the Dark</TITRE>
+<ANNEE>2000</ANNEE><GENRE>Drame</GENRE><PAYS/><MES idref="128"/>
+<ROLES>
+<ROLE idref="129">Selma</ROLE><ROLE idref="130">Kathy</ROLE></ROLES>
+<RESUME>Emigrée tchèque et mère célibataire, Selma travaille dans une usine américaine. Elle est en train de perdre
+ la vue et son fils Gene connaîtra le même sort à moins qu'elle ne réussisse à économiser pour lui payer une
+ opération. Mais le drame de sa vie s'intensifie quand son voisin l'accuse de lui avoir dérobé ses économies.</RESUME>
+</FILM>
+<FILM>
+<TITRE>Les rivières pourpres</TITRE>
+<ANNEE>2000</ANNEE><GENRE>Drame</GENRE><PAYS/><MES idref="131"/>
+<ROLES>
+<ROLE idref="60">Pierre Niemans</ROLE><ROLE idref="132">Max Kerkérian</ROLE></ROLES>
+<RESUME>
+
+    2000 - francais -  
+
+    Policier - 1H45 
+
+
+                                               avec... 
+
+                                                   JEAN RENO 
+
+                                                   VINCENT CASSEL 
+
+                                                   NADIA FARES 
+
+                                                   DOMINIQUE SANDA 
+
+
+
+
+
+
+                                                              
+                                                              
+
+
+ Le même jour, à 300 Kms de distance, 2 flics se voient confier 2 affaires singulières : un meurtre avec
+ mutilation et une tombe d'enfant profanée. Bientôt, leurs enquêtes se rejoignent. Les meurtres se
+ multiplient. La vérité dépassera toutes les hypothèses, et emmènera les 2 policiers en haute altitude, aux
+ portes de la mort et de la glace... </RESUME>
+</FILM>
+<FILM>
+<TITRE>The Yards</TITRE>
+<ANNEE>2000</ANNEE><GENRE>Policier</GENRE><PAYS/><MES idref="133"/>
+<ROLES>
+<ROLE idref="113">Kitty Olchin</ROLE><ROLE idref="134">Leo Handler</ROLE><ROLE idref="135">Willie Gutierrez</ROLE><ROLE idref="136">Erica Stoltz</ROLE><ROLE idref="137">Frank Olchin</ROLE></ROLES>
+<RESUME>A sa sortie de prison, Leo Handler est décidé à se racheter une conduite. Il trouve un poste chez son très
+ puissant oncle, mais va rapidement découvrir la face cachée des florissantes opérations de ce dernier :
+ chantage, corruption, sabotage et meurtre. Il détient alors un secret qui fait de lui la cible de la plus
+ impitoyable famille, la sienne. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Merci pour le chocolat</TITRE>
+<ANNEE>2000</ANNEE><GENRE>Policier</GENRE><PAYS/><MES idref="138"/>
+<ROLES>
+<ROLE idref="30">André Polonski</ROLE><ROLE idref="139">Marie-Claire Muller</ROLE><ROLE idref="140">JEanne Pollet</ROLE></ROLES>
+<RESUME>Le pianiste André Polonski a épousé une seconde fois Mika. Entre deux, il a eu un fils, Guillaume, dont la
+ mère est morte accidentellement. Jeanne, future grande pianiste, apprend incidemment qu'elle a failli être
+ échangée avec Guillaume le jour de sa naissance. Elle décide de pénètrer dans cette famille Polonski, qui
+ n'est pas la sienne... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Un monde parfait</TITRE>
+<ANNEE>1993</ANNEE><GENRE>Action</GENRE><PAYS/><MES idref="20"/>
+<ROLES>
+<ROLE idref="20">Red Garnett</ROLE><ROLE idref="141">Butch Haynes</ROLE><ROLE idref="142">Sally Gerber</ROLE></ROLES>
+<RESUME>1963. Voleur récidiviste, Butch Haynes s'évade du pénitencier de Huntsville où il devait purger 40 années
+ de détention Dans sa cavale, il prend en otage un enfant abandonné qui devient au fil des heures son ami,
+ tandis que le Texas Ranger Red Garnett s'interroge sur la façon de le coincer, aidé en cela par la
+ criminologue Sally Gerber. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Chasseur blanc, coeur noir</TITRE>
+<ANNEE>1990</ANNEE><GENRE>Drame</GENRE><PAYS/><MES idref="20"/>
+<ROLES>
+<ROLE idref="20">John Wilson</ROLE></ROLES>
+<RESUME>Réalisateur brillant et controversé, John Wilson est un homme sans compromis qui entend vivre ses
+ expériences jusqu'au bout. Ainsi, alors qu'il entreprend le tournage d'une superproduction en Afrique, se
+ laisse-t-il captiver par un autre projet et ce malgré les recommandations de son entourage : chasser
+ l'éléphant africain... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Il faut sauver le soldat Ryan</TITRE>
+<ANNEE>1998</ANNEE><GENRE>Guerre</GENRE><PAYS/><MES idref="45"/>
+<ROLES>
+<ROLE idref="143">Capitaine John H. Miller</ROLE><ROLE idref="144">ergent Michael Horvath</ROLE><ROLE idref="145">Soldat James Francis Ryan</ROLE></ROLES>
+<RESUME>6 juin 1944. Parmi tant d'autres, les soldats du Capitaine Miller s'apprêtent à envahir les plages de
+ Normandie. Une épreuve redoutable et mortelle. Pourtant, une tâche plus rude encore les attend : passer
+ derrière les lignes ennemies pour trouver et ramener le simple soldat Ryan, dont les 3 frères sont morts au
+ combat en quelques jours... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Full metal jacket</TITRE>
+<ANNEE>1987</ANNEE><GENRE>Guerre</GENRE><PAYS/><MES idref="101"/>
+<ROLES>
+<ROLE idref="146">Soldat J.T. Davis</ROLE><ROLE idref="147">Animal mother</ROLE></ROLES>
+<RESUME>1968, Caroline du Nord, le sergent Hartman entraîne intensivement dix-sept jeunes marines pour aller
+ combattre au Viet-Nam. Transformés en machines à tuer, les soldats sont envoyés au Viet-Nam pour
+ participer à l'offensive sanglante du Tet à Hue. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Barry Lindon</TITRE>
+<ANNEE>1975</ANNEE><GENRE>Drame</GENRE><PAYS/><MES idref="101"/>
+<ROLES>
+<ROLE idref="148">Barry Lindon</ROLE><ROLE idref="149">Lady Lindon</ROLE></ROLES>
+<RESUME>Irlande, XVIIIe siècle. Amoureux de sa cousine, Redmond Barry provoque en duel son soupirant. Le croyant
+ mort, il part pour l'armée d'où il apprend que son rival, toujours en vie, a épousé Nora. Désespéré, il tente de
+ déserter et rencontre Lady Lyndon. Elle l'épouse et lui donne son nom. Mais après l'avoir trompée, il doit
+ quitter le pays. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Orange mécanique</TITRE>
+<ANNEE>1971</ANNEE><GENRE>Science-fiction</GENRE><PAYS/><MES idref="101"/>
+<ROLES>
+<ROLE idref="150">Alex Delarge</ROLE></ROLES>
+<RESUME>La violence règne partout dans une Angleterre d'un futur proche. Alex et sa bande s'attaquent à qui bon leur
+ semble, multipliant meurtres, viols et passages à tabac. Arrêté, Alex est condamné à 14 ans de prison. Il
+ accepte de suivre une nouvelle thérapie expérimentale instituée par le gouvernement pour lutter contre la
+ criminalité... </RESUME>
+</FILM>
+<FILM>
+<TITRE>2001 L'Odyssée de l'espace</TITRE>
+<ANNEE>1968</ANNEE><GENRE>Science-fiction</GENRE><PAYS/><MES idref="101"/>
+<ROLES>
+<ROLE idref="151">Dr. David Bowman</ROLE><ROLE idref="152">Dr. Frank Poole</ROLE></ROLES>
+<RESUME>Un mysterieux monolithe emet de curieux signaux depuis l'aube de l'humanite. A sa rencontre sur Jupiter
+ part ce fruit de la technologie du XXIe siecle qu'est le vaisseau spatial "Discovery". A son bord,
+ l'ordinateur Hal assassine ses passagers, sauf Bowman qui le deconnecte. Il rencontre le monolithe et
+ decouvre ainsi un nouvel espace-temps... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Docteur Folamour</TITRE>
+<ANNEE>1964</ANNEE><GENRE>Science-fiction</GENRE><PAYS/><MES idref="101"/>
+<ROLES>
+<ROLE idref="153">Dr. Folamour</ROLE><ROLE idref="154">General "Buck" Turgidson</ROLE><ROLE idref="155">General Jack D. Ripper</ROLE></ROLES>
+<RESUME>Un général du "Strategic Air Command" devenu fou, donne l'ordre à son escadrille de bombarder l'URSS.
+ Essayant en vain de joindre le général, le pentagone envoie ses hommes sur place. Ceux-ci parviennent à
+ rappeler les bombardiers mais l'un d'eux, pilote par le major King Kong, ne répond pas à l'appel et se dirige
+ droit sur l'URSS... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Les sentiers de la gloire</TITRE>
+<ANNEE>1957</ANNEE><GENRE>Guerre</GENRE><PAYS/><MES idref="101"/>
+<ROLES>
+<ROLE idref="156">Colonel Dax</ROLE></ROLES>
+<RESUME>Un mysterieux monolithe emet de curieux signaux depuis l'aube de l'humanite. A sa rencontre sur Jupiter
+ part ce fruit de la technologie du XXIe siecle qu'est le vaisseau spatial "Discovery". A son bord,
+ l'ordinateur Hal assassine ses passagers, sauf Bowman qui le deconnecte. Il rencontre le monolithe et
+ decouvre ainsi un nouvel espace-temps... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Les 39 marches</TITRE>
+<ANNEE>1935</ANNEE><GENRE>Thriller</GENRE><PAYS/><MES idref="3"/>
+<ROLES>
+<ROLE idref="157">Richard Hannay</ROLE><ROLE idref="158">Pamela</ROLE></ROLES>
+<RESUME>Richard Hammey accepte d'héberger dans son appartement londonien une jeune femme, agent secret,
+ traquée par une mystérieuse organisation "Les 39 marches". Elle est assassinée dans la nuit et Richard se
+ retrouve poursuivi par la police et l'organisation... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Rebecca</TITRE>
+<ANNEE>1940</ANNEE><GENRE>Drame</GENRE><PAYS/><MES idref="3"/>
+<ROLES>
+<ROLE idref="159">George de Winter</ROLE><ROLE idref="160">Mme de Winter</ROLE><ROLE idref="161">Jack Favell</ROLE></ROLES>
+<RESUME>Au lendemain de son mariage avec Maxime de Winter, un noble anglais, une jeune femme s'installe dans
+ son château. elle est accueillie froidement par la gouvernante. Le souvenir de Rebecca, la première femme
+ de Maxime, morte noyée, plane sur la demeure. La nouvelle Mme de Winter se retrouve prisonnière d'un
+ piège qu'elle tisse involontairement. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Soupçons</TITRE>
+<ANNEE>1941</ANNEE><GENRE>Suspense</GENRE><PAYS/><MES idref="3"/>
+<ROLES>
+<ROLE idref="105">Johnnie Aysgarth</ROLE><ROLE idref="160">Lina McLaidlaw Aysgarth</ROLE></ROLES>
+<RESUME>Lina McKinlaw, une jeune fille riche, épouse le séduisant John Aysgarth. Peu après le mariage, Lina
+ découvre que John n'a pas un sou et qu'il s'est renseigné sur le montant de son assurancevie. Persuadée
+ qu'il veut se débarrasser d'elle pour toucher la prime, elle commence à surveiller les moindres faits et
+ gestes de son mari. </RESUME>
+</FILM>
+<FILM>
+<TITRE>Les enchaînés</TITRE>
+<ANNEE>1946</ANNEE><GENRE>Suspense</GENRE><PAYS/><MES idref="3"/>
+<ROLES>
+<ROLE idref="105">T.R. Devlin</ROLE><ROLE idref="162">Alicia Huberman</ROLE><ROLE idref="163">Alexander Sebastian</ROLE></ROLES>
+<RESUME>Alicia, fille d'un espion allemand, devient un agent des services secrets américains et part avec Devlin, son
+ co-équipier, pour Rio de Janeiro afin de démanteler un réseau d'anciens nazis... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Le crime était presque parfait</TITRE>
+<ANNEE>1954</ANNEE><GENRE>Policier</GENRE><PAYS/><MES idref="3"/>
+<ROLES>
+<ROLE idref="104">Margot Wendice</ROLE><ROLE idref="164">Tony Wendice</ROLE></ROLES>
+<RESUME>En apprenant que sa femme Margot a un amant, Tony décide de la tuer. Afin de ne pas être accusé du
+ meurtre et d'hériter de sa fortune, il oblige Lesgate, un ancien ami, à commettre le crime. Mais lors de
+ l'agression, Margot parvient à se défendre et tue Lesgate. Habilement, Tony persuade la police que ce
+ n'était pas de la légitime défense. </RESUME>
+</FILM>
+<FILM>
+<TITRE>L'homme qui en savait trop</TITRE>
+<ANNEE>1956</ANNEE><GENRE>Thriller</GENRE><PAYS/><MES idref="3"/>
+<ROLES>
+<ROLE idref="165">Doctor Ben McKenna</ROLE><ROLE idref="166">Jo McKenna</ROLE></ROLES>
+<RESUME>En vacances au Maroc avec leur fils Hank, le Dr McKenna et sa femme font la connaissance de Louis
+ Bernard, un français, et d'un couple d'anglais, les Drayton. Mais le lendemain, Bernard, déguisé en arabe,
+ meurt sous leurs yeux et les Drayton enlevent Hank. Sans avertir la police Mc Kenna et sa femme décident
+ de mener l'enquête... </RESUME>
+</FILM>
+<FILM>
+<TITRE>Jackie Brown</TITRE>
+<ANNEE>1997</ANNEE><GENRE>Policier</GENRE><PAYS/><MES idref="37"/>
+<ROLES>
+<ROLE idref="38">Ordell Robbie</ROLE><ROLE idref="167">Louis Gara</ROLE><ROLE idref="168">Jackie Brown</ROLE><ROLE idref="169">Melanie</ROLE><ROLE idref="17">Mark Dargus</ROLE></ROLES>
+<RESUME>Hôtesse de l'air, Jackie Brown arrondit ses fins de mois en convoyant de l'argent liquide pour le compte de
+ Ordell Robbie, trafiquant d'armes. Quand la police et le FBI lui signifient qu'ils comptent sur elle pour faire
+ tomber Robbie, Jackie Brown échafaude un plan audacieux : doubler tout le monde lors du prochain transfert
+ de $500 000... </RESUME>
+</FILM>
+<ARTISTE id="6"><ACTNOM>Cameron</ACTNOM><ACTPNOM>James</ACTPNOM><ANNEENAISS>1954</ANNEENAISS></ARTISTE>
+<ARTISTE id="3"><ACTNOM>Hitchcock</ACTNOM><ACTPNOM>Alfred</ACTPNOM><ANNEENAISS>1899</ANNEENAISS></ARTISTE>
+<ARTISTE id="4"><ACTNOM>Scott</ACTNOM><ACTPNOM>Ridley</ACTPNOM><ANNEENAISS>1937</ANNEENAISS></ARTISTE>
+<ARTISTE id="5"><ACTNOM>Weaver</ACTNOM><ACTPNOM>Sigourney</ACTPNOM><ANNEENAISS>1949</ANNEENAISS></ARTISTE>
+<ARTISTE id="9"><ACTNOM>Tarkovski</ACTNOM><ACTPNOM>Andrei</ACTPNOM><ANNEENAISS>1932</ANNEENAISS></ARTISTE>
+<ARTISTE id="10"><ACTNOM>Woo</ACTNOM><ACTPNOM>John</ACTPNOM><ANNEENAISS>1946</ANNEENAISS></ARTISTE>
+<ARTISTE id="11"><ACTNOM>Travolta</ACTNOM><ACTPNOM>John</ACTPNOM><ANNEENAISS>1954</ANNEENAISS></ARTISTE>
+<ARTISTE id="12"><ACTNOM>Cage</ACTNOM><ACTPNOM>Nicolas</ACTPNOM><ANNEENAISS>1964</ANNEENAISS></ARTISTE>
+<ARTISTE id="13"><ACTNOM>Burton</ACTNOM><ACTPNOM>Tim</ACTPNOM><ANNEENAISS>1958</ANNEENAISS></ARTISTE>
+<ARTISTE id="14"><ACTNOM>Depp</ACTNOM><ACTPNOM>Johnny</ACTPNOM><ANNEENAISS>1963</ANNEENAISS></ARTISTE>
+<ARTISTE id="15"><ACTNOM>Stewart</ACTNOM><ACTPNOM>James</ACTPNOM><ANNEENAISS>1908</ANNEENAISS></ARTISTE>
+<ARTISTE id="16"><ACTNOM>Novak</ACTNOM><ACTPNOM>Kim</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="17"><ACTNOM>Mendes</ACTNOM><ACTPNOM>Sam</ACTPNOM><ANNEENAISS>1965</ANNEENAISS></ARTISTE>
+<ARTISTE id="18"><ACTNOM>Spacey</ACTNOM><ACTPNOM>Kevin</ACTPNOM><ANNEENAISS>1959</ANNEENAISS></ARTISTE>
+<ARTISTE id="19"><ACTNOM>Bening</ACTNOM><ACTPNOM>Anette</ACTPNOM><ANNEENAISS>1958</ANNEENAISS></ARTISTE>
+<ARTISTE id="20"><ACTNOM>Eastwood</ACTNOM><ACTPNOM>Clint</ACTPNOM><ANNEENAISS>1930</ANNEENAISS></ARTISTE>
+<ARTISTE id="21"><ACTNOM>Hackman</ACTNOM><ACTPNOM>Gene</ACTPNOM><ANNEENAISS>1930</ANNEENAISS></ARTISTE>
+<ARTISTE id="22"><ACTNOM>Freeman</ACTNOM><ACTPNOM>Morgan</ACTPNOM><ANNEENAISS>1937</ANNEENAISS></ARTISTE>
+<ARTISTE id="23"><ACTNOM>Crowe</ACTNOM><ACTPNOM>Russell</ACTPNOM><ANNEENAISS>1964</ANNEENAISS></ARTISTE>
+<ARTISTE id="24"><ACTNOM>Ford</ACTNOM><ACTPNOM>Harrison</ACTPNOM><ANNEENAISS>1942</ANNEENAISS></ARTISTE>
+<ARTISTE id="25"><ACTNOM>Hauer</ACTNOM><ACTPNOM>Rutger</ACTPNOM><ANNEENAISS>1944</ANNEENAISS></ARTISTE>
+<ARTISTE id="26"><ACTNOM>McTierman</ACTNOM><ACTPNOM>John</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="27"><ACTNOM>Willis</ACTNOM><ACTPNOM>Bruce</ACTPNOM><ANNEENAISS>1955</ANNEENAISS></ARTISTE>
+<ARTISTE id="28"><ACTNOM>Harlin</ACTNOM><ACTPNOM>Renny</ACTPNOM><ANNEENAISS>1959</ANNEENAISS></ARTISTE>
+<ARTISTE id="29"><ACTNOM>Pialat</ACTNOM><ACTPNOM>Maurice</ACTPNOM><ANNEENAISS>1925</ANNEENAISS></ARTISTE>
+<ARTISTE id="30"><ACTNOM>Dutronc</ACTNOM><ACTPNOM>Jacques</ACTPNOM><ANNEENAISS>1943</ANNEENAISS></ARTISTE>
+<ARTISTE id="31"><ACTNOM>Fincher</ACTNOM><ACTPNOM>David</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="32"><ACTNOM>Pitt</ACTNOM><ACTPNOM>Brad</ACTPNOM><ANNEENAISS>1963</ANNEENAISS></ARTISTE>
+<ARTISTE id="33"><ACTNOM>Gilliam</ACTNOM><ACTPNOM>Terry</ACTPNOM><ANNEENAISS>1940</ANNEENAISS></ARTISTE>
+<ARTISTE id="34"><ACTNOM>Annaud</ACTNOM><ACTPNOM>Jean-Jacques</ACTPNOM><ANNEENAISS>1943</ANNEENAISS></ARTISTE>
+<ARTISTE id="35"><ACTNOM>Connery</ACTNOM><ACTPNOM>Sean</ACTPNOM><ANNEENAISS>1930</ANNEENAISS></ARTISTE>
+<ARTISTE id="36"><ACTNOM>Slater</ACTNOM><ACTPNOM>Christian</ACTPNOM><ANNEENAISS>1969</ANNEENAISS></ARTISTE>
+<ARTISTE id="37"><ACTNOM>Tarantino</ACTNOM><ACTPNOM>Quentin</ACTPNOM><ANNEENAISS>1963</ANNEENAISS></ARTISTE>
+<ARTISTE id="38"><ACTNOM>Jackson</ACTNOM><ACTPNOM>Samuel L.</ACTPNOM><ANNEENAISS>1948</ANNEENAISS></ARTISTE>
+<ARTISTE id="39"><ACTNOM>Arquette</ACTNOM><ACTPNOM>Rosanna</ACTPNOM><ANNEENAISS>1959</ANNEENAISS></ARTISTE>
+<ARTISTE id="40"><ACTNOM>Thurman</ACTNOM><ACTPNOM>Uma</ACTPNOM><ANNEENAISS>1970</ANNEENAISS></ARTISTE>
+<ARTISTE id="41"><ACTNOM>Farrelly</ACTNOM><ACTPNOM>Bobby</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="42"><ACTNOM>Diaz</ACTNOM><ACTPNOM>Cameron</ACTPNOM><ANNEENAISS>1972</ANNEENAISS></ARTISTE>
+<ARTISTE id="43"><ACTNOM>Dillon</ACTNOM><ACTPNOM>Mat</ACTPNOM><ANNEENAISS>1964</ANNEENAISS></ARTISTE>
+<ARTISTE id="44"><ACTNOM>Schwartzenegger</ACTNOM><ACTPNOM>Arnold</ACTPNOM><ANNEENAISS>1947</ANNEENAISS></ARTISTE>
+<ARTISTE id="45"><ACTNOM>Spielberg</ACTNOM><ACTPNOM>Steven</ACTPNOM><ANNEENAISS>1946</ANNEENAISS></ARTISTE>
+<ARTISTE id="46"><ACTNOM>Scheider</ACTNOM><ACTPNOM>Roy</ACTPNOM><ANNEENAISS>1932</ANNEENAISS></ARTISTE>
+<ARTISTE id="47"><ACTNOM>Shaw</ACTNOM><ACTPNOM>Robert</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="48"><ACTNOM>Dreyfus</ACTNOM><ACTPNOM>Richard</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="49"><ACTNOM>Demme</ACTNOM><ACTPNOM>Jonathan</ACTPNOM><ANNEENAISS>1944</ANNEENAISS></ARTISTE>
+<ARTISTE id="50"><ACTNOM>Hopkins</ACTNOM><ACTPNOM>Anthony</ACTPNOM><ANNEENAISS>1937</ANNEENAISS></ARTISTE>
+<ARTISTE id="51"><ACTNOM>Foster</ACTNOM><ACTPNOM>Jodie</ACTPNOM><ANNEENAISS>1962</ANNEENAISS></ARTISTE>
+<ARTISTE id="52"><ACTNOM>Chapman</ACTNOM><ACTPNOM>Brenda</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="53"><ACTNOM>Kilmer</ACTNOM><ACTPNOM>Val</ACTPNOM><ANNEENAISS>1959</ANNEENAISS></ARTISTE>
+<ARTISTE id="54"><ACTNOM>Fiennes</ACTNOM><ACTPNOM>Ralph</ACTPNOM><ANNEENAISS>1962</ANNEENAISS></ARTISTE>
+<ARTISTE id="55"><ACTNOM>Pfeiffer</ACTNOM><ACTPNOM>Michelle</ACTPNOM><ANNEENAISS>1957</ANNEENAISS></ARTISTE>
+<ARTISTE id="56"><ACTNOM>Bullock</ACTNOM><ACTPNOM>Sandra</ACTPNOM><ANNEENAISS>1964</ANNEENAISS></ARTISTE>
+<ARTISTE id="57"><ACTNOM>Goldblum</ACTNOM><ACTPNOM>Jeff</ACTPNOM><ANNEENAISS>1952</ANNEENAISS></ARTISTE>
+<ARTISTE id="58"><ACTNOM>Emmerich</ACTNOM><ACTPNOM>Roland</ACTPNOM><ANNEENAISS>1955</ANNEENAISS></ARTISTE>
+<ARTISTE id="59"><ACTNOM>Broderick</ACTNOM><ACTPNOM>Matthew</ACTPNOM><ANNEENAISS>1962</ANNEENAISS></ARTISTE>
+<ARTISTE id="60"><ACTNOM>Reno</ACTNOM><ACTPNOM>Jean</ACTPNOM><ANNEENAISS>1948</ANNEENAISS></ARTISTE>
+<ARTISTE id="61"><ACTNOM>Wachowski</ACTNOM><ACTPNOM>Andy</ACTPNOM><ANNEENAISS>1967</ANNEENAISS></ARTISTE>
+<ARTISTE id="62"><ACTNOM>Reeves</ACTNOM><ACTPNOM>Keanu</ACTPNOM><ANNEENAISS>1964</ANNEENAISS></ARTISTE>
+<ARTISTE id="63"><ACTNOM>Fishburne</ACTNOM><ACTPNOM>Laurence</ACTPNOM><ANNEENAISS>1961</ANNEENAISS></ARTISTE>
+<ARTISTE id="64"><ACTNOM>De Palma</ACTNOM><ACTPNOM>Brian</ACTPNOM><ANNEENAISS>1940</ANNEENAISS></ARTISTE>
+<ARTISTE id="65"><ACTNOM>Cruise</ACTNOM><ACTPNOM>Tom</ACTPNOM><ANNEENAISS>1962</ANNEENAISS></ARTISTE>
+<ARTISTE id="66"><ACTNOM>Voight</ACTNOM><ACTPNOM>John</ACTPNOM><ANNEENAISS>1938</ANNEENAISS></ARTISTE>
+<ARTISTE id="67"><ACTNOM>Béart</ACTNOM><ACTPNOM>Emmanuelle</ACTPNOM><ANNEENAISS>1965</ANNEENAISS></ARTISTE>
+<ARTISTE id="68"><ACTNOM>Kurozawa</ACTNOM><ACTPNOM>Akira</ACTPNOM><ANNEENAISS>1910</ANNEENAISS></ARTISTE>
+<ARTISTE id="69"><ACTNOM>Harris</ACTNOM><ACTPNOM>Ed</ACTPNOM><ANNEENAISS>1950</ANNEENAISS></ARTISTE>
+<ARTISTE id="70"><ACTNOM>Linney</ACTNOM><ACTPNOM>Laura</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="71"><ACTNOM>Girault</ACTNOM><ACTPNOM>Jean</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="72"><ACTNOM>De Funès</ACTNOM><ACTPNOM>Louis</ACTPNOM><ANNEENAISS>1914</ANNEENAISS></ARTISTE>
+<ARTISTE id="73"><ACTNOM>Galabru</ACTNOM><ACTPNOM>Michel</ACTPNOM><ANNEENAISS>1922</ANNEENAISS></ARTISTE>
+<ARTISTE id="74"><ACTNOM>Palud</ACTNOM><ACTPNOM>Hervé</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="75"><ACTNOM>Balasko</ACTNOM><ACTPNOM>Josiane</ACTPNOM><ANNEENAISS>1950</ANNEENAISS></ARTISTE>
+<ARTISTE id="76"><ACTNOM>Lavanant</ACTNOM><ACTPNOM>Dominique</ACTPNOM><ANNEENAISS>1944</ANNEENAISS></ARTISTE>
+<ARTISTE id="77"><ACTNOM>Lanvin</ACTNOM><ACTPNOM>Gérard</ACTPNOM><ANNEENAISS>1950</ANNEENAISS></ARTISTE>
+<ARTISTE id="78"><ACTNOM>Villeret</ACTNOM><ACTPNOM>Jacques</ACTPNOM><ANNEENAISS>1951</ANNEENAISS></ARTISTE>
+<ARTISTE id="79"><ACTNOM>Levinson</ACTNOM><ACTPNOM>Barry</ACTPNOM><ANNEENAISS>1942</ANNEENAISS></ARTISTE>
+<ARTISTE id="80"><ACTNOM>Hoffman</ACTNOM><ACTPNOM>Dustin</ACTPNOM><ANNEENAISS>1937</ANNEENAISS></ARTISTE>
+<ARTISTE id="81"><ACTNOM>Scott</ACTNOM><ACTPNOM>Tony</ACTPNOM><ANNEENAISS>1944</ANNEENAISS></ARTISTE>
+<ARTISTE id="82"><ACTNOM>McGillis</ACTNOM><ACTPNOM>Kelly</ACTPNOM><ANNEENAISS>1957</ANNEENAISS></ARTISTE>
+<ARTISTE id="83"><ACTNOM>Leconte</ACTNOM><ACTPNOM>Patrice</ACTPNOM><ANNEENAISS>1947</ANNEENAISS></ARTISTE>
+<ARTISTE id="84"><ACTNOM>Blanc</ACTNOM><ACTPNOM>Michel</ACTPNOM><ANNEENAISS>1952</ANNEENAISS></ARTISTE>
+<ARTISTE id="85"><ACTNOM>Clavier</ACTNOM><ACTPNOM>Christian</ACTPNOM><ANNEENAISS>1952</ANNEENAISS></ARTISTE>
+<ARTISTE id="86"><ACTNOM>Lhermite</ACTNOM><ACTPNOM>Thierry</ACTPNOM><ANNEENAISS>1952</ANNEENAISS></ARTISTE>
+<ARTISTE id="87"><ACTNOM>Pernnou</ACTNOM><ACTPNOM>Marie</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="88"><ACTNOM>Perkins</ACTNOM><ACTPNOM>Anthony</ACTPNOM><ANNEENAISS>1932</ANNEENAISS></ARTISTE>
+<ARTISTE id="89"><ACTNOM>Miles</ACTNOM><ACTPNOM>Vera</ACTPNOM><ANNEENAISS>1929</ANNEENAISS></ARTISTE>
+<ARTISTE id="90"><ACTNOM>Leigh</ACTNOM><ACTPNOM>Janet</ACTPNOM><ANNEENAISS>1927</ANNEENAISS></ARTISTE>
+<ARTISTE id="91"><ACTNOM>Marquand</ACTNOM><ACTPNOM>Richard</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="92"><ACTNOM>Hamill</ACTNOM><ACTPNOM>Mark</ACTPNOM><ANNEENAISS>1951</ANNEENAISS></ARTISTE>
+<ARTISTE id="93"><ACTNOM>Fisher</ACTNOM><ACTPNOM>Carrie</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="94"><ACTNOM>Taylor</ACTNOM><ACTPNOM>Rod</ACTPNOM><ANNEENAISS>1930</ANNEENAISS></ARTISTE>
+<ARTISTE id="95"><ACTNOM>Hedren</ACTNOM><ACTPNOM>Tippi</ACTPNOM><ANNEENAISS>1931</ANNEENAISS></ARTISTE>
+<ARTISTE id="96"><ACTNOM>Ricci</ACTNOM><ACTPNOM>Christina</ACTPNOM><ANNEENAISS>1980</ANNEENAISS></ARTISTE>
+<ARTISTE id="97"><ACTNOM>Walken</ACTNOM><ACTPNOM>Christopher</ACTPNOM><ANNEENAISS>1943</ANNEENAISS></ARTISTE>
+<ARTISTE id="98"><ACTNOM>Keitel</ACTNOM><ACTPNOM>Harvey</ACTPNOM><ANNEENAISS>1939</ANNEENAISS></ARTISTE>
+<ARTISTE id="99"><ACTNOM>Roth</ACTNOM><ACTPNOM>Tim</ACTPNOM><ANNEENAISS>1961</ANNEENAISS></ARTISTE>
+<ARTISTE id="100"><ACTNOM>Penn</ACTNOM><ACTPNOM>Chris</ACTPNOM><ANNEENAISS>1966</ANNEENAISS></ARTISTE>
+<ARTISTE id="101"><ACTNOM>Kubrick</ACTNOM><ACTPNOM>Stanley</ACTPNOM><ANNEENAISS>1928</ANNEENAISS></ARTISTE>
+<ARTISTE id="102"><ACTNOM>Kidman</ACTNOM><ACTPNOM>Nicole</ACTPNOM><ANNEENAISS>1967</ANNEENAISS></ARTISTE>
+<ARTISTE id="103"><ACTNOM>Nicholson</ACTNOM><ACTPNOM>Jack</ACTPNOM><ANNEENAISS>1937</ANNEENAISS></ARTISTE>
+<ARTISTE id="104"><ACTNOM>Kelly</ACTNOM><ACTPNOM>Grace</ACTPNOM><ANNEENAISS>1929</ANNEENAISS></ARTISTE>
+<ARTISTE id="105"><ACTNOM>Grant</ACTNOM><ACTPNOM>Cary</ACTPNOM><ANNEENAISS>1904</ANNEENAISS></ARTISTE>
+<ARTISTE id="106"><ACTNOM>Saint</ACTNOM><ACTPNOM>Eva Marie</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="107"><ACTNOM>Mason</ACTNOM><ACTPNOM>James</ACTPNOM><ANNEENAISS>1909</ANNEENAISS></ARTISTE>
+<ARTISTE id="110"><ACTNOM>DiCaprio</ACTNOM><ACTPNOM>Leonardo</ACTPNOM><ANNEENAISS>1974</ANNEENAISS></ARTISTE>
+<ARTISTE id="109"><ACTNOM>Winslet</ACTNOM><ACTPNOM>Kate</ACTPNOM><ANNEENAISS>1975</ANNEENAISS></ARTISTE>
+<ARTISTE id="111"><ACTNOM>Besson</ACTNOM><ACTPNOM>Luc</ACTPNOM><ANNEENAISS>1959</ANNEENAISS></ARTISTE>
+<ARTISTE id="112"><ACTNOM>Jovovich</ACTNOM><ACTPNOM>Milla</ACTPNOM><ANNEENAISS>1975</ANNEENAISS></ARTISTE>
+<ARTISTE id="113"><ACTNOM>Dunaway</ACTNOM><ACTPNOM>Fane</ACTPNOM><ANNEENAISS>1941</ANNEENAISS></ARTISTE>
+<ARTISTE id="114"><ACTNOM>Malkovitch</ACTNOM><ACTPNOM>John</ACTPNOM><ANNEENAISS>1953</ANNEENAISS></ARTISTE>
+<ARTISTE id="115"><ACTNOM>Karyo</ACTNOM><ACTPNOM>Tchéky</ACTPNOM><ANNEENAISS>1953</ANNEENAISS></ARTISTE>
+<ARTISTE id="116"><ACTNOM>Oldman</ACTNOM><ACTPNOM>Gary</ACTPNOM><ANNEENAISS>1958</ANNEENAISS></ARTISTE>
+<ARTISTE id="117"><ACTNOM>Holm</ACTNOM><ACTPNOM>Ian</ACTPNOM><ANNEENAISS>1931</ANNEENAISS></ARTISTE>
+<ARTISTE id="118"><ACTNOM>Portman</ACTNOM><ACTPNOM>Natalie</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="119"><ACTNOM>Parillaud</ACTNOM><ACTPNOM>Anne</ACTPNOM><ANNEENAISS>1960</ANNEENAISS></ARTISTE>
+<ARTISTE id="120"><ACTNOM>Anglade</ACTNOM><ACTPNOM>Jean-Hughes</ACTPNOM><ANNEENAISS>1955</ANNEENAISS></ARTISTE>
+<ARTISTE id="121"><ACTNOM>Barr</ACTNOM><ACTPNOM>Jean-Marc</ACTPNOM><ANNEENAISS>1960</ANNEENAISS></ARTISTE>
+<ARTISTE id="122"><ACTNOM>Ferrara</ACTNOM><ACTPNOM>Abel</ACTPNOM><ANNEENAISS>1952</ANNEENAISS></ARTISTE>
+<ARTISTE id="123"><ACTNOM>Caruso</ACTNOM><ACTPNOM>David</ACTPNOM><ANNEENAISS>1956</ANNEENAISS></ARTISTE>
+<ARTISTE id="124"><ACTNOM>Snipes</ACTNOM><ACTPNOM>Wesley</ACTPNOM><ANNEENAISS>1962</ANNEENAISS></ARTISTE>
+<ARTISTE id="125"><ACTNOM>Sciora</ACTNOM><ACTPNOM>Annabella</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="126"><ACTNOM>Rosselini</ACTNOM><ACTPNOM>Isabella</ACTPNOM><ANNEENAISS>1952</ANNEENAISS></ARTISTE>
+<ARTISTE id="127"><ACTNOM>Gallo</ACTNOM><ACTPNOM>Vincent</ACTPNOM><ANNEENAISS>1961</ANNEENAISS></ARTISTE>
+<ARTISTE id="128"><ACTNOM>von Trier</ACTNOM><ACTPNOM>Lars</ACTPNOM><ANNEENAISS>1956</ANNEENAISS></ARTISTE>
+<ARTISTE id="129"><ACTNOM>Gudmundsdottir</ACTNOM><ACTPNOM>Bjork</ACTPNOM><ANNEENAISS>1965</ANNEENAISS></ARTISTE>
+<ARTISTE id="130"><ACTNOM>Deneuve</ACTNOM><ACTPNOM>Catherine</ACTPNOM><ANNEENAISS>1943</ANNEENAISS></ARTISTE>
+<ARTISTE id="131"><ACTNOM>Kassowitz</ACTNOM><ACTPNOM>Matthieu</ACTPNOM><ANNEENAISS>1967</ANNEENAISS></ARTISTE>
+<ARTISTE id="132"><ACTNOM>Cassel</ACTNOM><ACTPNOM>Vincent</ACTPNOM><ANNEENAISS>1966</ANNEENAISS></ARTISTE>
+<ARTISTE id="133"><ACTNOM>Gray</ACTNOM><ACTPNOM>James</ACTPNOM><ANNEENAISS>1969</ANNEENAISS></ARTISTE>
+<ARTISTE id="134"><ACTNOM>Wahlberg</ACTNOM><ACTPNOM>Mark</ACTPNOM><ANNEENAISS>1971</ANNEENAISS></ARTISTE>
+<ARTISTE id="135"><ACTNOM>Phoenix</ACTNOM><ACTPNOM>Joaquin</ACTPNOM><ANNEENAISS>1974</ANNEENAISS></ARTISTE>
+<ARTISTE id="136"><ACTNOM>Theron</ACTNOM><ACTPNOM>Charlize</ACTPNOM><ANNEENAISS>1975</ANNEENAISS></ARTISTE>
+<ARTISTE id="137"><ACTNOM>Caan</ACTNOM><ACTPNOM>James</ACTPNOM><ANNEENAISS>1940</ANNEENAISS></ARTISTE>
+<ARTISTE id="138"><ACTNOM>Chabrol</ACTNOM><ACTPNOM>Claude</ACTPNOM><ANNEENAISS>1930</ANNEENAISS></ARTISTE>
+<ARTISTE id="139"><ACTNOM>Huppert</ACTNOM><ACTPNOM>Isabelle</ACTPNOM><ANNEENAISS>1953</ANNEENAISS></ARTISTE>
+<ARTISTE id="140"><ACTNOM>Mouglalis</ACTNOM><ACTPNOM>Anna</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="141"><ACTNOM>Costner</ACTNOM><ACTPNOM>Kevin</ACTPNOM><ANNEENAISS>1955</ANNEENAISS></ARTISTE>
+<ARTISTE id="142"><ACTNOM>Dern</ACTNOM><ACTPNOM>Laura</ACTPNOM><ANNEENAISS>1967</ANNEENAISS></ARTISTE>
+<ARTISTE id="143"><ACTNOM>Hanks</ACTNOM><ACTPNOM>Tom</ACTPNOM><ANNEENAISS>1956</ANNEENAISS></ARTISTE>
+<ARTISTE id="144"><ACTNOM>Sizemore</ACTNOM><ACTPNOM>Tom</ACTPNOM><ANNEENAISS>1964</ANNEENAISS></ARTISTE>
+<ARTISTE id="145"><ACTNOM>Damon</ACTNOM><ACTPNOM>Matt</ACTPNOM><ANNEENAISS>1970</ANNEENAISS></ARTISTE>
+<ARTISTE id="146"><ACTNOM>Modine</ACTNOM><ACTPNOM>Matthew</ACTPNOM><ANNEENAISS>1959</ANNEENAISS></ARTISTE>
+<ARTISTE id="147"><ACTNOM>Baldwin</ACTNOM><ACTPNOM>Adam</ACTPNOM><ANNEENAISS>1962</ANNEENAISS></ARTISTE>
+<ARTISTE id="148"><ACTNOM>O'Neal</ACTNOM><ACTPNOM>Ryan</ACTPNOM><ANNEENAISS>1941</ANNEENAISS></ARTISTE>
+<ARTISTE id="149"><ACTNOM>Berenson</ACTNOM><ACTPNOM>Marisa</ACTPNOM><ANNEENAISS>1946</ANNEENAISS></ARTISTE>
+<ARTISTE id="150"><ACTNOM>McDowell</ACTNOM><ACTPNOM>Macolm</ACTPNOM><ANNEENAISS>1943</ANNEENAISS></ARTISTE>
+<ARTISTE id="151"><ACTNOM>Dullea</ACTNOM><ACTPNOM>Keir</ACTPNOM><ANNEENAISS>1936</ANNEENAISS></ARTISTE>
+<ARTISTE id="152"><ACTNOM>Lockwood</ACTNOM><ACTPNOM>Gary</ACTPNOM><ANNEENAISS>1937</ANNEENAISS></ARTISTE>
+<ARTISTE id="153"><ACTNOM>Sellers</ACTNOM><ACTPNOM>Peter</ACTPNOM><ANNEENAISS>1925</ANNEENAISS></ARTISTE>
+<ARTISTE id="154"><ACTNOM>Scott</ACTNOM><ACTPNOM>George</ACTPNOM><ANNEENAISS>1927</ANNEENAISS></ARTISTE>
+<ARTISTE id="155"><ACTNOM>Hayden</ACTNOM><ACTPNOM>Sterling</ACTPNOM><ANNEENAISS>1916</ANNEENAISS></ARTISTE>
+<ARTISTE id="156"><ACTNOM>Douglas</ACTNOM><ACTPNOM>Kirk</ACTPNOM><ANNEENAISS>1916</ANNEENAISS></ARTISTE>
+<ARTISTE id="157"><ACTNOM>Donat</ACTNOM><ACTPNOM>Robert</ACTPNOM><ANNEENAISS>1905</ANNEENAISS></ARTISTE>
+<ARTISTE id="158"><ACTNOM>Caroll</ACTNOM><ACTPNOM>Madeleine</ACTPNOM><ANNEENAISS>1906</ANNEENAISS></ARTISTE>
+<ARTISTE id="159"><ACTNOM>Olivier</ACTNOM><ACTPNOM>Laurence</ACTPNOM><ANNEENAISS>1907</ANNEENAISS></ARTISTE>
+<ARTISTE id="160"><ACTNOM>Fontaine</ACTNOM><ACTPNOM>Joan</ACTPNOM><ANNEENAISS>1917</ANNEENAISS></ARTISTE>
+<ARTISTE id="161"><ACTNOM>Sanders</ACTNOM><ACTPNOM>George</ACTPNOM><ANNEENAISS>1906</ANNEENAISS></ARTISTE>
+<ARTISTE id="162"><ACTNOM>Bergman</ACTNOM><ACTPNOM>Ingrid</ACTPNOM><ANNEENAISS>1915</ANNEENAISS></ARTISTE>
+<ARTISTE id="163"><ACTNOM>Rains</ACTNOM><ACTPNOM>Claude</ACTPNOM><ANNEENAISS>1889</ANNEENAISS></ARTISTE>
+<ARTISTE id="164"><ACTNOM>Milland</ACTNOM><ACTPNOM>Ray</ACTPNOM><ANNEENAISS>1907</ANNEENAISS></ARTISTE>
+<ARTISTE id="165"><ACTNOM>Steward</ACTNOM><ACTPNOM>James</ACTPNOM><ANNEENAISS/></ARTISTE>
+<ARTISTE id="166"><ACTNOM>Day</ACTNOM><ACTPNOM>Doris</ACTPNOM><ANNEENAISS>1924</ANNEENAISS></ARTISTE>
+<ARTISTE id="167"><ACTNOM>De Niro</ACTNOM><ACTPNOM>Robert</ACTPNOM><ANNEENAISS>1943</ANNEENAISS></ARTISTE>
+<ARTISTE id="168"><ACTNOM>Grier</ACTNOM><ACTPNOM>Pam</ACTPNOM><ANNEENAISS>1949</ANNEENAISS></ARTISTE>
+<ARTISTE id="169"><ACTNOM>Fonda</ACTNOM><ACTPNOM>Bridget</ACTPNOM><ANNEENAISS>1964</ANNEENAISS></ARTISTE>
+<ARTISTE id="170"><ACTNOM>Keaton</ACTNOM><ACTPNOM>Michael</ACTPNOM><ANNEENAISS>1951</ANNEENAISS></ARTISTE>
+</FILMS>

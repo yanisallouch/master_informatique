@@ -1,0 +1,121 @@
+# Paths
+INPUTPATH = /home/e20170005405/master_informatique/1/s1/TD_TP/103/6/batiment.xml
+DATAPATH = /home/e20170005405/master_informatique/1/s1/TD_TP/103/3/BaseX/basex/
+WORKPATH = /home/e20170005405/master_informatique/1/s1/TD_TP/103/BaseX/basex/E:/repoGitlab.com/master_informatique/1/s1/TD_TP/103/5/
+PROJECTPATH = /home/e20170005405/master_informatique/1/s1/TD_TP/103/BaseX/basex/E:/home/e20170005405/master_informatique/1/s1/TD_TP/103/3/BaseX/basex/
+
+# Layout
+FONT = SansSerif
+MONOFONT = Monospaced
+FONTTYPE = 0
+FONTSIZE = 16
+ONLYMONO = false
+COLORRED = 16
+COLORGREEN = 16
+COLORBLUE = 0
+
+# Windows
+UPDATEVERSION = 9.4.3
+VIEWS = V H folder editor text plot - H table tree explore - H info map - - 
+GUISIZE0 = 1174
+GUISIZE1 = 1087
+GUILOC0 = 55
+GUILOC1 = 0
+MAXSTATE = true
+SHOWBUTTONS = true
+SHOWINPUT = true
+SHOWSTATUS = true
+SHOWINFO = true
+SHOWMAP = true
+SHOWTABLE = false
+SHOWTEXT = true
+SHOWFOLDER = false
+SHOWEXPLORE = false
+SHOWPLOT = false
+SHOWEDITOR = true
+SHOWTREE = false
+SHOWPROJECT = true
+PREFTAB = 0
+LOOKANDFEEL = javax.swing.plaf.metal.MetalLookAndFeel
+SHOWNAME = true
+SCROLLTABS = true
+MOUSEFOCUS = false
+XMLSUFFIXES = xml,xsd,svg,rdf,rss,rng,sch,xhtml
+ASCSORT = true
+CASESORT = true
+MERGEDUPL = false
+COLUMN = 1
+UNICODE = true
+SHOWMARGIN = true
+MARGIN = 200
+TABSPACES = true
+INDENT = 2
+SHOWINVISIBLE = true
+SHOWNL = true
+SHOWLINES = true
+MARKLINE = true
+SAVERUN = true
+PARSEPROJ = true
+AUTO = true
+FILES = *.xml, *.xq*
+SHOWHIDDEN = true
+SEARCHMODE = 0
+FILTERRT = false
+EXECRT = false
+DBNAME = batiment
+LASTINSERT = 1
+
+# Visualizations
+MAPATTS = true
+MAPOFFSETS = 3
+MAPALGO = 0
+MAPWEIGHT = 0
+TREESLIM = true
+TREEATTS = true
+PLOTDOTS = 0
+PLOTXLOG = false
+PLOTYLOG = false
+MAXTEXT = 2147483647
+MAXRESULTS = 2147483647
+
+# Search
+SEARCHED = 5
+SEARCHED1 = width:100%;
+SEARCHED2 = (\$item/...)
+SEARCHED3 = \$item/...
+SEARCHED4 = $item/..
+SEARCHED5 = alien
+REPLACED = 2
+REPLACED1 = {$0}
+REPLACED2 = {\$item/...}
+
+# History
+COMMANDS = 0
+SEARCH = 3
+SEARCH1 = [
+SEARCH2 = harvey
+SEARCH3 = sacrifice
+XQUERY = 0
+
+# Files
+EDITOR = 0
+INPUTS = 13
+INPUTS1 = /home/e20170005405/master_informatique/1/s1/TD_TP/103/6/batiment.xml
+INPUTS2 = E:/repoGitlab.com/master_informatique/1/s1/TD_TP/103/5/bddtweets.xml
+INPUTS3 = E:/repoGitlab.com/master_informatique/1/s1/TD_TP/103/5/tweetExemple.xml
+INPUTS4 = E:/repoGitlab.com/master_informatique/1/s1/TD_TP/103/2/tp2.xml
+INPUTS5 = https://data.montpellier3m.fr/sites/default/files/ressources/TAM_MMM_VELOMAG.xml
+INPUTS6 = E:/repoGitlab.com/master_informatique/1/s1/TD_TP/103/3/Documents-XML/trains.xml
+INPUTS7 = E:/repoGitlab.com/master_informatique/1/s1/TD_TP/103/3/Documents-XML/Documents XML-20200925.zip
+INPUTS8 = /home/e20170005405/master_informatique/1/s1/TD_TP/103/3/Documents-XML/
+INPUTS9 = /home/e20170005405/master_informatique/1/s1/TD_TP/103/3/Documents-XML/tn
+INPUTS10 = /home/e20170005405/master_informatique/1/s1/TD_TP/103/3/Documents-XML/train
+INPUTS11 = /home/e20170005405/master_informatique/1/s1/TD_TP/103/3/Documents-XML/trains.xml
+INPUTS12 = /home/e20170005405/master_informatique/1/s1/TD_TP/103/4/Requêtes XMark-20201002/
+INPUTS13 = /home/e20170005405/master_informatique/1/s1/TD_TP/103/3/BaseX/basex/
+OPEN = 0
+PROJECTS = 0
+PROJFILES = 0
+PROJCONTS = 0
+
+# Local Options

@@ -1,0 +1,31 @@
+<!DOCTYPE tweet [
+	<!ELEMENT tweet (message, date, gps*, city*, country*, os*, url*)>
+	<!ATTLIST tweet id_unique CDATA #REQUIRED>
+	<!ELEMENT message (texte+, user)>
+	<!ELEMENT date (fuseau_horaire)>
+	<!ATTLIST date seconde CDATA #REQUIRED>
+	<!ELEMENT gps (longitude, latitude)>
+	<!ELEMENT city (#PCDATA)>
+	<!ELEMENT country (#PCDATA)>
+	<!ELEMENT os (#PCDATA)>
+	<!ELEMENT url (#PCDATA)>
+	<!ELEMENT texte (hastag*, ref_user*)>
+	<!ATTLIST texte type_font IDREF #IMPLIED>
+	<!ATTLIST texte color_font IDREF #IMPLIED>
+	<!ATTLIST texte lg_font IDREF #IMPLIED>
+	<!ATTLIST texte nb_rt IDREF #IMPLIED>
+	<!ELEMENT user (follow, subscribe)>
+	<!ATTLIST user photo CDATA #IMPLIED>
+	<!ATTLIST user description CDATA #IMPLIED>
+	<!ATTLIST user identifiant IDREF #IMPLIED>
+	<!ATTLIST user nom IDREF #IMPLIED>
+	<!ATTLIST user profile_url IDREF #IMPLIED>
+	<!ATTLIST user description CDATA #REQUIRED>
+	<!ELEMENT fuseau_horaire (#PCDATA)>
+	<!ATTLIST longitude CDATA #IMPLIED>
+	<!ATTLIST latitude CDATA #IMPLIED>
+	<!ELEMENT hastag (#PCDATA)>
+	<!ELEMENT ref_user (#PCDATA)>
+	<!ELEMENT follow (#PCDATA)>
+	<!ELEMENT subscribe (#PCDATA)>
+]>

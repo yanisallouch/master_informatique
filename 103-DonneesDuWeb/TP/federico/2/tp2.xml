@@ -1,0 +1,117 @@
+<!-- Exercice 1 !-->
+
+<!--
+
+La DTD aurait du modéliser une BDD de tweet et pas un tweet ! L'exercice n'étant pas assez explicite.
+
+On a enlever les id/idREF car leur valeur pourrait déjà etre utiliser comme une clé primaire pour etre chercher dans la bdd.
+
+!-->
+
+<tweet idT="t6666">
+	<body>
+		<formatting>
+			<fontsize></fontsize>
+			<fontcolor></fontcolor>
+			<font></font>
+		</formatting>
+		<language></language>
+		<retweets></retweets>
+		<author idAuthor="u666">
+			<name></name>
+			<userref></userref>
+		</author>
+		<content>
+			<contentElement>.</contentElement>
+			<contentElement>
+				<userref>@exemple</userref>
+			</contentElement>
+			<contentElement>absolutely smashed it at </contentElement>
+			<contentElement><hastag>#mtvlivelockdown</hastag> </contentElement>
+			<contentElement>! Catch hhim at the official </contentElement>
+			<contentElement><userref>@clubmtvuk</userref> </contentElement>
+			<contentElement>after party tonight @ 10pm</contentElement>
+		</content>
+	</body>
+</tweet>
+
+<!-- Exercice 2!-->
+
+<!-- Exercice 3 !-->
+
+<!-- 2 !-->
+
+<EMPTY/>
+
+<EMPTY>
+</EMPTY>
+
+<!-- 4 !-->
+
+<C>
+</C>
+
+<C>
+	<C/>
+</C>
+
+<!-- 6 !-->
+
+<!-- Impossible !-->
+
+<!-- Exercice 4 ?!-->
+<!--
+r1 = (a*|(b|a1)) | (b1,(a2|c))
+First(r1)=a,b,a1,b1
+Last(r1)=a2,c
+Follow(r1,a)=a2,c
+Follow(r1,b)=a2,c
+Follow(r1,a1)=a2,c
+Follow(r1,b1)=a2,c
+Follow(r1,a2)={}
+Follow(r1,c)={}
+
+r2 = (a,(a1|b)+) | (c,(a2|b1))
+First(r2)=a,c
+Last(r2)=a1,b,a2,b1
+Follow(r2,a)=a1,b
+Follow(r2,c)=a2,b1
+
+r3 = (a|(a1|a2,a3))*,(a4|(d,d1,b))*,e
+First(r3)=a,a1,a2
+Last(r3)=a3,b,e
+Follow(r3,a)=a4,d
+Follow(r3,a1)=a3
+Follow(r3,a2)=a3
+Follow(r3,a4)=e
+Follow(r3,d)=d1
+Follow(r3,a3)={}
+Follow(r3,e)={}
+Follow(r3,d1)=b
+Follow(r3,b)={}
+!-->
+
+<!-- Exercice 5 ?!-->
+<!--
+r1, r2, r3 sont équivalentes à r :
+
+r = (a|b)*
+r1 = (a*, b*)*
+r2 = (a?, (a|b)*)
+r3 = ((a|a)+ | b)*
+
+Question: à l’aide du graphe associé à une expression régulière, proposer un algorithme permettant de vérifier si une
+expression utilisant les symboles {a1, a2,..., an} est équivalente à (a1|a2|...|an)*.
+
+Algo:
+prendre la racine, l'ajouter a la pileXML, ajouter ça regle associé dans la pileDTD;
+
+Si enfant il n'y a pas alors:
+	renvoyer (racine == regle);
+Sinon:
+	Pour chaque enfant du noeud de départ de la pile faire:
+		Rappeller l'algo sur chaque enfant par l'ordre du premier au dernier;
+	Fin pour;
+
+>> J'écris çà sans trop de réfléxion ... a revoir
+!-->

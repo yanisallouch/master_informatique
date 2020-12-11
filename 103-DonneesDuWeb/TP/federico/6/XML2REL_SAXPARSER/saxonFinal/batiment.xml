@@ -1,0 +1,21 @@
+<batiment>
+	<etage>
+		<description>foobar1</description>
+		<bureau>
+			<code>foobar1</code>
+		</bureau>
+		<salle>
+			<nombrePlaces>421</nombrePlaces>
+		</salle>
+	</etage>
+	<etage>
+		<description>foobar2</description>
+		<bureau>
+			<code>422</code>
+			<personne>william</personne>
+		</bureau>
+		<salle>
+			<nombrePlaces>422</nombrePlaces>
+		</salle>
+	</etage>	
+</batiment>

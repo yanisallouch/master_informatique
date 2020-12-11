@@ -1,0 +1,33 @@
+1) All the items
+
+2) The keywords in annotations of closed auctions
+
+3) All the keywords
+
+4) The keywords in a paragraph item
+
+5) The (either North or South) American items
+
+6) The paragraph items containing a keyword
+
+7) The mails containing a keyword
+
+8) The open auctions in which a certain person issued a bid before another person
+
+9) The past bidders of a given open auction
+
+10) The items that follow, in document order, a given item
+
+11) The text nodes that are contained in the keywords of the description element of a given item
+
+12) People having an address and either a phone or a homepage
+
+13) People having no homepage
+
+14) The initial and last bidder of all open auctions
+
+15) The open auctions having more than 5 bidders
+
+16) Mails sent in September
+
+17) The items whose description contains the word ‘gold’

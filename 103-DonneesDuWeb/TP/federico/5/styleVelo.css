@@ -1,0 +1,21 @@
+div {height:400px;border:5px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;}
+
+table {width:100%;}
+
+table, td {
+  border: 2px solid #bbb;
+}
+
+tr {
+
+	border-collapse: collapse;
+}
+
+th
+{	
+	border: 2px solid #bbb;
+	background-color: white;
+    position: sticky;
+    top: 0px;
+    
+}

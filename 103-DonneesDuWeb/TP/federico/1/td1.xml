@@ -1,0 +1,158 @@
+<!--Exo 1 Arbre 1 version 1-->
+<presse>
+	<journal>
+		<nom>Times</nom>
+		<directeur>
+			<nom>Williams</nom>
+			<prenom>William</prenom>
+		</directeur>
+	</journal>
+	<journalistes>
+		<journaliste anonymisation="non" idj="j01">
+			<nom>Poe</nom>
+			<prenom>Edgar</prenom>
+		</journaliste>
+	</journalistes>
+</presse>
+
+
+<!--Exo 1 Arbre 1 version 2-->
+<presse>
+	<journal>
+		<nom>Times</nom>
+		<directeur>
+			<nom>Williams</nom>
+			<prenom>William</prenom>
+		</directeur>
+	</journal>
+	<journalistes>
+		<journaliste anonymisation="oui" idj="j01">
+			<pseudonyme>Anatole France</pseudonyme>
+		</journaliste>
+	</journalistes>
+</presse>
+
+<!--Exo 1 Arbre 2 version 1-->
+<batiment>
+	<etage>
+		<description>foobar</description>
+		<bureau>
+			<code>foobar</code>
+		</bureau>
+		<salle>
+			<nombrePlaces>foobar</nombrePlaces>
+		</salle>
+	</etage>
+</batiment>
+
+<!--Exo 1 Arbre 2 version 2-->
+<batiment>
+	<etage>
+		<description>foobar</description>
+		<bureau>
+			<code>foobar</code>
+			<personne>william</personne>
+		</bureau>
+		<salle>
+			<nombrePlaces>foobar</nombrePlaces>
+		</salle>
+	</etage>
+</batiment>
+
+<!--Exo 2-->
+
+<!--XML1 Version 1--> 
+<!DOCTYPE F [
+	<!ELEMENT F (C*,B*)>
+	<!ELEMENT C (A|D)>
+	<!ELEMENT B (A|E)>
+	<!ELEMENT A EMPTY>
+	<!ELEMENT D EMPTY>
+	<!ELEMENT E EMPTY>
+]>
+
+<!--XML1 Version 2--> 
+<!DOCTYPE F [
+	<!ELEMENT F (C,B,B)>
+	<!ELEMENT C (A|D)>
+	<!ELEMENT B (A|E)>
+	<!ELEMENT A EMPTY>
+	<!ELEMENT D EMPTY>
+	<!ELEMENT E EMPTY>
+]>
+
+<!-- XML2 Version 1 -->
+
+<!DOCTYPE D [
+<!ELEMENT D (C*|E*|B*)>
+<!ELEMENT C EMPTY>
+<!ELEMENT E EMPTY>
+<!ELEMENT B EMPTY>
+]>
+
+<!--XML2 Version 2 -->
+<!DOCTYPE D [
+<!ELEMENT D (C*|E*|B*)>
+<!ELEMENT C EMPTY>
+<!ELEMENT E EMPTY>
+<!ELEMENT B EMPTY>
+]>
+
+<!--XML3 Version 1--> 
+<!DOCTYPE A [
+	<!ELEMENT A (C,C,E,E,E,C)>
+	<!ELEMENT C EMPTY>
+	<!ELEMENT E EMPTY>
+]>
+
+<!-- XML4 Version 1 -->
+<!DOCTYPE B [
+<!ELEMENT B (C*|E*|B*|D*)>
+<!ELEMENT C EMPTY>
+<!ELEMENT E EMPTY>
+<!ELEMENT B EMPTY>
+<!ELEMENT D EMPTY>
+]>
+
+<!DOCTYPE B [
+<!-- XML4 Version 2 -->
+<!ELEMENT B (C*|E*|B*|D*)>
+<!ELEMENT C EMPTY>
+<!ELEMENT E EMPTY>
+<!ELEMENT B EMPTY>
+<!ELEMENT D EMPTY>
+]>
+
+<!--XML3 Version 2--> 
+<!DOCTYPE A [
+	<!ELEMENT A ((C|E)*)>
+	<!ELEMENT C EMPTY>
+	<!ELEMENT E EMPTY>
+]>
+
+<!--XML5 Version 1--> 
+<!DOCTYPE A [
+	<!ELEMENT A EMPTY>
+]>
+
+<!--XML5 Version 2--> 
+<!DOCTYPE A [
+	<!ELEMENT A ANY>
+]>
+
+<!DOCTYPE A [
+<!-- XML6 Version 1 -->
+<!ELEMENT A (C+|E*|B*|D*)>
+<!ELEMENT C (#PCDATA)>
+<!ATTLIST C id IDREF #REQUIRED>
+<!ATTLIST C id ID #REQUIRED>
+<!ELEMENT C EMPTY>
+]>
+
+<!DOCTYPE A [
+<!-- XML6 Version 2 -->
+<!ELEMENT A (C+)>
+<!ELEMENT C (#PCDATA)>
+<!ATTLIST C id IDREF #REQUIRED>
+<!ATTLIST C id ID #REQUIRED>
+<!ELEMENT C EMPTY>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bddTweet [
+<!ELEMENT bddTweet (tweet*, user*)>
+<!ELEMENT tweet (date,metadata?,body, reponses*)>
+<!ATTLIST tweet idT ID #REQUIRED>
+<!ATTLIST tweet idRefUser IDREF #REQUIRED>
+<!ATTLIST tweet idRetweet IDREF #IMPLIED>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT metadata (media?,location?,userConfig?)>
+<!ELEMENT media (url+)>
+<!ELEMENT url (#PCDATA)>
+
+<!ELEMENT location (gps?,city?,country?)>
+<!ELEMENT gps (lat,long)>
+<!ELEMENT lat (#PCDATA)>
+<!ELEMENT long (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+
+<!ELEMENT userConfig (version)>
+<!ATTLIST userConfig osType (Android|iOS|Windows|Linux|unknown|other) "unknown">
+<!ELEMENT version (#PCDATA)>
+
+<!ELEMENT body (formatting,language,retweets,author,content)>
+<!ATTLIST body idOriginalTweet IDREF #IMPLIED>
+
+<!ELEMENT formatting (fontsize,fontcolor,font)>
+<!ELEMENT fontsize (#PCDATA)>
+<!ELEMENT fontcolor (#PCDATA)>
+<!ELEMENT font (#PCDATA)>
+<!ELEMENT language (#PCDATA)>
+<!ELEMENT retweets (#PCDATA)>
+<!ELEMENT author (name, userref)>
+<!ATTLIST author idAuthor IDREF #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+
+<!ELEMENT content (#PCDATA|url|hashtag|userref)*>
+
+<!ELEMENT hashtag (#PCDATA)>
+
+<!ELEMENT userref (#PCDATA)>
+
+<!ELEMENT reponses (tweet)*>
+<!ELEMENT user (nom+, prenom+)>
+<!ATTLIST user idU ID #REQUIRED>
+<!ATTLIST user idRefTweet IDREF #IMPLIED>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT prenom (#PCDATA)>
+]>
