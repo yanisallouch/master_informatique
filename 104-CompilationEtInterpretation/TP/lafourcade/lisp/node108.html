@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!Converted with LaTeX2HTML 0.6.5 (Tue Nov 15 1994) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds >
+<HEAD>
+<TITLE>10.1. The Property List</TITLE>
+</HEAD>
+<BODY>
+<meta name="description" value=" The Property List">
+<meta name="keywords" value="clm">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+<b>Common Lisp the Language, 2nd Edition</b>
+ <BR> <HR><A NAME=tex2html2868 HREF="node109.html"><IMG ALIGN=BOTTOM ALT="next" SRC="icons/next_motif.gif"></A> <A NAME=tex2html2866 HREF="node107.html"><IMG ALIGN=BOTTOM ALT="up" SRC="icons/up_motif.gif"></A> <A NAME=tex2html2860 HREF="node107.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="icons/previous_motif.gif"></A> <A NAME=tex2html2870 HREF="node1.html"><IMG ALIGN=BOTTOM ALT="contents" SRC="icons/contents_motif.gif"></A> <A NAME=tex2html2871 HREF="index.html"><IMG ALIGN=BOTTOM ALT="index" SRC="icons/index_motif.gif"></A> <BR>
+<B> Next:</B> <A NAME=tex2html2869 HREF="node109.html"> The Print Name</A>
+<B>Up:</B> <A NAME=tex2html2867 HREF="node107.html"> Symbols</A>
+<B> Previous:</B> <A NAME=tex2html2861 HREF="node107.html"> Symbols</A>
+<HR> <P>
+<H1><A NAME=SECTION001410000000000000000>10.1. The Property List</A></H1>
+<P>
+Since its inception, Lisp has associated with each symbol
+a kind of tabular data structure
+called a <i>property list</i> (<i>plist</i> for short).  A property list contains
+zero or more entries; each entry associates with a key
+(called the <i>indicator</i>), which is typically
+a symbol, an arbitrary Lisp object (called the <i>value</i> or,
+sometimes, the <i>property</i>).
+There are no duplications among the indicators; a property list may only
+have one property at a time with a given name.  In this way, given
+a symbol and an indicator (another symbol), an associated value can be
+retrieved.
+<P>
+A property
+list is very similar in purpose to an association list.  The difference
+is that a property list is an object with a unique identity; the
+operations for adding and removing property-list entries are destructive
+operations that alter the property list rather than making a new one.
+Association lists, on the other hand, are normally augmented
+non-destructively (without side effects) by adding new entries to the
+front (see <tt>acons</tt> and <tt>pairlis</tt>).
+<P>
+A property list is implemented as a memory cell
+containing a list with an even number (possibly zero) of elements.
+(Usually this memory cell is the property-list cell of a symbol,
+but any memory cell acceptable to <tt>setf</tt> can be used
+if <tt>getf</tt> and <tt>remf</tt> are used.)
+Each pair of elements in the list constitutes an entry;
+the first item is the indicator, and the second is the
+value.  Because property-list functions are given the symbol
+and not the list itself, modifications to the property list
+can be recorded by storing back into the property-list cell of the symbol.
+<P>
+When a symbol is created, its property list is initially empty.
+Properties are created by using <tt>get</tt> within a <tt>setf</tt> form.
+<P>
+Common Lisp does not use a symbol's property list as extensively as earlier
+Lisp implementations did.  Less-used data, such as compiler,
+debugging, and documentation information, is kept on property lists
+in Common Lisp.
+<P>
+<hr>
+<b>Compatibility note:</b> In older Lisp implementations, the
+print name, value, and function definition of a symbol were kept on its
+property list.  The value cell was introduced into MacLisp and Interlisp
+to speed up access to variables; similarly for the
+print-name cell and function cell (MacLisp does not use a function cell).
+Recent Lisp implementations such as Spice Lisp,
+Lisp Machine Lisp, and NIL have
+introduced all of these cells plus the
+package cell.
+None of the MacLisp system property names
+(<tt>expr</tt>, <tt>fexpr</tt>, <tt>macro</tt>, <tt>array</tt>,
+<tt>subr</tt>, <tt>lsubr</tt>, <tt>fsubr</tt>, and in former times <tt>value</tt> and
+<tt>pname</tt>) exist in Common Lisp.
+<P>
+In Common Lisp, the notion of ``disembodied property list''
+introduced in MacLisp is eliminated.  It tended to be used for
+rather kludgy things, and in Lisp Machine Lisp is often associated with
+the use of locatives (to make it ``off by one'' for searching
+alternating keyword lists).  In Common Lisp special <tt>setf</tt>-like
+property-list functions are introduced: <tt>getf</tt>
+and <tt>remf</tt>.
+<hr>
+<P>
+<BR><b>[Function]</b><BR>
+<tt>get <i>symbol</i> <i>indicator</i> &amp;optional <i>default</i></tt><P><tt>get</tt> searches the property list of
+<i>symbol</i> for an indicator <tt>eq</tt> to <i>indicator</i>.
+The first argument must be a symbol.
+If one is found, then the corresponding value is returned;
+otherwise <i>default</i> is returned.
+<P>
+If <i>default</i> is not specified,
+then <tt>nil</tt> is used for <i>default</i>.
+<P>
+Note that there is no way to distinguish an absent property from
+one whose value is <i>default</i>.
+<P><pre>
+(get x y) == (getf (symbol-plist x) y)
+</pre><P>
+Suppose that the property list of <tt>foo</tt> is <tt>(bar t baz 3 hunoz &quot;Huh?&quot;)</tt>.
+Then, for example:
+<P><pre>
+(get 'foo 'baz) => 3 
+(get 'foo 'hunoz) => &quot;Huh?&quot; 
+(get 'foo 'zoo) => <tt>nil</tt>
+</pre><P>
+<P>
+<hr>
+<b>Compatibility note:</b> In MacLisp, the first argument to <tt>get</tt> could
+be a list, in which case the <i>cdr</i> of the list was treated
+as a so-called ``disembodied property list.''
+The first argument to <tt>get</tt>
+could also be any other object, in which case <tt>get</tt> would 
+always return <tt>nil</tt>.  In Common Lisp, it is an error to give anything
+but a symbol as the first argument to <tt>get</tt>.
+<P>
+What Common Lisp calls <tt>get</tt>, Interlisp calls <tt>getprop</tt>.
+<P>
+What MacLisp and Interlisp call <tt>putprop</tt> is accomplished
+in Common Lisp by using <tt>get</tt> with <tt>setf</tt>.
+<hr>
+<P>
+<tt>setf</tt> may be used with <tt>get</tt> to create a new property-value
+pair, possibly replacing an old pair with the same property name.
+For example:
+<P><pre>
+(get 'clyde 'species) => <tt>nil</tt> 
+(setf (get 'clyde 'species) 'elephant) => elephant 
+and now (get 'clyde 'species) => elephant
+</pre><P>
+The <i>default</i> argument may be
+specified to <tt>get</tt> in this context; it is ignored by <tt>setf</tt> but
+may be useful in such macros as <tt>push</tt> that are related to <tt>setf</tt>:
+<P><pre>
+(push item (get sym 'token-stack '(initial-item)))
+</pre><P>
+means approximately the same as
+<P><pre>
+(setf (get sym 'token-stack '(initial-item)) 
+      (cons item (get sym 'token-stack '(initial-item))))
+</pre><P>
+which in turn would be treated as simply
+<P><pre>
+(setf (get sym 'token-stack) 
+      (cons item (get sym 'token-stack '(initial-item))))
+</pre><P>
+<P>
+<img align=bottom alt="change_begin" src="gif/change_begin.gif"><br>
+X3J13 voted in March 1989 (REMF-DESTRUCTION-UNSPECIFIED) <A NAME=9866>&#160;</A> 
+to clarify the permissible side effects of certain operations;
+<tt>(setf (get <i>symbol</i> <i>indicator</i>) <i>newvalue</i>)</tt>
+is required to behave exactly the same as
+<tt>(setf (getf (symbol-plist <i>symbol</i>) <i>indicator</i>) <i>newvalue</i>)</tt>.
+<br><img align=bottom alt="change_end" src="gif/change_end.gif">
+<P>
+<BR><b>[Function]</b><BR>
+<tt>remprop <i>symbol</i> <i>indicator</i></tt><P>This removes from <i>symbol</i> the property with an indicator <tt>eq</tt>
+to <i>indicator</i>.  The property indicator and the corresponding
+value are removed by destructively splicing the property
+list.  It returns <tt>nil</tt> if no such property was found,
+or non-<tt>nil</tt> if a property was found.
+<P><pre>
+(remprop x y) == (remf (symbol-plist x) y)
+</pre><P>
+For example, if the property list of <tt>foo</tt> is initially
+<P><pre>
+(color blue height 6.3 near-to bar)
+</pre><P>
+then the call
+<P><pre>
+(remprop 'foo 'height)
+</pre><P>
+returns a non-<tt>nil</tt> value after altering <tt>foo</tt>'s property list to be
+<P><pre>
+(color blue near-to bar)
+</pre><P>
+<P>
+<img align=bottom alt="change_begin" src="gif/change_begin.gif"><br>
+X3J13 voted in March 1989 (REMF-DESTRUCTION-UNSPECIFIED) <A NAME=9893>&#160;</A> 
+to clarify the permissible side effects of certain operations;
+<tt>(remprop <i>symbol</i> <i>indicator</i>)</tt>
+is required to behave exactly the same as
+<tt>(remf (symbol-plist <i>symbol</i>) <i>indicator</i>)</tt>.
+<br><img align=bottom alt="change_end" src="gif/change_end.gif">
+<P>
+<BR><b>[Function]</b><BR>
+<tt>symbol-plist <i>symbol</i></tt><P>This returns the list that contains the property pairs of <i>symbol</i>;
+the contents of the property-list cell are extracted and returned.
+<P>
+Note that using <tt>get</tt> on the result of <tt>symbol-plist</tt> does <i>not</i> work.
+One must give the symbol itself to <tt>get</tt> or else
+use the function <tt>getf</tt>.
+<P>
+<tt>setf</tt> may be used with <tt>symbol-plist</tt> to destructively replace
+the entire property list of a symbol.  This is a relatively dangerous
+operation, as it may destroy important information that
+the implementation may happen to store in property lists.
+Also, care must be taken that the new
+property list is in fact a list of even length.
+<p>
+<hr>
+<b>Compatibility note:</b> In MacLisp, this function is called <tt>plist</tt>;
+in Interlisp, it is called <tt>getproplist</tt>.
+<hr>
+<P>
+<BR><b>[Function]</b><BR>
+<tt>getf <i>place</i> <i>indicator</i> &amp;optional <i>default</i></tt><P><tt>getf</tt> searches the property list stored in <i>place</i>
+for an indicator <tt>eq</tt> to <i>indicator</i>.
+If one is found, then the corresponding value is returned;
+otherwise <i>default</i> is returned.  If <i>default</i> is not specified,
+then <tt>nil</tt> is used for <i>default</i>.
+Note that there is no way to distinguish an absent property from
+one whose value is <i>default</i>.
+Often <i>place</i> is computed from
+a generalized variable acceptable to <tt>setf</tt>.
+<P>
+<tt>setf</tt> may be used with <tt>getf</tt>, in which case the <i>place</i> must
+indeed be acceptable as a <i>place</i> to <tt>setf</tt>.  The effect is to
+add a new property-value pair, or update an existing pair,
+in the property list kept in the <i>place</i>.
+The <i>default</i> argument may be
+specified to <tt>getf</tt> in this context; it is ignored by <tt>setf</tt> but
+may be useful in such macros as <tt>push</tt> that are related to <tt>setf</tt>.
+See the description of <tt>get</tt> for an example of this.
+<P>
+<img align=bottom alt="change_begin" src="gif/change_begin.gif"><br>
+X3J13 voted in March 1989 (REMF-DESTRUCTION-UNSPECIFIED) <A NAME=9939>&#160;</A> 
+to clarify the permissible side effects of certain operations;
+<tt>setf</tt> used with <tt>getf</tt> is permitted to perform a <tt>setf</tt>
+on the <i>place</i> or on any part, <i>car</i> or <i>cdr</i>, of the
+top-level list structure held by that <i>place</i>.
+<P>
+X3J13 voted in March 1988 (PUSH-EVALUATION-ORDER) <A NAME=9949>&#160;</A> 
+to clarify order of evaluation (see section <A HREF="node80.html#SETFSECTION">7.2</A>).
+<br><img align=bottom alt="change_end" src="gif/change_end.gif">
+<P>
+<hr>
+<b>Compatibility note:</b> The Interlisp function <tt>listget</tt> is similar to <tt>getf</tt>.
+The Interlisp function <tt>listput</tt> is similar to using <tt>getf</tt>
+with <tt>setf</tt>.
+<hr>
+<P>
+<BR><b>[Macro]</b><BR>
+<tt>remf <i>place</i> <i>indicator</i></tt><P>This removes from the property list stored in <i>place</i>
+the property with an indicator <tt>eq</tt>
+to <i>indicator</i>.  The property indicator and the corresponding
+value are removed by destructively splicing the property
+list.  <tt>remf</tt> returns <tt>nil</tt> if no such property was found,
+or some non-<tt>nil</tt> value if a property was found.
+The form <i>place</i> may be any generalized variable acceptable to <tt>setf</tt>.
+See <tt>remprop</tt>.
+<P>
+<img align=bottom alt="change_begin" src="gif/change_begin.gif"><br>
+X3J13 voted in March 1989 (REMF-DESTRUCTION-UNSPECIFIED) <A NAME=9971>&#160;</A> 
+to clarify the permissible side effects of certain operations;
+<tt>remf</tt> is permitted to perform a <tt>setf</tt>
+on the <i>place</i> or on any part, <i>car</i> or <i>cdr</i>, of the
+top-level list structure held by that <i>place</i>.
+<P>
+X3J13 voted in March 1988 (PUSH-EVALUATION-ORDER) <A NAME=9980>&#160;</A> 
+to clarify order of evaluation (see section <A HREF="node80.html#SETFSECTION">7.2</A>).
+<br><img align=bottom alt="change_end" src="gif/change_end.gif">
+<P>
+<BR><b>[Function]</b><BR>
+<tt>get-properties <i>place</i> <i>indicator-list</i></tt><P><tt>get-properties</tt> is like <tt>getf</tt>, except that the second
+argument is a list of indicators.  <tt>get-properties</tt> searches the
+property list stored in <i>place</i> for any of the indicators in
+<i>indicator-list</i> until it finds the first property
+in the property list whose indicator is one of
+the elements of <i>indicator-list</i>.  Normally <i>place</i> is computed from
+a generalized variable acceptable to <tt>setf</tt>.
+<P>
+<tt>get-properties</tt> returns three values.
+If any property was found, then
+the first two values are the indicator
+and value for the first property whose indicator was in <i>indicator-list</i>,
+and the third is that tail of the property list whose <i>car</i>
+was the indicator (and whose <i>cadr</i> is therefore the value).
+If no property was found, all three values are <tt>nil</tt>.
+Thus the third value serves as a flag indicating success or failure
+and also allows the search to be restarted, if desired, after the property
+was found.
+<P>
+<BR> <HR><A NAME=tex2html2868 HREF="node109.html"><IMG ALIGN=BOTTOM ALT="next" SRC="icons/next_motif.gif"></A> <A NAME=tex2html2866 HREF="node107.html"><IMG ALIGN=BOTTOM ALT="up" SRC="icons/up_motif.gif"></A> <A NAME=tex2html2860 HREF="node107.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="icons/previous_motif.gif"></A> <A NAME=tex2html2870 HREF="node1.html"><IMG ALIGN=BOTTOM ALT="contents" SRC="icons/contents_motif.gif"></A> <A NAME=tex2html2871 HREF="index.html"><IMG ALIGN=BOTTOM ALT="index" SRC="icons/index_motif.gif"></A> <BR>
+<B> Next:</B> <A NAME=tex2html2869 HREF="node109.html"> The Print Name</A>
+<B>Up:</B> <A NAME=tex2html2867 HREF="node107.html"> Symbols</A>
+<B> Previous:</B> <A NAME=tex2html2861 HREF="node107.html"> Symbols</A>
+<HR> <P>
+<HR>
+<P><ADDRESS>
+AI.Repository@cs.cmu.edu
+</ADDRESS>
+</BODY>

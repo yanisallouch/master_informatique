@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!-- saved from url=(0050)http://www.lirmm.fr/~ducour/Cours/Compil/vm-1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  
+  <meta name="GENERATOR" content="Mozilla/4.76 [fr] (X11; U; Linux 2.2.18 i686) [Netscape]">
+  <title>Compilation TD Génération de Code - Implémentation de la VM</title>
+</head>
+<body>
+<h1>TD FMIN 106 -- Implémentation de la VM<br>
+</h1>
+<hr>
+L'objectif de ces exercices est de détailler
+précisément
+les étapes d'implémentation de la machine virtuelle.
+<ol>
+  <li><span style="font-weight: bold;">Structures de données</span><br>
+La première étape consiste à définir la
+structure de données VM et à implémenter son API :
+    <ul>
+      <li><span style="font-family: monospace;">make-vm</span> :
+crée une machine virtuelle, avec un nom, une certaine taille de
+mémoire, etc. ; </li>
+      <li><span style="font-family: monospace;">get-register</span> / <span style="font-family: monospace;">set-register</span> pour
+accéder au contenu des registres ;</li>
+      <li><span style="font-family: monospace;">get-memory</span> / <span style="font-family: monospace;">set-memory</span> pour accéder
+au contenu de la mémoire à une adresse donnée.</li>
+    </ul>
+  </li>
+  <hr>
+  <li> <b>Exécution de la VM</b><br>
+Il faut interpréter chaque opération
+élémentaire à partir de l'API de la VM :
+    <ul>
+      <li><span style="font-family: monospace;">move</span> de
+registre/valeur immédiate à registre ;<br>
+      </li>
+      <li><span style="font-family: monospace;">load</span><span style="font-weight: bold;"> / </span><span style="font-family: monospace;">store</span><span style="font-weight: bold;"> </span>, de mémoire à
+registre ou de registre/valeur à mémoire ;<br>
+      </li>
+      <li><span style="font-family: monospace;">push</span> / <span style="font-family: monospace;">pop</span> pour la pile (se
+ramène aux deux séries précédentes) ;</li>
+      <li>opérations arithmétiques
+élémentaires, de registres/valeurs à registre ; </li>
+      <li>sauts inconditionnels, avec et sans retour, et retour ;</li>
+      <li>comparaison (<span style="font-family: monospace;">cmp</span>),
+qui positionne des flags ;</li>
+      <li>saut conditionnels, suivant la position des flags.<br>
+      </li>
+    </ul>
+Chaque opération se traduit très simplement. La fonction
+complète est une boucle infinie d'interprétation de
+l'instruction courante. Prévoir le cas de l'arrêt (<span style="font-family: monospace;">halt</span>).<br>
+  </li>
+  <hr>
+  <li> <b>Chargement de la VM</b><br>
+La fonction de chargement prend en argument une séquence de code
+VM et la recopie dans la mémoire en faisant la résolution
+de symboles, ce qui donne 3 cas suivant l'opération
+considérée :
+    <ul>
+      <li>pour les opérations ordinaires, il s'agit juste de la
+recopie ; <br>
+      </li>
+      <li>pour les étiquettes (opération <span style="font-family: monospace;">label</span>), on résout juste
+le symbole en l'associant à l'adresse de chargement courante (ne
+pas oublier de traiter en erreur le cas où l'étiquette a
+déjà été rencontrée) ;<br>
+on propage aussi la résolution du symbole aux
+références en avant déjà rencontrées
+;</li>
+      <li>pour les sauts (conditionnels, inconditionnels ou avec
+retour), on remplace l'étiquette par l'adresse si le symbole est
+déjà résolu, et sinon on mémorise la
+référence en avant.</li>
+      <li>le traitement des étiquettes s'effectue à
+l'aide de 2 tables de hachage (<span style="font-family: monospace;">hashtable</span>)
+pour mémoriser respectivement les symboles résolus et les
+références en avant ;</li>
+      <li>les étiquettes sont de&nbsp; 2 sortes, locales et
+globales.<br>
+Les locales sont des variables locales de la fonction de chargement et
+elles doivent toutes être résolues à la fin du
+chargement (à vérifier).<br>
+Les globales sont des données de la VM.<br>
+      </li>
+    </ul>
+La fonction de chargement elle-même est une boucle (pas de
+récursion !) sur la liste d'instruction à charger.
+    <hr> </li>
+  <li> <b>Interface VM / LISP</b> <br>
+L'interface LISP / VM est double. Il faut pouvoir appeler la VM depuis
+LISP (pour la lancer) et LISP depuis la VM (pour exécuter les
+fonctions LISP primitives). <br>
+  </li>
+  <ul>
+    <li>Dans l'exécution de la VM, un saut avec retour à
+un symbole non résolu est un appel de fonction
+prédéfini : il faut extraire les arguments de la pile, en
+faire la liste et appliquer la fonction au moyen d'<span style="font-family: monospace;">apply</span>.</li>
+    <li>Pour lancer la VM, par exemple sur l'expression LISP <span style="font-family: monospace;">(fibo 10)</span>, quand<span style="font-family: monospace;"> fibo</span> a été
+préalablement chargée, il y a 2 solutions :</li>
+    <ul>
+      <li>compiler l'expression <span style="font-family: monospace;">(fibo
+10)</span>, charger le code résultant, et l'exécuter en
+lançant la VM sur l'adresse où il a été
+chargé : il faut rajouter un<span style="font-family: monospace;">
+(halt)</span> à la fin du code pour que la VM s'arrête
+proprement.<span style="font-family: monospace;"></span></li>
+      <li>définir une fonction LISP <span style="font-family: monospace;">vm-apply</span>, à la syntaxe
+analogue à <span style="font-family: monospace;">apply</span>,
+qui va pusher tous les arguments et faire un saut avec retour à
+l'adresse de <span style="font-family: monospace;">fibo</span>. Le
+retour doit se faire sur une instruction <span style="font-family: monospace;">(halt)</span>.<br>
+      </li>
+    </ul>
+  </ul>
+  <br>
+  <hr>
+</ol>
+
+
+</body></html>

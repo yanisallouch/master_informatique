@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!-- saved from url=(0049)http://www.lirmm.fr/~ducour/Cours/LEC/lisp-5.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  
+  <meta name="GENERATOR" content="Mozilla/4.76 [fr] (X11; U; Linux 2.2.18 i686) [Netscape]">
+  <title>TD Compilation - Analyse par cas</title>
+</head>
+<body>
+<h2>TD Compilation - Analyse par cas<br>
+</h2>
+<hr>
+L'objectif de ces exercices est d'appliquer les schémas
+d'évaluation et de compilation sur des objectifs simples.
+<ol>
+  <li><span style="font-weight: bold;"> Analyse par cas et langages
+à balises</span><br>
+La syntaxe parenthésée de LISP n'est qu'une des
+nombreuses syntaxes arbitraires possibles.<br>
+L'objectif de cet exercice est de transformer&nbsp; la syntaxe de LISP
+en une syntaxe alternative dans laquelle les cas syntaxiques de
+l'analyse par cas seraient explicités sous la forme de balises.</li>
+</ol>
+<ul>
+  <ul>
+    <li>dans une première version on peut juste rajouter une
+balise à la syntaxe LISP.<br>
+par exemple, la définition de la fonction factorielle
+deviendrait :</li>
+  </ul>
+</ul>
+<div style="margin-left: 80px;"><span style="font-family: monospace;">(:defun
+fact (n)</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(:if (:fun = (:var n) (:literal 0))</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(:literal 1)</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(:fun * (:var n) (:fun fact (:fun - (:var n) (:literal 1))))))</span><br>
+<br>
+Définir la fonction <span style="font-family: monospace;">lisp+tag</span>
+qui transforme une expression évaluable LISP en une expression
+parenthésée avec balises comme dans cet exemple.<br>
+<div style="margin-left: 40px;">
+<ul>
+  <li>on suivra le principe de l'analyse par cas vu en cours</li>
+  <li>les balises sont des mots-clés LISP (type <span style="font-family: monospace;">keyword</span>)</li>
+  <li>deux fonctions récursives croisées sont
+nécessaires : <br>
+  </li>
+  <ul>
+    <li><span style="font-family: monospace;">lisp+tag</span> prend une
+expression évaluable en paramètre</li>
+    <li><span style="font-family: monospace;">map-lisp+tag</span> prend
+une liste d'expressions évaluables<br>
+    </li>
+  </ul>
+</ul>
+</div>
+</div>
+<ul>
+  <ul>
+    <li>dans une deuxième version, on supprime les
+parenthèses et on génère du code à la HTML,
+avec des balises ouvrantes et fermantes.<br>
+En "pur" HTML, la fonction factorielle serait alors transformée
+en :<br>
+    </li>
+  </ul>
+</ul>
+<div style="margin-left: 80px;"><span style="font-family: monospace;">&lt;defun&gt;
+fact (n)</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;if&gt; &lt;fun&gt; = &lt;var&gt; n &lt;/var&gt; &lt;literal&gt; 0
+&lt;/literal&gt; &lt;/fun&gt;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;literal&gt; 1 &lt;/literal&gt;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;fun&gt; * &lt;var&gt; n &lt;/var&gt; &lt;fun&gt; fact &lt;fun&gt; -
+&lt;var&gt; n &lt;/var&gt; &lt;literal&gt; 1 &lt;/literal&gt;
+&lt;/fun&gt; &lt;/fun&gt; &lt;/fun&gt; &lt;/if&gt; &lt;/defun&gt;<br>
+<br>
+</span>Le lecteur voit immédiatement le gain en matière
+de lisibilité !<br>
+Ecrire la fonction <span style="font-family: monospace;">lisp-to-html</span>
+qui effectue cette transformation et retourne le code HTML.<br>
+<br>
+NB. Comme LISP manipule bien les listes et mal les chevrons, on prendra
+les conventions suivantes :<br>
+<ul>
+  <li>le code HTML est une <span style="font-style: italic;">liste
+plate</span></li>
+  <li>pour les chevrons, on peut utiliser des symboles LISP tels quels,
+par exemple<span style="font-family: monospace;"> &lt;fun&gt;</span> et
+    <span style="font-family: monospace;">&lt;/fun&gt;</span>.<br>
+Cela marche bien pour <span style="font-family: monospace;">lisp-to-html</span>
+mais la transformation inverse en est compliquée.<br>
+On préférera donc <span style="font-family: monospace;">
+    </span>aux chevrons une syntaxe parenthésée
+de type <span style="font-family: monospace;">(fun)</span> et <span style="font-family: monospace;">(/ fun)</span>.<br>
+  </li>
+</ul>
+</div>
+<div style="margin-left: 80px;">Définir la fonction <span style="font-family: monospace;">lisp-to-html</span>.<br>
+</div>
+<div style="margin-left: 40px;">
+<ul>
+  <li>Définir la fonction inverse <span style="font-family: monospace;">html-to-lisp</span>.<br>
+  </li>
+</ul>
+</div>
+<ol>
+  <hr><br>
+  <hr>
+</ol>
+
+
+</body></html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!-- saved from url=(0049)http://www.lirmm.fr/~ducour/Cours/LEC/lisp-4.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  
+  <meta name="GENERATOR" content="Mozilla/4.76 [fr] (X11; U; Linux 2.2.18 i686) [Netscape]">
+</head>
+<body>
+<h2>TD Compilation - VM</h2>
+<hr>
+L'objectif de ces exercices est de spécifier
+précisément
+la machine virtuelle, d'écrire du code à la main et d'en
+générer sur des exemples simples.
+<ol>
+  <li>
+    <b>Specifications pour l'appel de fonction</b><br>
+Il faut préciser chacun des points suivants
+    <ul>
+      <li>
+adresse de retour (empilée avant ou après les
+paramètres),
+      </li>
+      <li>appel de fonction par <b>jmp</b> ou <b>jsr</b>,
+      </li>
+      <li>accès à l'intérieur de la pile par le
+pointeur de sommet
+de pile <b>SP</b> ou par une construction syntaxique spéciale <b>&amp;
+n</b>,
+      </li>
+      <li>valeur de retour (pile ou registre),
+      </li>
+      <li>retour de fonction par <b>rtn</b> ou <b>jsr</b>,
+      </li>
+      <li>qui dépile les paramètres (appelant ou
+appelé),
+      </li>
+    </ul>
+Toute combinaison est possible mais certaines sont plus simples que
+d'autres.
+  </li>
+  <li>
+    <hr></li>
+  <b>Quelques fonctions simples</b>
+  <br>
+Ecrire à la main, dans le code de la VM et en suivant les
+spécifications que vous avez choisies, le code des focntions
+suivantes
+:
+  <ul>
+    <li>
+les fonctions <b>f</b> et <b>g</b> du TD 1,
+    </li>
+    <li>les fonctions <b>fact</b> et <b>fibo</b>, en version
+récursive,
+    </li>
+  </ul>
+Vérifier que le code produit est non seulement correct, mais
+qu'il
+respecte vos conventions et qu'il aurait pu être produit par un
+programme.
+  <hr><li>
+    <b>Calculette</b>
+    <br>
+En suivant les spécifications que vous avez choisies,
+    <br>
+définir la fonction <b>compile-calcul</b> qui prend une
+expression
+arithmétique en paramètre et génère le code
+VM correspondant.
+    <br>
+La spécification de la calculette est la même que dans le
+TD
+précédent.
+    <ul>
+      <li>commencer par écrire à la main, dans le code de
+la VM, la
+fonction correspondant à l'expression que vous voulez compiler ;
+      </li>
+      <li>écrire ensuite la fonction <b>compile-calcul</b>,
+comme cas particulier
+d'une fonction de compilation qui ne traiterait que les cas
+d'opérations arithmétiques et de constantes
+numériques.
+      </li>
+    </ul>
+  </li>
+  <hr>
+  <li><b>Fonction fact</b>
+    <br>
+Ecrire la fonction de génération de code <b>compile-vm</b>
+permettant de compiler la fonction <b>fact</b> écrite de
+façon
+récursive.
+    <br>
+Pour cela, on traitera les schémas de compilation
+nécessaires
+pour la fonction :
+    <ul>
+      <li>
+constantes numériques et opérateurs arithmétiques
+(comme
+        <b>compile-calcul</b>) ;
+      </li>
+      <li>conditionnelles et comparaisons (<b>if</b> et <b>=</b>) ;
+      </li>
+      <li>appels de fonctions
+      </li>
+    </ul>
+  </li>
+  <hr><li>
+    <b>Variables locales</b>
+    <br>
+Généraliser au traitement des variables locales (<b>lambda</b>
+ou <b>let</b>), par exemple
+    <ul>
+      <li>
+pour la fonction <b>foo</b>:<br>
+        <tt>
+(defun foo (n) (let ((x (fact n))) (* (+ x n) (- x n))))</tt>
+      </li>
+      <li>pour la fonction <b>bar</b>:<br>
+        <tt>
+(defun bar (n) (let ((x (fact n))) (* (foo (+ x n)) (foo (- x n)))))</tt>
+      </li>
+    </ul>
+    <br>
+Dans les deux cas, on écrira d'abord la fonction à la
+main pour
+bien voir à quoi on veut aboutir.
+  </li>
+  <hr>
+</ol>
+
+
+</body></html>

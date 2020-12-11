@@ -1,0 +1,49 @@
+1) Écrire une fonction qui teste si un entier est un carré 
+
+f(n : integer) : boolean
+f:=false;
+i:=0;
+while n <= ixi do
+	if n= ixi then f: true else skip;
+	i:=i+1
+
+Non, pas tout à fait.
+Pour ton "if n = ixi", si "n = ixi" alors tu es déjà sorti avec la condition du
+while (n <= ixi) et donc tu n'as pas positionné la variable f.
+Je te laisse corriger ?
+	
+2) Écrire la fonction factorielle de manière récursive 
+
+f(n:integer) : integer
+if n=0 f:=1 else
+f:=nxf(n-1)
+
+OK, parfait.
+
+3) Écrire un programme qui alloue un tableau d’entiers d’une taille demandée à l’utilisateur, et appelle une procédure pour l’initialiser ;
+
+var n:integer  i:integer 
+f(n : integer)
+var k := new array of integer[n];
+i:=0; while i<=n do k[i]=0
+
+n:=read()
+f(n)
+
+Non. Le tableau doit être déclaré comme variable globale et non locale à
+f. Sinon, la référence au tableau est perdue.
+Je te laisse corriger ?
+
+4)  Écrire une fonction qui teste si tous les éléments d’un tableau d’entiers passé en paramètre sont positifs.
+
+f(n: array of integer): boolean
+var i:= integer; f:=true; i:=0; 
+while i<t do
+	if n[i]>=0 skip else f:=false;
+	i:= i+1
+	
+	// si t est la taille de n
+
+Non. La taille t sort d'où ? Elle doit être un paramètre de ta fonction f (en
+plus du tableau n). C'est comme en C en fait.
+Je te laisse corriger ?

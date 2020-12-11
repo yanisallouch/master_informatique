@@ -1,0 +1,206 @@
+﻿Implémentation en COMMON LISP de la VM
+
+propriétés de symboles
+
+'toto
+
+(get 'toto 'prop) ⇒ nil
+(setf (get 'toto 'prop) '42)
+(get 'toto 'prop)  ⇒ 42
+
+(setf (get 'mavm 'R0) 100)
+(get 'mavm 'R0) ⇒ 100
+
+(setf (get 'mavm 'memoire) (make-array '(1000000)) // crée un tableau de 1 million de cases
+
+(defun make-vm (nom)
+
+(setf (get nom 'R0) 0)
+(setf (get nom 'R1) 0)
+
+// plutôt avec set-registre
+(set-registre nom 'PC 0)
+(set-registre nom 'SP 0)
+....
+
+(setf (get nom  'memoire) (make-array '(1000000))
+)
+
+(make-vm 'majolievm)
+(get 'majolievm 'R0) ⇒  0
+
+        (defun set-registre (vm registre valeur) (
+                (setf (get vm registre ) valeur)
+        )
+
+ (set-registre 'majolievm 'SP 1024)
+
+        (defun get-registre (vm registre) (
+                 (get vm registre )
+        )
+
+ (get-registre 'majolievm 'SP) ⇒ 1024
+
+fonctions à écrire
+
+make-vm (nom …)
+set-registre (nomdevm nomderegistre valeur)
+get-registre (nomdevm nomderegistre)
+
+vm-load-code (nomdevm code)
+
+while (not(null l)) (
+charger (car l)
+l <-- (cdr l)
+)
+
+vm-load-file-code (nomdevm fichier)
+// le code c'est une liste d'instructions
+
+'(
+        (MOVE (:CONST 100) R0)
+        (MOVE (:CONST 200) R1)
+        (ADD R0 R1)
+        ....
+)
+
+vm-exec-instr (nomdevm instruction)
+vm-exec-instr-move  (nomdevm src dest)
+vm-exec-instr-load  (nomdevm src dest)
+vm-exec-instr-store  (nomdevm src dest)
+vm-exec-instr-add  (nomdevm src dest)
+…
+
+vm-exec (nomdevm)  //// une boucle  ATTENTION pas de récursivité
+
+pour le compilateur
+compiler (expressionlisp)
+compiler-save  (expressionlisp chemindefichier)
+
+// ca compile une expression expr, charge le code ASM dans la vm et l exécute
+// utile pour appeler la fonction
+vm-compiler-load-exec (vm expr)
+
+(vm-compiler-load-exec 'majolievm '(fibo 15))
+        //equivalent à
+        (vm-load-code 'majolievm  (compiler  '(fibo 15))  )
+        (vm-exec  'majolievm)
+
+(compiler '(fibo 15)) ⇒ '(...          (MOVE (:CONST 15) R0)
+                                (PUSH R0)
+….
+// creation de l'environnement
+        (JSR 'fibo)
+…
+// restitution de l'environnement
+
+(HALT)
+)
+
+// c'est le chargeur qui positionner correctement le PC au début du bloc de code chargé
+
+en mémoire on aura la sous partie suivante :
+
+                                100y : (HALT)
+                                …
+100x : (JSR 'fibo)
+                                ...
+                                1001 : (PUSH R0)
+1000 : (MOVE (:CONST 15) R0)
+
+PC == 1000
+
+la génération de code
+
+analyse par cas
+parcours récursif de l'expression lisp
+
+(fibo (+ 1 2 3))
+
+(defmacro mamacro (x y) (
+(list x y)
+)
+
+(mamacro 1 (+ 2 3))
+ => (1 (+ 2 3))
+
+si ( ( x != 0) && (y/x > z)) alors
+
+si  (x != 0)  alors
+        si  (y/x > z) alors
+
+(LOAD  500  R0) /// va cherche le contenu de la case mémoire à l'adresse 500 et le met dans R0
+(LOAD  FP   R0)
+
+(MOVE 500 R0)
+(LOAD  FP   R0)
+// avec index
+(LOAD  (- FP 1)   R0) // met dans R0 le contenu de la case mémoire à l'adresse FP - 1
+
+(LOAD  (- FP 2)   R0)
+(LOAD  (+ FP 5)   R0)
+(LOAD  (- FP 5)   R0)
+
+// alternativement - et c'est plus simple / plus clair
+(LOAD  (:REF FP -5)   R0)
+(LOAD  (:REF FP 10)   R0)
+
+// MOVE
+// deux cas : registre ou litéral
+// ex: (MOVE R1 R0) - deux symboles comme arguments src et dest
+// ex: (MOVE (:LIT 100) R0) -
+// utile si on veut mettre le symbol R0 dans un registre
+// (MOVE (:LIT R1) R0)
+// ⇒ ( vm-exec-instr-move vm (:LIT R1) R0)
+
+(defun vm-exec-instr-move (vm src dest)
+(if (consp src)
+(set_registre vm dest (cadr src))
+(set-registre vm dest (get_registre vm src))
+)
+)
+
+// CAS du HALT
+(defun vm-exec-instr-halt (vm)
+  (set-registre vm 'RUN nil)
+)
+
+// Principe de la boucle
+(defun vm-exec (vm)
+(while (get-registre vm 'RUN) do
+
+(vm-exec-instr-load vm 'PC 'INSTR)                 // equiv d executer (LOAD 'PC 'INSTR)
+(vm-incr-registre vm 'PC)                        // on incérmente PC
+(vm-exec-instr (get-registre 'vm  'INSTR))         // on exécute l'instruction chargé dans
+// le registre 'INSTR
+)
+)
+
+// code de Denis
+
+(defun vm_exec_instr (vm value)
+    (case (car value)
+        ('MOVE     (vm_instr_move vm (cadr value) (caddr value)))
+        ('LOAD     (vm_instr_load vm (cadr value) (caddr value)))
+        ('STORE     (vm_instr_store vm (cadr value) (caddr value)))
+        ('INCR     (vm_instr_incr vm (cadr value)))
+        ('DECR     (vm_instr_decr vm (cadr value)))
+        ('ADD     (vm_instr_add vm (cadr value) (caddr value)))
+        ('MULT     (vm_instr_mul vm (cadr value) (caddr value)))
+        ('SUB     (vm_instr_sub vm (cadr value) (caddr value)))
+        ('DIV     (vm_instr_div vm (cadr value) (caddr value)))
+        ('PUSH     (vm_instr_push vm (cadr value)))
+        ('POP     (vm_instr_pop vm (cadr value)))
+        (t (error "execInst instruction inconnue ~s " (car value)))
+    )
+)
+
+C’était ça
+(defun vm_instr_incr (vm att)
+    (setReg vm att (+ (getReg vm att) 1))
+)
+
+APPEL :
+(vm_exec_instr 'test '(INCR R0))
+
+Concernant l'analyse par cas pour la génération de code voir chap 6 du doc LEC.pdf

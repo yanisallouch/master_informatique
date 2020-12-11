@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!-- saved from url=(0049)http://www.lirmm.fr/~ducour/Cours/LEC/lisp-2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  
+  <meta name="GENERATOR" content="Mozilla/4.76 [fr] (X11; U; Linux 2.2.18 i686) [Netscape]">
+</head>
+<body>
+<h1>TD de LISP numéro 3 et 4
+</h1>
+<hr>
+<ol>
+  <li> <b>Paramètres optionnels et APPLY</b></li>
+  <br>
+  <ul>
+    <li>Définir les fonctions de recherche dans une liste telles
+que <b>member</b>, <b>assoc</b>,
+etc. avec un argument optionnel pour la fonction de comparaison
+à
+utiliser (mot-clé <tt>:test</tt>). </li>
+    <li>Lire la description de ces fonctions dans le manuel en ligne et
+implémenter
+aussi les mot-clés <tt>:key</tt> et <span style="font-family: monospace;">:from-the-end</span>.</li>
+    <li>Montrez comment éviter l'usage de <span style="font-family: monospace;">:key</span> en se servant de <span style="font-family: monospace;">:test</span>.<br>
+    </li>
+    <li>Comment assurer un minimum d'efficacité à ces
+fonctions ?<br>
+    </li>
+  </ul>
+  <br>
+  <hr> <li><b>fonctions d'arité variable et APPLY</b></li>
+  <ul>
+    <li>Définir les fonctions n-aires de manipulation de listes
+comme <b>append</b>,
+par une unique fonction récursive en utilisant <b>apply</b>.</li>
+    <li>définir ces fonctions sans utiliser <b>apply</b>,
+à
+l'aide
+d'une fonction récursive locale définie par <b>labels</b>.</li>
+    <li>idem pour la fonction <b>list*</b> telle que <tt>(list* 1 2 3
+'(4 5
+6))</tt>
+retourne <tt>(1 2 3 4 5 6)</tt>.<br>
+      <br>
+    </li>
+  </ul>
+  <hr> <li><b>Fonctions destructives sur les listes</b></li>
+  <br>
+Définir les différentes fonctions sur les listes en mode
+destructif (ou modification physique) et non pas en mode copie comme on
+l'a vu jusqu'ici.
+  <p>Fonctions concernées : </p>
+  <ul>
+    <li> <b>nconc</b> version destructive de <b>append</b>.</li>
+    <li> <b>delete</b> version destructive de <b>remove</b>.</li>
+    <li> <b>nreverse</b> version destructrice de <b>reverse</b>.</li>
+    <li> <b>nsubst</b> version destructive de <b>subst</b>.<br>
+      <br>
+    </li>
+  </ul>
+  <hr> <li><b>Fonctions de partage sur les listes</b></li>
+  <br>
+Entre la copie et la destruction, il y a le partage, qui consiste
+à
+ne rien détruire mais à ne recopier que le minimum. <br>
+Définir les fonctions <b>subst</b> et <b>remove</b> en mode
+partage, de telle sorte que la fonction retourne son argument dans le
+cas
+où aucune substitution n'est faite. <br>
+  <b>NB.</b> la fonction ne doit effectuer qu'un unique parcours de
+l'arbre,
+comme pour les autres versions.
+  <p>Une présentation élégante des 3 versions
+(copie,
+partage, destruction) de ces fonctions consiste à utiliser un
+schéma
+unique dans lequel on ne fait varier que la fonction de construction de
+liste : typiquement, dans les versions partage et destruction, on
+remplace
+l'usage de <b>cons</b> par celui d'une autre fonction, locale. <br>
+  <br>
+  </p>
+  <hr><li> <b>Calculette</b></li>
+  <br>
+Définir la fonction <b>calcul</b> qui prend une expression
+arithmétique
+en paramètre et l'évalue. <br>
+L'expression ne doit contenir que des nombres et des opérateurs
+arithmétiques usuels.on généralisera ensuite
+à
+des opérateurs d'arité quelconque. <br>
+On commencera en ne traitant que des opérateurs binaires et
+  <ul>
+    <li>faire une version qui prend en compte spécifiquement
+chaque
+opérateur
+;</li>
+    <li>faire une version qui traite génériquement chaque
+opérateur
+;</li>
+    <li>généraliser au cas de l'évaluation de
+n'importe
+quelle
+expression Lisp qui n'utilise que des fonctions globales nommées
+et des constantes de n'importe quel type. Traiter le cas de <b>quote</b>.<br>
+      <br>
+    </li>
+  </ul>
+  <hr> <li><b>Les macros</b></li>
+  <ul>
+    <li>reprendre l'exercice 1 de la <a href="http://www.lirmm.fr/~ducour/Cours/LEC/lisp-1.html">feuille de
+TD 1 &amp; 2</a> et tranformer les expressions <span style="font-weight: bold;">lambda</span> en <span style="font-weight: bold;">let</span> ou <span style="font-weight: bold;">let*</span> ;<br>
+    </li>
+    <li>définir les macros <b>let</b> et <b>let*</b>&nbsp;
+avec un
+nombre
+quelconque de variables ;</li>
+    <li>définir les macros <b>and</b> et <b>or</b> ;</li>
+    <li>définir les macros <b>cond</b> et <b>case</b> ;</li>
+  </ul>
+Dans tous les cas, attention aux récursions, aux doubles
+évaluations
+et à la capture de variable. <br>
+On utilisera <b>macroexpand</b> pour vérifier la correction
+des expansions. <br>
+  <br>
+  <hr> <li><b>Tester backquote</b></li>
+  <br>
+Pour comprendre ce que fait <b>backquote</b>, il est
+intéressant
+d'analyser la valeur de <b>`(toto , titi truc ,@tata tutu) </b>ou de
+toute
+autre expression backquotée. <br>
+Pour cela, on peut regarder '<b>`(toto , titi truc ,@tata tutu) : </b>comme
+  <b>print</b>
+restitue la forme bacquotée d'origine, on analysera la valeur en
+en prenant les <b>car</b> et <b>cdr</b> successifs. <br>
+Expliquer. <br>
+  <br>
+  <hr width="100%"> <li><b>Implémenter backquote</b></li>
+  <br>
+L'objectif est de définir le fonctionnement du caractère <i>backquote</i>
+en définissant une fonction <b>backquotify</b> qui transforme
+l'expression
+backquotée en une expression de construction de liste. <br>
+Pour cela, il faut d'abord supposer que "<b>,x</b>" est lu (fonction <b>read</b>)
+comme la liste <b>(unquote x)</b>, de la même manière que
+"<b>'x</b>" est lu <b>(quote x)</b>. Idem pour "<b>,@x</b>" qui est lu
+  <b>(splice-unquote
+x)</b>. <br>
+On procède par étapes
+  <ol>
+    <li>dans un premier temps, on définit <b>backquotify</b>
+pour qu'il
+transforme l'expression <b>`(e1 e2 .. en)</b> en <b>(list 'e1 ... 'en)</b>
+;</li>
+    <li>on traite ensuite le cas où des <b>ei</b> sont de la
+forme <b>(unquote
+fi)</b> de telle sorte que l'expression produite comporte alors <b>fi</b>
+à la place de <b>'ei</b> ;</li>
+    <li>on généralise alors à un arbre : la
+récursion
+ne se fait pas seulement sur le <b>cdr</b> mais aussi sur le <b>car</b>
+;</li>
+    <li>on traite ensuite le cas des <b>(splice-unquote x)</b> :
+attention, il
+faut alors faire une récursion de la cellule "du dessus"&nbsp;
+(rare
+contre-exemple à la règle consistant à ne tester
+dans
+une récursion que la cellule courante) ;</li>
+    <li>on finit par la définition d'une fonction de
+simplification qui
+fait l'inverse de l'étape 1 en reconstruisant des constantes et
+qui simplifie les appels imbriqués (<b>append</b>, <b>cons</b>
+et <b>list*</b>
+ou <b>list</b>, etc.)</li>
+  </ol>
+On peut alors vérifier, que ça marche :
+  <p><tt>(bacquotify '((lambda ((unquote (caar args))) (splice-unquote
+body))
+(unquote (cadar args))))</tt> <br>
+doit retourner quelque-chose comme : <br>
+  <tt>(list (list* 'lambda (list (caar args)) body) (cadar args))</tt> <br>
+On peut même comparer ce que votre version produit avec le
+résultat
+de la version du système, que la question
+précédente
+permet d'obtenir. <br>
+  <br>
+  </p>
+  <hr><li> <b>Récursions terminales et continuations</b></li>
+  <br>
+Une <i>continuation</i> est une <i>fermeture</i>, c'est-à-dire
+une lambda-expression capturant l'environnement courant, passée
+en argument à une autre fonction qui appelle la continuation
+pour
+se continuer. <br>
+L'un des usages des continuations est de permettre la transformation
+de n'importe quelle récursion enveloppée en
+récursion
+terminale.
+  <ul>
+    <li>Ecrire la fonction <b>length</b> en récursion terminale
+avec
+une
+continuation.</li>
+    <li>appliquer le même principe pour d'autres fonctions : <b>fact</b>,
+      <b>copylist</b>,
+etc.</li>
+    <li>idem pour la fonction <b>size</b> qui est doublement
+récursive.</li>
+  </ul>
+  <hr>
+</ol>
+
+
+</body></html>

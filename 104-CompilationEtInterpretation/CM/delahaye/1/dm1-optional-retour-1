@@ -1,0 +1,72 @@
+Titre: Exercice (optionnel) du CM1
+Auteur: Yanis Allouch
+Date: 09/09/2020
+UE: HMIN104
+
+
+Q1) Fonction estCarré(n):bool
+
+f(n: integer):boolean
+	var res: integer;
+	f:=false;
+	if n >= 1 then
+		if n = 1 then
+			f:= true
+		else
+			res:= 1;
+			while res <= n do
+				res := res * 2
+			if res = n then
+				f:= true
+			skip
+	skip
+
+Non, pas tout à fait.
+Tu chasses le cas 0, pourquoi ?
+Dans la boucle, pourquoi "res * 2" ? Il faut chercher un res tel que res * res = n.
+Il te manque aussi des "else" pour les "if".
+Je te laisse corriger ?
+
+Q2) Fonction récursive factorielle(n):int
+
+f(n: integer):integer
+	if n = 0 then 
+		f:= 1
+	else
+		if n = 1 then
+			f := n
+		else
+			f:= n * f(n-1)
+
+Oui, ça marche.
+Par contre, inutile de traiter le cas "n = 1", il est capturé par le reste du code normalement.
+
+Q3) Programme 1 : alloué un tablerau + initialiser (zéro)
+
+var n: integer; var t:new array of integer
+
+f(n: integer)
+	while n>= 0 do
+		t[n-1] := 0; n := n - 1
+
+Non, pas tout à fait.
+Le tableau doit être déclaré (tout en haut) dans les variables globales, mais sa création (l'allocation proprement dite) est faite dans le code du programme principal (tout en bas).
+Dans la procédure f, ça n'est pas une bonne pratique que de toucher le paramètre formel n (tu le décrémentes). Crée une variable locale et itère avec elle.
+Pour l'initialisation, on souhaite demander les valeurs à l'utilisateur (avec read).
+Pour la taille du tableau, c'est pareil, il faut la demander à l'utilisateur (avec read) dans le programme principal.
+Je te laisse corriger ?
+
+Q4) Fonction estToutPositif(tab):bool
+
+f(t: array of integer, n: integer):boolean
+	f := true;
+	while n >= 0 do
+		if t[n-1] < 0 then
+			f := false;
+		skip; n := n-1
+
+Presque bon.
+Il te manque encore le "else".
+Attention aussi à ne pas utiliser le ";" comme une fin d'instruction : ici le ";" à la fin de "f := false" n'est pas correct.
+Si tu tombes sur un élément non positif, il faut pouvoir sortir de la boucle sans devoir aller jusqu'au bout.
+Je te laisse corriger ?

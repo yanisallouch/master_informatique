@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!-- saved from url=(0049)http://www.lirmm.fr/~ducour/Cours/LEC/lisp-3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  
+  <meta name="GENERATOR" content="Mozilla/4.76 [fr] (X11; U; Linux 2.2.18 i686) [Netscape]">
+  <title>TD Compilation numéro 1</title>
+</head>
+<body>
+<h2>TD Compilation - calculette<br>
+</h2>
+<hr>
+L'objectif de ces exercices est d'appliquer les schémas
+d'évaluation et de compilation sur des objectifs simples.
+<ol>
+  <li> <b>Calculette</b> <br>
+Définir la fonction <b>calcul</b> qui prend une expression
+arithmétique
+en paramètre et l'évalue. <br>
+L'expression ne doit contenir que des nombres et des opérateurs
+arithmétiques usuels.<br>
+On commencera en ne traitant que des opérateurs binaires.&nbsp;
+    <ul>
+      <li>faire une version qui prend en compte spécifiquement
+chaque
+opérateur
+;</li>
+      <li>faire une version qui traite génériquement
+chaque
+opérateur
+;</li>
+      <li>généraliser au cas de l'évaluation de
+n'importe
+quelle
+expression Lisp qui n'utilise que des fonctions globales nommées
+et des constantes de n'importe quel type. <br>
+      </li>
+      <li>Traiter le cas de <b>quote</b>.</li>
+      <li>Généraliser
+à
+des opérateurs d'arité quelconque.</li>
+      <ul>
+        <li>en intégrant l'arité quelconque au code de la
+fonction ;</li>
+        <li>en transformant préalablement la donnée pour
+binariser tous les opérateurs d'arité &gt; 2. (<span style="font-style: italic;">transformation source-à-source</span>).<br>
+        </li>
+      </ul>
+    </ul>
+  </li>
+  <hr>
+  <li><b>Interprétation d'automates</b>
+    <ul>
+      <li>on commencera par définir de façon abstraite
+(ADT) une
+structure
+de données <i>automate</i> et l'interface fonctionnelle
+correspondant ; <br>
+dans un deuxième temps on définira une
+implémentation
+particulière (à base de listes pour simplifier), on
+définira les fonctions de l'interface, que l'on pourra remplacer
+ultérieurement par des macros. </li>
+      <li>définir la fonction <b>eval-auto</b>, qui prend en
+argument un
+automate
+et un mot et retourne vrai/faux suivant que l'automate reconnaît
+le mot
+ou pas. <br>
+on fera d'abord une version pour des automates <i>déterministes</i>,
+avant d'en faire une pour les automates <i>indéterministes</i>.
+      </li>
+    </ul>
+  </li>
+  <hr>
+  <li><b>Compilation d'automates</b> <br>
+Écrire la fonction <b>compile-auto</b>, qui prend en argument
+un
+automate et retourne une fonction d'interprétation de mot, qui
+prend en
+argument un mot et retourne vrai/faux suivant que l'automate
+reconnaît
+le mot ou pas. L'invariant suivant doit être
+vérifié : <br>
+    <tt>(eval-auto auto mot) = (apply (compile-auto auto) mot ())</tt>
+    <ul>
+      <li>on commencera par définir à la main la fonction
+d'interprétation correspondant à un automate donné
+; </li>
+      <li>dans un second temps, on définit la fonction <b>compile-auto</b>
+qui
+génère la fonction d'interprétation de n'importe
+quel
+automate ; <br>
+Une des façons de faire consiste à faire de chaque
+état
+de l'automate une fonction locale. </li>
+      <li>on peut enfin transformer cette fonction <b>compile-auto</b>
+en une macro <b>def-compile-auto</b>.</li>
+    </ul>
+Voir le poly de compilation pour plus de détails.<br>
+  </li>
+  <hr>
+  <li><b>Tester backquote<br>
+    </b>Voir le poly de LISP pour plus de détails.<br>
+    <br>
+Pour comprendre ce que fait <b>backquote</b>, il est
+intéressant
+d'analyser la valeur de <b>`(toto , titi truc ,@tata tutu) </b>ou de
+toute
+autre expression backquotée. <br>
+Pour cela, on peut regarder '<b>`(toto , titi truc ,@tata tutu) : </b>comme
+    <b>print</b>
+restitue la forme bacquotée d'origine, on analysera la valeur en
+en prenant les <b>car</b> et <b>cdr</b> successifs. <br>
+Essayez avec <span style="font-weight: bold;">macroexpand</span>.<br>
+Expliquer.<br>
+    <hr style="width: 100%; height: 2px;"></li>
+  <li><b>Implémenter backquote<br>
+    </b>L'objectif est de définir le fonctionnement du
+caractère <i>backquote</i>
+en définissant une fonction <b>backquotify</b> qui transforme
+l'expression
+backquotée en une expression de construction de liste. <br>
+Pour cela, il faut d'abord supposer que "<b>,x</b>" est lu (fonction <b>read</b>)
+comme la liste <b>(unquote x)</b>, de la même manière que
+"<b>'x</b>" est lu <b>(quote x)</b>. Idem pour "<b>,@x</b>" qui est lu
+    <b>(splice-unquote
+x)</b>. <br>
+On procède par étapes<br>
+  </li>
+  <ol>
+    <li>dans un premier temps, on définit <b>backquotify</b>
+pour qu'il
+transforme l'expression <b>`(e1 e2 .. en)</b> en <b>(list 'e1 ... 'en)</b>
+;</li>
+    <li>on traite ensuite le cas où des <b>ei</b> sont de la
+forme <b>(unquote
+fi)</b> de telle sorte que l'expression produite comporte alors <b>fi</b>
+à la place de <b>'ei</b> ;</li>
+    <li>on généralise alors à un arbre : la
+récursion
+ne se fait pas seulement sur le <b>cdr</b> mais aussi sur le <b>car</b>
+;</li>
+    <li>on traite ensuite le cas des <b>(splice-unquote x)</b> :
+attention, il
+faut alors faire une récursion de la cellule "du dessus"&nbsp;
+(rare
+contre-exemple à la règle consistant à ne tester
+dans
+une récursion que la cellule courante) ;</li>
+    <li>on finit par la définition d'une fonction de
+simplification qui
+fait l'inverse de l'étape 1 en reconstruisant des constantes et
+qui simplifie les appels imbriqués (<b>append</b>, <b>cons</b>
+et <b>list*</b>
+ou <b>list</b>, etc.)<br>
+      <br>
+    </li>
+  </ol>
+On peut alors vérifier, que ça marche : <br>
+  <tt>(bacquotify '((lambda ((unquote (caar args))) (splice-unquote
+body))
+(unquote (cadar args))))</tt> <br>
+doit retourner quelque-chose comme : <br>
+  <tt>(list (list* 'lambda (list (caar args)) body) (cadar args))</tt><br>
+On peut même comparer ce que votre version produit avec le
+résultat de la version du système, que la question
+précédente permet d'obtenir.<br>
+  <br>
+  <hr>
+</ol>
+
+
+</body></html>

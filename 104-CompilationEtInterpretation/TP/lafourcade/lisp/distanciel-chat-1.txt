@@ -1,0 +1,109 @@
+            [07:59] Guilhem Blanchard : parfait
+[07:59] <br>Bienvenue sur <b>Le BBB de Lafourcade</b>!<br><br>Pour comprendre comment fonctionne BigBlueButton, veuillez voir nos <a href="http://www.bigbluebutton.org/content/videos" target="_blank"><u>tutoriels vidéos</u></a>.<br><br>Pour joindre la communication audio, cliquez sur l'icône du casque (en haut à gauche). <b>Merci d'utiliser un casque, pour éviter l'écho.</b><br><br>Cette session peut être enregistrée.
+[08:00] Mathieu Lafourcade : url de mon doc de cours : http://www.lirmm.fr/~lafourcade/ML-enseign/Compilation/compil-GenCode.HTML
+[08:00] Yanis Allouch : re bonjour
+[08:02] Mathieu Lafourcade : les documents pour le tp sont dans le moodle
+[08:02] Mathieu Lafourcade : Compilation vers VM LISP
+LISP + GC + VMDossier
+[08:04] Guilhem Blanchard : le son est sacadé
+[08:05] Guilhem Blanchard : c'est mieux
+[08:06] Jeremy Simione : bof
+[08:07] Hayaat Hebiret : c'est la connexion , dicscord n'arrangera rien je pense
+[08:08] Hayaat Hebiret : ça va mieux sans le partage d'écran
+[08:08] Yanis Allouch : x)
+[08:08] Hayaat Hebiret : de votre coté je pense
+[08:08] Arthur Engel : J'ai des petits freezes de voix personnellement
+[08:09] Arthur Engel : moi ça me va, mais je sais pas ce qu'il en est des 150 autres personnes
+[08:09] Hayaat Hebiret : http://www.lirmm.fr/~lafourcade/ML-enseign/Compilation/compil-GenCode.HTML
+[08:09] Yanis Allouch : *29
+[08:09] Yanis Allouch : non
+[08:09] Arthur Engel : j'étais pas loin
+[08:25] Nicolas Lauret : oui
+[08:25] Quentin Fontaine : oui
+[08:40] Bnyat Bnyat : j'ai pas compris <proc>?
+[08:41] Bnyat Bnyat : ah oki merci
+[08:50] Azeddine Zadir : difficile de suivre sans partage
+[08:50] Azeddine Zadir : oui
+[08:50] Yanis Allouch : oui
+[09:05] Yasmine Ait Ali Yahia : Monsieur peut-on avoir un exemple concret parce que ça reste un peu flou pour moi ...
+[09:26] Denis Beauget : Question bête : Vous avez un environnement pour le LISP à distance ? A part l'accès à nos sessions ?
+[09:26] Mathieu Lafourcade : installer clisp
+[09:27] Yanis Allouch : https://sourceforge.net/p/clisp/clisp/ci/clisp_2_49-2010-07-07/tree/src/NEWS
+[09:28] Denis Beauget : Merci!
+[09:28] Guilhem Blanchard : ```sudo apt install clisp```
+[09:28] Yanis Allouch : µ https://sourceforge.net/projects/clisp/files/latest/download
+[09:28] Yanis Allouch : le lien avant ne redirige pas sur l'installer windows
+[09:29] Hayaat Hebiret : https://clisp.sourceforge.io/
+[09:29] Hayaat Hebiret : a droite
+[09:30] Mathieu Lafourcade : https://sourceforge.net/projects/clisp/
+[09:30] Azeddine Zadir : https://zoomadmin.com/HowToInstall/UbuntuPackage/clisp
+[09:30] Azeddine Zadir : sur linux
+[09:41] Mathieu Lafourcade : donc, je résume le travail à faire pour la suite de la matinée : installer clisp sur votre machine, faire le tp1 et commencer le  tp2 (si possible)
+[09:41] Mathieu Lafourcade : fichiers de tp dans : Compilation vers VM LISP
+LISP + GC + VMDossier
+[09:42] Mathieu Lafourcade : fichiers lisp-1.html
+[09:42] Mathieu Lafourcade : et le 2
+[09:44] Mathieu Lafourcade : pour le corriger du tp à faire collectivement : https://docs.google.com/document/d/1bNTQ057oylU_61x75i0d880ait8kgfHpsQfTls9O3qk/edit?usp=sharing
+[09:44] Mathieu Lafourcade : *corrigé
+[09:58] Mathieu Lafourcade : je vois que certains avancent vite, ne regardé le corrigé que si vous etes bloqués - cherchez un peu avant :)
+[09:58] Mathieu Lafourcade : *regardez
+[10:23] Mathieu Lafourcade : lisez bien le doc suivant hein ? clisp.pdf
+[10:23] Mathieu Lafourcade : dans le mm dossier que les énoncés de tp
+[10:33] Denis Beauget : length et member sont des mots réservés ? CLISP aime pas trop
+[10:39] Mathieu Lafourcade : oui, écrivez vos propres fonctions, genre monlenght et monmember
+[11:27] Guilhem Blanchard : j'ai essayé
+[11:27] Guilhem Blanchard : (defun makelist (n) (if (eq 0 n)  '(0)) (cons n (makelist (- n 1))))
+[11:27] Guilhem Blanchard : mais j'ai
+[11:27] Guilhem Blanchard : Break 20 [27]> (makelist 8)
+
+*** - Débordement de pile Lisp : RAZ
+[11:27] Mathieu Lafourcade : hummm
+[11:28] Mathieu Lafourcade : essaye avec equal au lieu de eq
+[11:28] Mathieu Lafourcade : eq c est l identité physique, pas l egalité de valeur
+[11:28] Guilhem Blanchard : j'ai la meme erreur
+[11:28] Mathieu Lafourcade : en gros tu pars en boucle infinie avec ta version
+[11:28] Guilhem Blanchard : ok, je regarde pour la condition d'arret
+[11:29] Mathieu Lafourcade : appelle ta fonction monmakeliste
+[11:29] Mathieu Lafourcade : pas de conflit avec la fonction systeme  ?
+[11:30] Guilhem Blanchard : ha peut etre
+[11:31] Guilhem Blanchard : toujours la meme
+[11:34] Mathieu Lafourcade : tu n a pas un pb de parenthse ?
+[11:34] Mathieu Lafourcade : (defun makelist (n) (if (eq 0 n) '(0) (cons n (makelist (- n 1))))
+[11:34] Mathieu Lafourcade : apres ton '(0))
+[11:34] Mathieu Lafourcade : parenthese en trop
+[11:34] Mathieu Lafourcade : ca clot le if
+[11:35] Mathieu Lafourcade : donc l appel recursif se fait infiniment
+[11:35] Guilhem Blanchard : ha, ok. merci
+[11:36] Guilhem Blanchard : Break 20 [27]> (defun monmakelist (n) (if (equal 0 n)  '(0) (cons n (monmakelist (- n 1)))))
+MONMAKELIST
+Break 20 [27]> (monmakelist 8)
+(8 7 6 5 4 3 2 1 0)
+[11:36] Andrea Pires : j'ai pas très bien compris atom
+[11:37] Andrea Pires : ca renvoit à la dimension d'une cellule ?
+[11:37] Mathieu Lafourcade : non vrai si c'est un atome, donc faux si c est une cellule
+[11:38] Andrea Pires : un atome = un seul élément ?
+[11:39] Mathieu Lafourcade : oui, pas une liste donc
+[11:39] Mathieu Lafourcade : attention atom nil rend vrai
+[11:40] Mathieu Lafourcade : nil est a la fois une symbol, une atome et une liste
+[11:40] Mathieu Lafourcade : une symbol
+[11:40] Mathieu Lafourcade : une liste pas vide n est pas un atome
+[11:52] Bnyat Bnyat : du coup if(atom l) ça veut dire un élément dans la liste l?
+[11:53] Mathieu Lafourcade : non ca veut dire que l est un atome
+[11:53] Mathieu Lafourcade : si tu veux tester que l est une liste vide ca marche
+[11:53] Mathieu Lafourcade : (null l) marche aussi
+[11:53] Mathieu Lafourcade : et est plus clair
+[11:57] Bnyat Bnyat : mais (null l) est le contraire de (atom l) ?
+[11:58] Mathieu Lafourcade : nononon pas vraiment, null indique s il sagit de la liste vide
+[11:58] Mathieu Lafourcade : atome si c est un atome
+[11:59] Mathieu Lafourcade : or NIL est a la fois un atome et la liste vide (c'est le seul cas comme ça)
+[12:00] Bnyat Bnyat : ah alors dans les deux premiers on veut dire que si (atom l) passe à l'étape suivante?
+[12:00] Mathieu Lafourcade : oui
+[12:00] Bnyat Bnyat : merci
+[12:38] Bnyat Bnyat : cons(monmakelist(-n 1)) , ici à chaque étape cons engistre le valuer n-1 dans la liste?
+[12:41] Bnyat Bnyat : *cons n(monmakeliste(-n 1))
+[12:45] Mathieu Lafourcade : ca la concatène à la liste
+[12:45] Mathieu Lafourcade : ca la rajoute en tete de la liste
+[12:45] Mathieu Lafourcade : c'est ce que fai la fonction cons, de rajouter un element en tete de liste
+[12:46] Mathieu Lafourcade : (cons x l)
+[12:46] Mathieu Lafourcade : retourne la liste ( x . l )
+[12:47] Bnyat Bnyat : merci beaucoup
