@@ -1,0 +1,16 @@
+Si vous placez ces fichiers dans le même répertoire que votre code.c ou code.cpp faire :
+include le calcul.h
+
+compiler en deux étapes : 
+pour le C :
+
+gcc -c  code.c
+
+gcc calculC.o code.o -o executable
+
+pour C++ :
+
+g++ -c  code.cpp
+
+g++ calculCC.o code.o -o executable
+

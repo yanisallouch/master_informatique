@@ -1,0 +1,38 @@
+==00:00:00:00.000 7767== Memcheck, a memory error detector
+==00:00:00:00.000 7767== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==00:00:00:00.000 7767== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==00:00:00:00.000 7767== Command: ./a.out
+==00:00:00:00.000 7767== Parent PID: 5702
+==00:00:00:00.000 7767== 
+==00:00:00:00.506 7767== Invalid read of size 1
+==00:00:00:00.506 7767==    at 0x48CBCBA: ____strtol_l_internal (strtol_l.c:292)
+==00:00:00:00.506 7767==    by 0x48C7743: atoi (atoi.c:27)
+==00:00:00:00.506 7767==    by 0x109700: main (exo4.c:99)
+==00:00:00:00.506 7767==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==00:00:00:00.506 7767== 
+==00:00:00:00.506 7767== 
+==00:00:00:00.506 7767== Process terminating with default action of signal 11 (SIGSEGV)
+==00:00:00:00.506 7767==  Access not within mapped region at address 0x0
+==00:00:00:00.506 7767==    at 0x48CBCBA: ____strtol_l_internal (strtol_l.c:292)
+==00:00:00:00.506 7767==    by 0x48C7743: atoi (atoi.c:27)
+==00:00:00:00.506 7767==    by 0x109700: main (exo4.c:99)
+==00:00:00:00.506 7767==  If you believe this happened as a result of a stack
+==00:00:00:00.506 7767==  overflow in your program's main thread (unlikely but
+==00:00:00:00.506 7767==  possible), you can try to increase the size of the
+==00:00:00:00.506 7767==  main thread stack using the --main-stacksize= flag.
+==00:00:00:00.506 7767==  The main thread stack size used in this run was 8388608.
+==00:00:00:00.517 7767== 
+==00:00:00:00.517 7767== HEAP SUMMARY:
+==00:00:00:00.517 7767==     in use at exit: 628 bytes in 4 blocks
+==00:00:00:00.517 7767==   total heap usage: 5 allocs, 1 frees, 1,652 bytes allocated
+==00:00:00:00.517 7767== 
+==00:00:00:00.545 7767== LEAK SUMMARY:
+==00:00:00:00.545 7767==    definitely lost: 0 bytes in 0 blocks
+==00:00:00:00.545 7767==    indirectly lost: 0 bytes in 0 blocks
+==00:00:00:00.545 7767==      possibly lost: 544 bytes in 2 blocks
+==00:00:00:00.545 7767==    still reachable: 84 bytes in 2 blocks
+==00:00:00:00.545 7767==         suppressed: 0 bytes in 0 blocks
+==00:00:00:00.545 7767== Rerun with --leak-check=full to see details of leaked memory
+==00:00:00:00.545 7767== 
+==00:00:00:00.545 7767== For lists of detected and suppressed errors, rerun with: -s
+==00:00:00:00.545 7767== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
