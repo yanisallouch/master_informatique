@@ -1,0 +1,5 @@
+State Partie 1 - Reprendre en Java/Eclipse l'implantation d'une calculette donnée dans le cours. Mais au lieu de faire une version infixée, faites une version préfixée (on doit entrer "+ puis 1 puis 2" au lieu de "1 puis + puis 2" pour calculer 1+2).
+
+State Partie 2 - encodage d'une machine à état, voir les questions 1, 2, 3 et 4. Pour la question 5, ceux qui le souhaitent peuvent migrer sur la partie 3 de l'exercice.
+
+State Partie 3 - Implantation de la Calculette donnée en cours, en Pharo-Smalltalk en utilisant la primitive de changement de classe adoptInstance qui permet de radicalement simplifier le schéma. 

@@ -1,0 +1,131 @@
+            [07:42] 12305 : bonjour
+[07:45] 12301 : bonjour :)
+[07:58] 12302 : oui
+[07:58] 12303 : Oui
+[07:58] 12304 : oui
+[07:59] 12305 : oui
+[07:59] Sensei : voyez vous mon écran
+[08:00] 12306 : Oui
+[08:00] 12307 : oui
+[08:00] 12303 : Oui
+[08:01] 12305 : il n'y a pas de page 45, il fait 24 pages
+[08:28] 12308 : mais si object o utilise d'autres méthodes après?
+[08:29] 12303 : Tu devrais prendre la parole car il ne regarde pas le tchat
+[08:30] 12308 : ah merci
+[08:31] 12309 : On créé cette sous-classe anonyme un peu comme l'on créée une function anonyme ?
+[08:32] 12309 : (pas forécment une question posé seulement au prof d'ailleurs)
+[08:38] 12301 : https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html
+[08:38] 12309 : ty
+[08:43] Sensei : avez vous un cours sur MVC
+[08:43] Sensei : ?
+[08:43] 12301 : non
+[08:43] 12305 : non
+[08:43] 12310 : non
+[08:44] 12302 : Ceux qui ont l'option IHM
+[08:44] 12311 : Non, mais on l'a vue un petit peu en PHP (vraiment un bref passage)
+[08:44] 12302 : Donc très peu de personnes
+[08:55] 12312 : Une interface en Java n'a que des méthode , il n'y aurait pas vraiment de liens en dehors de la méthode . Potentiellement il faudrait changer l'implémentation de la méthode mais je ne vois pas ce que ça apporte en plus sur le découplage .
+[08:55] 12301 : le singleton ?
+[08:57] 12301 : @12312 l'interface propose un contrat (de méthode) donc si tu te limite qu'a leur utilisation, sur un exemple interface List : add, get, remove, tu peux utiliser une ArrayList comme une LinkedList (deux fonctionnement différent)
+[08:59] 12301 : et si tu imagine ça avec un diag de Venn, imagine un cercle pour ton programme qui se croise avec l'ensemble List : composé de deux sous ensemble ArrayList et LinkedList
+[08:59] 12312 : @12301 Je crois avoir saisie ,merci!
+[09:05] 12313 : ça coupe
+[09:05] 12301 : pareil
+[09:05] 12305 : pareil
+[09:05] 12314 : pareil
+[09:06] 12309 : Houston, on vous reçoit pas bien
+[09:06] 12313 : j'ai rien compris des dernières 2 min du coup
+[09:06] 12315 : Guilhem notre sauveur
+[09:06] 12316 : oui
+[09:06] 12303 : Oui
+[09:06] 12304 : oui
+[09:06] 12317 : oui
+[09:06] 12302 : Oui !
+[09:06] 12318 : oui super
+[09:06] 12309 : oui
+[09:07] 12316 : oui
+[09:07] 12309 : Oui
+[09:07] 12317 : oui
+[09:22] Sensei : Ou se trouve l'affectation polymorphique ?
+[09:23] 12301 : CompteurView v = new  CompteurView(m, new CompteurController(m));
+[09:25] 12309 : parce que "Compteur extends Model"
+[09:25] Sensei : exact
+[09:32] 12312 : j'ai une question sur le polymorphisme d'inclusion
+[09:32] Sensei : 12 mn de pause, à tout de suite
+[09:32] 12312 : et d'exclusion
+[09:32] Sensei : oui ...
+[09:32] 12312 : j'ai pas bien compris la différence
+[09:32] 12312 : entre les 2
+[09:33] 12312 : eclusion
+[09:33] Sensei : je n'ai jamais parlé de polymorphisme d'exclusion
+[09:33] 12312 : je suis plus sure du nom désoler
+[09:33] Sensei : toute voiture est un véhicule
+[09:34] 12312 : inclusion et composition pardon
+[09:35] Sensei : il s'agit de paramétrage
+[09:35] 12312 : d'accord merci
+[09:41] 12312 : Donc oui j'ai retrouvé mes questions
+[09:41] Sensei : Nous ouvrons en fait 3 groupes de TD-TP à distance, correspondant aux groupes habituels.
+[09:41] Sensei : Le 3ième groupe va apparaître sous peu sur Moodle
+[09:42] 12312 : alors c'étais sur les polymophisme induite et explicite
+[09:43] 12312 : explicite ce serais comme l'exemple précédent avec le compteur ?
+[09:43] Sensei : vous me poserez la question de vive voix ... attendons que les TDs débutent
+[09:48] 12312 : Je suis impaire du coup je vais rejoindre un autre groupe.
+[09:49] Sensei : en fait il y a maintenant 3 groupes correspondant aux groupes habituels d'avant
+[09:51] Sensei : vous pouvez rejoindre votre groupe habituel
+[09:52] Sensei : voir sur Moodle les 3 groupes
+[09:53] 12303 : Oui
+[09:53] 12320 : oui
+[09:53] 12321 : oui
+[09:53] 12322 : oui
+[09:53] 12323 : oui
+[09:53] Sensei : On y va, vous êtes là ?
+[09:53] 12324 : oui
+[09:53] 12325 : oui
+[10:10] Sensei : A vous !
+[10:12] Sensei : Je coupe mon écran 10 min.
+[10:24] Sensei : un petit point ...
+[10:36] Sensei : à vous ...
+[10:38] Sensei : Je suggère en premier lieu d'écrire la méthode compile de la classe Compiler
+[10:38] Sensei : c'est le coeur du framework
+[10:39] 12311 : On aurait une classe correspondant à Application (Compiler ?) et ensuite une classe Abstraite Factory puis des LanguageFactory extends de cette classe là ?
+[10:48] Sensei : oui c'est ça
+[10:52] Sensei : Corrigé de la méthode compile donné
+[10:56] 12311 : Dans votre schéma les méthodes scan,parse... des classes abstraites Lexer,Parser.. sont bien abstraites ?
+[10:57] Sensei : oui
+[10:57] 12311 : Merci!
+[10:59] Sensei : Elles représentent les concepts (analyse syntaxique par exemple) et définissent les prototoles (méthode parse(...) ..)
+[11:00] Sensei : maintenant ... le constructeur de la classe Compiler
+[11:01] Sensei : et les injections de dépendances
+[11:02] Sensei : si vous compilez un programme Java, il faut que l'attribut Parser référence un JavaParser
+[11:04] Sensei : faites le lien avec l'exemple donné dans le texte du TP ...
+[11:05] 12311 : Dans CompilerFactory on a des méthodes createLexer() ect.. à redéfinir dans les Factory de language ?
+[11:11] Sensei : oui exactement
+[11:14] Sensei : Donc maintenant vous pouvez écrire le constructeur de Compiler
+[11:16] 12326 : On ne voit plus votre écran
+[11:17] 12320 : On ne voit plus votre écran
+[11:23] 12322 : oui
+[11:36] 12327 : override
+[11:45] 12311 : Pourquoi dans les Factory on doit créer des Class comme class JavaLexer extends Lexer plutôt que juste extends Lexer dans les factory ?
+[11:48] 12311 : class JavaLexer extends Lexer {
+
+        @Override
+        public ScanedText scan(ProgramText t) {
+            System.out.println("Je scan un programme Java");
+            return new ScanedText();
+        }
+    }
+[11:48] 12311 : Je fais ça
+[11:48] 12311 : Dans ma classe JavaFactory
+[11:48] 12311 : Oui mais du coup pourquoi on doit faire une class JavaLexer dans JavaFactory ? Plutôt que juste extends de Lexer
+[11:49] 12311 : Pour redéfinir la méthode scan je comprend pas pourquoi on doit recréer une class supplémentaire
+[11:51] 12311 : Et qu'est-ce qui nous aurait empêcher de faire JavaFactory extends Lexer et écrire directement scan dans JavaFactory plutôt que de rajouter une sous classe, c'est juste pour éviter que JavaFactory sois une sous classe de Lexer?
+[11:53] 12311 : Dans l'idéal une classe "CompilationMethod" contenant Scan/PrettyPrinter.... et JavaFactory extends CompilationMethod mais du coup oui je comprend que dans notre cas il y avait pas vraiment le choix de faire des sous classes
+[11:55] Sensei : Sans attributs sur les Parser, Lexer etc, cela peut fonctionner comme vous le dites
+[11:56] 12311 : D'accord merci!
+[12:01] Sensei : D'autres questions ?
+[12:04] 12303 : Merci au revoir
+[12:04] 12306 : Merci au revoir
+[12:04] Sensei : Si pas d'autre question ... à bientôt
+[12:04] 12325 : merci
+[12:04] 12320 : merci au revoir bonne journée
+[12:04] 12302 : Bonne journée

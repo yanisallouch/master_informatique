@@ -1,0 +1,12 @@
+true
+Rouge=Red
+Orienter=NO_COLOR
+PointeFermer=Blue
+PointeV=Blue
+Rectangulaire=Pink
+Vert=Dark_Green
+Sommets=Yellow
+Elliptique=Pink
+NonOrienter=NO_COLOR
+Aretes=NO_COLOR
+Couleurs=Yellow

@@ -1,0 +1,71 @@
+>>>>> slide 2 <<<<<
+
+	This thesis was supported by Mélissa Rossi the 10th September 2020 at University of Paris. As of today she works as member of the cryptography team in the French cybersecurity agency known as ANSSI.
+
+>>>>> slide 3 <<<<<
+
+	I chosed to present her work because as we all know, cryptography is the science of private message.
+	And as of today and right now it's an important matter to discuss and to talk with.
+
+	It concern a broad spectrum of our daily numeric life, we find it in smartphones for decades, connected watches, our credit card and some health equipment but it's not restricted to object that are electrically powered for exemple our ID cards.
+
+>>>>> slide 3 animation 1 <<<<<
+
+	And all of this device can be seen as a bunch of keys that we keep preciously with us and that help us to secure our life, our sensitive informations and our identity.
+
+	They are stored as numbers on each devices and most of the time, their access is prohibited without a password.
+
+	This bunch of keys allow us to operate actions only the owner can do, like with a credit card only the owner can withdraw money from the ATM.
+
+>>>>> slide 3 animation 2 <<<<<
+
+	This operations used cryptographic algorithms that we calls asymetric that we will symbolize as a lock in this presentation.
+
+	I need to reminds you that the lock will unlock only if given the correct key and without the key and only looking at the openly avaible parameters of the algorithm, no one is able to reconstruct a key in reasonable time to unlock it.
+
+	So everything seems fine ? You may ask me why are you even bothering yourself presenting this subject to us ? That's just fine, so let me show you the fields of the algorithm used as of today and that we know so far so you can have a broader comprehension of this research.
+
+>>>>> slide 4 <<<<<
+
+	So most of our algotrithms in cryptography today use exactly only properties from two mathematicals problems.
+
+
+>>>>> slide 4 animation 1 <<<<<
+
+	In one hand we have RSA.
+
+>>>>> slide 4 animation 2 <<<<<
+
+	In the ohter hand it's called discrete logarithm.
+
+	I won't go any further in details from the mathematical point of view, because i won't pay any respect to her work. So if you are really interested, at the end of the presentation i can share the link towards the paper.
+
+	So both of this mathematical tools stand on the property of prime numbers, which lay back on the problem for prime numbers factorisation.
+
+>>>>> slide 4 animation 3 <<<<<
+
+	And the security in this model comes from the fact i said earlier : no one is able to reconstruct the key in a reasonable time. To give you a number, she estimated that for a normal implementation you will need at least SEVEN HUNDRED AND THIRTEEN THOUSANDS years to generate only one key.                     712 854 years.
+
+	This stands only for today but what of tomorrow ? It's not that unlikely to think in a more or less distant future of a computer powerful enough to generate the key in seconds.
+
+>>>>> slide 4 animation  <<<<<
+
+	Yet it's not for tomorrow that we will see such computer and even with the promising announcement from Google or IBM we are yet to achieve such computers.
+
+	Another incentive for searching alternatives it's because the panorama today looks like that ...
+
+>>>>> slide 4 animation  <<<<<
+
+	It would help us to avoid monoculture. Which will help us to avoid having all of our solutions getting down at once.
+
+	And this is exactly the thesis of Melissa Rossi.
+
+	Among the plethore of techniques avaible to be studied, they all share a common property. It's that they are all based on different mathematical problem. And her doctoral school elected the LATTICES-BASED problems.
+
+	They are mathematical discrete geometric structures that correspond to point separated uniformly. In this structure, the question "what is the minimal distance between two points A and B" is considered to be a DIFFICULT PROBLEM.
+
+	But in cryptography this problem is dived into deeper dimensions and the problem become VERY difficult. And she takes advantages of this difficulty to conceive new asymetric systems that looks promising for now.
+
+	In fact it won't give a 100% security, and depends of the hypothesis of the problem that include the difficulty just as explained before and the context of usage.
+
+	All the techniques she works on, are less than a TWENTY years old. Which is almost as old as me nonetheless it's an empty field to be studied.

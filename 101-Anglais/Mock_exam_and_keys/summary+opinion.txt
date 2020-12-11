@@ -1,0 +1,14 @@
+As part of fourteens europeans partners involved in a ferious project, the open university is developping ways of identifying and searching for audio-visual media. Usually we would enter as much keyword as needed to find what we are looking for.
+
+In order for this kind of search to be efficient, one have to catalog manually all of those keywords to one  concept. Pharos is able to get information from pictures, the color, the edges, the pixel and try to search for patterns.
+
+With a mathematical approch, they can determine how much a picture is similar to another.
+We can imagine a near futur, how shopping would be surprisingly more easier. Imagine shopping a peticuliar dress, and the website suggest you a trousser with similar colour, texture or patterns.
+
+Opinion:
+
+I do believe that this science is more than welcome today but as every tools developped for a greater good, in one hand i'm convinced that this will be used as a targeting practices by scrupulous website (even notable ones) tp sell more craps to their clients.
+
+On the other hand, private interest may involves themselves to shift the balance towards their goals during this project, as we are all aware of the recent developpment in image recognition from China for example to track their own citizen, thieft, criminals or political prisoners.
+
+I hope that people who don't understand science and specifically computer science should not worry about the the "machines taking advantages" but more about private interest. Like Leonard Nimoy said “The more we share the more we have.”.

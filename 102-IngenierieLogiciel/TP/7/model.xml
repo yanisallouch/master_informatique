@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="5"/>
+	</properties>
+	<struct>
+		<and mandatory="true" name="GenerateurDeGraphe">
+			<or mandatory="true" name="Sommets">
+				<graphics key="collapsed" value="false"/>
+				<feature name="Rectangulaire"/>
+				<feature name="Elliptique"/>
+			</or>
+			<alt mandatory="true" name="Aretes">
+				<feature name="NonOrienter"/>
+				<alt name="Orienter">
+					<feature name="PointeFermer"/>
+					<feature name="PointeV"/>
+				</alt>
+			</alt>
+			<or name="Couleurs">
+				<feature name="Rouge"/>
+				<feature name="Vert"/>
+			</or>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>Orienter</var>
+				<not>
+					<var>NonOrienter</var>
+				</not>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

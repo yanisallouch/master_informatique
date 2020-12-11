@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="GenerateurDeGraphe"/>
+	<feature automatic="selected" name="Sommets"/>
+	<feature manual="selected" name="Rectangulaire"/>
+	<feature name="Elliptique"/>
+	<feature automatic="selected" name="Aretes"/>
+	<feature manual="selected" name="NonOrienter"/>
+	<feature automatic="unselected" name="Orienter"/>
+	<feature automatic="unselected" name="PointeFermer"/>
+	<feature automatic="unselected" name="PointeV"/>
+	<feature name="Couleurs"/>
+	<feature name="Rouge"/>
+	<feature name="Vert"/>
+</configuration>

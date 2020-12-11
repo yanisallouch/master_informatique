@@ -1,0 +1,119 @@
+            [09:39] 12301 : oui
+[09:39] 12302 : OUI
+[09:39] 12301 : oui
+[09:41] Sensei : TD TP 7 : http://www.lirmm.fr/~dony/enseig/IL/index.html
+[09:47] 12303 : le son n'est pas tres bon
+[09:47] 12301 : le soucis n'est pas le volume , ca saccade
+[09:47] 12304 : C'est pas un probleme de volume mais de qualité de son
+[09:47] 12301 : *sa
+[09:49] 12301 : oui
+[09:49] 12304 : Oui
+[09:49] 12305 : oui
+[09:49] 12306 : beaucoup mieux oui
+[09:49] Sensei : TD TP 7 : http://www.lirmm.fr/~dony/enseig/IL/index.html
+[09:57] 12307 : Concernant le lien wiki donné dans le 1.2, il faut suivre ce lien : https://fr.wikipedia.org/wiki/Fabrique_abstraite
+[10:02] 12307 : sur ce qu'il fait en soit non, le problème est plus comment utiliser l'injection de dépendance, l'inversion de contrôle etc pour créer notre framework ^^'
+mais bon, ça devrait venir...
+[10:06] 12301 : non non
+[10:06] 12304 : Si si on vous entend
+[10:06] 12305 : oui
+[10:06] 12304 : Oui
+[10:06] 12305 : si
+[10:06] 12301 : si si
+[10:07] 12304 : Votre micro est même très fort et y'a pas moyen de réguler le son sur BBB ^^
+[10:07] 12304 : Je vais regarder dans les parametres de session Linux
+[10:07] 12304 : Je suis sur X2GO
+[10:07] 12305 : sur windows -> windows sound
+[10:07] 12304 : OUi
+[10:08] 13208 : Donc pour chaque langanguage on fait une sous classe?
+[10:13] 13208 : du coup on a pas besoin de créer 3 classe d'abstrait , lexer parser .... , au lieu de ça on créer une classe fabrique abstrait?
+[10:14] Sensei : si on va quand meme définir un lexer, parser, etc... qui seront abstrait
+[10:14] Sensei : puis on va ecrire les sous classes spécifique à chaque classe abstraite
+[10:14] Sensei : voir figure 1
+[10:15] Sensei : on a produitABstraitA qui correspond à, par exemple, Lexer
+[10:15] Sensei : donc on aura un LexerJava, instancié par une CompileurFabriqueJava
+[10:15] Sensei : et CompileurFabriqueJava hérite de CompileurFabrique
+[10:16] Sensei : (la notion d'heritage de classe peut être aussi faite via une interface tel l'exemple)
+[10:17] 13208 : merci
+[10:21] 12304 : Il n'y aura pas également la fonction compile ?
+[10:22] 12304 : Ah compile sera dans la fabrique abstraite et appellera les  méthodes c'est ça ?
+[10:22] 12307 : oui je pense
+[10:22] 12304 : ok !
+[10:22] 12307 : et on spécifie les méthodes pour chaque langage
+[10:25] 12307 : oui
+[10:29] 13208 : par exemple dans le figure 1 fabriqueConcerent1 correspond à fabriqueJava , fabriqueConcerent2 à fabriqueC++ et etc?
+[10:29] Sensei : oui
+[10:30] 13208 : merci
+[10:30] 13208 : et produitA1 c'est lexerJava par exemple oui?
+[10:31] Sensei : exact!
+[10:31] 13208 : cool merci
+[10:45] Sensei : est-ce qu'il y a quelqu'un qui a fini la modélisation du premier exercice?
+[10:46] 12307 : on est d'accord qu'on doit "juste" adapter la figure 1 à notre problème ou on a des extensions à réaliser ?
+[10:47] Sensei : vous devez le réaliser par la suite
+[10:47] Sensei : Exo1 :
+1) diagramme uml de votre architecture
+2) coder l'architecture
+[10:48] 12307 : oui oui, je parlais juste de la modélisation, pas de son implémentation ^^
+[10:48] Sensei : après vous ne devez pas implémenter serieusement le compileur, des println suffisent
+[10:48] 12307 : heureusement...
+[10:55] 12309 : Donc pas besoin d'implementer tout ce qui est ScanedText, ProgramText etc .. ?
+[10:55] 12304 : On est d'accord que Compiler c'est une classe a créer en plus ?
+[10:55] 12304 : Dans laquelle on met  méthodes : Scan, Parse et Generate qui println ?
+[10:57] Sensei : @12309 non
+[10:57] Sensei : @12304 
+1) Oui, Compiler est notre "Client"
+[10:58] 12304 : Ok merci
+[10:58] Sensei : 2) on les défini dans leurs classes correspondante Lexer, Parser, Generator (voir page 1)
+[10:59] Sensei : Pour les classes ScannedText, AST et File, vous pouvez faire des classes vide ou remplacer le retour par un void puisque les methodes ne contienent seulement des printlns
+[11:06] 12307 : j'ai pas fini d'implémenter l'exo 1 mais j'ai fait le diagramme UML du 2 ^^'
+[11:06] 13208 : du coup par exemple dans la méthode créerProduitA on doit invoquer ProduitA?
+[11:07] 12309 : On doit aussi implementer une exception particuliere ou on peut juste faire un simple print dans le catch ?
+[11:14] 12305 : je crois que c'est mon pc qui a buf
+[11:15] 12305 : *g
+[11:15] <br>Bienvenue sur <b>TD-TP#2</b>!<br><br>Pour comprendre comment fonctionne BigBlueButton, veuillez voir nos <a href="http://www.bigbluebutton.org/content/videos" target="_blank"><u>tutoriels vidéos</u></a>.<br><br>Pour joindre la communication audio, cliquez sur l'icône du casque (en haut à gauche). <b>Merci d'utiliser un casque, pour éviter l'écho.</b><br><br>Cette session peut être enregistrée.
+[11:16] 12305 : https://puu.sh/GJzZz/a344d00f34.png
+[11:16] 12305 : c'est mon code sur eclipse
+[11:19] 12303 : on n'as plus d'image. C'est la pause ou ça bug ?
+[11:27] Sensei : non j'ai pas remis le pdf
+[11:27] Sensei : mais je suis avec Yanis, n'hesitez pas à poser des questions ou prendre votre pause :)
+[11:28] 12303 : ok
+[11:30] 12309 : Dans l'exo 1, dans le main on a juste compiler dans un try, est-ce que avant on doit faire des appels aux factory ou pas ?
+[11:33] 12309 : D'accord donc on instancie les factory dans l'appel de compiler ?
+[11:33] 12309 : enfin dans son constructeur*
+[11:34] 12309 : D'accord
+[11:34] 12303 : non on voit le pdf
+[11:44] 12303 : oui
+[11:44] 12301 : oui
+[11:45] 12303 : oui on voit le schema uml
+[11:56] 12305 : allo ?
+[11:56] 12305 : vous etes entrain de parler ?
+[12:07] 13208 : vous pouvez expliquer le jeu un peu s'il vous plîat , je comprends pas comment il marche
+[12:13] 13208 : non je comprends pas
+[12:14] 12303 : le pendu ?
+[12:16] 12309 : Ouais
+[12:18] 13208 : donc l'objectif c'est d'associer les symboles et les lettres?
+[12:18] 12305 : non
+[12:18] 12305 : ca c'est un moyen
+[12:18] 12305 : l'objectif c'est de faire une factory de difficulté
+[12:19] 13208 : merci
+[12:19] 12305 : je vois pas encore comment mais on va génrérer un jeu parametré par ca difficulté
+[12:20] Sensei : oui on va utiliser les patterns abs factory + DI + IoC pour faire un jeu paramétré
+[12:20] 12309 : On a que cette seance pour ce TP ou on a la semaine pro aussi ?
+[12:21] Sensei : nos produits seront l'alphabet et la GestPhraseMystere (guidé ou non-guidé)
+[12:22] 12305 : https://puu.sh/GJAP8/de318b32d6.png
+[12:22] 12305 : ?
+[12:22] Sensei : @Anthony normalement vous n'avez que ce TP. à voir avec M. Dony et la vitesse de vos collègue. Avec le confinement on va voir si tout le monde arrive à suivre
+[12:23] Sensei : @Yanis oui
+[12:23] 13208 : c'est trop difficile à comprendre haha
+[12:25] 13208 : oui
+[12:26] 12309 : Bah en vrai avoir 2 séances pour ça, ca serait pas mal x)
+[12:31] 12305 : https://puu.sh/GJATZ/2374094246.png ça peut t'aider @bnyat
+[12:32] 12305 : j'ai pas encore essayer de comprendre le pourquoi du comment mais j'ai repris la structure d'avant, essaie de faire pareil
+[12:33] Sensei : je m'absente 2 minute
+[12:35] 13208 : merci beaucoup @Yanis
+[12:52] Sensei : je vous laisse, si vous avez des questions n'hesitez pas à nous contacter
+[12:52] Sensei : par mail
+[12:53] 12305 : d'accord
+[12:53] 12305 : bonne journée
+[12:53] 12303 : bonne journée
+[12:53] Sensei : bonne journée
