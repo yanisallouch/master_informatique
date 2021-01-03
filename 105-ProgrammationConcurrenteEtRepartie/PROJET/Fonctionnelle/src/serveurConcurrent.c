@@ -170,7 +170,7 @@ int main( int argc, char *argv[] ) {
 	}
 	/* Initialize socket structure */
 	bzero((char *) &serv_addr, sizeof(serv_addr));
-	portno = 8181;
+	/*portno = 8181;*/
 	serv_addr.sin_family = AF_INET;
 	serv_addr.sin_addr.s_addr = INADDR_ANY;
 	serv_addr.sin_port = htons(portno);
@@ -303,7 +303,7 @@ void initSites(struct site * sitesDispo, int* taille){
 }
 void affichageSites(struct site * sitesDispo, int taille){
 	//system("clear");
-	printf("%-5s %-16s %-6s %-6s %-6s %-6s %-6s %-6s\n", "ID", "Label", "CPU-T","CPU-E","CPU-P", "Go-T","Go-E","Go-P");
+	printf("%-5s %-16s %-6s %-6s %-6s %-6s %-6s %-6s\n", "ID", "Label", "CPU-T","Go-T","CPU-E", "Go-E","CPU-P","Go-P");
 	printf("---------------------------------------------------------------\n");
 	for (size_t i = 0; i < (size_t)taille; i++) {
 		printf("%-5d %-16s %-6d %-6d %-6d %-6d %-6d %-6d\n", (int)i, sitesDispo[i].label, sitesDispo[i].nbProcesseur, sitesDispo[i].nbCapaciteStockage, sitesDispo[i].nbProcesseurExclusif, sitesDispo[i].nbCapaciteStockageExclusif, sitesDispo[i].nbProcesseurPartage, sitesDispo[i].nbCapaciteStockagePartage );

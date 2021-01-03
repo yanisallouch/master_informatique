@@ -303,7 +303,7 @@ void initSites(struct site * sitesDispo, int* taille){
 }
 void affichageSites(struct site * sitesDispo, int taille){
 	//system("clear");
-	printf("%-5s %-16s %-6s %-6s %-6s %-6s %-6s %-6s\n", "ID", "Label", "CPU-T","CPU-E","CPU-P", "Go-T","Go-E","Go-P");
+	printf("%-5s %-16s %-6s %-6s %-6s %-6s %-6s %-6s\n", "ID", "Label", "CPU-T","Go-T","CPU-E", "Go-E","CPU-P","Go-P");
 	printf("---------------------------------------------------------------\n");
 	for (size_t i = 0; i < (size_t)taille; i++) {
 		printf("%-5d %-16s %-6d %-6d %-6d %-6d %-6d %-6d\n", (int)i, sitesDispo[i].label, sitesDispo[i].nbProcesseur, sitesDispo[i].nbCapaciteStockage, sitesDispo[i].nbProcesseurExclusif, sitesDispo[i].nbCapaciteStockageExclusif, sitesDispo[i].nbProcesseurPartage, sitesDispo[i].nbCapaciteStockagePartage );

@@ -1,0 +1,6 @@
+[
+    {"name": "Montpellier", "cpu": 92, "memory": 700},
+    {"name": "Lyon", "cpu": 64, "memory": 1200},
+    {"name": "Paris", "cpu": 162, "memory": 3000},
+    {"name": "Tours", "cpu": 16, "memory": 300}
+]

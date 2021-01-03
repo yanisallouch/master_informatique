@@ -1,0 +1,11 @@
+id,idlieu,nom,designationinterne,airedestockageeffectifentrepot,nbtotalpalettestockable,typelieu,hemisphere,continent,pays,ville,codepostal,numadresse,addressecomplete,nbpersonnel
+1,9,"Hauck, Leannon and Stark",5LvSpP-4HuBTi-jyeGTT,602,19,usine,nord,Oceania,Greece,Néos Oropós,,631,8367 Anzinger Street,55
+2,66,"Schultz, Will and Pouros",3Bv22C-5NBW09-8KAeUE,238,93,entrepot,sud,Europe,Brazil,Rio das Ostras,28890-000,6282,837 Dawn Hill,16
+3,52,"Doyle, Borer and Parker",pRL6AL-qMEyvP-OQxOSl,132,38,entrepot,sud,Europe,Russia,Chistopol’,422986,7124,2473 Lindbergh Pass,92
+4,36,Jones Inc,sWMsuu-ItSG0M-gIXU3q,748,12,non-defini,sud,North America,Japan,Kannabechō-yahiro,720-2417,2,8319 Gale Avenue,88
+5,35,"Corwin, Davis and Armstrong",akG0xP-12Amuk-o65WtS,193,82,entrepot,sud,Europe,Philippines,Limbuhan,7203,18,5 Emmet Avenue,88
+6,86,"Zboncak, Blick and Nitzsche",jymsnx-YNMVo3-tj9S0c,87,34,usine,nord,North America,New Zealand,Rosebank,1746,8323,6526 Derek Crossing,1
+7,18,"Okuneva, Powlowski and Witting",LscfwL-SQswPD-6uCLgU,775,82,usine,sud,North America,Australia,Sydney,1171,1483,3460 Lunder Way,13
+8,18,Okuneva LLC,A3g08S-bYnRWx-amxe3S,958,21,non-defini,sud,Europe,Czech Republic,Libušín,273 06,7,10845 Fordem Parkway,46
+9,48,Ledner-Hansen,RpjWwp-8jMapP-obvFwY,652,79,non-defini,sud,South America,China,Dongshi,,120,1 Spohn Drive,36
+10,37,"Cronin, Waelchi and Schimmel",Zd4lgB-JH0nHA-E8dktm,279,90,entrepot,sud,Africa,China,Mahong,,138,5030 Rockefeller Street,64

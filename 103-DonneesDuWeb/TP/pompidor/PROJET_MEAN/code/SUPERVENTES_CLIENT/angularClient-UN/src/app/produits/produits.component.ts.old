@@ -1,0 +1,22 @@
+import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+
+@Component({
+	selector: 'app-produits',
+	templateUrl: './produits.component.html',
+	styleUrls: ['./produits.component.css']
+})
+export class ProduitsComponent implements OnInit {
+	public produits : Object[] = [{"nom":"quercétine", "type":"anti-oxydant"},
+	 {"nom":"caféine", "type":"anti-fatigue"}] ;
+
+	/* Not useful */
+	title = 'My awesome Angular Project Produits changed title !';
+	/* Not useful */
+
+	constructor() {
+	}
+
+	ngOnInit(): void {
+	}
+}

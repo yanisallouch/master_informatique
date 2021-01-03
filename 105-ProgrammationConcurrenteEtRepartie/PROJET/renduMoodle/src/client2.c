@@ -201,7 +201,7 @@ int main(int argc, char *argv[]) {
 }
 void affichageRessources(struct site * sitesDispo, int taille){
 	// system("clear");
-	printf("%-5s %-16s %-6s %-6s %-6s %-6s %-6s %-6s\n", "ID", "Label", "CPU-T","CPU-E","CPU-P", "Go-T","Go-E","Go-P");
+	printf("%-5s %-16s %-6s %-6s %-6s %-6s %-6s %-6s\n", "ID", "Label", "CPU-T","Go-T","CPU-E", "Go-E","CPU-P","Go-P");
 	printf("---------------------------------------------------------------\n");
 	for (size_t i = 0; i < (size_t)taille; i++) {
 		P(semId, i);

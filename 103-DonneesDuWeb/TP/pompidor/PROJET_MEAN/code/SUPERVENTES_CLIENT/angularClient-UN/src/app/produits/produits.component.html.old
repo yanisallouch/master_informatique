@@ -1,0 +1,5 @@
+<p>produits works!</p>
+
+<ul>
+	<li *ngFor="let p of produits"> {{p.nom}} {{p.type}}</li>
+</ul>

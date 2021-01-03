@@ -1,0 +1,1 @@
+var jQueryFromXAQuery=jQuery.noConflict(!0);typeof $=="undefined"?($=jQuery,jQuery=jQueryFromXAQuery,typeof $=="undefined"&&($=jQueryFromXAQuery)):jQuery=jQueryFromXAQuery

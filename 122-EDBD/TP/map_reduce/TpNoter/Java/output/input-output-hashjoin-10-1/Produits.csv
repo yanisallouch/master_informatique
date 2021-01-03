@@ -1,0 +1,11 @@
+id,idProduit,nomProduit,gammeProduit,coutMoyen,gbuType,venduParQuantite,poidsTotal,largeurEmballage,longueurEmballage,hauteurEmballage,volumeEmballage
+1,63736-001,Monistat 1 Combination Pack,Miconazole Nitrate,4443.14,MS,20,291,452,415,280,180
+2,42248-130,PRO LASER,"OCTINOXATE, TITANIUM DIOXIDE, OXYBENZONE",1840.91,GP,38,33,25,284,145,353
+3,55648-555,RISPERIDONE,RISPERIDONE,1605.21,MG,37,22,193,147,348,452
+4,50436-3974,Loperamide Hydrochloride,loperamide hydrochloride,58.88,VA,23,431,32,50,127,178
+5,60505-3780,Venlafaxine Hydrochloride,venlafaxine hydrochloride,3131.75,MG,42,292,216,8,198,75
+6,43857-0248,Prostoforce,"Aralia Quinquefolia, Damiana, Hydrocotyle Asiatica, Juniperus Virginiana, Pareira Brava, Sabal Serrulata, Thuja Occidentalis, Clematis Erecta",593.79,MG,20,32,337,207,61,217
+7,61919-026,BACLOFEN,BACLOFEN,3987.07,MG,12,120,238,229,365,335
+8,21695-373,Zanaflex,tizanidine hydrochloride,1637.56,MG,50,233,483,246,68,276
+9,52544-233,Microgestin,Norethindrone Acetate and Ethinyl Estradiol and Ferrous Fumarate,1359.84,MS,40,345,131,499,414,175
+10,0049-0052,Geodon,ziprasidone hydrochloride,1615.90,VA,5,333,227,259,200,2

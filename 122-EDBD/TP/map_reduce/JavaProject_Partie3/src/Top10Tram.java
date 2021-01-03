@@ -1,8 +1,7 @@
 import java.io.IOException;
-import java.math.BigDecimal;
+//import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.TreeMap;
 import java.util.logging.FileHandler;
@@ -11,11 +10,9 @@ import java.util.logging.SimpleFormatter;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
@@ -88,7 +85,7 @@ class Reduce extends Reducer<Text, IntWritable, Text, IntWritable> {
 		int  sum = 0;
 		
 		Text keyCopy = new Text(key);
-		for (IntWritable val: values ) {
+		for (@SuppressWarnings("unused") IntWritable val: values ) {
 			sum+= 1;
 			
 		
