@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+            "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Création du graphe de flot de contrôle
+</TITLE>
+
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META name="GENERATOR" content="hevea 1.10">
+<STYLE type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.title{margin:2ex auto;text-align:center}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+DIV TABLE{margin-left:inherit;margin-right:inherit;}
+PRE{text-align:left;margin-left:0ex;margin-right:auto;}
+BLOCKQUOTE{margin-left:4ex;margin-right:4ex;text-align:left;}
+TD P{margin:0px;}
+BODY{background:white;}
+.title{padding:1ex;background:#00B200;}
+.titlemain{padding:1ex;background:#00B200;}
+.section{padding:.5ex;background:#2DE52D;}
+.subsection{padding:0.3ex;background:#66FF66;}
+</STYLE>
+
+<style type="text/css">
+pre, code, tt {font:12pt monospace;*font-size:100%;font-weight: bold;}
+</style>
+</HEAD>
+<BODY >
+<!--HEVEA command line is: hevea -entities -fix -O index.tex -->
+<!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Création du graphe de flot de contrôle</H1></TD></TR>
+</TABLE><DIV CLASS="center">
+Voici le <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/cours05.pdf">cours</A> correspondant. La solution se trouve dans le
+fichier <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/upp2rtlI.ml.html">upp2rtlI.ml</A>.
+</DIV><!--TOC section Présentation-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Présentation</H2><!--SEC END --><P>Le sujet est constitué par l&#X2019;archive <TT><A HREF="td5.tar.gz">td5.tar.gz</A></TT>. On construit
+l&#X2019;exécutable avec la commande <TT>make</TT>.</P><P>On continue le travail de transformation du programme. On a obtenu la semaine
+dernière un programme exprimé dans le langage intermédiaire <TT><SPAN STYLE="font-variant:small-caps">UPP</SPAN></TT>, qui
+utilise les opérateurs du MIPS, mais repose toujours sur des arbres de syntaxe
+abstraite, et distingue expressions, conditions, et instructions. La
+transformation que nous étudions aujourd&#X2019;hui, de <TT><SPAN STYLE="font-variant:small-caps">UPP</SPAN></TT> vers <TT><SPAN STYLE="font-variant:small-caps">RTL</SPAN></TT>,
+fait disparaître les arbres de syntaxe abstraite, et efface la distinction
+entre expressions, conditions et instructions: tout devient séquence
+d&#X2019;instructions. </P><P>Les variables locales (nommées) du programme <TT><SPAN STYLE="font-variant:small-caps">UPP</SPAN></TT> sont transformées en
+pseudo-registres (numérotés). Il est facile de créer de nouveaux
+pseudo-registres. La transformation que nous implémentons en créera parfois
+pour stocker des résultats intermédiaires.</P><P>Les arbres de syntaxe abstraite, qui représentent des structures de contrôle
+de haut niveau (conditionnelle, boucle), sont remplacés par des structures
+équivalentes de bas niveau (étiquettes et sauts). Dans <TT><SPAN STYLE="font-variant:small-caps">RTL</SPAN></TT>, chaque
+instruction possède une étiquette (ou label) qui l&#X2019;identifie de façon
+unique. Chaque instruction porte zéro, un ou deux labels qui représentent ses
+successeurs dans le graphe de flot de contrôle.</P><P>Commencez par comparer les définitions des langages source et cible de la
+transformation, données par <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/UPP.mli.html">UPP.mli</A> et <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/RTL.mli.html">RTL.mli</A>.</P><!--TOC subsection Ce que vous devez implémenter-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Ce que vous devez implémenter</H3><!--SEC END --><P>Pour des raisons pédagogiques, le code de la transformation est partagé en
+deux fichiers. Le premier, <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/upp2rtl.ml.html">upp2rtl.ml</A>, est donné; il définit
+quelques fonctions administratives dont vous n&#X2019;aurez pas à vous soucier. Le
+second, <TT>upp2rtlI.ml</TT>,est à compléter. (Le grand «I» peut signifier
+«intéressant»...) C&#X2019;est ce second fichier qui contient les fonctions
+les plus importantes:
+</P><PRE CLASS="verbatim">let translate_expression (destr : Register.t) (e : UPP.expression) (destl : Label.t) : Label.t = ...
+
+let translate_condition (c : UPP.condition) (truel : Label.t) (falsel : Label.t) : Label.t = ...
+
+let translate_instruction (i : UPP.instruction) (destl : Label.t) : Label.t = ...
+</PRE><P>Voici les spécifications de ces trois fonctions:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+<FONT COLOR="red"><TT>translate_expression</TT></FONT> engendre des instructions <TT><SPAN STYLE="font-variant:small-caps">RTL</SPAN></TT> dont l&#X2019;effet
+est d&#X2019;évaluer l&#X2019;expression <FONT COLOR="red"><TT>e</TT></FONT>, d&#X2019;en placer le résultat dans le
+pseudo-registre <FONT COLOR="red"><TT>destr</TT></FONT>, et de transférer le contrôle à l&#X2019;étiquette
+<FONT COLOR="red"><TT>destl</TT></FONT>.
+</LI><LI CLASS="li-itemize"><FONT COLOR="red"><TT>translate_condition</TT></FONT> engendre des instructions <TT><SPAN STYLE="font-variant:small-caps">RTL</SPAN></TT> dont l&#X2019;effet
+est d&#X2019;évaluer la condition <FONT COLOR="red"><TT>c</TT></FONT> et de transférer le contrôle à l&#X2019;une des
+étiquettes <FONT COLOR="red"><TT>truel</TT></FONT> ou <FONT COLOR="red"><TT>falsel</TT></FONT>, selon la valeur de la
+condition.
+</LI><LI CLASS="li-itemize"><FONT COLOR="red"><TT>translate_instruction</TT></FONT> engendre des instructions <TT><SPAN STYLE="font-variant:small-caps">RTL</SPAN></TT> dont
+l&#X2019;effet est d&#X2019;exécuter l&#X2019;instruction <TT><SPAN STYLE="font-variant:small-caps">UPP</SPAN></TT> <FONT COLOR="red"><TT>i</TT></FONT> puis de transférer le
+contrôle à l&#X2019;étiquette <FONT COLOR="red"><TT>destl</TT></FONT>.
+</LI></UL><P>
+Ces trois fonctions renvoient le label d&#X2019;entrée des instructions <TT><SPAN STYLE="font-variant:small-caps">RTL</SPAN></TT>
+qu&#X2019;elles ont engendrées.</P><P>Dans les trois cas, le graphe de flot de contrôle <TT><SPAN STYLE="font-variant:small-caps">RTL</SPAN></TT> en cours de
+construction reste implicite. Pour lui ajouter de nouveaux sommets et de
+nouvelles arêtes, vous disposez des fonctions <FONT COLOR="red"><TT>generate</TT></FONT> et <FONT COLOR="red"><TT>loop</TT></FONT>,
+décrites ci-dessous.</P><!--TOC subsection Ce qui vous est donné-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Ce qui vous est donné</H3><!--SEC END --><P>Le module <TT>upp2rtlI</TT> définit un foncteur, <TT>Make</TT>. (Un «foncteur»
+est une fonction qui attend un module et renvoie un module. On peut voir cela
+comme une simple facilité pour écrire une fonction qui attend de nombreux
+arguments et renvoie de nombreux résultats.) Les trois fonctions que vous
+devez compléter, <FONT COLOR="red"><TT>translate_expression</TT></FONT>, <FONT COLOR="red"><TT>translate_condition</TT></FONT> et
+<FONT COLOR="red"><TT>translate_instruction</TT></FONT>, font partie du résultat de ce foncteur. Pour
+les implémenter, vous aurez donc accès à l&#X2019;argument de ce foncteur. Cet
+argument, nommé <FONT COLOR="red"><TT>Env</TT></FONT>, vous offre une série de fonctions auxiliaires
+utiles:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+<FONT COLOR="red"><TT>lookup</TT></FONT> facilite la traduction entre variables et pseudo-registres;
+</LI><LI CLASS="li-itemize"><FONT COLOR="red"><TT>allocate</TT></FONT> fait apparaître un nouveau pseudo-registre;
+</LI><LI CLASS="li-itemize"><FONT COLOR="red"><TT>generate</TT></FONT> attend une instruction <TT><SPAN STYLE="font-variant:small-caps">RTL</SPAN></TT>, que vous aurez
+construite; il crée dans le graphe de flot de contrôle un nouveau sommet,
+qui porte cette instruction, et vous renvoie l&#X2019;étiquette de ce sommet;
+</LI><LI CLASS="li-itemize"><FONT COLOR="red"><TT>loop</TT></FONT>, décrite en cours, construit une boucle dans le graphe de
+flot de contrôle; si elle vous semble par trop mystérieuse, consultez son
+implémentation dans <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/upp2rtl.ml.html">upp2rtl.ml</A>;
+</LI><LI CLASS="li-itemize"><FONT COLOR="red"><TT>is_exit</TT></FONT> permet de reconnaître l&#X2019;étiquette de sortie du graphe
+de flot de contrôle;
+</LI><LI CLASS="li-itemize"><FONT COLOR="red"><TT>result</TT></FONT> indique si on compile une procédure ou une fonction.
+</LI></UL><!--TOC subsection Pour commencer-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Pour commencer</H3><!--SEC END --><P>La traduction de la plupart des instructions est déjà effectuée dans la
+fonction <FONT COLOR="red"><TT>translate_instruction</TT></FONT>. Relisez le code pour comprendre le
+fonctionnement à rebours de ces fonctions de transformation: on part du label
+de l&#X2019;instruction suivante et on renvoie le label de l&#X2019;instruction nouvellement
+créée.</P><P>Pour vous échauffer, traitez le cas d&#X2019;une constante dans
+<FONT COLOR="red"><TT>translate_expression</TT></FONT>. Cela permet d&#X2019;interpréter correctement le code
+<TT><SPAN STYLE="font-variant:small-caps">RTL</SPAN></TT> d&#X2019;un programme trivial qui appelle writeln:</P><PRE CLASS="verbatim"># ./compilo -irtl test/trivial.p
+# 10
+</PRE><!--TOC section Traduction des expressions-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Traduction des expressions</H2><!--SEC END --><P>Vous pourrez ensuite ajouter à <FONT COLOR="red"><TT>translate_expression</TT></FONT> les cas suivants:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+lecture d&#X2019;une variable globale (<FONT COLOR="red"><TT>EGetGlobal</TT></FONT>) &#X2013; facile, car cette instruction est traduite à l&#X2019;identique;
+</LI><LI CLASS="li-itemize">appel de fonction (<FONT COLOR="red"><TT>EFunCall</TT></FONT>) &#X2013; facile, car la fonction <FONT COLOR="red"><TT>translate_call</TT></FONT> est fournie;
+</LI><LI CLASS="li-itemize">lecture d&#X2019;une variable locale (<FONT COLOR="red"><TT>EGetVar</TT></FONT>) &#X2013; rappelez-vous comment le MIPS code l&#X2019;instruction <TT>move</TT>;
+</LI><LI CLASS="li-itemize">opérateurs unaires et binaires (<FONT COLOR="red"><TT>EUnOp</TT></FONT>, <FONT COLOR="red"><TT>EBinOp</TT></FONT>),
+lecture en mémoire (<FONT COLOR="red"><TT>ELoad</TT></FONT>) &#X2013; attention à respecter l&#X2019;ordre d&#X2019;évaluation imposé par le langage source;
+</LI></UL><P>
+Vous ajouterez également à <FONT COLOR="red"><TT>translate_instruction</TT></FONT> le cas de l&#X2019;écriture
+d&#X2019;une variable locale (<FONT COLOR="red"><TT>ISetVar</TT></FONT>).</P><PRE CLASS="verbatim"># ./compilo -irtl test/calcul.p
+# 1
+# 50
+</PRE><!--TOC section Traduction des conditions-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Traduction des conditions</H2><!--SEC END --><P>Complétez ensuite <FONT COLOR="red"><TT>translate_condition</TT></FONT>.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+dans le cas de base où la condition est une expression booléenne (<FONT COLOR="red"><TT>CExpression</TT></FONT>),
+on se contentera d&#X2019;émettre une instruction pour tester si l&#X2019;expression produit la valeur
+0 ou 1; les fonctions auxiliaires <FONT COLOR="red"><TT>mkunbranch</TT></FONT> et/ou <FONT COLOR="red"><TT>mkbinbranch</TT></FONT> pourront être
+utiles;
+</LI><LI CLASS="li-itemize">dans les cas où la condition est composite (<FONT COLOR="red"><TT>CNot</TT></FONT>, <FONT COLOR="red"><TT>CAnd</TT></FONT>, <FONT COLOR="red"><TT>Cor</TT></FONT>), à
+vous de trouver une façon concise d&#X2019;engendrer le code souhaité; attention à respecter la
+sémantique paresseuse des opérateurs <FONT COLOR="red"><TT>CAnd</TT></FONT> et <FONT COLOR="red"><TT>Cor</TT></FONT>.
+</LI></UL><P>
+Vous ajouterez également à <FONT COLOR="red"><TT>translate_instruction</TT></FONT> le cas de la
+conditionnelle (<FONT COLOR="red"><TT>IIf</TT></FONT>).</P><PRE CLASS="verbatim"># ./compilo -irtl test/court-circuit.p
+</PRE><!--TOC section Traduction de la boucle-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Traduction de la boucle</H2><!--SEC END --><P>La seule instruction restant à traduire est la boucle (<FONT COLOR="red"><TT>IWhile</TT></FONT>).</P><P>Nous ne pourrons pas engendrer les instructions nécessaires, comme nous
+l&#X2019;avons fait jusqu&#X2019;ici, uniquement à l&#X2019;aide de la fonction auxiliaire fonction
+<FONT COLOR="red"><TT>generate</TT></FONT>. (Pourquoi?) C&#X2019;est ici que la fonction auxiliaire <FONT COLOR="red"><TT>loop</TT></FONT>
+est utile.</P><P>Traitez le cas <FONT COLOR="red"><TT>IWhile</TT></FONT> de la fonction <FONT COLOR="red"><TT>translate_instruction</TT></FONT>.</P><P>Vous avez maintenant un traducteur complet de <TT><SPAN STYLE="font-variant:small-caps">UPP</SPAN></TT> vers <TT><SPAN STYLE="font-variant:small-caps">RTL</SPAN></TT>, que
+vous pouvez tester avec les commandes <TT>make rtl</TT> ou <TT>make test</TT>.</P><!--TOC section Identification des appels terminaux-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Identification des appels terminaux</H2><!--SEC END --><P>Le langage <TT><SPAN STYLE="font-variant:small-caps">RTL</SPAN></TT> offre deux instructions d&#X2019;appel de procédure:
+<FONT COLOR="red"><TT>ICall</TT></FONT> et <FONT COLOR="red"><TT>ITailCall</TT></FONT>. Examinez la différence entre les deux
+fonctions auxiliaires (fournies) <FONT COLOR="red"><TT>translate_call</TT></FONT> et
+<FONT COLOR="red"><TT>translate_tail_call</TT></FONT>. Un appel ordinaire rend la main à l&#X2019;appelant
+lorsque la fonction ou procédure appelée termine son exécution, tandis qu&#X2019;un
+appel terminal ne rend pas la main à l&#X2019;appelant (il rend la main directement à
+l&#X2019;appelant de l&#X2019;appelant). De ce fait, l&#X2019;instruction <FONT COLOR="red"><TT>ITailCall</TT></FONT> demande
+moins de paramètres: pas besoin de registre destination où stocker le résultat
+de l&#X2019;appel, ni de label destination où continuer l&#X2019;exécution après l&#X2019;appel.</P><P>La question est d&#X2019;identifier correctement les «appels terminaux», qui
+peuvent être traduits par <FONT COLOR="red"><TT>ITailCall</TT></FONT>, par opposition aux appels
+ordinaires, qui doivent être traduits par <FONT COLOR="red"><TT>ICall</TT></FONT>.</P><P>Un exemple typique d&#X2019;appel terminal est donné par <TT>test/fact3.p</TT>, qui
+implémente une fonction factorielle récursive avec un accumulateur. Le
+code que produit actuellement votre compilateur contient un appel ordinaire:
+</P><PRE CLASS="verbatim"># ./compilo -drtl test/fact3.p
+# ./compilo -dasm test/fact3.p
+</PRE><P>Le programme <TT>test/tail.p</TT> contient d&#X2019;autres exemples, artificiels,
+d&#X2019;appels terminaux.</P><P>Ajoutez à la fonction <FONT COLOR="red"><TT>translate_instruction</TT></FONT> deux cas supplémentaires
+pour identifier les appels terminaux à une procédure ou à une fonction.</P><P>Pour identifier correctement ces situations, vous pourrez avoir besoin des
+informations auxiliaires <FONT COLOR="red"><TT>is_exit</TT></FONT> et <FONT COLOR="red"><TT>result</TT></FONT>. Vous pourrez
+employer la construction <FONT COLOR="red"><TT>when</TT></FONT> d&#X2019;Objective Caml pour indiquer qu&#X2019;un cas
+ne s&#X2019;applique que si une certaine condition est satisfaite. Enfin, une fois
+l&#X2019;appel terminal identifié, employez la fonction auxiliaire
+<FONT COLOR="red"><TT>translate_tail_call</TT></FONT> pour le traduire.</P><P>Vérifiez dans les cas de <TT>test/fact3.p</TT> et <TT>test/tail.p</TT> que la
+traduction est correcte. Au niveau du code assembleur, vous devez observer que
+le calcul de la factorielle est traduit par une simple boucle. Vérifiez via
+<TT>make test</TT> que vous n&#X2019;avez rien cassé.</P><!--TOC section Optimisation de la traduction des conditions-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Optimisation de la traduction des conditions</H2><!--SEC END --><P>Considérez le test <TT>test/gcdfunc.p</TT>, qui contient de nombreuses conditions,
+et imprimez votre traduction:
+</P><PRE CLASS="verbatim"># ./compilo -drtl test/gcdfunc.p
+</PRE><P>Que pensez-vous de la traduction des conditions? Pourrait-on l&#X2019;améliorer en
+tenant compte des tests autorisés par le processeur MIPS dans les
+branchements? Consultez la définition des types <FONT COLOR="red"><TT>MIPSOps.uncon</TT></FONT> et
+<FONT COLOR="red"><TT>MIPSOps.bincon</TT></FONT> pour savoir quels tests sont permis.</P><P>Améliorez le cas <FONT COLOR="red"><TT>CExpression</TT></FONT> de la fonction <FONT COLOR="red"><TT>translate_condition</TT></FONT>
+pour engendrer des tests plus efficaces lorsque la forme de l&#X2019;expression le
+permet. Vous pourrez utiliser à nouveau les fonctions auxiliaires
+<FONT COLOR="red"><TT>mkunbranch</TT></FONT> et <FONT COLOR="red"><TT>mkbinbranch</TT></FONT>.</P><P>Vérifiez dans le cas de <TT>test/gcdfunc.p</TT> que vos optimisations ont l&#X2019;effet
+désiré, et vérifiez via <TT>make test</TT> que vous n&#X2019;avez rien cassé.</P><!--CUT END -->
+<!--HTMLFOOT-->
+<!--ENDHTML-->
+<!--FOOTER-->
+<HR SIZE=2><BLOCKQUOTE CLASS="quote"><EM>Ce document a été traduit de L<sup>A</sup>T<sub>E</sub>X par <A HREF="http://hevea.inria.fr">H<FONT SIZE=2><sup>E</sup></FONT>V<FONT SIZE=2><sup>E</sup></FONT>A</A></EM></BLOCKQUOTE></BODY>
+</HTML>

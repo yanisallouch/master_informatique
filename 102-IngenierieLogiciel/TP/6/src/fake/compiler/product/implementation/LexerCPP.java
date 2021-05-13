@@ -5,7 +5,7 @@ import fake.compiler.product.ILexer;
 public class LexerCPP implements ILexer {
 
 	public LexerCPP() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override

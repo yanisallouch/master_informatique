@@ -5,7 +5,7 @@ import fake.compiler.product.IParser;
 public class ParserCPP  implements IParser {
 
 	public ParserCPP() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override

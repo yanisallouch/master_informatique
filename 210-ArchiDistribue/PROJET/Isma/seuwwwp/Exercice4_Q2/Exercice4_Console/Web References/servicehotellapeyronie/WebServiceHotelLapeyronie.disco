@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://localhost:44300/WebServiceHotelLapeyronie.asmx?wsdl" docRef="https://localhost:44300/WebServiceHotelLapeyronie.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://localhost:44300/WebServiceHotelLapeyronie.asmx" xmlns:q1="http://tempuri.org/" binding="q1:WebService1Soap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://localhost:44300/WebServiceHotelLapeyronie.asmx" xmlns:q2="http://tempuri.org/" binding="q2:WebService1Soap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

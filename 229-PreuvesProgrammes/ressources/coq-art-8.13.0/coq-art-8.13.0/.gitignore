@@ -1,0 +1,17 @@
+Makefile.coq
+Makefile.coq.conf
+execute_loops.ml
+execute_loops.mli
+insert-sort.ml
+insert-sort.mli
+pplus.ml
+pplus.mli
+.lia.cache
+*~
+*.d
+*.aux
+*.glob
+*.vo
+*.vio
+*.vos
+*.vok

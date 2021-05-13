@@ -10,7 +10,7 @@ public class ProduitSolde extends Produit {
 
 	public ProduitSolde(String nom, double prix, double reduction) {
 		super(nom, prix);
-		// TODO Auto-generated constructor stub
+		
 		this.reduction = reduction;
 	}
 	

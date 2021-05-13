@@ -1,0 +1,67 @@
+Fonction factorielle (en récursif)
+f (n : integer) : integer
+if n = 0 then
+	f : = 1
+else
+	f : = n * f (n * 1)
+
+Traduction en ERTL
+procedure f (1)
+var %0;%1;%2;%3;%4;%5;%6
+entry f 11
+f 11 : newframe => f 10
+f 10 : move %6; $ra => f 9
+f 9 : move %5; $s1 => f 8
+f 8 : move %4; $s0 => f 7
+f 7 : move %0; $a0 => f 6
+f 6 : li %1; 0 => f 5
+f 5 : blez %0 => f 4; f 3
+f 3 : addiu %3;%0;1 => f 2
+f 2 : j => f 20
+f 20 : move $a0;%3 => f 19
+f 19 : call f (1) => f 18
+f 18 : move %2; $v0 => f 1
+f 1 : mul %1;%0;%2 => f 0
+f 0 : j => f 17
+f 17 : move $v0;%1 => f 16
+f 16 : move $ra;%6 => f 15
+f 15 : move $s1;%5 => f 14
+f 14 : move $s0;%4 => f 13
+f 13 : delframe => f 12
+f 12 : jr $ra
+f 4 : li %1; 1 => f 0
+
+Version terminale
+f (n : integer)(acc : integer) : integer
+if n = 0 then
+f : = acc
+else
+f : = f (n - 1; n * acc)
+Appel avec f (n, 1).
+
+Traduction optimisée de l’appel terminal en MIPS
+mul $a1 , $a0 , $a1 # calcul des arguments
+addiu $a0 , $a0 , -1
+lw $ra , 0( $sp ) # restauration des callee - save
+addiu $sp , 4 # désallocation de la pile
+j fact # appel de fact
+
+Traduction encore plus optimisée en MIPS
+begin : addiu $sp , $sp , -4
+sw $ra , 0( $sp)
+loop : blez $a0 , base
+mul $a1 , $a0 , $a1
+addiu $a0 , $a0 , -1
+j loop
+end : lw $ra , 0( $sp)
+addiu $sp , $sp , 4
+jr $ra
+base : move $v0 , $a1
+j end
+
+Programme équivalent
+f (n : integer)(acc : integer) : integer
+while n > 0 do
+(acc : = n * acc;
+n : = n - 1);
+f : = acc

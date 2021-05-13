@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+            "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Sélection d'instructions
+</TITLE>
+
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META name="GENERATOR" content="hevea 1.10">
+<STYLE type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.title{margin:2ex auto;text-align:center}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+DIV TABLE{margin-left:inherit;margin-right:inherit;}
+PRE{text-align:left;margin-left:0ex;margin-right:auto;}
+BLOCKQUOTE{margin-left:4ex;margin-right:4ex;text-align:left;}
+TD P{margin:0px;}
+BODY{background:white;}
+.title{padding:1ex;background:#00B200;}
+.titlemain{padding:1ex;background:#00B200;}
+.section{padding:.5ex;background:#2DE52D;}
+.subsection{padding:0.3ex;background:#66FF66;}
+</STYLE>
+
+<style type="text/css">
+pre, code, tt {font:12pt monospace;*font-size:100%;font-weight: bold;}
+</style>
+</HEAD>
+<BODY >
+<!--HEVEA command line is: hevea -entities -fix -O index.tex -->
+<!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Sélection d&#X2019;instructions</H1></TD></TR>
+</TABLE><DIV CLASS="center">
+Voici le <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/cours04.pdf">cours</A> correspondant. La solution se trouve dans les
+fichiers <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/pp2upp.ml.html">pp2upp.ml</A> et <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/upp2upp.ml.html">upp2upp.ml</A>.
+</DIV><!--TOC section Présentation-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Présentation</H2><!--SEC END --><P>Comme d&#X2019;habitude, il faut commencer par télécharger l&#X2019;archive <TT><A HREF="td4.tar.gz">td4.tar.gz</A></TT>
+puis la dépaqueter et construire l&#X2019;exécutable:
+</P><PRE CLASS="verbatim"># tar xvfz td4.tar.gz
+# cd td4
+# make
+</PRE><P>L&#X2019;objectif de ce TD est de passer du langage PP au langage UPP. En d&#X2019;autres
+termes, on cherche à transformer un arbre de syntaxe abstraite Pseudo-Pascal,
+obtenu par analyse syntaxique du code, en un arbre de syntaxe abstraite UPP.
+Les syntaxes abstraites de ces langages sont définies respectivement dans
+<TT>PP.mli</TT> et <TT>UPP.mli</TT>.</P><P>Les principales transformations sont les suivantes:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+les variables globales ne sont plus désignées par leur nom, mais par
+leur addresse;
+</LI><LI CLASS="li-itemize">les opérations <EM>load</EM> et <EM>store</EM> sont utilisées pour accéder
+aux tableaux;
+</LI><LI CLASS="li-itemize">les expressions sont réécrites pour mieux exploiter les opérateurs
+fournis par l&#X2019;assembleur MIPS.
+</LI></UL><P>
+Au passage, on effectue quelques autres transformations, qui ne nous
+intéresseront pas dans ce TD:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+la vérification des types ayant déjà été effectuée (voir le fichier
+<A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/typechecking.ml.html">typechecking.ml</A>), les types ne nous sont plus utiles; ils sont
+supprimés;
+</LI><LI CLASS="li-itemize">des instructions sont insérées pour initialiser chaque variable locale à
+la valeur 0.
+</LI></UL><!--TOC section Pour commencer-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Pour commencer</H2><!--SEC END --><P>Commencez par comparer attentivement les fichiers qui décrivent le langage source
+et le langage destination de la traduction qu&#X2019;il va falloir implémenter.
+Le langage source est décrit par <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/PP.mli.html">PP.mli</A> et le langage destination par <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/UPP.mli.html">UPP.mli</A>.</P><P>Vous pouvez le faire en éditant les deux fichiers en parallèle (faire
+<TT>Ctrl-x 3</TT> sous emacs), ou bien (pourquoi pas) en utilisant la commande
+<TT>diff -w PP.mli UPP.mli</TT>.</P><P>Le fichier à modifier est <TT>pp2upp.ml</TT>. Son interface est donnée par <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/pp2upp.mli.html">pp2upp.mli</A>.</P><P>Traduisez d&#X2019;abord les appels de procédure du langage <TT><SPAN STYLE="font-variant:small-caps">PP</SPAN></TT> vers le langage
+<TT><SPAN STYLE="font-variant:small-caps">UPP</SPAN></TT>. Il s&#X2019;agit de traiter le motif <FONT COLOR="red"><TT>PP.IProcCall (callee, es)</TT></FONT> de
+la fonction <FONT COLOR="red"><TT>translate_instruction</TT></FONT>. Cela permet d&#X2019;interpréter
+correctement le code <TT><SPAN STYLE="font-variant:small-caps">UPP</SPAN></TT> d&#X2019;un programme trivial qui appelle
+<FONT COLOR="red"><TT>writeln</TT></FONT>:</P><PRE CLASS="verbatim"># ./compilo -iupp test/trivial.p
+# 10
+</PRE><P>À tout moment, vous pouvez lancer <TT>make test</TT> pour apprécier vos progrès.</P><!--TOC section Adressage des variables globales-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Adressage des variables globales</H2><!--SEC END --><P>Les variables globales sont stockées dans une zone de taille fixe. Il faut
+calculer la taille que l&#X2019;on souhaite attribuer à cette zone, et l&#X2019;adresse de
+chaque variable, exprimée comme un décalage (<EM>offset</EM>) relatif à
+l&#X2019;adresse du début de cette zone. L&#X2019;adresse absolue du début de cette
+zone n&#X2019;est pas connue pour le moment, mais nous ferons en sorte qu&#X2019;elle
+soit stockée dans le registre <TT>$gp</TT>.</P><P>Quel que soit leur type (entier, booléen ou tableau), les valeurs que nous
+manipulons occupent un mot en mémoire. (Pourquoi? Réfléchissez-y.) Pour nous,
+un mot égale 32 bits ou 4 octets.</P><P>Si les variables sont par exemple nommées <TT>x</TT>, <TT>y</TT>, <TT>z</TT>,
+etc., alors nous souhaitons leur attribuer respectivement les <EM>offsets</EM>
+0, 4, 8, etc.</P><P>Cependant, plutôt que de faire apparaître partout la constante 4, nous utiliserons la
+constante <FONT COLOR="red"><TT>MIPS.word</TT></FONT>. Ainsi, il nous suffirait en théorie de modifier la
+définition de cette constante pour produire du code MIPS 64 bits.</P><P>Implémentez la fonction <FONT COLOR="red"><TT>allocate_globals</TT></FONT>. Celle-ci doit produire un
+couple formé de:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+un environnement global, de type <FONT COLOR="red"><TT>genv</TT></FONT>, qui à chaque nom de
+variable globale associe un <EM>offset</EM>;
+</LI><LI CLASS="li-itemize">un entier, qui représente la taille totale de la zone des variables
+globales.
+</LI></UL><P>Pour itérer sur la table des variables globales, <FONT COLOR="red"><TT>p.PP.globals</TT></FONT>, vous
+pourrez utiliser la fonction
+<TT><A HREF="http://caml.inria.fr/pub/docs/manual-ocaml/libref/Map.S.html#VALfold"><FONT COLOR="red">StringMap.fold</FONT></A></TT>.</P><P>Ensuite, traduisez les accès (en lecture et en écriture) aux variables globales.
+Il vous faut traiter les cas suivants:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+pour la lecture, le motif <FONT COLOR="red"><TT>PP.EGetVar v</TT></FONT> dans <FONT COLOR="red"><TT>translate_expression</TT></FONT>.
+</LI><LI CLASS="li-itemize">pour l&#X2019;écriture, le motif <FONT COLOR="red"><TT>PP.ISetVar (v, e)</TT></FONT> dans <FONT COLOR="red"><TT>translate_instruction</TT></FONT>.
+</LI></UL><P>Vous pouvez vérifier que votre code est correct à l&#X2019;aide d&#X2019;un exemple simple.
+Par exemple, le programme Pseudo-Pascal <TT>echo.p</TT> attend un entier sur
+l&#X2019;entrée standard et le répète sur la sortie standard:
+</P><PRE CLASS="verbatim"># ./compilo -iupp test/echo.p
+# 98
+# 98
+</PRE><!--TOC section Accès au tas-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Accès au tas</H2><!--SEC END --><P>En Pseudo-Pascal, les tableaux sont alloués dynamiquement et stockés dans le
+tas. Un accès (en lecture ou en écriture) à un tableau se traduit donc par un
+accès à la mémoire (à l&#X2019;aide d&#X2019;une opération <EM>load</EM> ou <EM>store</EM>), à
+une adresse que l&#X2019;on doit calculer.</P><P>Implémentez successivement les fonctions suivantes:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+<FONT COLOR="red"><TT>w2b</TT></FONT> attend une expression <FONT COLOR="red"><TT>e</TT></FONT> qui produit un entier (un
+nombre de mots) et renvoie une expression qui produit également un entier
+(cette fois un nombre d&#X2019;octets).<P>Vous utiliserez la fonction <FONT COLOR="red"><TT>Upp2upp.mkbinop</TT></FONT> pour engendrer le code
+d&#X2019;une multiplication.
+</P></LI><LI CLASS="li-itemize"><FONT COLOR="red"><TT>element_address</TT></FONT> attend deux expressions <FONT COLOR="red"><TT>base</TT></FONT> et
+<FONT COLOR="red"><TT>index</TT></FONT>, la première censée produire un pointeur &#X2013; l&#X2019;adresse de base
+d&#X2019;un tableau &#X2013; et la seconde censée produire un entier &#X2013; un indice dans ce
+tableau. <FONT COLOR="red"><TT>element_address</TT></FONT> renvoie une expression qui produit
+l&#X2019;adresse de l&#X2019;élément de tableau correspondant à <FONT COLOR="red"><TT>base</TT></FONT> et
+<FONT COLOR="red"><TT>index</TT></FONT>.
+</LI><LI CLASS="li-itemize">les fonctions <FONT COLOR="red"><TT>mkload</TT></FONT> et <FONT COLOR="red"><TT>mkstore</TT></FONT> traduisent un accès à la mémoire,
+en lecture ou en écriture, en une expression ou instruction UPP.<P>Une optimisation est possible, et souhaitable: si l&#X2019;expression qui
+représente l&#X2019;adresse est une addition unaire, de la forme <FONT COLOR="red"><TT>(i+) e</TT></FONT>,
+vous pouvez émettre une instruction <EM>load</EM> ou <EM>store</EM> contenant
+l&#X2019;<EM>offset</EM> <FONT COLOR="red"><TT>i</TT></FONT>.
+</P></LI></UL><P>Utilisez ensuite les fonctions ci-dessus pour traduire les accès, en lecture ou en écriture, aux tableaux:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+traitez le motif <FONT COLOR="red"><TT>PP.EArrayGet (earray, eindex)</TT></FONT> de <FONT COLOR="red"><TT>translate_expression</TT></FONT>.
+</LI><LI CLASS="li-itemize">traitez le motif <FONT COLOR="red"><TT>PP.IArraySet (earray, eindex, evalue)</TT></FONT> de <FONT COLOR="red"><TT>translate_instruction</TT></FONT>.
+</LI></UL><P>Enfin, traitez le motif <FONT COLOR="red"><TT>PP.EArrayAlloc (_, e)</TT></FONT> de
+<FONT COLOR="red"><TT>translate_expression</TT></FONT>. Vous traduirez l&#X2019;opération d&#X2019;allocation d&#X2019;un
+nouveau tableau en un appel à la fonction primitive <FONT COLOR="red"><TT>Alloc</TT></FONT>. Cette
+fonction primitive attend un entier, qui représente une taille exprimée en
+octets. Elle alloue dans le tas un bloc de mémoire de la taille souhaitée, et
+en renvoie l&#X2019;adresse. (Elle correspond à la fonction <FONT COLOR="red"><TT>malloc</TT></FONT> du langage
+C.) Cette fonction n&#X2019;existe pas en Pseudo-Pascal, mais nous est utile pour la
+compilation, donc est introduite dans UPP.</P><P>Vous avez maintenant un traducteur complet (quoique pas optimal) de <TT><SPAN STYLE="font-variant:small-caps">PP</SPAN></TT>
+vers <TT><SPAN STYLE="font-variant:small-caps">UPP</SPAN></TT>. Vous pouvez vérifier à tout moment la correction de vos
+modifications à l&#X2019;aide de la commande <TT>make test</TT> (qui utilise <TT>spim</TT>)
+ou bien <TT>make upp</TT> (qui utilise l&#X2019;interprète UPP). Vous devez obtenir OK
+pour tous les tests.</P><P>Une solution au TD, pour ce qui concerne la traduction de <TT><SPAN STYLE="font-variant:small-caps">PP</SPAN></TT> vers
+<TT><SPAN STYLE="font-variant:small-caps">UPP</SPAN></TT>, est donnée dans <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/pp2upp.ml.html">pp2upp.ml</A>.</P><!--TOC section Opérations arithmétiques-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Opérations arithmétiques</H2><!--SEC END --><P>On s&#X2019;intéresse maintenant à la façon dont les opérations binaires sont
+construites et réécrites dans <TT>upp2upp.ml</TT>. En particulier les opérations
+les plus courantes: addition, soustraction et multiplication doivent être
+aussi efficaces que possible.</P><P>Consultez le fichier <TT>upp2upp.ml</TT> qui vous est fourni. Il est correct,
+mais totalement trivial. Nous allons devoir l&#X2019;améliorer...</P><P>Une contrainte à prendre en compte est la possibilité d&#X2019;<EM>effets de bord</EM>
+durant l&#X2019;évaluation d&#X2019;une expression. On appelle effet de bord tout effet
+observable que peut avoir l&#X2019;exécution d&#X2019;une expression, en dehors du fait
+qu&#X2019;elle produit un résultat: en particulier, le fait de modifier le contenu de
+la mémoire (qu&#X2019;il s&#X2019;agisse d&#X2019;une variable globale ou d&#X2019;un tableau alloué dans
+le tas), de lire sur l&#X2019;entrée standard, ou d&#X2019;écrire sur la sortie standard. Le
+compilateur doit préserver le comportement observable du programme, et ne doit
+donc pas changer la nature des effets de bord ni l&#X2019;ordre dans lequel ils ont
+lieu. Par exemple, supprimer le calcul d&#X2019;une expression sous prétexte que son
+résultat n&#X2019;est pas utilisé n&#X2019;est correct que si cette expression n&#X2019;a pas
+d&#X2019;effets de bord. On dit alors que l&#X2019;expression est <EM>pure</EM>.</P><P>Dans notre cas, la seule possibilité pour une expression d&#X2019;effectuer un effet
+de bord est via un appel à une fonction. La fonction <FONT COLOR="red"><TT>pure</TT></FONT>, qui vous est
+fournie, attend une expression <FONT COLOR="red"><TT>expr</TT></FONT> et renvoie <FONT COLOR="red"><TT>true</TT></FONT> si cette
+expression est pure. Il s&#X2019;agit d&#X2019;une approximation: certaines expressions
+effectuent des appels de fonction et pourtant n&#X2019;ont pas d&#X2019;effets de bord.</P><!--TOC subsection Optimisations liées aux constantes-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Optimisations liées aux constantes</H3><!--SEC END --><P>Une première optimisation aisée consiste à calculer dès la compilation le
+résultat d&#X2019;une opération si tous les opérandes sont connus (sont des
+constantes). Faites-le pour les quatre opérations arithmétiques: addition,
+soustraction, multiplication, division. Vérifiez avec <TT>make test</TT> que vous
+n&#X2019;avez pas introduit d&#X2019;erreurs. Vérifiez que le code produit s&#X2019;est amélioré,
+par exemple en examinant le fichier <TT>test/arith.spi</TT>. (Tous les
+fichiers <TT>test/*.spi</TT> sont mis à jour à chaque fois que <TT>make test</TT>
+est exécuté.)</P><P>Ensuite, vous pourrez optimiser les cas où l&#X2019;un des opérandes est constant et
+vaut 0 ou 1.</P><!--TOC subsection Optimisations liées à UOpAddi-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Optimisations liées à UOpAddi</H3><!--SEC END --><P>On souhaite transformer l&#X2019;addition binaire en addition unaire lorsque l&#X2019;un des
+opérandes est une constante et lorsque cette constante peut être codée sur 16
+bits. (La fonction <FONT COLOR="red"><TT>Integer.fits16</TT></FONT> donne cette information.)</P><P>Par exemple, l&#X2019;addition <FONT COLOR="red"><TT>i + e</TT></FONT> entre une petite constante <FONT COLOR="red"><TT>i</TT></FONT> et
+une expression <FONT COLOR="red"><TT>e</TT></FONT> peut être traduite par une addition unaire <FONT COLOR="red"><TT>(i+)
+e</TT></FONT>.</P><P>On peut ensuite chercher dans quels cas ces constantes peuvent se combiner,
+par exemple lors d&#X2019;une addition binaire de la forme <FONT COLOR="red"><TT>((i1+) e1) + ((i2+)
+e2)</TT></FONT>. C&#X2019;est de là que peut provenir un certain gain d&#X2019;efficacité.</P><P>Enfin, pour favoriser ces combinaisons de constantes, il peut être intéressant
+d&#X2019;extraire ces additions unaires, autant que possible, vers l&#X2019;extérieur des
+expressions.</P><!--TOC subsection Optimisation des multiplications-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Optimisation des multiplications</H3><!--SEC END --><P>Comme dans le cas de l&#X2019;addition, on pourra tenter d&#X2019;extraire et de combiner
+les constantes: par exemple, l&#X2019;expression <FONT COLOR="red"><TT>3 * (y * 8)</TT></FONT> devrait être
+traduite à l&#X2019;aide d&#X2019;une seule multiplication.</P><P>La multiplication est une opération arithmétique relativement coûteuse en
+termes de temps d&#X2019;exécution. Il est donc intéressant de la transformer en
+décalage de bits lorsque l&#X2019;un des opérandes est une puissance de 2.</P><P>Vous pouvez utiliser pour ceci l&#X2019;opérateur unaire <FONT COLOR="red"><TT>UPP.UOpSlli</TT></FONT>, qui
+représente le décalage à gauche (<EM>shift left logical</EM>).</P><P>Les fonctions <FONT COLOR="red"><TT>is_power_of_two</TT></FONT>, <FONT COLOR="red"><TT>log2</TT></FONT> et
+<FONT COLOR="red"><TT>exp2</TT></FONT>, définies dans le module <FONT COLOR="red"><TT>Integer</TT></FONT>, pourront vous être utiles.</P><P>On fera en sorte que même une expression complexe comme <FONT COLOR="red"><TT>2 * (y * 8)</TT></FONT>
+soit traduite à l&#X2019;aide d&#X2019;une seule instruction de décalage à gauche...</P><P>On pourra ensuite faire de même pour la division par une puissance de deux.</P><!--TOC section Pour finir-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Pour finir</H2><!--SEC END --><P>Dans notre cas, la sélection d&#X2019;instructions est relativement simple, parce que
+l&#X2019;architecture MIPS est particulièrement simple et régulière. Pourtant, nous
+avons déjà dû formuler manuellement de nombreuses règles de réécriture. Pour
+des architectures plus complexes, avec des instructions et des modes
+d&#X2019;adressage très variés, on ne peut plus formuler manuellement toutes les
+règles nécessaires. On utilise un algorithme dédié pour choisir, parmi les
+différentes traductions possibles, laquelle minimise une certaine fonction de
+coût. On consultera par exemple le livre d&#X2019;Andrew Appel, « <EM>Modern
+compiler implementation in ML</EM> », chapitre 9, « <EM>Instruction
+Selection</EM> ». Le sujet donne encore lieu à des recherches; voir par
+exemple les articles de Dias et Ramsey (<A HREF="http://www.cs.tufts.edu/%7Enr/pubs/recognizer-abstract.html">CC 2006</A>,
+<A HREF="http://www.cs.tufts.edu/%7Enr/pubs/gentileset-abstract.html">POPL 2010</A>).</P><P>Une solution au TD, pour ce qui concerne l&#X2019;optimisation des opérations
+binaires, est donnée dans <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/upp2upp.ml.html">upp2upp.ml</A>. On lira notamment les
+commentaires à propos des règles de réécriture. Cette solution n&#X2019;est pas
+complète: on pourrait imaginer encore plus de règles.</P><!--CUT END -->
+<!--HTMLFOOT-->
+<!--ENDHTML-->
+<!--FOOTER-->
+<HR SIZE=2><BLOCKQUOTE CLASS="quote"><EM>Ce document a été traduit de L<sup>A</sup>T<sub>E</sub>X par <A HREF="http://hevea.inria.fr">H<FONT SIZE=2><sup>E</sup></FONT>V<FONT SIZE=2><sup>E</sup></FONT>A</A></EM></BLOCKQUOTE></BODY>
+</HTML>

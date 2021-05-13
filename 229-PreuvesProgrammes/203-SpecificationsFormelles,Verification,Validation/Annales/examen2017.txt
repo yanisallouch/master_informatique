@@ -1,0 +1,33 @@
+Exercice 1:
+1)
+                 ax                         ax
+P(t) |- P(t) Vright           Q(t) |- Q(t)Vright
+P(t) |- Vx.P(x) Uright        Q(t) |- Vx.Q(x) Uright2
+P(t) |- (Vx.P(x)) U Q(x) Vleft  Q(t) |- (Vx.P(x) U Q(x)) Vleft
+(Vx.P(x)) |- (Vx.P(x)) U Q(x)   (Vx.Q(x)) |- (Vx.P(x) U Q(x)) Uleft
+            (Vx.P(x)) U (Vx.Q(x)) |- (Vx.P(x) U Q(x)) =>right
+            (Vx.P(x)) U (Vx.Q(x)) => (Vx.P(x) U Q(x))
+
+
+                               ax
+P(x) |- (]x.Q(x)) , P(x) Vright                                       ax
+P(x) |- (]x.Q(x)) , (Vx.P(x)) ]left    (]x.P(x)) , Q(x) |- Q(x) ]right
+(]x.P(x)) |- (]x.Q(x)) , (Vx.P(x))     (]x.P(x)) , Q(x) |- (]x.Q(x)) =>left
+            (Vx.P(x) => Q(x)) , (]x.P(x)) |- (]x.Q(x)) =>right
+            (Vx.P(x) => Q(x)) |- (]x.P(x)) => (]x.Q(x)) =>right
+            (Vx.P(x) => Q(x)) => (]x.P(x)) => (]x.Q(x))
+
+2)
+                    ax                      ax
+A , A => B |- A => B    A , A => B |- A =>E
+                A , A => B |- B =>I
+                A |- (A => B) => B  =>I
+                A => (A => B) => B
+
+                            ax
+(A => B => C) , A , B , A |- B  =>I                         ax
+(A => B => C) , A , B |- A => B   (A => B => C) , A , B |- A
+            (A => B => C) , A , B |- C  =>I
+            (A => B => C) , A |- B => C  =>I
+            (A => B => C) |- A => B => C  =>I
+            (A => B => C) => A => B => C

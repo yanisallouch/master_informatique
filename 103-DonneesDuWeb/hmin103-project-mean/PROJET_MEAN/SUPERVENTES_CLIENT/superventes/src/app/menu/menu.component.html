@@ -1,0 +1,19 @@
+<div>
+    <a routerLink="/produits"> Liste des produits </a>
+    &nbsp;&nbsp;
+    <a [routerLink]="'/categories'"> Liste des catégories </a>
+    &nbsp;&nbsp;
+		<a [routerLink]="'/recherche'"> Recherche par criteres </a>
+		&nbsp;&nbsp;
+		<a *ngIf="!(user|async)" [routerLink]="'/connexion'" > Connexion </a>
+    &nbsp;&nbsp;
+    <a *ngIf="!(user|async)" [routerLink]="'/inscription'" > Inscription</a>
+    <a *ngIf="(user|async)" [routerLink]="'/panier'" > Panier </a>
+    &nbsp;&nbsp;
+    <a *ngIf="(user|async)" (click)="deconnexion()" href="" > Deconnexion </a>
+    &nbsp;&nbsp;
+    <a style="color:blue; text-decoration:underline"(click)="connexionForcee()">Connexion forcée</a>
+    &nbsp;&nbsp;
+    <a  *ngIf="(user|async)" > Bonjour {{ userName }} !</a>
+    &nbsp;&nbsp;
+</div>

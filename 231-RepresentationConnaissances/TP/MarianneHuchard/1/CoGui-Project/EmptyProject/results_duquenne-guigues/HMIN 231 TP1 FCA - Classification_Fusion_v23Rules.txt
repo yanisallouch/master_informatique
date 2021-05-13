@@ -1,0 +1,186 @@
+<  3> DataSets=SP,DataSets=IP,Update=PT,Steps=1,Steps=2,Steps=3,Steps=5 => EstSupport ,Approach=Apriori,Accuracy=False-positive,Structures=TR
+<  3> DataSets=TS,Steps=1,Steps=3,Steps=4,Steps=5 => Structures=TR
+<  3> #Citations=Très populaire >400 & <1601,DataSets=IP,Structures=TR,Steps=1,Steps=2,Steps=3,Steps=5 => Year=2002-2006,EstSupport 
+<  3> #Citations=Populaire >100 & <301,DataSets=SP,DataSets=IP,Structures=TR,Update=PB,Steps=1,Steps=2,Steps=3,Steps=5 => Year=2007-2011,Accuracy=Exact
+<  3> #Citations=Populaire >100 & <301,DataSets=TS,Structures=LT,Update=PB,Steps=1,Steps=3,Steps=5 => Year=2007-2011,FWK/Pattern=Support (FI),EstSupport ,Accuracy=Exact
+<  3> #Citations=Très connu >30 & <101,Structures=TR,Steps=1,Steps=3,Steps=4,Steps=5 => Update=PT
+<  3> #Citations=Très connu >30 & <101,DataSets=TS,Update=PB,Steps=1,Steps=3,Steps=5 => Accuracy=Exact
+<  3> #Citations=Connu >15 & < 31,Steps=1,Steps=3,Steps=4,Steps=5 => EstIncremental,Accuracy=False-positive,DataSets=IP,Structures=TR,Steps=2
+<  3> #Citations=Connu >15 & < 31,DataSets=IP,Structures=TR,Update=PT,Steps=1,Steps=2,Steps=3,Steps=5 => EstSupport 
+<  3> #Citations=Connu >15 & < 31,DataSets=TS,Structures=LT,Update=PB,Steps=1,Steps=3,Steps=5 => Year=2012-2016
+<  3> #Citations=Publié >0 & < 15,Structures=TR,Steps=1,Steps=3,Steps=5 => Approach=FP-Growth
+<  3> #Citations=Publié >0 & < 15,DataSets=TS,Steps=1,Steps=3,Steps=5 => Window=FsW/TransSW,EstSliding,Accuracy=Exact,Structures=LT
+<  3> Accuracy=False-positive,Structures=LT,Steps=1,Steps=3,Steps=5 => EstSupport ,Approach=Apriori,DataSets=SP,DataSets=IP,Steps=2
+<  3> Accuracy=False-positive,#Citations=Populaire >100 & <301,Steps=1,Steps=3,Steps=5 => DataSets=TS,Structures=TR
+<  3> Accuracy=False-positive,#Citations=Très connu >30 & <101,Steps=1,Steps=3,Steps=4,Steps=5 => EstSupport 
+<  3> Accuracy=False-positive,#Citations=Très connu >30 & <101,Update=PB,Steps=1,Steps=3,Steps=5 => DataSets=SP,DataSets=IP,Steps=2
+<  3> Accuracy=Exact,#Citations=Populaire >100 & <301,DataSets=SP,DataSets=IP,Update=PB,Steps=1,Steps=2,Steps=3,Steps=5 => Year=2007-2011,Structures=TR
+<  3> Accuracy=Exact,#Citations=Connu >15 & < 31,DataSets=TS,Structures=TR,Update=PT,Steps=1,Steps=3,Steps=5 => Approach=FP-Growth
+<  3> EstSliding,#Citations=Populaire >100 & <301,Structures=LT,Update=PT,Steps=1,Steps=3,Steps=5 => DataSets=TS
+<  3> EstSliding,#Citations=Populaire >100 & <301,Structures=TR,Update=PT,Steps=1,Steps=3,Steps=5 => DataSets=IP,Steps=2
+<  3> EstSliding,#Citations=Populaire >100 & <301,DataSets=IP,Update=PT,Steps=1,Steps=2,Steps=3,Steps=5 => Structures=TR
+<  3> EstSliding,#Citations=Populaire >100 & <301,DataSets=TS,Update=PT,Steps=1,Steps=3,Steps=5 => Structures=LT
+<  3> EstSliding,#Citations=Connu >15 & < 31,Update=PB,Steps=1,Steps=3,Steps=5 => Year=2012-2016,Window=FsW/TransSW,DataSets=TS
+<  3> EstSliding,#Citations=Connu >15 & < 31,DataSets=IP,Structures=TR,Steps=1,Steps=2,Steps=3,Steps=5 => EstSupport 
+<  3> EstSliding,Accuracy=False-positive,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => EstSupport 
+<  3> EstSliding,Accuracy=Exact,DataSets=SP,DataSets=IP,Update=PB,Steps=1,Steps=2,Steps=3,Steps=5 => Structures=TR
+<  3> EstSliding,Accuracy=Exact,#Citations=Populaire >100 & <301,DataSets=IP,Update=PB,Steps=1,Steps=2,Steps=3,Steps=5 => Year=2007-2011
+<  3> EstIncremental,Structures=LT,Update=PT,Steps=1,Steps=3,Steps=5 => Window=Landmark,Accuracy=Exact,#Citations=Très connu >30 & <101
+<  3> EstIncremental,#Citations=Connu >15 & < 31,Update=PT,Steps=1,Steps=3,Steps=5 => Window=Decay,Structures=TR
+<  3> EstIncremental,#Citations=Connu >15 & < 31,Structures=TR,Update=PB,Steps=1,Steps=3,Steps=5 => DataSets=SP,DataSets=IP,Steps=2
+<  3> EstIncremental,Accuracy=False-positive,DataSets=SP,DataSets=IP,Structures=TR,Update=PB,Steps=1,Steps=2,Steps=3,Steps=4,Steps=5 => Approach=FP-Growth
+<  3> EstIncremental,Accuracy=False-positive,#Citations=Très connu >30 & <101,Steps=1,Steps=3,Steps=5 => DataSets=SP,DataSets=IP,Steps=2
+<  3> EstIncremental,Accuracy=False-positive,#Citations=Connu >15 & < 31,DataSets=IP,Structures=TR,Steps=1,Steps=2,Steps=3,Steps=5 => Steps=4
+<  3> Window=VsW/TransSW,Steps=1,Steps=3,Steps=5 => Year=2007-2011,EstSliding
+<  3> Window=FsW/TransSW,EstSliding,#Citations=Populaire >100 & <301,Structures=LT,Steps=1,Steps=3,Steps=5 => DataSets=IP,Steps=2
+<  3> Window=FsW/TransSW,EstSliding,#Citations=Populaire >100 & <301,DataSets=TS,Steps=1,Steps=3,Steps=5 => Accuracy=Exact,Structures=TR
+<  3> Window=FsW/TransSW,EstSliding,#Citations=Connu >15 & < 31,DataSets=TS,Structures=TR,Steps=1,Steps=3,Steps=5 => Year=2012-2016
+<  3> Window=FsW/TransSW,EstSliding,Accuracy=Exact,#Citations=Populaire >100 & <301,Structures=TR,Update=PB,Steps=1,Steps=3,Steps=5 => Approach=FP-Growth
+<  3> Window=FsW/TimeSW,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Support (FI),EstSupport ,EstSliding,#Citations=Populaire >100 & <301,DataSets=TS,Structures=LT
+<  3> Window=Landmark,EstIncremental,#Citations=Très connu >30 & <101,Structures=TR,Update=PT,Steps=1,Steps=3,Steps=5 => EstUtility,DataSets=TS
+<  3> Window=Landmark,EstIncremental,#Citations=Très connu >30 & <101,DataSets=SP,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => Update=PB
+<  3> Window=Landmark,EstIncremental,Accuracy=Exact,Update=PT,Steps=1,Steps=3,Steps=5 => #Citations=Très connu >30 & <101,Structures=LT
+<  3> Window=Landmark,EstIncremental,Accuracy=Exact,Structures=LT,Update=PB,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Utility (HUI),EstUtility
+<  3> Window=Landmark,EstIncremental,Accuracy=Exact,DataSets=TS,Structures=LT,Steps=1,Steps=3,Steps=5 => EstUtility,#Citations=Très connu >30 & <101
+<  3> Window=Decay,EstIncremental,Steps=1,Steps=3,Steps=4,Steps=5 => Accuracy=False-positive,DataSets=IP,Structures=TR,Steps=2
+<  3> Window=Decay,EstIncremental,Accuracy=False-positive,Steps=1,Steps=3,Steps=5 => DataSets=IP,Structures=TR,Steps=2,Steps=4
+<  3> Approach=Other,Update=PB,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Support (FI),EstSupport ,EstSliding,DataSets=SP,DataSets=IP,Structures=LT,Steps=2
+<  3> Approach=Other,DataSets=SP,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => FWK/Pattern=Support (FI),EstSupport ,EstSliding,Structures=LT,Update=PB
+<  3> Approach=Other,DataSets=TS,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => EstSliding,Accuracy=Exact,Structures=LT
+<  3> Approach=Other,EstSliding,Structures=TR,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Support (FI),EstSupport ,DataSets=IP,Steps=2
+<  3> Approach=Hybrid,Accuracy=Exact,DataSets=TS,Structures=LT,Update=PT,Steps=1,Steps=3,Steps=5 => EstSliding
+<  3> Approach=FP-Growth,DataSets=TS,DataSets=IP,Structures=TR,Steps=1,Steps=2,Steps=3,Steps=5 => FWK/Pattern=Support (CI),EstSupport ,Window=FsW/TransSW,EstSliding,Accuracy=Exact,Structures=LT,Update=PT
+<  3> Approach=FP-Growth,#Citations=Connu >15 & < 31,Structures=TR,Update=PB,Steps=1,Steps=3,Steps=5 => Year=2012-2016
+<  3> Approach=FP-Growth,#Citations=Connu >15 & < 31,Structures=TR,Update=PT,Steps=1,Steps=3,Steps=5 => Accuracy=Exact,DataSets=TS
+<  3> Approach=FP-Growth,#Citations=Connu >15 & < 31,DataSets=IP,Structures=TR,Steps=1,Steps=2,Steps=3,Steps=5 => Year=2012-2016
+<  3> Approach=FP-Growth,EstSliding,#Citations=Populaire >100 & <301,DataSets=TS,Structures=TR,Steps=1,Steps=3,Steps=5 => Update=PB
+<  3> Approach=FP-Growth,EstIncremental,#Citations=Très connu >30 & <101,Structures=TR,Steps=1,Steps=3,Steps=5 => Window=Landmark
+<  3> Approach=FP-Growth,Window=Decay,EstIncremental,Structures=TR,Steps=1,Steps=3,Steps=5 => #Citations=Connu >15 & < 31
+<  3> Approach=Apriori,#Citations=Très connu >30 & <101,DataSets=SP,DataSets=IP,Update=PB,Steps=1,Steps=2,Steps=3,Steps=5 => Structures=LT
+<  3> Approach=Apriori,Accuracy=Exact,DataSets=SP,DataSets=IP,Update=PB,Steps=1,Steps=2,Steps=3,Steps=5 => EstIncremental
+<  3> Approach=Apriori,Accuracy=Exact,DataSets=TS,Structures=TR,Update=PB,Steps=1,Steps=3,Steps=5 => EstIncremental
+<  3> Approach=Apriori,EstSliding,DataSets=IP,Structures=LT,Update=PB,Steps=1,Steps=2,Steps=3,Steps=5 => Window=FsW/TransSW
+<  3> Approach=Apriori,Window=Landmark,EstIncremental,#Citations=Très connu >30 & <101,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => Structures=LT
+<  3> Approach=Apriori,Window=Landmark,EstIncremental,Accuracy=Exact,DataSets=IP,Update=PB,Steps=1,Steps=2,Steps=3,Steps=5 => FWK/Pattern=Utility (HUI),EstUtility
+<  3> EstUncertain,DataSets=TS,Steps=1,Steps=3,Steps=5 => EstSliding
+<  3> EstUncertain,#Citations=Publié >0 & < 15,Steps=1,Steps=3,Steps=5 => Window=FsW/TransSW,EstSliding,Accuracy=Exact
+<  3> EstUncertain,EstSliding,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => Window=FsW/TransSW,Accuracy=Exact
+<  3> EstUncertain,EstIncremental,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Uncertain (EFI),Approach=FP-Growth,Accuracy=False-positive,DataSets=SP,DataSets=IP,Structures=TR,Update=PB,Steps=2
+<  3> EstUtility,#Citations=Populaire >100 & <301,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Utility (HUI),Accuracy=Exact,DataSets=IP,Structures=LT,Steps=2
+<  3> EstUtility,#Citations=Très connu >30 & <101,DataSets=TS,Structures=TR,Update=PT,Steps=1,Steps=3,Steps=5 => Window=Landmark,EstIncremental
+<  3> EstUtility,Accuracy=Exact,DataSets=TS,Structures=TR,Structures=LT,Steps=1,Steps=3,Steps=5 => Update=PT
+<  3> EstUtility,Accuracy=Exact,#Citations=Très connu >30 & <101,Update=PB,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Utility (HUI)
+<  3> EstUtility,Accuracy=Exact,#Citations=Très connu >30 & <101,DataSets=TS,Structures=TR,Steps=1,Steps=3,Steps=5 => Approach=FP-Growth
+<  3> EstUtility,Window=FsW/TransSW,EstSliding,Accuracy=Exact,Structures=LT,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Utility (HUI)
+<  3> EstUtility,Window=FsW/TransSW,EstSliding,Accuracy=Exact,DataSets=TS,Update=PT,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Utility (HUI)
+<  3> EstUtility,Window=Landmark,EstIncremental,DataSets=TS,Structures=TR,Update=PT,Steps=1,Steps=3,Steps=5 => #Citations=Très connu >30 & <101
+<  3> EstUtility,Window=Landmark,EstIncremental,#Citations=Très connu >30 & <101,DataSets=TS,Structures=TR,Steps=1,Steps=3,Steps=5 => Update=PT
+<  3> EstUtility,Window=Decay,EstIncremental,Steps=1,Steps=3,Steps=5 => Accuracy=Exact,#Citations=Connu >15 & < 31,DataSets=TS
+<  3> EstSupport ,#Citations=Très populaire >400 & <1601,Structures=TR,Steps=1,Steps=3,Steps=5 => Year=2002-2006,DataSets=IP,Steps=2
+<  3> EstSupport ,#Citations=Très connu >30 & <101,Steps=1,Steps=3,Steps=4,Steps=5 => Accuracy=False-positive
+<  3> EstSupport ,#Citations=Très connu >30 & <101,Update=PB,Steps=1,Steps=3,Steps=5 => DataSets=SP,DataSets=IP,Structures=LT,Steps=2
+<  3> EstSupport ,#Citations=Connu >15 & < 31,Update=PT,Steps=1,Steps=3,Steps=5 => DataSets=IP,Structures=TR,Steps=2
+<  3> EstSupport ,#Citations=Connu >15 & < 31,DataSets=TS,Steps=1,Steps=3,Steps=5 => Year=2012-2016,Window=FsW/TransSW,EstSliding,Structures=LT
+<  3> EstSupport ,#Citations=Publié >0 & < 15,Steps=1,Steps=3,Steps=5 => Update=PT
+<  3> EstSupport ,Accuracy=False-positive,DataSets=TS,Structures=TR,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Support (FI)
+<  3> EstSupport ,Accuracy=False-positive,#Citations=Très connu >30 & <101,DataSets=SP,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => Approach=Apriori
+<  3> EstSupport ,Accuracy=Exact,#Citations=Populaire >100 & <301,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => Structures=TR
+<  3> EstSupport ,EstSliding,Accuracy=False-positive,Structures=TR,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Support (FI),Update=PT
+<  3> EstSupport ,EstIncremental,DataSets=TS,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Support (FI),Approach=Apriori,#Citations=Populaire >100 & <301,Structures=TR,Update=PB
+<  3> EstSupport ,EstIncremental,#Citations=Très connu >30 & <101,Steps=1,Steps=3,Steps=5 => Approach=Apriori,DataSets=IP,Steps=2
+<  3> EstSupport ,EstIncremental,Accuracy=Exact,Steps=1,Steps=3,Steps=5 => Year=2007-2011,Approach=Apriori
+<  3> EstSupport ,Window=FsW/TransSW,EstSliding,Accuracy=Exact,#Citations=Populaire >100 & <301,Steps=1,Steps=3,Steps=5 => Approach=FP-Growth,Structures=TR
+<  3> EstSupport ,Window=Landmark,EstIncremental,DataSets=IP,Structures=TR,Steps=1,Steps=2,Steps=3,Steps=5 => Accuracy=False-positive
+<  3> EstSupport ,Window=Decay,EstIncremental,Steps=1,Steps=3,Steps=5 => Year=2007-2011,DataSets=IP,Structures=TR,Steps=2
+<  3> EstSupport ,Approach=Other,DataSets=TS,Steps=1,Steps=3,Steps=5 => EstSliding,Accuracy=Exact,Structures=LT
+<  3> EstSupport ,Approach=Hybrid,Accuracy=Exact,DataSets=TS,Structures=LT,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Support (FI),EstSliding
+<  3> EstSupport ,Approach=FP-Growth,#Citations=Très connu >30 & <101,Structures=TR,Steps=1,Steps=3,Steps=5 => Window=FsW/TransSW,EstSliding,DataSets=TS,Update=PT
+<  3> EstSupport ,Approach=FP-Growth,Accuracy=False-positive,Structures=TR,Steps=1,Steps=3,Steps=5 => Steps=4
+<  3> EstSupport ,Approach=Apriori,#Citations=Très connu >30 & <101,DataSets=SP,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => Accuracy=False-positive
+<  3> EstSupport ,Approach=Apriori,Accuracy=False-positive,Structures=TR,Steps=1,Steps=3,Steps=4,Steps=5 => EstIncremental
+<  3> EstSupport ,Approach=Apriori,Accuracy=Exact,#Citations=Très connu >30 & <101,DataSets=IP,Structures=LT,Steps=1,Steps=2,Steps=3,Steps=5 => DataSets=Not (FP),Update=PT
+<  3> EstSupport ,Approach=Apriori,Window=FsW/TransSW,EstSliding,Accuracy=Exact,DataSets=IP,Structures=LT,Steps=1,Steps=2,Steps=3,Steps=5 => DataSets=Not (FP),Update=PT
+<  3> EstSupport ,Approach=Apriori,Window=Landmark,EstIncremental,Steps=1,Steps=3,Steps=4,Steps=5 => Year=2002-2006,FWK/Pattern=Support (FI)
+<  3> FWK/Pattern=Utility (HUI),EstUtility,#Citations=Très connu >30 & <101,DataSets=TS,Structures=TR,Steps=1,Steps=3,Steps=5 => Year=2012-2016
+<  3> FWK/Pattern=Utility (HUI),EstUtility,EstIncremental,DataSets=TS,Structures=TR,Update=PT,Steps=1,Steps=3,Steps=5 => Year=2012-2016
+<  3> FWK/Pattern=Utility (HUI),EstUtility,Approach=Apriori,EstIncremental,Accuracy=Exact,DataSets=IP,Update=PB,Steps=1,Steps=2,Steps=3,Steps=5 => Window=Landmark
+<  3> FWK/Pattern=Utility (HAUI),Steps=1,Steps=3,Steps=5 => EstUtility,Approach=FP-Growth,Accuracy=Exact,DataSets=TS,Structures=TR
+<  3> FWK/Pattern=Support (MFI),EstSupport ,Structures=LT,Update=PT,Steps=1,Steps=3,Steps=5 => Accuracy=Exact
+<  3> FWK/Pattern=Support (MFI),EstSupport ,DataSets=IP,Update=PT,Steps=1,Steps=2,Steps=3,Steps=5 => Approach=Apriori,#Citations=Très connu >30 & <101
+<  3> FWK/Pattern=Support (MFI),EstSupport ,#Citations=Très connu >30 & <101,Update=PT,Steps=1,Steps=3,Steps=5 => Approach=Apriori,DataSets=IP,Steps=2
+<  3> FWK/Pattern=Support (MFI),EstSupport ,Accuracy=Exact,Update=PT,Steps=1,Steps=3,Steps=5 => Structures=LT
+<  3> FWK/Pattern=Support (FI),EstSupport ,Update=PB,Steps=1,Steps=3,Steps=4,Steps=5 => Year=2002-2006,EstIncremental
+<  3> FWK/Pattern=Support (FI),EstSupport ,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=4,Steps=5 => Year=2002-2006,EstIncremental,DataSets=SP
+<  3> FWK/Pattern=Support (FI),EstSupport ,DataSets=IP,Update=PT,Steps=1,Steps=2,Steps=3,Steps=5 => Accuracy=False-positive,Structures=TR
+<  3> FWK/Pattern=Support (FI),EstSupport ,#Citations=Connu >15 & < 31,Steps=1,Steps=3,Steps=5 => EstSliding
+<  3> FWK/Pattern=Support (FI),EstSupport ,EstSliding,Accuracy=False-positive,Steps=1,Steps=3,Steps=5 => Structures=TR,Update=PT
+<  3> FWK/Pattern=Support (FI),EstSupport ,Window=FsW/TransSW,EstSliding,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => DataSets=SP,Structures=LT,Update=PB
+<  3> FWK/Pattern=Support (FI),EstSupport ,Window=FsW/TransSW,EstSliding,#Citations=Populaire >100 & <301,Steps=1,Steps=3,Steps=5 => Update=PB
+<  3> FWK/Pattern=Support (FI),EstSupport ,Approach=Apriori,Steps=1,Steps=3,Steps=4,Steps=5 => Year=2002-2006,Window=Landmark,EstIncremental
+<  3> FWK/Pattern=Support (CI),EstSupport ,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=4,Steps=5 => Accuracy=False-positive
+<  3> FWK/Pattern=Support (CI),EstSupport ,Accuracy=False-positive,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => Steps=4
+<  3> FWK/Pattern=Support (CI),EstSupport ,Approach=Apriori,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => Window=FsW/TransSW,EstSliding,Structures=LT
+<  3> Year=2017-2021,Update=PB,Steps=1,Steps=3,Steps=5 => Window=Landmark,EstIncremental
+<  3> Year=2017-2021,#Citations=Très connu >30 & <101,Steps=1,Steps=3,Steps=5 => Window=Landmark,EstIncremental,Structures=LT
+<  3> Year=2017-2021,#Citations=Connu >15 & < 31,Steps=1,Steps=3,Steps=5 => EstUtility,Accuracy=Exact,DataSets=TS
+<  3> Year=2017-2021,#Citations=Publié >0 & < 15,Steps=1,Steps=3,Steps=5 => Window=FsW/TransSW,EstSliding,Accuracy=Exact,Update=PT
+<  3> Year=2017-2021,Accuracy=Exact,Structures=TR,Update=PT,Steps=1,Steps=3,Steps=5 => Approach=FP-Growth
+<  3> Year=2017-2021,Accuracy=Exact,DataSets=TS,Structures=TR,Steps=1,Steps=3,Steps=5 => EstUtility,EstIncremental
+<  3> Year=2017-2021,EstIncremental,Structures=LT,Steps=1,Steps=3,Steps=5 => Window=Landmark,#Citations=Très connu >30 & <101
+<  3> Year=2017-2021,Approach=FP-Growth,Accuracy=Exact,Structures=TR,Steps=1,Steps=3,Steps=5 => Update=PT
+<  3> Year=2017-2021,Approach=Apriori,Steps=1,Steps=3,Steps=5 => DataSets=IP,Steps=2
+<  3> Year=2017-2021,EstSupport ,Steps=1,Steps=3,Steps=5 => Structures=LT
+<  3> Year=2012-2016,#Citations=Très connu >30 & <101,Update=PB,Steps=1,Steps=3,Steps=5 => Accuracy=Exact
+<  3> Year=2012-2016,Accuracy=Exact,#Citations=Connu >15 & < 31,DataSets=TS,Structures=TR,Steps=1,Steps=3,Steps=5 => Approach=FP-Growth
+<  3> Year=2012-2016,EstIncremental,DataSets=IP,Structures=TR,Steps=1,Steps=2,Steps=3,Steps=5 => Approach=FP-Growth,Accuracy=False-positive,Steps=4
+<  3> Year=2012-2016,EstIncremental,#Citations=Très connu >30 & <101,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Utility (HUI),EstUtility,Window=Landmark
+<  3> Year=2012-2016,EstIncremental,#Citations=Connu >15 & < 31,Structures=TR,Steps=1,Steps=3,Steps=5 => Approach=FP-Growth
+<  3> Year=2012-2016,Window=FsW/TransSW,EstSliding,#Citations=Connu >15 & < 31,DataSets=TS,Structures=LT,Steps=1,Steps=3,Steps=5 => EstSupport 
+<  3> Year=2012-2016,Window=Landmark,EstIncremental,Update=PB,Steps=1,Steps=3,Steps=5 => DataSets=IP,Steps=2
+<  3> Year=2012-2016,Window=Decay,EstIncremental,Steps=1,Steps=3,Steps=5 => #Citations=Connu >15 & < 31
+<  3> Year=2012-2016,Approach=Other,Steps=1,Steps=3,Steps=5 => DataSets=TS
+<  3> Year=2012-2016,EstUncertain,Approach=FP-Growth,Structures=TR,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Uncertain (EFI),Update=PB
+<  3> Year=2012-2016,EstUtility,DataSets=TS,Update=PT,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Utility (HUI),EstIncremental,Structures=TR
+<  3> Year=2012-2016,EstSupport ,Update=PB,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Support (FI),Window=FsW/TransSW,EstSliding,DataSets=TS,Structures=LT
+<  3> Year=2012-2016,EstSupport ,#Citations=Connu >15 & < 31,Steps=1,Steps=3,Steps=5 => Window=FsW/TransSW,EstSliding,DataSets=TS,Structures=LT
+<  3> Year=2012-2016,FWK/Pattern=Utility (HUI),EstUtility,EstIncremental,DataSets=TS,Structures=TR,Steps=1,Steps=3,Steps=5 => Update=PT
+<  3> Year=2012-2016,FWK/Pattern=Utility (HUI),EstUtility,EstIncremental,Accuracy=Exact,Update=PB,Steps=1,Steps=3,Steps=5 => Structures=LT
+<  3> Year=2012-2016,FWK/Pattern=Utility (HUI),EstUtility,Window=Landmark,EstIncremental,Accuracy=Exact,Steps=1,Steps=3,Steps=5 => Structures=LT
+<  3> Year=2012-2016,FWK/Pattern=Support (CI),EstSupport ,DataSets=IP,Structures=TR,Update=PT,Steps=1,Steps=2,Steps=3,Steps=5 => Approach=FP-Growth
+<  3> Year=2007-2011,Steps=1,Steps=3,Steps=4,Steps=5 => EstSupport ,Accuracy=False-positive,DataSets=IP,Steps=2
+<  3> Year=2007-2011,DataSets=SP,DataSets=IP,Structures=LT,Steps=1,Steps=2,Steps=3,Steps=5 => EstSupport ,Update=PB
+<  3> Year=2007-2011,#Citations=Très connu >30 & <101,DataSets=SP,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => Accuracy=False-positive
+<  3> Year=2007-2011,Accuracy=False-positive,DataSets=SP,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => #Citations=Très connu >30 & <101
+<  3> Year=2007-2011,Accuracy=Exact,Structures=TR,Update=PT,Steps=1,Steps=3,Steps=5 => Window=FsW/TransSW,EstSliding,DataSets=TS
+<  3> Year=2007-2011,EstSliding,DataSets=SP,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => Update=PB
+<  3> Year=2007-2011,EstIncremental,Update=PB,Steps=1,Steps=3,Steps=5 => Structures=TR
+<  3> Year=2007-2011,EstIncremental,Update=PT,Steps=1,Steps=3,Steps=5 => EstSupport ,DataSets=IP,Steps=2
+<  3> Year=2007-2011,EstIncremental,DataSets=SP,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => Structures=TR
+<  3> Year=2007-2011,EstIncremental,Accuracy=False-positive,Steps=1,Steps=3,Steps=5 => DataSets=IP,Structures=TR,Steps=2
+<  3> Year=2007-2011,EstIncremental,Accuracy=Exact,Steps=1,Steps=3,Steps=5 => EstSupport ,Approach=Apriori
+<  3> Year=2007-2011,Window=Decay,EstIncremental,Steps=1,Steps=3,Steps=5 => EstSupport ,DataSets=IP,Structures=TR,Steps=2
+<  3> Year=2007-2011,Approach=Other,Steps=1,Steps=3,Steps=5 => EstSupport ,DataSets=IP,Structures=TR,Steps=2
+<  3> Year=2007-2011,Approach=Hybrid,Accuracy=Exact,DataSets=TS,Structures=LT,Steps=1,Steps=3,Steps=5 => EstSliding,#Citations=Populaire >100 & <301
+<  3> Year=2007-2011,Approach=FP-Growth,EstSliding,#Citations=Populaire >100 & <301,Structures=TR,Steps=1,Steps=3,Steps=5 => Update=PB
+<  3> Year=2007-2011,Approach=Apriori,Structures=TR,Steps=1,Steps=3,Steps=5 => EstSupport ,EstIncremental
+<  3> Year=2007-2011,Approach=Apriori,DataSets=IP,Update=PB,Steps=1,Steps=2,Steps=3,Steps=5 => Structures=LT
+<  3> Year=2007-2011,Approach=Apriori,DataSets=SP,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => EstSupport 
+<  3> Year=2007-2011,Approach=Apriori,#Citations=Populaire >100 & <301,Steps=1,Steps=3,Steps=5 => Accuracy=Exact,Update=PB
+<  3> Year=2007-2011,Approach=Apriori,EstSliding,DataSets=IP,Structures=LT,Steps=1,Steps=2,Steps=3,Steps=5 => Window=FsW/TransSW
+<  3> Year=2007-2011,EstUncertain,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Uncertain (EFI),Approach=FP-Growth,Structures=TR,Update=PB
+<  3> Year=2007-2011,EstUtility,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Utility (HUI),Window=FsW/TransSW,EstSliding,Accuracy=Exact
+<  3> Year=2007-2011,EstSupport ,DataSets=SP,DataSets=IP,Update=PB,Steps=1,Steps=2,Steps=3,Steps=5 => Structures=LT
+<  3> Year=2007-2011,EstSupport ,Accuracy=False-positive,DataSets=IP,Structures=TR,Steps=1,Steps=2,Steps=3,Steps=5 => Update=PT
+<  3> Year=2007-2011,EstSupport ,Accuracy=Exact,DataSets=IP,Structures=LT,Update=PT,Steps=1,Steps=2,Steps=3,Steps=5 => #Citations=Très connu >30 & <101
+<  3> Year=2007-2011,EstSupport ,Accuracy=Exact,#Citations=Très connu >30 & <101,DataSets=IP,Structures=LT,Steps=1,Steps=2,Steps=3,Steps=5 => Update=PT
+<  3> Year=2007-2011,EstSupport ,EstIncremental,DataSets=IP,Structures=TR,Steps=1,Steps=2,Steps=3,Steps=5 => Window=Decay
+<  3> Year=2007-2011,EstSupport ,Window=FsW/TransSW,EstSliding,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => FWK/Pattern=Support (CI),#Citations=Très connu >30 & <101,Structures=LT
+<  3> Year=2007-2011,EstSupport ,Approach=Apriori,DataSets=IP,Update=PT,Steps=1,Steps=2,Steps=3,Steps=5 => #Citations=Très connu >30 & <101
+<  3> Year=2007-2011,FWK/Pattern=Support (FI),EstSupport ,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => Structures=TR
+<  3> Year=2002-2006,EstSupport ,Structures=LT,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Support (FI),#Citations=Populaire >100 & <301,DataSets=SP,DataSets=IP,Steps=2
+<  3> Year=2002-2006,EstSupport ,DataSets=TS,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Support (FI),#Citations=Populaire >100 & <301,Structures=TR
+<  3> Year=2002-2006,EstSupport ,Accuracy=Exact,Steps=1,Steps=3,Steps=5 => Approach=FP-Growth,Window=FsW/TransSW,EstSliding,Structures=TR
+<  3> Year=2002-2006,EstSupport ,EstSliding,DataSets=IP,Structures=TR,Steps=1,Steps=2,Steps=3,Steps=5 => Update=PT
+<  3> Year=2002-2006,EstSupport ,Window=FsW/TransSW,EstSliding,Structures=TR,Steps=1,Steps=3,Steps=5 => Approach=FP-Growth,Accuracy=Exact
+<  3> Year=2002-2006,FWK/Pattern=Support (FI),EstSupport ,EstSliding,Steps=1,Steps=3,Steps=5 => #Citations=Populaire >100 & <301
+<  3> Year=2002-2006,FWK/Pattern=Support (FI),EstSupport ,Approach=Apriori,Update=PB,Steps=1,Steps=3,Steps=5 => Window=Landmark,EstIncremental

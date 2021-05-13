@@ -7,7 +7,7 @@ public class ProduitSolde extends ProduitForfait {
 	public ProduitSolde(Produit decore, double solde) {
 		super(decore);
 		this.solde = solde;
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override

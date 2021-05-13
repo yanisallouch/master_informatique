@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">The Train Hours App UI</string>
+    <string name="train_from">Train from</string>
+    <string name="ville_depart">From</string>
+    <string name="ville_arrive">To</string>
+    <string-array name="horaires">
+        <item>Montpellier\t Marseille\t 8:05 </item>
+        <item>Montpellier\t Marseille\t 8:05</item>
+        <item>Montpellier\t Marseille\t 8:05</item>
+    </string-array>
+</resources>

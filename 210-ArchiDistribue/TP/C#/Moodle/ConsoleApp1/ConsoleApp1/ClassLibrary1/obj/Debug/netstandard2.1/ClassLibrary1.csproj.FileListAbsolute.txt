@@ -1,0 +1,9 @@
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\ClassLibrary1\bin\Debug\netstandard2.1\ClassLibrary1.deps.json
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\ClassLibrary1\bin\Debug\netstandard2.1\ClassLibrary1.dll
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\ClassLibrary1\bin\Debug\netstandard2.1\ClassLibrary1.pdb
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\ClassLibrary1\obj\Debug\netstandard2.1\ClassLibrary1.csprojAssemblyReference.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\ClassLibrary1\obj\Debug\netstandard2.1\ClassLibrary1.AssemblyInfoInputs.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\ClassLibrary1\obj\Debug\netstandard2.1\ClassLibrary1.AssemblyInfo.cs
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\ClassLibrary1\obj\Debug\netstandard2.1\ClassLibrary1.csproj.CoreCompileInputs.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\ClassLibrary1\obj\Debug\netstandard2.1\ClassLibrary1.dll
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\ClassLibrary1\obj\Debug\netstandard2.1\ClassLibrary1.pdb

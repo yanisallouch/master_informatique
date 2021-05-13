@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Service_Web.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Service_Web_Calculatrice_Calculator_x0020_Web_x0020_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://ecs.syr.edu/faculty/fawcett/Handouts/cse775/code/calcWebService/Calc.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

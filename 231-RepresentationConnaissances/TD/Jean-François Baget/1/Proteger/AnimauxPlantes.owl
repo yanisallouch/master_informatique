@@ -1,0 +1,359 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#"
+     xml:base="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLObjectProperty_738953bf_d941_4a86_a623_a8e2723eff90 -->
+
+    <owl:ObjectProperty rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLObjectProperty_738953bf_d941_4a86_a623_a8e2723eff90">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">partieDe</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLObjectProperty_b15063bb_f1f3_4b91_9d50_d37405df286a -->
+
+    <owl:ObjectProperty rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLObjectProperty_b15063bb_f1f3_4b91_9d50_d37405df286a">
+        <owl:inverseOf rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLObjectProperty_f0d99acb_aee1_4edf_82e4_dbc65c8abc6d"/>
+        <rdfs:domain rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_631bef23_f362_4f86_981f_35e93564960f"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">mange</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLObjectProperty_f0d99acb_aee1_4edf_82e4_dbc65c8abc6d -->
+
+    <owl:ObjectProperty rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLObjectProperty_f0d99acb_aee1_4edf_82e4_dbc65c8abc6d">
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">mangePar</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_02bb21f3_f94d_4e07_8bdd_289db12dede8 -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_02bb21f3_f94d_4e07_8bdd_289db12dede8">
+        <rdfs:subClassOf rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_0780a296_d7d4_4156_b88a_dedf39c25c2c"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLObjectProperty_b15063bb_f1f3_4b91_9d50_d37405df286a"/>
+                <owl:allValuesFrom rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_7a895933_9c95_4e4e_8bae_bab7fb6e7536"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Girafe</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_039813f3_0ba2_4f86_a359_d76e3e97c341 -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_039813f3_0ba2_4f86_a359_d76e3e97c341">
+        <rdfs:subClassOf rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_3adb7e6d_0c79_42c8_94a2_9519ec4a9596"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Arbre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_0780a296_d7d4_4156_b88a_dedf39c25c2c -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_0780a296_d7d4_4156_b88a_dedf39c25c2c">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_631bef23_f362_4f86_981f_35e93564960f"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLObjectProperty_b15063bb_f1f3_4b91_9d50_d37405df286a"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_3adb7e6d_0c79_42c8_94a2_9519ec4a9596"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLObjectProperty_738953bf_d941_4a86_a623_a8e2723eff90"/>
+                                        <owl:allValuesFrom rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_3adb7e6d_0c79_42c8_94a2_9519ec4a9596"/>
+                                    </owl:Restriction>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Herbivore</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_3adb7e6d_0c79_42c8_94a2_9519ec4a9596 -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_3adb7e6d_0c79_42c8_94a2_9519ec4a9596">
+        <owl:disjointWith rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_631bef23_f362_4f86_981f_35e93564960f"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Plante</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_60a21040_0d22_4284_842c_e68de7009c51 -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_60a21040_0d22_4284_842c_e68de7009c51">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_3adb7e6d_0c79_42c8_94a2_9519ec4a9596"/>
+                    <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_631bef23_f362_4f86_981f_35e93564960f"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">AnimalPlante</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_631bef23_f362_4f86_981f_35e93564960f -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_631bef23_f362_4f86_981f_35e93564960f">
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Animal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_79152cba_7eb7_404c_99fb_dfbe69f45d1e -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_79152cba_7eb7_404c_99fb_dfbe69f45d1e">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLObjectProperty_738953bf_d941_4a86_a623_a8e2723eff90"/>
+                <owl:allValuesFrom rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_039813f3_0ba2_4f86_a359_d76e3e97c341"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Branche</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_7a895933_9c95_4e4e_8bae_bab7fb6e7536 -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_7a895933_9c95_4e4e_8bae_bab7fb6e7536">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLObjectProperty_738953bf_d941_4a86_a623_a8e2723eff90"/>
+                <owl:allValuesFrom rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_79152cba_7eb7_404c_99fb_dfbe69f45d1e"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Feuille</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_9235da2a_950c_47e1_ac4d_5bafd268511c -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_9235da2a_950c_47e1_ac4d_5bafd268511c">
+        <rdfs:subClassOf rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_ef68c2e4_a225_4fb2_98a0_df086f666337"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLObjectProperty_b15063bb_f1f3_4b91_9d50_d37405df286a"/>
+                <owl:allValuesFrom rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_0780a296_d7d4_4156_b88a_dedf39c25c2c"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Lion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_be267063_f3d6_4673_9b25_b3cfdfaa6849 -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_be267063_f3d6_4673_9b25_b3cfdfaa6849">
+        <rdfs:subClassOf rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_3adb7e6d_0c79_42c8_94a2_9519ec4a9596"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLObjectProperty_b15063bb_f1f3_4b91_9d50_d37405df286a"/>
+                <owl:someValuesFrom rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_0780a296_d7d4_4156_b88a_dedf39c25c2c"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLObjectProperty_b15063bb_f1f3_4b91_9d50_d37405df286a"/>
+                <owl:someValuesFrom rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_ef68c2e4_a225_4fb2_98a0_df086f666337"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:comment xml:lang="fr">Une PlanteSavoureuse est une Plante qui est mangée par un Herbivore et aussi par un Carnivore</rdfs:comment>
+        <rdfs:label xml:lang="en">PlanteSavoureuse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_ef68c2e4_a225_4fb2_98a0_df086f666337 -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_ef68c2e4_a225_4fb2_98a0_df086f666337">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_631bef23_f362_4f86_981f_35e93564960f"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLObjectProperty_b15063bb_f1f3_4b91_9d50_d37405df286a"/>
+                        <owl:someValuesFrom rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_631bef23_f362_4f86_981f_35e93564960f"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Carnivore</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_4c00a1e4_3557_4929_a2d9_1e55f125e112 -->
+
+    <owl:NamedIndividual rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_4c00a1e4_3557_4929_a2d9_1e55f125e112">
+        <rdf:type rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_039813f3_0ba2_4f86_a359_d76e3e97c341"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Olivier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_683b6210_d4f8_4bf9_8773_071ca5890c3e -->
+
+    <owl:NamedIndividual rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_683b6210_d4f8_4bf9_8773_071ca5890c3e">
+        <rdf:type rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_79152cba_7eb7_404c_99fb_dfbe69f45d1e"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">LaPalme</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_793685ed_5953_4775_b37a_53884e2b9570 -->
+
+    <owl:NamedIndividual rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_793685ed_5953_4775_b37a_53884e2b9570">
+        <rdf:type rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_02bb21f3_f94d_4e07_8bdd_289db12dede8"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Sophie</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_832c21ec_f647_409c_af22_7c17cb75f361 -->
+
+    <owl:NamedIndividual rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_832c21ec_f647_409c_af22_7c17cb75f361">
+        <rdf:type rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_7a895933_9c95_4e4e_8bae_bab7fb6e7536"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Batavia</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_878c180b_7111_4282_ac76_4b5e7d4efda2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_878c180b_7111_4282_ac76_4b5e7d4efda2">
+        <rdf:type rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_be267063_f3d6_4673_9b25_b3cfdfaa6849"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Rose-Marie</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_d34623d4_410f_426f_88e4_38e60f40c555 -->
+
+    <owl:NamedIndividual rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_d34623d4_410f_426f_88e4_38e60f40c555">
+        <rdf:type rdf:resource="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLClass_9235da2a_950c_47e1_ac4d_5bafd268511c"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Léo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_4c00a1e4_3557_4929_a2d9_1e55f125e112"/>
+            <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_683b6210_d4f8_4bf9_8773_071ca5890c3e"/>
+            <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_793685ed_5953_4775_b37a_53884e2b9570"/>
+            <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_832c21ec_f647_409c_af22_7c17cb75f361"/>
+            <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_878c180b_7111_4282_ac76_4b5e7d4efda2"/>
+            <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/AnimauxPlantes.owl#OWLNamedIndividual_d34623d4_410f_426f_88e4_38e60f40c555"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

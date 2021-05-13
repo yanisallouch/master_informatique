@@ -1,0 +1,481 @@
+TD service web SOAP
+
+Comprendre WSDL et SOAP
+
+1 Web Service Description Language
+
+1.
+
+Étudiez ligne à ligne le fichier getDate1.wsd1 afin de comprendre :
+
+— dans un premier temps, sans se préoccuper des espaces de noms et autres problèmes
+xml, quel service est déclaré dans ce fichier
+
+— ensuite les détails xml nécessaires
+
+— enfin le fonctionnemement de la partie concrête (avec les bindings)
+
+Quel service est publié dans le fichier getDate2.wsdl ?
+Quel service est publié dans le fichier getDate3.wsd1l ?
+
+Avec la connaissance du fichier .cs qui a permis la génération des wsdl, réfléchissez à
+la bonne façon d'écrire vos méthodes de service de manière à ce que les services soient
+facilement utilisables.
+
+SOAP
+
+Étudiez les requêtes SOAP correspondant à un appel au service web getDate1 défini
+section précédente de manière à comprendre l’encodage SOAP en fonction du fichier
+WSDL. Cet encodage dépend de ce qui est spécifié dans les bindings. Vous trouverez des
+détails à ce sujet à cette adresse :
+
+http ://www.ibm.com/developerworks/webservices/library/ws-whichwsdl/
+
+Mêmes questions pour getDate2 et getDate3.
+
+3 Documents
+
+Listing 1 — getDatel.wsdl
+
+ 
+
+1 <?7xml version—” 1.0” encoding—”UTF-8”?7>
+2 <wsdl:definitions xmins:soap—”http://schemas.xmlsoap.org/wsdl/soap/”
+
+xmins:tns—”http://mondomaine.fr/monAppli”
+xmins:s—”http://www.w3.org/2001/XMLSchema”
+xmins:soap12=”http://schemas.xmlsoap.org/wsdl/soap12/”
+targetNamespace—”http://mondomaine.fr/monAppli”
+xmins:wsdl=”http://schemas.xmlsoap.org/wsdl/”>
+
+<wsdl:types>
+<s:schema elementFormDefault—” qualified” targetNamespace—”http://mondomaine.fr/monAppli”>
+
+<s:element name—” getDatel”>
+
+<s:complexType/>
+
+</s:element>
+<s:element name—” getDatelResponse”>
+
+<s:complexType>
+<s:sequence>
+<s:element minOccurs—”0” maxOccurs—”1” name—” getDatelResult” type—”s:string”/>
+</s:sequence>
+</s:complexType>
+
+</s:element>
+
+</s:schema>
+</wsdl:types>
+<wsdl:message name—” getDatelSoapIin”>
+
+<wsdl:part name—” parameters” element—” tns:getDatel1”/>
+</wsdl:message>
+<wsdl:message name—” getDatelSoapOut”>
+
+<wsdl:part name—” parameters” element—” tns:getDateiResponse”/>
+</wsdl:message>
+<wsdl:portType name—” ServiceDateSoap”>
+
+<wsdl:operation name—”getDatel1”>
+
+<wsdl:input message—” tns:getDatelSoapln”/>
+<wsdl:output message—” tns:getDatelSoapOut”/>
+
+</wsdl:operation>
+
+</wsdl:portType>
+
+<wsdl:binding name—” ServiceDateSoap” type—” tns:ServiceDateSoap”>
+<soap:binding transport—”http://schemas.xmlsoap.org/soap/http”/>
+<wsdl:operation name—” getDate1”>
+<soap:operation soapAction—” http://mondomaine.fr/monAppli/getDatel1” style—” document” />
+<wsdl:input>
+<soap:body use—’” literal”/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use—” literal”/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name—”ServiceDateSoap12” type—” tns:ServiceDateSoap”>
+<soapl2:binding transport—”http://schemas.xmlsoap.org/soap/http”/>
+<wsdl:operation name—” getDate1”>
+<soapl2:operation soapAction—” http://mondomaine. fr /monAppli/getDatel” style—” document” />
+<wsdl:input>
+<soapl2:body use—’” literal”/>
+</wsdl:input>
+<wsdl:output>
+<soapl2:body use—’ literal”/>
+</wsdl:output>
+</wsdl:operationx>
+</wsdl:binding>
+<wsdl:service name=—” ServiceDate”>
+<wsdl:port name—”ServiceDateSoap” binding—” tns:ServiceDateSoap”>
+<soap:address location—”http://localhost/ws.asmx”/>
+</wsdl:port>
+<wsdl:port name—”ServiceDateSoap12” binding—” tns:ServiceDateSoap12”>
+<soapl2:address location—”http://localhost /ws.asmx”/>
+</wsdl:port>
+</wsdl:servicex>
+
+</wsdl:definitions>
+
+ 
+
+Listing 2 — getDate2.wsdl
+
+ 
+
+<?xml version—” 1.0” encoding—"”UTF-8"?>
+<wsdl:definitions
+
+© 0 -J O Où à OU NO
+
+xmilns:soap=—” http://schemas.xmlsoap.org/wsdl/soap/”
+xmilns:soapenc—”http://schemas.xmlsoap.org/soap/encoding/”
+xmilns:tns—”http://mondomaine.fr/monAppli”
+xmins:s—”http://www.w3.0org/2001/XMLSchema”
+xmins:soap12—” http://schemas.xmlsoap .org/wsdl/soap12/”
+targetNamespace—” http://mondomaine. fr /monAppli”
+xmins:wsdl=”http://schemas.xmlsoap.org/wsdl/”>
+<wsdl:types>
+<s:schema elementFormDefault—” qualified” targetNamespace—” http://mondomaine.fr/monAppli”>
+<s:element name—” getDate2”>
+<s:complexType>
+<s:sequence>
+<s:element minOccurs—”1” maxOccurs—”1” name—”f” type—”tns:Format”/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:simpleType name—” Format”>
+<s:restriction base—”s:string”>
+<s:enumeration value—”JMA”/>
+<s:enumeration value—”"HMS”/>
+<s:enumeration value—”HMSJMA’ />
+</s:restriction>
+</s:simpleType>
+<s:element name—” getDate2Response”>
+<s:complexType>
+<s:sequence>
+<s:element minOccurs—”0” maxOccurs—” 1” name—” getDate2Result” type=”s:string”/>
+</s:sequence>
+</s:complexType>
+</s:element>
+</s:schema>
+</wsdl:types>
+<wsdl:message name—” getDate2Soapln”>
+<wsdl:part name—” parameters” element—” tns:getDate2”/>
+</wsdl:message>
+<wsdl:message name—” getDate2SoapOut”>
+<wsdl:part name—” parameters” element—” tns:getDate2Response”/>
+</wsdl:message>
+<wsdl:portType name—” ServiceDateSoap”>
+<wsdl:operation name—” getDate2”>
+<wsdl:input message—” tns:getDate2Soapln”/>
+<wsdl:output message—” tns:getDate2SoapOut”/>
+</wsdl:operationx>
+</wsdl:portType>
+<wsdl:binding name—”ServiceDateSoap” type—” tns:ServiceDateSoap”>
+<soap:binding transport—”http://schemas.xmlsoap.org/soap/http”/>
+<wsdl:operation name—” getDate2”>
+<soap:operation soapAction—”http://mondomaine.fr/monAppli/getDate2” style—” document” />
+<wsdl:input>
+<soap:body use—’” literal”/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use—” literal”/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name—”ServiceDateSoap12” type—” tns:ServiceDateSoap”>
+<soapi2:binding transport—”http://schemas.xmlsoap.org/soap/http”/>
+<wsdl:operation name—” getDate2”>
+<soapl2:operation soapAction—”http://mondomaine. fr /monAppli/getDate2” style—” document” />
+<wsdl:input>
+<soapl2:body use—” literal”/>
+</wsdl:input>
+<wsdl:output>
+<soapl2:body use—’” literal”/>
+68 </wsdl:output>
+
+69 </wsdl:operation>
+
+70 </wsdl:binding>
+
+71 <wsdl:service name—” ServiceDate”>
+
+72 <wsdl:port name—”ServiceDateSoap” binding—”tns:ServiceDateSoap”>
+
+73 <soap:address location—”http://localhost/ws.asmx”/>
+
+74 </wsdl:port>
+
+75 <wsdl:port name—” ServiceDateSoap12” binding—” tns:ServiceDateSoap12”>
+76 <soapl2:address location—”http://localhost /ws.asmx”/>
+
+77 </wsdl:port>
+
+78 </wsdl:servicex>
+79 </wsdl:definitions>
+
+ 
+
+Listing 3 — getDate3.wsdl
+
+ 
+
+1 <?xml version—” 1.0” encoding—”UTF-8”?>
+
+2 <wsdl:definitions xmilns:soap—”http://schemas.xmlsoap.org/wsdl/soap/” xmlns:tm—”http://microsoft .com/wsdl/mime
+/textMatching/” xmlns:soapenc—”http://schemas.xmlsoap.org/soap/encoding/” xmins:mime=—” http://schemas.
+xmlsoap.org/wsdl/mime/” xmlins:tns—”http://mondomaine.fr/monAppli” xmlins:s—”http://www.w3.org/2001/
+XMLSchema” xmlns:soap12—”http://schemas.xmlsoap.org/wsdl/soap12/” xmlins:http—” http://schemas.xmlsoap.org/
+wsdl/http/” targetNamespace—” http://mondomaine.fr/monAppli” xmlns:wsdl=”http://schemas.xmlsoap.org/wsdl/”
+
+>
+<wsdl:types>
+
+3
+
+4 <s:schema elementFormDefault—” qualified” targetNamespace—” http://mondomaine. fr /monAppli”>
+5 <s:element name—” getDate3”>
+
+6 <s:complexType/>
+
+7 </s:element>
+
+8 <s:element name—” getDate3Response”>
+
+9 <s:complexType>
+
+10 <s:sequence>
+
+11 <s:element minOccurs—”0” maxOccurs—”1” name—” getDate3Result” type—”tns:Date”/>
+12 </s:sequence>
+
+13 </s:complexType>
+
+14 </s:element>
+
+15 <s:complexType name—” Date”>
+
+16 <s:sequence}>
+
+17 <s:element minOccurs—”1” maxOccurs—”1” name—” jour” type=”s:int”/>
+
+18 <s:element minOccurs—”1” maxOccurs—”1” name—” mois” type—”s:int”/>
+
+19 <s:element minOccurs=”1” maxOccurs—”1” name—”annee” type—”s:int”/>
+
+20 </s:sequencex>
+
+21 </s:complexType>
+
+22 </s:schema>
+
+23 </wsdl:types>
+
+24 <wsdl:message name—” getDate3Soapln”>
+
+25 <wsdl:part name—” parameters” element—” tns:getDate3”/>
+
+26 </wsdl:message>
+
+27 <wsdl:message name—” getDate3SoapOut”>
+
+28 <wsdl:part name—” parameters” element—” tns:getDate3Response”/>
+29 </wsdl:message>
+
+30 <wsdl:portType name—” ServiceDateSoap”’>
+
+31 <wsdl:operation name—” getDate3”7>
+
+32 <wsdl:input message—” tns:getDate3Soapln”/>
+33 <wsdl:output message—” tns:getDate3SoapOut”/>
+34 </wsdl:operation>
+
+35 </wsdl:portType>
+36 <wsdl:binding name—”ServiceDateSoap” type—” tns:ServiceDateSoap”>
+
+37 <soap:binding transport—”http://schemas.xmlsoap.org/soap/http”/>
+
+38 <wsdl:operation name—” getDate3”>
+
+39 <soap:operation soapAction—”http://mondomaine.fr/monAppli/getDate3” style—” document” />
+40 <wsdl:input>
+
+Al <soap:body use=—’” literal”/>
+
+42 </wsdl:input>
+
+43 <wsdl:output>
+
+A4 <soap:body use—” literal”/>
+
+45 </wsdl:output>
+
+46 </wsdl:operation>
+
+AT </wsdl:binding>
+48 <wsdl:binding name—” ServiceDateSoap12” type—” tns:ServiceDateSoap”>
+
+49 <soapl2:binding transport—”http://schemas.xmlsoap.org/soap/http”/>
+50 <wsdl:operation name—” getDate3”>
+
+51 <soapl2:operation soapAction—”http://mondomaine. fr /monAppli/getDate3” style—” document” />
+52 <wsdl:input>
+
+53 <soapl2:body use—” literal”/>
+
+54 </wsdl:input>
+
+55 <wsdl:output>
+
+56 <soapl2:body use—” literal”/>
+
+57 </wsdl:output>
+
+58 </wsdl:operation>
+
+59 </wsdl:binding>
+
+60 <wsdl:service name—” ServiceDate”>
+
+61 <wsdl:port name=”ServiceDateSoap” binding=”tns:ServiceDateSoap”>
+
+62 <soap:address location—”http://localhost/ws.asmx”/>
+
+63 </wsdl:port>
+
+64 <wsdl:port name—”ServiceDateSoap12” binding—”tns:ServiceDateSoap12”>
+65 <soapl2:address location—”http://localhost/ws.asmx”/>
+
+66 </wsdl:port>
+
+67 </wsdl:servicex>
+68 </wsdl:definitions>
+
+ 
+
+Listing 4 - SOAP pour getDatel
+
+ 
+
+1 POST /ws.asmx HTTP/1.1
+
+2 Host: localhost
+
+3 Content—-Type: application/soap+xml; charset=utf-8
+4 Content-—-Length: length
+
+5
+
+6 <?xml version—” 1.0” encoding—”utf—-8"?>
+0 -J O O1 à C0 D
+
+<soap12:Envelope xmlins:xsi—”http://www.w3.org/2001/XMLSchema-instance” xmlns:xsd—” http://www.w3.org/2001/
+XMLSchema” xmins:soap12=”http://www.w3.org/2003/05/soap—-envelope”>
+<soap12:Body>
+<getDatel xmins=—”http://mondomaine.fr/monAppli” />
+</soap12:Body>
+</soap12:Envelope>
+
+HTTP/1.1 200 OK
+Content—-Type: application/soap+xml; charset—utf-8
+Content—-Length: length
+
+<?xml version—’” 1.0” encoding—”utf-8”?7>
+<soap12:Envelope xmlns:xsi—”http://www.w3.0org/2001/XMLSchema-instance” xmlns:xsd—” http://www.w3.org/2001/
+XMLSchema” xmlns:soap12—”http://www.w3.org/2003/05/soap—-envelope”>
+<soap12:Body>
+<getDatelResponse xmlns—” http://mondomaine. fr /monAppli”>
+<getDatelResult>string</getDatel1Result>
+</getDatelResponse>
+</soap12:Body>
+</soap12:Envelope>
+
+ 
+
+Listing 5 —- SOAP pour getDate2
+
+ 
+
+POST /ws.asmx HTTP/1.1
+
+Host: localhost
+
+Content—-Type: application/soap+xml; charset-—utf-8s
+Content-Length: length
+
+<?xml version—” 1.0” encoding—”utf-—-8"?>
+<soap12:Envelope xmins:xsi—”http://www.w3.org/2001/XMLSchema-instance” xmlns:xsd=—”http://www.w3.org/2001/
+XMLSchema” xmins:soap12—”http://www.w3.org/2003/05/soap—-envelope”>
+<soap12:Body>
+<getDate2 xmlns=”http://mondomaine.fr/monAppli”>
+<f>JMA or HMS or HMSJMA</f>
+</getDate2>
+</soap12:Body>
+</soap12:Envelope>
+
+ 
+
+HTTP/1.1 200 OK
+Content—-Type: application/soap+xml; charset—utf-—8
+Content—-Length: length
+
+<?xml version—” 1.0” encoding—”utf-8”?7>
+<soap1l2:Envelope xmlns:xsi—”http://www.w3.0org/2001/XMLSchema-instance” xmlns:xsd—”http://www.w3.org/2001/
+XMLSchema” xmlns:soap12—”http://www.w3.org/2003/05/soap—-envelope”>
+<soap12:Body>
+<getDate2Response xmlins—”http://mondomaine. fr /monAppli”>
+<getDate2Result>string</getDate2Result>
+</getDate2Response>
+</soap12:Body>
+</soap12:Envelope>
+
+ 
+
+Listing 6 - SOAP pour getDate3
+
+ 
+
+POST /ws.asmx HTTP/1.1
+
+Host: localhost
+
+Content—Type: text/xml; charset=utf—8
+Content—-Length: length
+
+SOAPAction: ”http://mondomaine.fr/monAppli/getDate3”
+
+<?xml version—” 1.0” encoding—”utf-8"7>
+<soap:Envelope xmilns:xsi—”http://www.w3.org/2001/XMLSchema-instance” xmilns:xsd=—”http://www.w3.org/2001/
+XMLSchema” xmlns:soap—”http://schemas.xmlsoap.org/soap/envelope/?”>
+<soap:Body>
+<getDate3 xmins—”http://mondomaine.fr/monAppli” />
+</soap:Body>
+</soap:Envelope>
+
+ 
+
+HTTP/1.1 200 OK
+Content—Type: text/xml; charset=utf—8
+Content—-Length: length
+
+<?xml version—’” 1.0” encoding—”utf-8”?7>
+<soap:Envelope xmilns:xsi—”http://www.w3.org/2001/XMLSchema-instance” xmilns:xsd=—”http://www.w3.org/2001/
+XMLSchema” xmlns:soap—” http://schemas.xmlsoap.org/soap/envelope/?>
+<soap:Body>
+<getDate3Response xmlins—”http://mondomaine. fr /monAppli”>
+<getDate3Result>
+<jour>int</jour>
+<mois>int</mois>
+<annee>int</annee>
+</getDate3Result>
+</getDate3Response>
+</soap:Body>
+</soap:Envelope>
+
+ 

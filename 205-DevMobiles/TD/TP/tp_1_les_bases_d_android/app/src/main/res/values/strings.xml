@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">My First App</string>
+    <string name="fill_in">Please fill the following field</string>
+    <string name="firstName">Enter a First Name</string>
+    <string name="lastName">Enter Last Name</string>
+    <string name="skillsField">Enter Skills Field</string>
+    <string name="validate">Enter to Validate</string>
+    <string name="age">Enter Age</string>
+    <string name="phone">Enter a Phone Number</string>
+    <string name="confirmation">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="back">Return</string>
+    <string name="call">Call</string>
+    <string name="numberToCall">Number to be called : </string>
+</resources>

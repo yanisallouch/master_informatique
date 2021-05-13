@@ -1,0 +1,16 @@
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Numbers\bin\Debug\net5.0\Numbers.exe
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Numbers\bin\Debug\net5.0\Numbers.deps.json
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Numbers\bin\Debug\net5.0\Numbers.runtimeconfig.json
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Numbers\bin\Debug\net5.0\Numbers.runtimeconfig.dev.json
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Numbers\bin\Debug\net5.0\Numbers.dll
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Numbers\bin\Debug\net5.0\ref\Numbers.dll
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Numbers\bin\Debug\net5.0\Numbers.pdb
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Numbers\obj\Debug\net5.0\Numbers.csprojAssemblyReference.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Numbers\obj\Debug\net5.0\Numbers.GeneratedMSBuildEditorConfig.editorconfig
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Numbers\obj\Debug\net5.0\Numbers.AssemblyInfoInputs.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Numbers\obj\Debug\net5.0\Numbers.AssemblyInfo.cs
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Numbers\obj\Debug\net5.0\Numbers.csproj.CoreCompileInputs.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Numbers\obj\Debug\net5.0\Numbers.dll
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Numbers\obj\Debug\net5.0\ref\Numbers.dll
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Numbers\obj\Debug\net5.0\Numbers.pdb
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Numbers\obj\Debug\net5.0\Numbers.genruntimeconfig.cache

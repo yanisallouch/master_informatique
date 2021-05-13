@@ -1,0 +1,18 @@
+<p>{{message}}</p>
+<table>
+   	<tr>
+   		<th>Nom</th>
+   		<th>Prix unitaire</th>
+   		<th>Quantité</th>
+   		<th>Prix total</th>
+   		<th>Supprimer</th>
+    </tr>
+    <tr *ngFor="let produit of contenu; let i = index;trackByIdx">
+  		<td>{{produit['nom']}}</td>
+		<td>{{produit['prix']}}</td>
+		<td><input type="number"  [(ngModel)]="produit['quantite']" min=1> </td>
+		<td>{{produit['prix'] * produit['quantite']}}</td>
+		<td><a (click)="supprimer(i)"><button>X</button></a></td>
+	</tr>
+</table>
+<div><a (click)="savePanier()"><button>Sauvegarder</button></a><a (click)="this.ngOnInit()"><button>Annuler</button></a><a (click)="submitPanier()"><button>Valider commande</button></a></div>

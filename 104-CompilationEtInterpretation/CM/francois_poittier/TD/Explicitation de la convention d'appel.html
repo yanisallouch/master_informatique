@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+            "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Explicitation de la convention d'appel
+</TITLE>
+
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META name="GENERATOR" content="hevea 1.10">
+<STYLE type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.thefootnotes{text-align:left;margin:0ex;}
+.dt-thefootnotes{margin:0em;}
+.dd-thefootnotes{margin:0em 0em 0em 2em;}
+.title{margin:2ex auto;text-align:center}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+DIV TABLE{margin-left:inherit;margin-right:inherit;}
+PRE{text-align:left;margin-left:0ex;margin-right:auto;}
+BLOCKQUOTE{margin-left:4ex;margin-right:4ex;text-align:left;}
+TD P{margin:0px;}
+BODY{background:white;}
+.title{padding:1ex;background:#00B200;}
+.titlemain{padding:1ex;background:#00B200;}
+.section{padding:.5ex;background:#2DE52D;}
+.subsection{padding:0.3ex;background:#66FF66;}
+.ffootnoterule{border:none;margin:1em auto 1em 0px;width:50%;background:#00CC00;}
+</STYLE>
+
+<style type="text/css">
+pre, code, tt {font:12pt monospace;*font-size:100%;font-weight: bold;}
+</style>
+</HEAD>
+<BODY >
+<!--HEVEA command line is: hevea -entities -fix -O index.tex -->
+<!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Explicitation de la convention d&#X2019;appel</H1></TD></TR>
+</TABLE><DIV CLASS="center">
+Voici le <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/cours06.pdf">cours</A> correspondant. La solution se trouve dans le
+fichier <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/rtl2ertlI.ml.html">rtl2ertlI.ml</A>.
+</DIV><!--TOC section Présentation-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Présentation</H2><!--SEC END --><P>Le sujet est dans l&#X2019;archive <TT><A HREF="td6.tar.gz">td6.tar.gz</A></TT>.</P><P>Il s&#X2019;agit aujourd&#X2019;hui de passer du language <TT><SPAN STYLE="font-variant:small-caps">RTL</SPAN></TT>, défini dans
+<A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/RTL.mli.html">RTL.mli</A>, au langage <TT><SPAN STYLE="font-variant:small-caps">ERTL</SPAN></TT>, défini dans
+<A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/ERTL.mli.html">ERTL.mli</A>. Étudiez la différence entre ces deux langages,
+expliquée en particulier par les commentaires introductifs de
+<A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/ERTL.mli.html">ERTL.mli</A>.</P><P>Pour passer de RTL à ERTL, il faut:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+d&#X2019;une part, traduire de façon non triviale les instruction d&#X2019;appel
+(<FONT COLOR="red"><TT>ICall</TT></FONT> et <FONT COLOR="red"><TT>ITailCall</TT></FONT>); c&#X2019;est le point de vue de l&#X2019;appelant;
+</LI><LI CLASS="li-itemize">d&#X2019;autre part, ajouter à chaque procédure un prologue et un épilogue;
+c&#X2019;est le point de vue de l&#X2019;appelé.
+</LI></UL><P>La convention d&#X2019;appel et les registres du processeur MIPS sont décrits
+par le fichier <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/MIPS.mli.html">MIPS.mli</A>. Par ailleurs, quelques fonctions
+auxiliaires utiles sont regroupées dans <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/misc.mli.html">misc.mli</A>. Consultez
+ces deux interfaces...</P><P>Comme la semaine dernière, la traduction est séparée en deux modules. Le
+module <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/rtl2ertl.ml.html">rtl2ertl.ml</A> définit quelques fonctions de base et les
+fournit au module paramétré <TT>rtl2ertlI.ml</TT>, que vous allez devoir
+implémenter.</P><P>Aujourd&#X2019;hui, le fichier <TT>rtl2ertlI.ml</TT> vous est fourni vide! (C&#X2019;est
+pourquoi, si vous avez fait <TT>make</TT>, la compilation a échoué.) À vous de
+compléter ce fichier pour satisfaire l&#X2019;interface <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/rtl2ertlI.mli.html">rtl2ertlI.mli</A>.
+(Un peu d&#X2019;aide?<SUP><A NAME="text1" HREF="#note1">1</A></SUP>) Ceci doit vous
+permettre de compiler via <TT>make</TT>. Bien sûr, le petit compilateur ne
+fonctionne pas.</P><!--TOC section Ce qui vous est fourni-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Ce qui vous est fourni</H2><!--SEC END --><P>Vous disposez des informations et facilités offertes par le paramètre
+<FONT COLOR="red"><TT>Env</TT></FONT>. Celles-ci sont décrites au début de <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/rtl2ertlI.mli.html">rtl2ertlI.mli</A>.</P><P>Notons que les labels et pseudo-registres de <TT><SPAN STYLE="font-variant:small-caps">RTL</SPAN></TT> restent valables en
+<TT><SPAN STYLE="font-variant:small-caps">ERTL</SPAN></TT>. On utilise si possible les mêmes, mais les fonctions
+<FONT COLOR="red"><TT>allocate</TT></FONT> et <FONT COLOR="red"><TT>generate</TT></FONT> permettent d&#X2019;en engendrer de nouveaux si
+besoin.</P><!--TOC section Ce que vous devez écrire-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Ce que vous devez écrire</H2><!--SEC END --><P>Voici les éléments qu&#X2019;il vous faut définir:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+la fonction <FONT COLOR="red"><TT>translate_call</TT></FONT> construit une séquence d&#X2019;instructions
+<TT><SPAN STYLE="font-variant:small-caps">ERTL</SPAN></TT> qui correspondent à une instruction <TT><SPAN STYLE="font-variant:small-caps">RTL</SPAN></TT> <FONT COLOR="red"><TT>ICall</TT></FONT>;
+</LI><LI CLASS="li-itemize">l&#X2019;étiquette <FONT COLOR="red"><TT>prologue</TT></FONT> est le point d&#X2019;entrée d&#X2019;une séquence
+d&#X2019;instructions qui constitue le prologue; en d&#X2019;autres termes, l&#X2019;étiquette
+<FONT COLOR="red"><TT>prologue</TT></FONT> deviendra le nouveau point d&#X2019;entrée de la procédure, et
+cette séquence d&#X2019;instructions devra transférer le contrôle à l&#X2019;ancien
+point d&#X2019;entrée de la procédure;
+</LI><LI CLASS="li-itemize">l&#X2019;étiquette <FONT COLOR="red"><TT>epilogue</TT></FONT> est le point d&#X2019;entrée d&#X2019;une séquence
+d&#X2019;instructions qui constitue l&#X2019;épilogue; en d&#X2019;autres termes, un saut sera
+installé de l&#X2019;ancien point de sortie de la procédure vers <FONT COLOR="red"><TT>epilogue</TT></FONT>,
+et cette séquence d&#X2019;instructions devra se terminer par <FONT COLOR="red"><TT>IReturn</TT></FONT>;
+</LI><LI CLASS="li-itemize">la fonction <FONT COLOR="red"><TT>translate_tail_call</TT></FONT> construit une séquence d&#X2019;instructions
+<TT><SPAN STYLE="font-variant:small-caps">ERTL</SPAN></TT> qui correspondent à une instruction <TT><SPAN STYLE="font-variant:small-caps">RTL</SPAN></TT> <FONT COLOR="red"><TT>ITailCall</TT></FONT>.
+</LI></UL><P>Dans un premier temps, vous pourrez d&#X2019;une part faire l&#X2019;hypothèse que les
+appels ont au plus quatre arguments, de sorte que les quatre registres de la
+liste <FONT COLOR="red"><TT>MIPS.parameters</TT></FONT> suffisent et la pile n&#X2019;est pas utilisée; d&#X2019;autre
+part implémenter <FONT COLOR="red"><TT>translate_tail_call</TT></FONT> à l&#X2019;aide de
+<FONT COLOR="red"><TT>translate_call</TT></FONT>, c&#X2019;est-à-dire compiler les appels terminaux comme des
+appels ordinaires. Ceci devrait vous permettre d&#X2019;obtenir plus facilement un
+compilateur qui fonctionne (presque).</P><!--TOC section Fonctions auxiliaires &#X2013; pas à pas-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Fonctions auxiliaires &#X2013; pas à pas</H2><!--SEC END --><P>On suggère d&#X2019;implémenter les fonctions auxiliaires suivantes. Vous pouvez choisir de les
+écrire d&#X2019;abord ou de passer tout de suite à la section suivante.</P><!--TOC subsection Pseudo-registres et registres physiques-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Pseudo-registres et registres physiques</H3><!--SEC END --><P>Le language <TT><SPAN STYLE="font-variant:small-caps">ERTL</SPAN></TT> fournit deux instructions pour copier une valeur d&#X2019;un
+pseudo-registre à un registre matériel et inversement: <FONT COLOR="red"><TT>IGetHwReg</TT></FONT> et
+<FONT COLOR="red"><TT>ISetHwReg</TT></FONT>.</P><P>On suggère d&#X2019;implémenter les fonctions suivantes:
+</P><PRE CLASS="verbatim">let sethwreg ((desthwr, sourcer) : MIPS.register * Register.t) (l : Label.t) : Label.t = ...
+
+let sethwregs (moves : (MIPS.register * Register.t) list) (l : Label.t) : Label.t = ...
+
+let osethwreg ((desthwr, osourcer) : MIPS.register * Register.t option) (l : Label.t) : Label.t = ...
+
+let gethwreg ((destr, sourcehwr) : Register.t * MIPS.register) (l : Label.t) : Label.t = ...
+
+let gethwregs (moves : (Register.t * MIPS.register) list) (l : Label.t) : Label.t = ...
+
+let ogethwreg ((odestr, sourcehwr) : Register.t option * MIPS.register) (l : Label.t) : Label.t = ...
+</PRE><P>La spécification de ces fonctions est la suivante:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+<FONT COLOR="red"><TT>sethwreg</TT></FONT>
+engendre une instruction qui copie le contenu d&#X2019;un pseudo-registre 
+	<FONT COLOR="red"><TT>sourcer</TT></FONT> vers un registre matériel
+	<FONT COLOR="red"><TT>desthwr</TT></FONT> et a pour successeur l&#X2019;étiquette <FONT COLOR="red"><TT>l</TT></FONT>;
+	renvoie l&#X2019;étiquette de l&#X2019;instruction engendrée;
+</LI><LI CLASS="li-itemize"><FONT COLOR="red"><TT>sethwregs</TT></FONT>
+	est analogue à <FONT COLOR="red"><TT>sethwreg</TT></FONT>, mais accepte une liste de paires de registres
+et engendre une séquence d&#X2019;instructions;
+</LI><LI CLASS="li-itemize"><FONT COLOR="red"><TT>osethwreg</TT></FONT>
+	 n&#X2019;engendre aucune instruction si <FONT COLOR="red"><TT>osourcer</TT></FONT> est <FONT COLOR="red"><TT>None</TT></FONT>,
+et engendre une instruction à l&#X2019;aide de <FONT COLOR="red"><TT>sethwreg</TT></FONT> dans le cas contraire;
+</LI><LI CLASS="li-itemize"><FONT COLOR="red"><TT>gethwreg</TT></FONT>, <FONT COLOR="red"><TT>gethwregs</TT></FONT>, <FONT COLOR="red"><TT>ogethwreg</TT></FONT> sont symétriques aux précédentes.
+</LI></UL><!--TOC subsection Pseudo-registres et emplacements de pile-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Pseudo-registres et emplacements de pile</H3><!--SEC END --><P>Le language <TT><SPAN STYLE="font-variant:small-caps">ERTL</SPAN></TT> fournit deux instructions pour transférer une valeur d&#X2019;un pseudo-registre 
+à un emplacement de pile et inversement: <FONT COLOR="red"><TT>IGetStack</TT></FONT> et <FONT COLOR="red"><TT>ISetStack</TT></FONT>.</P><P>On distingue pour le moment deux types d&#X2019;emplacements de pile: les
+emplacements <EM>entrants</EM> (<FONT COLOR="red"><TT>SlotIncoming</TT></FONT>), utilisés pour lire les
+paramètres en provenance de l&#X2019;appelant, et les emplacements <EM>sortants</EM>
+(<FONT COLOR="red"><TT>SlotOutgoing</TT></FONT>), utilisés pour écrire des paramètres à destination d&#X2019;un
+appelé.</P><P>Les emplacements sont représentés par un décalage entier positif ou nul. Ceci
+nous amène naturellement à écrire les fonctions suivantes:
+</P><PRE CLASS="verbatim">let offsets (rs : Register.t list) : ((Register.t * int32) list) = ...
+
+let setstackslots (sourcers : Register.t list) (l : Label.t) : Label.t = ...
+
+let getstackslots (destrs : Register.t list) (l : Label.t) : Label.t = ...
+</PRE><P>La spécification de ces fonctions est la suivante:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+la fonction <FONT COLOR="red"><TT>offsets</TT></FONT>
+	 associe à chaque pseudo-registre de la liste <FONT COLOR="red"><TT>rs</TT></FONT> un décalage correspondant
+à l&#X2019;emplacement qui lui sera alloué (0, 4, etc.) et produit une liste d&#X2019;association
+entre pseudo-registres et décalages;
+</LI><LI CLASS="li-itemize">la fonction <FONT COLOR="red"><TT>setstackslots</TT></FONT>
+engendre une séquence d&#X2019;instructions qui copie chacun des pseudo-registres de la
+liste <FONT COLOR="red"><TT>sourcers</TT></FONT> vers un emplacement de pile sortant approprié;
+</LI><LI CLASS="li-itemize">la fonction <FONT COLOR="red"><TT>getstackslots</TT></FONT>
+engendre une séquence d&#X2019;instructions qui copie un emplacement de pile entrant
+approprié vers chacun des pseudo-registres de la
+liste <FONT COLOR="red"><TT>destrs</TT></FONT>.
+</LI></UL><P>
+Les fonctions <FONT COLOR="red"><TT>setstackslots</TT></FONT> et <FONT COLOR="red"><TT>getstackslots</TT></FONT> implémentent respectivement
+le point de vue de l&#X2019;appelant et de l&#X2019;appelé. Elles doivent être d&#X2019;accord sur l&#X2019;emplacement
+attribué à chaque paramètre; ce sera naturellement le cas si elles s&#X2019;appuient toutes deux
+sur la fonction <FONT COLOR="red"><TT>offsets</TT></FONT>.</P><!--TOC section Explicitation de la convention d&#X2019;appel-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Explicitation de la convention d&#X2019;appel</H2><!--SEC END --><P>On rappelle brièvement la convention d&#X2019;appel.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Du côté de l&#X2019;appelant &#X2013; traduction d&#X2019;un appel:
+<UL CLASS="itemize"><LI CLASS="li-itemize">
+les premiers paramètres sont passés dans les registres de la liste <FONT COLOR="red"><TT>MIPS.parameters</TT></FONT>,
+c&#X2019;est-à-dire en fait <FONT COLOR="red"><TT>$a0, $a1, $a2, $a3</TT></FONT>;
+</LI><LI CLASS="li-itemize">les paramètres suivants sont passés sur la pile, dans la zone des paramètres sortants;
+</LI><LI CLASS="li-itemize">l&#X2019;adresse de retour est placée dans <FONT COLOR="red"><TT>$ra</TT></FONT> par l&#X2019;instruction <FONT COLOR="red"><TT>ERTL.ICall</TT></FONT> &#X2013;
+pas besoin pour nous de le faire explicitement, donc;
+</LI><LI CLASS="li-itemize">si l&#X2019;appelé est une fonction, son résultat est transmis dans le registre <FONT COLOR="red"><TT>MIPS.result</TT></FONT>,
+c&#X2019;est-à-dire en fait <FONT COLOR="red"><TT>$v0</TT></FONT>;
+</LI></UL>
+</LI><LI CLASS="li-itemize">Du côté de l&#X2019;appelé &#X2013; prologue:
+<UL CLASS="itemize"><LI CLASS="li-itemize">
+une trame de pile est installée;
+</LI><LI CLASS="li-itemize">les registres <EM>callee-save</EM>, ainsi que le registre <FONT COLOR="red"><TT>$ra</TT></FONT>,
+sont sauvegardés dans des pseudo-registres frais;
+</LI><LI CLASS="li-itemize">les premiers paramètres sont lus dans les registres de la liste <FONT COLOR="red"><TT>MIPS.parameters</TT></FONT>
+et placés dans des pseudo-registres appropriés;
+</LI><LI CLASS="li-itemize">les paramètres suivants sont lus sur la pile, dans la zone des paramètres entrants,
+et placés dans des pseudo-registres appropriés;
+</LI></UL>
+</LI><LI CLASS="li-itemize">Du côté de l&#X2019;appelé &#X2013; épilogue:
+<UL CLASS="itemize"><LI CLASS="li-itemize">
+si la procédure courante doit renvoyer un résultat, ce résultat est
+placé dans le registre <FONT COLOR="red"><TT>MIPS.result</TT></FONT>;
+</LI><LI CLASS="li-itemize">les registres <EM>callee-save</EM>, ainsi que le registre <FONT COLOR="red"><TT>$ra</TT></FONT>,
+retrouvent leur valeur initiale;
+</LI><LI CLASS="li-itemize">la trame de pile est désinstallée;
+</LI><LI CLASS="li-itemize">on rend la main à l&#X2019;appelant via une instruction <FONT COLOR="red"><TT>IReturn</TT></FONT>, qui
+par convention trouve l&#X2019;adresse de retour dans le registre <FONT COLOR="red"><TT>$ra</TT></FONT>.
+</LI></UL>
+</LI></UL><P>À vous d&#X2019;implémenter <FONT COLOR="red"><TT>translate_call</TT></FONT>, <FONT COLOR="red"><TT>prologue</TT></FONT> et <FONT COLOR="red"><TT>epilogue</TT></FONT>
+suivant la description ci-dessus, et à l&#X2019;aide des fonctions auxiliaires suggérées
+plus haut.</P><P>Pour commencer, implémentez <FONT COLOR="red"><TT>translate_tail_call</TT></FONT> de façon triviale, à
+l&#X2019;aide d&#X2019;un simple appel à <FONT COLOR="red"><TT>translate_call</TT></FONT>. Ce sera inefficace &#X2013; les
+appels terminaux seront compilés comme des appels ordinaires &#X2013; mais correct.</P><P>Vous pouvez tester le compilateur à l&#X2019;aide des commandes <TT>make ertl</TT> et
+<TT>make test</TT>.</P><!--TOC section Compilation efficace des appels terminaux-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Compilation efficace des appels terminaux</H2><!--SEC END --><P>Il reste à améliorer la fonction <FONT COLOR="red"><TT>translate_tail_call</TT></FONT> pour compiler
+efficacement les appels terminaux.</P><P>On distingue deux cas, que l&#X2019;on pourra traiter successivement.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Si la procédure appelée coïncide avec la procédure courante, alors il
+est inutile de désinstaller la trame de pile pour la réinstaller aussitôt.
+On souhaite donc compiler l&#X2019;appel par un simple saut vers le point d&#X2019;entrée
+de la procédure, précédé d&#X2019;un transfert des paramètres effectifs vers les
+pseudo-registres censés contenir les paramètres formels.
+</LI><LI CLASS="li-itemize">Dans le cas général, on souhaite que l&#X2019;appelant désalloue sa trame de
+pile avant d&#X2019;effectuer l&#X2019;appel. On doit donc transférer les paramètres
+effectifs vers les registres physiques appropriés, puis exécuter une
+séquence d&#X2019;instructions analogue à l&#X2019;épilogue, à la différence qu&#X2019;elle se
+termine non pas par une instruction <FONT COLOR="red"><TT>ERTL.IReturn</TT></FONT>, mais par une
+instruction de saut <FONT COLOR="red"><TT>ERTL.ITailCall</TT></FONT>. On n&#X2019;implémentera ceci que dans
+le cas où tous les paramètres sont passés dans des registres physiques, car
+le cas où certains paramètres sont passés sur la pile serait un véritable
+casse-tête. Dans ce dernier cas, on se contentera d&#X2019;un appel à
+<FONT COLOR="red"><TT>translate_call</TT></FONT>.
+</LI></UL><P>Pour le premier point ci-dessus, on aura besoin d&#X2019;une fonction:
+</P><PRE CLASS="verbatim">let parallel_move (destrs : Register.t list) (sourcers : Register.t list) (l : Label.t) : Label.t = ...
+</PRE><P>Cette fonction engendre une séquence d&#X2019;instructions dont
+l&#X2019;effet est de transférer le contenu des pseudo-registres <FONT COLOR="red"><TT>sourcers</TT></FONT> vers
+les pseudo-registres <FONT COLOR="red"><TT>destrs</TT></FONT>. Les listes <FONT COLOR="red"><TT>sourcers</TT></FONT> et <FONT COLOR="red"><TT>destrs</TT></FONT>
+sont supposées de même longueur. On prendra garde au fait que certains
+pseudo-registres peuvent apparaître à la fois dans <FONT COLOR="red"><TT>sourcers</TT></FONT> et
+<FONT COLOR="red"><TT>destrs</TT></FONT>!</P><!--BEGIN NOTES document-->
+<HR CLASS="ffootnoterule"><DL CLASS="thefootnotes"><DT CLASS="dt-thefootnotes">
+<A NAME="note1" HREF="#text1">1</A></DT><DD CLASS="dd-thefootnotes">Exécutez d&#X2019;abord la commande <TT>cp -f rtl2ertlI.mli
+rtl2ertlI.ml</TT>, afin de recopier la signature du module <FONT COLOR="red"><TT>Env</TT></FONT>. Ouvrez
+ensuite le fichier <TT>rtl2ertlI.ml</TT>. Remplacez «<CODE> : sig </CODE>» par
+«<CODE> = struct </CODE>», puis remplacez les déclarations <CODE>val</CODE> par des
+définitions <CODE>let</CODE>. Vous pouvez pour le moment donner des définitions
+vides à l&#X2019;aide de la construction <CODE>assert false</CODE>.
+</DD></DL>
+<!--END NOTES-->
+<!--CUT END -->
+<!--HTMLFOOT-->
+<!--ENDHTML-->
+<!--FOOTER-->
+<HR SIZE=2><BLOCKQUOTE CLASS="quote"><EM>Ce document a été traduit de L<sup>A</sup>T<sub>E</sub>X par <A HREF="http://hevea.inria.fr">H<FONT SIZE=2><sup>E</sup></FONT>V<FONT SIZE=2><sup>E</sup></FONT>A</A></EM></BLOCKQUOTE></BODY>
+</HTML>

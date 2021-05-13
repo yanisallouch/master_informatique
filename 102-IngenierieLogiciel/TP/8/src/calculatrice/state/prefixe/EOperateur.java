@@ -4,7 +4,7 @@ public class EOperateur extends EtatCalculette {
 
 	public EOperateur(Calculette c) {
 		super(c);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override

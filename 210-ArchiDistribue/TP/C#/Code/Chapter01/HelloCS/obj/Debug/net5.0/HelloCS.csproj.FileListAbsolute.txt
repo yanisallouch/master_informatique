@@ -1,0 +1,16 @@
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter01\HelloCS\bin\Debug\net5.0\HelloCS.exe
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter01\HelloCS\bin\Debug\net5.0\HelloCS.deps.json
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter01\HelloCS\bin\Debug\net5.0\HelloCS.runtimeconfig.json
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter01\HelloCS\bin\Debug\net5.0\HelloCS.runtimeconfig.dev.json
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter01\HelloCS\bin\Debug\net5.0\HelloCS.dll
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter01\HelloCS\bin\Debug\net5.0\ref\HelloCS.dll
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter01\HelloCS\bin\Debug\net5.0\HelloCS.pdb
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter01\HelloCS\obj\Debug\net5.0\HelloCS.csprojAssemblyReference.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter01\HelloCS\obj\Debug\net5.0\HelloCS.GeneratedMSBuildEditorConfig.editorconfig
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter01\HelloCS\obj\Debug\net5.0\HelloCS.AssemblyInfoInputs.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter01\HelloCS\obj\Debug\net5.0\HelloCS.AssemblyInfo.cs
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter01\HelloCS\obj\Debug\net5.0\HelloCS.csproj.CoreCompileInputs.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter01\HelloCS\obj\Debug\net5.0\HelloCS.dll
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter01\HelloCS\obj\Debug\net5.0\ref\HelloCS.dll
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter01\HelloCS\obj\Debug\net5.0\HelloCS.pdb
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter01\HelloCS\obj\Debug\net5.0\HelloCS.genruntimeconfig.cache

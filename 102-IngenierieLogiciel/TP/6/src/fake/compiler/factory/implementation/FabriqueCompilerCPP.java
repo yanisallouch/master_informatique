@@ -11,7 +11,7 @@ import fake.compiler.product.implementation.ParserCPP;
 public class FabriqueCompilerCPP implements IFabriqueCompiler {
 
 	public FabriqueCompilerCPP() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	@Override

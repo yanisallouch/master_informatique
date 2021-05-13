@@ -1,0 +1,13 @@
+dans l'ordre :
+
+https://material.io/design/introduction
+
+https://material.io/components?platform=android
+
+https://material.io/develop/android
+
+https://material.io/design/color/the-color-system.html#color-theme-creation
+
+-----------------------------------------
+
+https://firebase.google.com/docs/cloud-messaging/

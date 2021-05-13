@@ -1,0 +1,19 @@
+<!-- Liste des produits : -->
+<div *ngIf="inACategory"> <a [routerLink]="'/categories'">Retour aux catégories</a></div>
+<ul>
+    <!-- <li *ngFor="let produit of produits"> {{produit['nom']}} ({{produit['type']}}) <a *ngIf='(user|async)' [routerLink] = "['/panier/ajout', produit.nom, produit.marque]"> achat </a> </li> -->
+    <table style="width:100%">
+    	<tr>
+    		<th *ngFor="let val of getKeys(produits[0])"> {{ val }}</th>
+    		<!-- <th>Catégorie</th> -->
+    		<th *ngIf='(user|async)'>Quantité</th>
+    		<th *ngIf='(user|async)'> </th>
+    	</tr>
+    	<tr *ngFor="let produit of produits; let i = index;trackByIdx">
+    		<td *ngFor="let val of getKeys(produit)">{{ produit[val] }}</td>
+    		<!-- <td>{{ produit['type'] }}</td> -->
+    		<td *ngIf='(user|async)'><input type="number" value="0"  [(ngModel)]="quantites[i]" [ngModel] = "1"> </td>
+    		<td *ngIf='(user|async)'><a  (click)="ajouterPanier(produit.nom, produit.marque, quantites[i], produit.prix)"><button>ajouter au panier</button> </a> </td>
+    	</tr>
+    </table>
+</ul>

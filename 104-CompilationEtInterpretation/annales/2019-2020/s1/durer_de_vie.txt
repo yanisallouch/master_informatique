@@ -1,0 +1,20 @@
+{}
+f(n:integer,
+{n}
+N:integer):integer
+{n,N}
+	f:=N;
+{f,n}
+	i:=0;
+{f,i,n}
+	while i < n do
+{f,i}
+		i:=i+1;
+{f}
+		if pair(f) then
+{f}
+			f:= f/2
+		else
+{f}
+			f:=3*f+1
+{}

@@ -9,7 +9,7 @@ import jeu.de.lettre.product.implementation.GestPhraseMystereGuider;
 public class FabriqueJeuFacile implements IFabriqueJeu {
 	
 	public FabriqueJeuFacile() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override

@@ -1,0 +1,34 @@
+POST /ws.asmx HTTP/1.1
+Host: localhost
+Content-Type: text/xml; charset=utf-8
+Content-Length: length
+SOAPAction: "http://mondomaine.fr/monAppli/getDate3"
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <getDate3 xmlns="http://mondomaine.fr/monAppli" />
+  </soap:Body>
+</soap:Envelope>
+
+------------------------------------------------------------
+
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Content-Length: length
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <getDate3Response xmlns="http://mondomaine.fr/monAppli">
+      <getDate3Result>
+        <jour>int</jour>
+        <mois>int</mois>
+        <annee>int</annee>
+      </getDate3Result>
+    </getDate3Response>
+  </soap:Body>
+</soap:Envelope>
+
+<!-- style Document/literal wrapped -->

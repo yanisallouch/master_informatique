@@ -1,0 +1,110 @@
+00:16:28	Félix Yriarte:	Bonjour
+00:16:30	Marie Mille:	bonjour :)
+00:16:31	Yasmine AIT ALI YAHIA:	Bonjour 
+00:16:32	Yasmine AIT ALI YAHIA:	Oui 
+00:16:32	Denis Beauget:	Bonjour, oui
+00:16:34	Yassine El atillah:	bonjour
+00:20:18	Johanna:	cest possible pour les BCD aussi ? :)
+00:20:40	Johanna:	daccord merci !
+00:23:29	Yasmine AIT ALI YAHIA:	Vous pouvez couper les microphones Monsieur 
+00:24:46	guilhem bl:	on pourais passer sur bbb pour les prochains cours svp. sur zoom je suis regulièrement (toutes les 10 min) expulsé de l'audio et le temps de rafraichir la page j'ai perdu 20 de son 
+00:25:02	guilhem bl:	je pers le son sur zoom
+00:25:06	guilhem bl:	regulièrement 
+00:25:09	guilhem bl:	c'est pas stable
+00:39:59	Marie Mille:	Pour les notes c'est 50/50 ?
+00:40:44	Marie Mille:	Merci !
+00:41:01	johanna:	meme pour les BCD ? x)
+00:41:19	johanna:	haha merci
+00:41:34	Marie Mille:	Euhhhhhhhhhhh
+00:41:53	ismailgasmi:	On espère aussi !
+00:45:39	Komlavi AMOUZOU:	Oui
+00:51:25	Antoine Luciani:	Pensez à éteindre vos micros ;)
+00:51:52	Marie Mille:	On doit installer Jupyter...etc des maintenant ?
+00:52:34	Marie Mille:	idem pour Sickitlearn, Pandas, Seaborn….etc
+00:55:54	johanna:	je ne vois plus l'ecran cest normal ?
+00:56:04	johanna:	ca marche merci ^^
+00:59:07	Pascal Poncelet:	[ ]
+# pour monter son drive Google Drive localfrom google.colab import drivedrive.mount('/content/gdrive')
+
+Mounted at /content/gdrive
+Corriger éventuellement la ligne ci-dessous pour mettre le chemin vers un répertoire spécifique dans votre répertoire Google Drive :
+[ ]
+%cd /content/gdrive/My Drive/Colab Notebooks/EGC_Ecole2021## pour une utilisation sur une machine locale changer le chemin ci-dessous et décommenter la ligne#%cd ./
+
+/content/gdrive/My Drive/Colab Notebooks/EGC_Ecole2021
+01:12:38	Djamel BENAMEUR:	C'est vraiment intéressant !! 
+01:23:05	Djamel BENAMEUR:	les hashtag c'est le cancer de la société 
+01:23:25	Antoine Luciani:	You are fake news !
+01:27:31	guilhem bl:	amerique
+01:27:40	guilhem bl:	pas afrique
+01:27:51	Plogeur:	équateur vous avez dit
+01:35:18	Plogeur:	j’ai pas compris le rapport ?
+01:35:55	Djamel BENAMEUR:	Spéculation 
+01:42:59	Plogeur:	toujours la faute au meme pays
+01:54:31	Djamel BENAMEUR:	Nickel 
+01:54:33	Plogeur:	ok
+01:54:34	ismailgasmi:	Parfait
+01:54:37	Marie Mille:	ok
+01:54:39	David Camarazo:	Parfait.
+01:54:49	Nizar:	oui
+02:07:54	Marie Mille:	oui
+02:07:58	David Camarazo:	oui
+02:08:00	Jean-Maurice Raboude:	oui
+02:08:06	Camille Aissani:	oui
+02:08:51	guilhem bl:	negatif
+02:08:52	Jérémy:	negatif
+02:08:52	Hayaat Hebiret:	négatif ?
+02:08:56	Antoine Luciani:	plutôt négatif oui
+02:08:59	David Camarazo:	négatif
+02:09:08	Antoine Luciani:	"choqué" "ennemi"...
+02:09:09	Thomas Zaragoza:	mots clefs
+02:09:10	Marie Mille:	oui mais par rapport a quoi
+02:09:11	guilhem bl:	mots clé, cloqué, ...
+02:09:17	guilhem bl:	choqué*
+02:09:42	Hayaat Hebiret:	"choqué" "ennemi" "atteinte grave"
+02:13:00	Marie Mille:	Si quelqu'un répondait à cela de manière negative. Ce serait aussi un avis negatif mais pas par rapport a la meme opinion
+02:30:00	Djamel BENAMEUR:	Flash Krash 
+02:30:48	guilhem bl:	le graphe est zoomé sur le haut, c'est pas une chute de 90%
+02:39:56	ismailgasmi:	Mais du coup ils sont contactés ? C’est pour quoi ils sont interessants
+02:40:09	ismailgasmi:	Grace aux données additionnelles
+02:40:49	ismailgasmi:	D’accord, merci.
+02:42:06	Djamel BENAMEUR:	Et souvent si les médias en parle, il faut absolumenet s'eloigner hahaah 
+02:42:33	Plogeur:	ah non
+02:42:46	guilhem bl:	l'IA et le big learnig c'est jamais que des if imbriqué :)
+02:43:55	Charles:	C’était quoi la définition de Data Mining à l’époque ?
+03:03:04	Marie Mille:	Aura t on acces aux diapos s'il vous palit ?
+03:03:09	Marie Mille:	plait
+03:03:31	Marie Mille:	Ok, merci :)
+03:03:48	Charles:	Pour ceux qui ne sont pas inscris au moodle, on doit vous envoyer un mail ?
+03:03:56	david:	où est ce qu'on peux retrouver l'enregistrement s'il veut plait ?
+03:04:05	Charles:	Ah super!
+03:04:13	david:	super merci !
+03:08:16	Charles:	C’est cool de se mélanger pourtant
+03:10:29	Djamel BENAMEUR:	Comme d'habitude je veux dire 
+03:10:58	Charles:	Vive l’amour après tout
+03:13:49	Charles Desgenetez:	Ah d’accord, parce que le seul terme Data Mining est vraiment connu de nos jours pour les gens qui cherchent dans le code source de logi/ludiciels (souvent des jeux-videos) pour avoir des infos en exclusivités etc…
+03:14:07	Charles Desgenetez:	le terme *
+03:14:27	Charles Desgenetez:	Mais du coup c’est plus la même définition ui
+03:22:20	Charles Desgenetez:	Harcelé par Uber Eats quand j’ai pas acheté 1 tacos dans le mois 😔
+03:31:15	guilhem bl:	non
+03:32:03	Charles Desgenetez:	On dirait qu’il y a un lien entre la bière et l'aspirine
+03:32:12	ismailgasmi:	Haha
+03:32:15	Denis Beauget:	AH
+03:32:16	Charles Desgenetez:	😳😳
+03:32:23	Komlavi AMOUZOU:	Haha
+03:32:54	Hayaat Hebiret:	 les mails de la fac partent dans mes spams aussi :)
+03:32:58	Djamel BENAMEUR:	il faut vraiement que l'information sert l'entrprise à l'analyse et prendre des décisions 
+03:34:52	Marie Mille:	Merci !
+03:34:57	Binyat AZIZ SHARIF:	merci
+03:35:04	ismailgasmi:	Merci, bonne journée !
+03:35:10	Jean-Maurice Raboude:	oui, merci
+03:35:13	Peter Vendloczki:	Bonne journée ! 
+03:35:18	johanna:	oui merci beaucoup !
+03:35:19	Félix Yriarte:	merci, au revoir !
+03:35:20	johanna:	bonne journée :)
+03:35:25	Denis Beauget:	merci, au revoir !
+03:35:25	Marion Varoqui:	merci au revoir !
+03:35:25	Milissa dadi:	Merci bonne journée
+03:35:26	David Camarazo:	Merci à dans 15 jours.
+03:35:27	Djamel BENAMEUR:	Mercii 
+03:35:28	Charles Desgenetez:	Merci bonne journée !

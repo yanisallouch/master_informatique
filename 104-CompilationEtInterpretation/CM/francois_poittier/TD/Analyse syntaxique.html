@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+            "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Analyse syntaxique
+</TITLE>
+
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META name="GENERATOR" content="hevea 1.10">
+<STYLE type="text/css">
+.li-enumerate{margin:1ex 0ex;}
+.title{margin:2ex auto;text-align:center}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+DIV TABLE{margin-left:inherit;margin-right:inherit;}
+PRE{text-align:left;margin-left:0ex;margin-right:auto;}
+BLOCKQUOTE{margin-left:4ex;margin-right:4ex;text-align:left;}
+TD P{margin:0px;}
+.lstlisting{font-family:monospace;white-space:pre;margin-right:auto;margin-left:0pt;text-align:left}
+BODY{background:white;}
+.title{padding:1ex;background:#00B200;}
+.titlemain{padding:1ex;background:#00B200;}
+.section{padding:.5ex;background:#2DE52D;}
+.subsection{padding:0.3ex;background:#66FF66;}
+</STYLE>
+
+<style type="text/css">
+pre, code, tt {font:12pt monospace;*font-size:100%;font-weight: bold;}
+</style>
+</HEAD>
+<BODY >
+<!--HEVEA command line is: hevea -entities -fix -O index.tex -->
+<!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Analyse syntaxique</H1></TD></TR>
+</TABLE><DIV CLASS="center">
+Voici le <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/cours03.pdf">cours</A> correspondant. La solution se trouve dans le
+fichier <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/parser.mly.html">parser.mly</A>.
+</DIV><!--TOC section Présentation-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Présentation</H2><!--SEC END --><P>Nous utilisons aujourd&#X2019;hui un générateur d&#X2019;analyseurs syntaxiques, c&#X2019;est-à-dire
+un outil qui, à partir d&#X2019;une grammaire, produit le code d&#X2019;un analyseur syntaxique.
+(Notons qu&#X2019;il s&#X2019;agit d&#X2019;une forme de compilation!)</P><P>Les générateurs les plus utilisés sont basés sur le formalisme LR et
+descendent de <A HREF="http://en.wikipedia.org/wiki/Yacc">yacc</A>, le premier
+outil du genre, développé dans les années 70. Dans le monde d&#X2019;Objective Caml,
+l&#X2019;outil standard est <A HREF="http://caml.inria.fr/pub/docs/manual-ocaml/manual026.html">ocamlyacc</A>. Nous
+utiliserons de préférence <A HREF="http://gallium.inria.fr/~fpottier/menhir/manual.pdf">menhir</A>,
+qui est plus agréable d&#X2019;utilisation.</P><P>L&#X2019;objectif de ce TD est d&#X2019;écrire un analyseur syntaxique pour Pseudo-Pascal,
+qui doit permettre de passer de la syntaxe concrète à la syntaxe abstraite.
+La syntaxe abstraite de Pseudo-Pascal est résumée par cette
+<A HREF="../../pp.pdf">fiche</A> et est définie formellement dans le fichier
+<A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/LPP.mli.html">LPP.mli</A>.</P><P>Les langages LPP (défini par <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/LPP.mli.html">LPP.mli</A>) et et PP (défini par
+<A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/PP.mli.html">PP.mli</A>) sont en fait identiques &#X2013; il s&#X2019;agit dans les deux cas de
+Pseudo-Pascal &#X2013; à ceci près que dans LPP, les arbres abstraits sont annotés
+par des positions en provenance du code source, tandis que dans PP, ces
+positions ont été supprimées. La chaîne de compilation est la suivante:
+l&#X2019;analyseur syntaxique produit des arbres au sens de LPP; le typeur
+(implémenté dans <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/typechecking.ml.html">typechecking.ml</A>) analyse des arbres de LPP, et
+utilise les positions pour afficher de bons messages d&#X2019;erreur si besoin; puis
+les positions sont supprimées (<A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/lpp2pp.ml.html">lpp2pp.ml</A>), car elles ne sont pas
+utiles dans la suite. L&#X2019;interprète que nous avons écrit la semaine dernière
+utilisait des arbres PP. L&#X2019;analyseur syntaxique que nous écrivons aujourd&#X2019;hui
+doit produire des arbres LPP.</P><!--TOC section Progression-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Progression</H2><!--SEC END --><P>Comme d&#X2019;habitude, il vous faut télécharger l&#X2019;archive <TT><A HREF="td3.tar.gz">td3.tar.gz</A></TT>.
+La compilation se fait à l&#X2019;aide de la commande <TT>make</TT>.</P><P>L&#X2019;analyseur lexical vous est fourni (<A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/lexer.mll.html">lexer.mll</A>), ainsi qu&#X2019;un
+analyseur syntaxique incomplet, situé dans le fichier <TT>parser.mly</TT>. 
+Il y manque:
+</P><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+la définition de la syntaxe des expressions &#X2013; les seules expressions reconnues
+pour le moment sont les constantes entières;
+</LI><LI CLASS="li-enumerate">la définition de la syntaxe des instructions &#X2013; les seules instructions reconnues
+pour le moment sont les instructions d&#X2019;affectation à une variable;
+</LI><LI CLASS="li-enumerate">des déclarations de précédence des opérateurs.
+</LI></OL><P>Vous pouvez vérifier que le petit compilateur accepte un programme qui n&#X2019;utilise que
+les constructions reconnues par cet analyseur incomplet, comme <TT>zero.p</TT>:
+</P><DIV CLASS="lstlisting">program
+
+var
+   x : integer;
+
+begin
+   x := 0
+end.</DIV><P>
+Le petit compilateur accepte ce fichier et ne signale aucune erreur de syntaxe:
+</P><PRE CLASS="verbatim"># ./compilo test/zero.p
+</PRE><P>Vous pouvez passer l&#X2019;option <CODE>-dpp</CODE> au petit compilateur pour lui demander
+d&#X2019;afficher le programme Pseudo-Pascal après l&#X2019;avoir analysé (c&#X2019;est-à-dire que
+le petit compilateur effectue d&#X2019;abord la traduction de la syntaxe concrète
+vers la syntaxe abstraite, puis la traduction inverse, et affiche le
+résultat). On doit alors obtenir un programme identique au programme source,
+modulo l&#X2019;indentation, le parenthésage, etc. qui peuvent être différents.
+</P><PRE CLASS="verbatim"># ./compilo -dpp test/zero.p
+program
+
+var 
+  x : integer; 
+  
+begin
+  x := 0
+end.
+</PRE><P>Vous pourrez vérifier expérimentalement que l&#X2019;analyseur syntaxique qui
+vous est fourni est bel et bien incomplet:
+</P><PRE CLASS="verbatim"># ./compilo test/trivial.p
+File "test/trivial.p", line 4, characters 4-11:
+Syntax error.
+</PRE><P>Ici, il n&#X2019;a pas reconnu l&#X2019;appel de procédure <CODE>writeln(10)</CODE>.</P><P>L&#X2019;objectif est de compléter l&#X2019;analyseur syntaxique.</P><P>Il vous faut compléter la grammaire des définitions et des instructions.
+Au fur et à mesure que vous ajouterez des constructions syntaxiques, vous
+verrez apparaître des conflits, qui seront signalés par Menhir. Vous devrez
+comprendre ces conflits et les résoudre (les éliminer) à l&#X2019;aide de déclarations
+de précédence.</P><P>Lorsque vous compilerez l&#X2019;analyseur syntaxique incomplet qui vous est fourni,
+vous constaterez que Menhir affiche des avertissements: certains lexèmes
+(<EM>tokens</EM>) et certaines productions ne sont jamais utilisés. C&#X2019;est
+normal: l&#X2019;analyseur est incomplet et contient effectivement des morceaux qui
+ne sont pas (encore) utilisés.</P><P>Un premier critère de réussite est fourni par la commande <TT>make test</TT>.
+Pour chaque programme Pseudo-Pascal dans le sous-répertoire <TT>test/</TT>, on
+vérifie que ce programme est accepté par votre analyseur syntaxique.</P><P>Un second critère de réussite est fourni par la commande <TT>make dpp</TT>.
+Pour chaque programme Pseudo-Pascal dans le sous-répertoire <TT>test/</TT>, on
+vérifie que la fonction <CODE>./compilo -dpp</CODE> est involutive. En d&#X2019;autres
+termes, si on effectue l&#X2019;analyse syntaxique puis l&#X2019;affichage du programme, on
+doit obtenir un texte qui peut à nouveau être analysé puis affiché à
+l&#X2019;identique. On vérifie ainsi que l&#X2019;analyseur syntaxique et l&#X2019;afficheur sont
+d&#X2019;accord entre eux: par exemple, si l&#X2019;analyseur syntaxique pense que <CODE>+</CODE>
+est associatif à gauche alors que l&#X2019;afficheur pense qu&#X2019;il est associatif à
+droite, ce test échouera pour une entrée de la forme <CODE>x+(y+z)</CODE>.</P><P>Ces deux critères ne garantissent pas que votre analyseur syntaxique est
+correct: par exemple, un analyseur syntaxique trivial, qui accepte tout et
+construit un arbre de syntaxe correspondant au programme vide, vérifierait ces
+deux critères!</P><P>Un troisième critère de réussite est fourni par la commande <TT>make
+reftest</TT>. Pour chaque programme Pseudo-Pascal dans le sous-répertoire
+<TT>test/</TT>, on vérifie que le comportement de ce programme, obtenu via
+<CODE>./compilo -ipp</CODE>, est identique au comportement attendu, qui a été obtenu
+à l&#X2019;aide du petit compilateur de référence (dont l&#X2019;analyseur syntaxique est
+supposé correct) et stocké dans un fichier <CODE>.out</CODE>.</P><!--TOC section À propos de Menhir-->
+<H2 CLASS="section"><!--SEC ANCHOR -->À propos de Menhir</H2><!--SEC END --><!--TOC subsection Non-terminaux paramétrés-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Non-terminaux paramétrés</H3><!--SEC END --><P>L&#X2019;une des caractéristiques qui distinguent Menhir est la possibilité de
+définir des symboles non-terminaux paramétrés. Un langage de programmation
+moderne, comme Objective Caml, Haskell ou Java, permet de définir une fois
+pour toutes un type des listes, paramétré par le type des éléments. De même,
+Menhir permet de définir une fois pour toutes la syntaxe des listes,
+paramétrée par la syntaxe des éléments. Bien sûr, diverses variantes sont
+possibles, selon que l&#X2019;on veut autoriser ou non la liste vide, selon que les
+éléments de la liste sont délimités par des séparateurs, des terminateurs,
+etc.</P><P>La librairie standard de Menhir définit un certain nombre de non-terminaux
+paramétrés, qui sont souvent utiles. Ces définitions sont décrites dans le
+<A HREF="http://gallium.inria.fr/~fpottier/menhir/manual.pdf">manuel</A>, figure 3. On les trouve
+également dans le fichier
+<A HREF="http://gallium.inria.fr/~fpottier/menhir/standard.mly.html">standard.mly</A>. Bien sûr,
+rien ne vous empêche de définir vos propres symboles non-terminaux paramétrés.</P><P>Pour donner un exemple de l&#X2019;utilité des non-terminaux paramétrés, supposons
+que l&#X2019;on souhaite reconnaître une liste d&#X2019;expressions séparées par des
+virgules, potentiellement vide, et délimitée par des parenthèses. (Dans le cas
+de Pseudo-Pascal, cela correspond à la liste des arguments effectifs d&#X2019;un
+appel de fonction.) En l&#X2019;absence de non-terminaux paramétrés, on devrait
+effectuer une définition en trois étages &#X2013; voici par exemple ce que l&#X2019;on
+devrait écrire si l&#X2019;on utilisait ocamlyacc:
+</P><PRE CLASS="verbatim">delimited_comma_separated_expression_list:
+| LPAREN comma_separated_expression_list RPAREN
+    { $2 }
+
+comma_separated_expression_list:
+|
+    { [] }
+| nonempty_comma_separated_expression_list
+    { $1 }
+
+nonempty_comma_separated_expression_list:
+| expression
+    { [$1] }
+| expression COMMA nonempty_comma_separated_expression_list
+    { $1 :: $3 }
+</PRE><P>Si l&#X2019;on utilise Menhir, les notions d&#X2019;objet délimité et de liste avec
+séparateurs sont déjà définies dans la librairie standard (consultez leur
+définition dans
+<A HREF="http://gallium.inria.fr/~fpottier/menhir/standard.mly.html">standard.mly</A>), ce qui
+permet d&#X2019;utiliser directement le symbole non-terminal
+<CODE>delimited(LPAREN, separated_list(COMMA, expression), RPAREN)</CODE>,
+sans devoir effectuer aucune définition auxiliaire.</P><P>Si <CODE>X</CODE> est un non-terminal, Menhir permet d&#X2019;écrire <CODE>X?</CODE>,
+<CODE>X*</CODE>, et <CODE>X+</CODE>. Ces notations sont considérées comme des
+abréviations pour <CODE>option(X)</CODE>, <CODE>list(X)</CODE>, et
+<CODE>nonempty_list(X)</CODE>, respectivement. Les symboles non-terminaux
+paramétrés permettent ainsi de considérer ces notations comme de
+simples cas particuliers d&#X2019;un mécanisme beaucoup plus général.</P><!--TOC section Conflits-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Conflits</H2><!--SEC END --><P>Un second atout de Menhir est sa capacité à expliquer les conflits
+(shift/reduce et reduce/reduce) sous une forme relativement lisible.</P><P>Lorsque Menhir signale un ou plusieurs conflits, vous devez consulter le
+fichier <TT>parser.conflicts</TT>. Celui-ci justifie chaque conflit en
+expliquant en quoi ce conflit correspond à une ambiguïté de la grammaire. Plus
+précisément, pour chaque conflit, Menhir construit une phrase (composée de
+symboles terminaux et non-terminaux) qui peut être interprétée de deux façons
+différentes &#X2013; cette phrase est (un préfixe de) la frange de deux arbres
+d&#X2019;analyse syntaxique distincts. Ceci prouve que la grammaire n&#X2019;est pas LR(1),
+et (souvent) lorsque cela se produit, la grammaire est effectivement ambiguë.</P><P>Vous pouvez également consulter le fichier <TT>parser.automaton</TT>. Moins
+lisible, celui contient la description de l&#X2019;automate LR qui a été engendré,
+et indique quels états contiennent des conflits.</P><P>En général, il existe deux façons de résoudre un conflit. L&#X2019;une est de donner
+des directives de précédence (<CODE>%left</CODE>, <CODE>%right</CODE>, <CODE>%nonassoc</CODE>,
+<CODE>%prec</CODE>) bien senties. Ce mécanisme offre l&#X2019;avantage de ne demander
+aucune modification de la grammaire, mais peut être difficile d&#X2019;emploi, et
+doit être utilisé avec parcimonie. L&#X2019;autre est de modifier la grammaire pour
+éviter le conflit. Lorsque l&#X2019;on utilise Menhir, l&#X2019;emploi judicieux de la
+directive <CODE>%inline</CODE> permet d&#X2019;effectuer certaines modifications de la
+grammaire de façon transparente, et permet d&#X2019;éliminer certains conflits sans
+difficulté.</P><P>Dans le TD d&#X2019;aujourd&#X2019;hui, la plupart des conflits pourront être résolus à
+l&#X2019;aide de directive de précédence. Cependant, la directive <CODE>%inline</CODE>
+a été utilisée pour définir le symbole non-terminal <CODE>binop</CODE>. À titre
+d&#X2019;exercice, vous pourrez vérifier que ceci permet d&#X2019;éviter certains conflits
+&#X2013; supprimer la directive fait ré-apparaître ces conflits &#X2013; et vous pourrez
+tenter d&#X2019;expliquer pourquoi.</P><!--CUT END -->
+<!--HTMLFOOT-->
+<!--ENDHTML-->
+<!--FOOTER-->
+<HR SIZE=2><BLOCKQUOTE CLASS="quote"><EM>Ce document a été traduit de L<sup>A</sup>T<sub>E</sub>X par <A HREF="http://hevea.inria.fr">H<FONT SIZE=2><sup>E</sup></FONT>V<FONT SIZE=2><sup>E</sup></FONT>A</A></EM></BLOCKQUOTE></BODY>
+</HTML>

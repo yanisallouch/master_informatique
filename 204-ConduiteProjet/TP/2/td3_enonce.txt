@@ -1,0 +1,321 @@
+ 
+
+8.1 LE CAS ASSURETOUT
+
+Vous êtes consultant de la compagnie Assuretout. Dressez un diagnostic de la
+situation de projet et proposez une stratégie de développement.
+
+&.1.1 Description de l'entreprise Assuretout
+
+La société Assuretout est une compagnie d'assurance JARD (ncendies-
+Accidents-Risques Divers) de 1600 personnes, fondée en 1930. Sa structure peut
+être décrite à deux niveaux : la structure externe englobe le siège de la compagnie
+
+et son réseau de distribution et la structure interne est celle du siège. La structure
+externe est donnée dans la figure 8.1,
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+SE
+iège .
+LE TR
+Inspecteurs Bureaux Centraux Courtiers
+Fer Agents
+
+ 
+
+ 
+
+ 
+
+Figure 8.1 : Structure externe de l’entreprise Assuretout
+
+Te fonctionnement est centralicé : toutes les décisions, en particulier celles
+
+relatives à la production (produits, tarifs...) sont prises au siège, sans participation
+des agents. Les inspecteurs assurent le contrôle des agents.
+
+Les bureaux centraux, implantés régionalement, datent de moins de dix ans. Ils
+témoignent d'un désir de décentralisation. En théorie, ils exercent un contrôle sur
+les agents. En pratique, les agents court-circuitent souvent les bureaux centraux,
+parce que ceux-ci ont peu de pouvoir, notamment en ce qui conceme les
+autorisations de souscription. Il y a donc un contact direct entre les agents et le
+siège. À l'inverse, bien que les agents et les courtiers soient les seuls à pouvoir
+
+vendre de l'assurance sur le plan régional, les bureaux centraux font également de
+la ventc directe.
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Direction générale
+Organisation | | Informatique | | Administratif Sinistres | Comptabilité |
+Automobile| | Multirisque Multirisque. Risque
+habitation agricole industriel
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Figure 8.2 : Structure interne de l’entreprise Assuretout
+
+Au siège (Fig. 8.2), les départements de production sont calqués sur les
+familles de produits : automobile, multirisque habitation à l'usage des particulicrs,
+multirisque agricole et risque industriel à l’usage des entreprises. Chacun à une
+gestion propre ct son mode spécifique de définition des produits, avec un souci
+d'autonomie par rapport aux autres. Le département Automobile est le seul à être
+informatisé, avec un système qui le rend dépendant du département Informatique.
+Le département Administratif dirige le réseau commercial.
+
+Le rôle du département Organisation est mal défini car les changements
+d'organisation passent le plus souvent par l'informatique.
+ 
+
+ 
+
+8.1.2 Description du projet Assuretout
+
+Assuretout est encore peu informatisée. Les applications principales re
+comptabilité et la tarification des contrats automobile. Depuis quelques ann -
+l'entreprise connaît une baisse de sa rentabilité, ce qui est d'ailleurs Nil
+toutes les grandes compagnies d'assurance qui connaissent des frais & .
+importants dans un contexte de concurrence accrue. Sur le conseil d'une socii :
+services, la direction générale a décidé d'entreprendre une vaste informatisation de
+l'activité opérationnelle. Les objectifs annoncés sont :
+
++ informatiser pour diminuer le personnel ;
++ standardiser la conception des produits, à partir d'éléments de base ;
++ simplifier les modalités de gestion et réduire leur diversité.
+
+Par ailleurs, le nouveau système d'information doit offrir une vue unique ai
+l'assuré. On doit en retour présenter à ce dernier une Vision homogène de
+l'entreprise, quelle que soit l’entité de l’entreprise à laquelle il s'adresse.
+
+Une planification à un horizon de cinq ans a défini globalement les es
+conduisant à l'informatisation de toute l'entreprise. Le plan informatique comporte
+plusieurs axes :
+
++ Constituer une base de données Clients, regroupant toutes les informations
+sur les clients, qui sont actuellement dispersées dans les différents res
+Il est ainsi difficile de retrouver tous les contrats d'un même client, s'1 -
+relèvent de produits appartenant à des départements différents ou s’ils .
+été souscrits dans des agences différentes. Une même personne peut ains
+être considérée comme équivalant à plusieurs clients.
+
+* Élaborer une base produit, conçue comme un catalogue général des
+&aranties possibles, à partir duquel on puisera pour élaborer tous les
+produits d'assurance, quels qu'ils soient.
+
+s Connecter les agents d'assurance, notamment Pour accélérer les circuits
+d'encaissement.
+
+Plusieurs solutions sont envisagées en cc qui concerne la structure externe de
+la compagnie, en particulier :
+
+* le rôle des bureaux centraux : leur donner plus de pouvoir ou bien à terme
+les faire disparaître ?
+
+° le rôle des agents, dans une altermative centralisation/décentralisation.
+Certains agents sont déjà équipés d'ordinateurs sur lequel ils effectuent
+notamment la comptabilité de leur agence. Le réseau comprend plus de
+
+mille agents. Ces derniers ont, l'année précédente, manifesté leur
+inquiétude par un jour de grève.
+
+8.1.3 Mode de fonctionnement des services ulilisateurs Assuretour
+
+Les activités d'assurance sont réglementées : placées sous le contrôle d'un
+ministère de tutelle, clles sont régies par le code des assurances. Cette pression
+réglementaire externe trouve son pendant dans la réglementation interne de 1a
+Compagnie. Un lien très fort unit les employés à leur entreprise : la plupart y sont
+rentrés jeunes et y ont été formés, le secteur de l'assurance possédant sa propre
+filière de formation.
+
+Les départements de production comprennent entre cent et deux cents
+Personnes. Pour faire face à la croissance des décennies précédentes, on avait
+recruté du personnel, souvent faiblernent qualifié. Le travail parcellisé, les tâches
+limitées, souvent routinières, s'accommodent mal des initiatives individuelles. La
+bonne marche de ces départements repose sur le savoir des anciens, qui en
+assurent la transmission aux nouveaux. Dans ce domaine, vuù le champ de la
+Connaissance est étendu, on a facilement FÉCOUTS au savoir de quelques individus
+au lieu de rechercher l'information dans les nombreux tCxtcs, HemMmes Ou externes.
+La Connaissance des produits et de la réglementation est l'assise de l'autorité.
+8.1.4 Département Informatique Assuretour
+
+La structure du département Informatique est donnée à Ja figure 8.3,
+
+Informatique |
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Système | Péri-informatique | [Maintenance] [Études (Plan) ]
+
+Figure 8.3 : Structure du département Informatique Assuretout
+
+Le département est d'une taille moyenne, moins de cinquante personnes. Les
+qualifications déterminent strictement l'affectation sur les diverses tâches ; la
+frontière entre développeur et concepteur est difficile à franchir. La maintenance
+se compose d'unc vingtaine de personnes, moyennement qualifiées, réparties en
+deux groupes principaux (production automobile et comptabilité). Les dernandes
+de maintenance sont ordonnancées selon leur degré d'urgence.
+
+Les développements ont jusque-là porté sur des applications de taille limitée,
+qui sont ensuite devenues plus importantes à travers des opérations de
+maintenance. Les développements nouveaux étant rares, la structure calquée sur
+les applications à maintenir est stable. Une équipe système, cellule isolée, travaille
+en quasi -autarcie, Compte tenu de leur cantonnement sur des parties d'application
+et de l'existence de l'équipe système développant les couches intermédiaires
+(utilitaires, interfaces avec les logiciels de base.), la technicité des programmeurs
+est assez faible.
+
+Un nouveau directeur informatique a été récemment recruté. Le département
+Informatique n'ayant pas les forces suffisantes pour faire face à un grand projet, il
+est prévu de le renforcer par des apports extérieurs. Ainsi, le nouveau directeur
+est-il en train de mettre sur pied sa fonction études. Jusque-là, aucune méthode
+n'avait été utilisée, chacun étant libre de concevoir et développer à sa guise.
+
+8.1.5 Relations du département Informatique Assuretout avec les autres
+départements
+
+La culture du département Informatique est différente de celle des
+départements utilisateurs. Leurs relations sont maiquées par le souvenir des
+prestations accomplies les années précédentes. Le département Informatique est
+souvent apparu dominateur, la conception n'étant guère participative.
+
+Le directeur du département le plus informatisé est l'ancien directeur
+informatique. Il a été aiguillé vers cette nouvelle fonction au moment du
+lancement du plan informatique. C'est donc lui qui avait mis en place l'actuelle
+chaîne de tarification automobile. Il n'est pas très favorable aux changements
+pouvant être apportés par le plan. Son département commence à connaître des
+difficultés de maintenance, car l'application de tarification a déjà beaucoup
+évolué. Mais c'est aussi le département qui, à cause de la nature des risques
+couverts, est le moins rentable. C'est le plus opposé à une approche banalisée des
+différents produits commercialisés par l'entreprise.
+
+Les autres départements ressentent une crainte mêlée d'ignorance devant cette
+
+technique pouvant modifier profondément la vie de leurs services. Ils sont plus
+inquiets que demandeurs.
+ 
+
+ 
+
+La connaissance du système existant présente les Caractéristiques suivantes :
+
+* Beaucoup d'informations sont intériorisées par les personnes; ce
+phénomène est accentué par l'ancienneté et la stabilité du personnel.
+
+* De nombreuses informations sont éparpillées ; les documents de synthèse
+font défaut.
+
+* Les informations quantifiées, sur les volumes de production par exemple,
+et les statistiques sont rares.
+
+8.1.6 Proposition du plan informatique Assuretout
+
+Le plan informatique contient un découpage du chiunp de l'étude en six
+domaines :
+
+I. Te domaine Intermédiaires comporte l’adininistration des différents
+éléments du réseau (bureau central, agent, courtier, inspecteur...) et le
+calcul des commissions aux intermédiaires.
+
+2. Le domaine Clients recouvre la gestion des données clients, indépendantes
+des polices souscrites, à savoir ses Caractéristiques administratives et
+Commerciales. Il doit introduire la riotion de portefeuille client et
+portefeuille agence. Il faut établir un système de maillage permettant de
+relier différents clients (même famille, même entreprise..).
+
+- Le domaine Production traite de la souscription des contrats.
+
++ Le dormuine Sinistres couvre le traitement de la réalisation d’un risque.
+
+S. Le domaine Base produit vise à élaborer un catalogue de tous les types de
+risques et de garanties proposées. Les éléments de ce cataloguc doivent
+permettre de concevoir de nouveaux produits et d'effectuer des contrôles à
+la souscription d'un contrat.
+
+6. Le domaine Encaissement gère l'émission des quittances et le paiement
+des primes.
+
+Lao
+
+ 

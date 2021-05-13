@@ -4,7 +4,7 @@ import fake.compiler.product.IGenerator;
 public class GeneratorCPP implements IGenerator {
 
 	public GeneratorCPP() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override

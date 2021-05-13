@@ -1,0 +1,9 @@
+C:\Users\nasse\source\repos\Exercice3\Exercice3_Q1\bin\Debug\Exercice3_Q1.exe.config
+C:\Users\nasse\source\repos\Exercice3\Exercice3_Q1\bin\Debug\Exercice3_Q1.exe
+C:\Users\nasse\source\repos\Exercice3\Exercice3_Q1\bin\Debug\Exercice3_Q1.pdb
+C:\Users\nasse\source\repos\Exercice3\Exercice3_Q1\obj\Debug\Exercice3_Q1.exe
+C:\Users\nasse\source\repos\Exercice3\Exercice3_Q1\obj\Debug\Exercice3_Q1.pdb
+C:\Users\nasse\source\repos\Exercice3\Exercice3_Q1\obj\Debug\Exercice3_Client.csprojAssemblyReference.cache
+C:\Users\nasse\source\repos\Exercice3\Exercice3_Q1\obj\Debug\Exercice3_Q1.Form1.resources
+C:\Users\nasse\source\repos\Exercice3\Exercice3_Q1\obj\Debug\Exercice3_Client.csproj.GenerateResource.cache
+C:\Users\nasse\source\repos\Exercice3\Exercice3_Q1\obj\Debug\Exercice3_Q1.Properties.Resources.resources

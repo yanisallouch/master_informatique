@@ -1,0 +1,9 @@
+< 10> DataSets=Not (FP),Steps=1,Steps=3,Steps=5 => EstSupport ,DataSets=IP,Update=PT,Steps=2
+< 10> EstSliding,DataSets=TS,DataSets=IP,Steps=1,Steps=2,Steps=3,Steps=5 => Structures=LT
+< 10> Window=FsW/TransSW,EstSliding,Structures=LT,Update=PT,Steps=1,Steps=3,Steps=5 => Accuracy=Exact
+< 10> EstUtility,Structures=TR,Steps=1,Steps=3,Steps=5 => DataSets=TS
+< 10> EstSupport ,Structures=TR,Update=PB,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Support (FI)
+< 10> EstSupport ,DataSets=IP,Update=PB,Steps=1,Steps=2,Steps=3,Steps=5 => DataSets=SP
+< 10> EstSupport ,DataSets=TS,Update=PB,Steps=1,Steps=3,Steps=5 => FWK/Pattern=Support (FI)
+< 10> FWK/Pattern=Support (CI),Steps=1,Steps=3,Steps=5 => EstSupport ,DataSets=IP,Steps=2
+< 10> Year=2002-2006,Steps=1,Steps=3,Steps=5 => EstSupport 

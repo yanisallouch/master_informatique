@@ -1,0 +1,13 @@
+[
+	{
+	"email": "hey",
+	"produits": [
+					{"nom":"Caféine", "prix":15, "marque":"marque1", "quantite":1},
+    				{"nom":"Curcumine","prix":30, "marque":"marque1", "quantite":2},
+    				{"nom":"Quercétine","prix":50, "marque":"marque2", "quantite":3}
+				]
+
+	}
+
+
+]

@@ -11,7 +11,7 @@ public class CompteAvecReduction extends Compte {
 
 	public CompteAvecReduction(Client client) {
 		super(client);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override

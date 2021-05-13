@@ -5,7 +5,7 @@ import fake.compiler.product.IParser;
 public class ParserJAVA implements IParser {
 
 	public ParserJAVA() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override

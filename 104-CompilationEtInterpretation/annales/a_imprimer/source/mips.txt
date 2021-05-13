@@ -1,0 +1,22 @@
+Fonction factorielle (en récursif)
+f (n : integer) : integer
+if n = 0 then
+	f : = 1
+else
+	f : = n * f (n * 1)
+	
+Traduction en MIPS
+f17 : addiu $sp , $sp , -8
+sw $ra , 4( $sp)
+sw $s0 , 0( $sp)
+move $s0 , $a0
+blez $s0 , f4
+addiu $a0 , $s0 , -1
+jal f17
+mul $v0 , $s0 , $v0
+f28 : lw $ra , 4( $sp )
+lw $s0 , 0( $sp)
+addiu $sp , $sp , 8
+jr $ra
+f4: li $v0 , 1
+j f28

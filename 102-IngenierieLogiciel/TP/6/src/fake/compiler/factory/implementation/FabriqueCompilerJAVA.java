@@ -11,7 +11,7 @@ import fake.compiler.product.implementation.ParserJAVA;
 public class FabriqueCompilerJAVA implements IFabriqueCompiler {
 
 	public FabriqueCompilerJAVA() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override

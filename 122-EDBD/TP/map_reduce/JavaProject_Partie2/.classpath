@@ -13,6 +13,6 @@
 	<classpathentry kind="lib" path="lib-dev/hadoop-core.jar"/>
 	<classpathentry kind="lib" path="lib-dev/jackson-core-asl-1.9.13.jar"/>
 	<classpathentry kind="lib" path="lib-dev/jackson-mapper-asl-1.9.13.jar"/>
-	<classpathentry kind="lib" path="E:/gitlab.com/master_informatique/122-EDBD/TP/map_reduce/JavaProject_Partie2/lib-dev/patch-hadoop_7682-1.0.x-win.jar"/>
+	<classpathentry kind="lib" path="/mnt/e/gitlab.com/master_informatique/122-EDBD/TP/map_reduce/JavaProject_Partie2/lib-dev/patch-hadoop_7682-1.0.x-win.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

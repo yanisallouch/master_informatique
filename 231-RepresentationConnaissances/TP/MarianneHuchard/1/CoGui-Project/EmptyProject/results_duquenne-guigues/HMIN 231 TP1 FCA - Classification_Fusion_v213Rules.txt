@@ -1,0 +1,4 @@
+< 13> Structures=TR,Structures=LT,Steps=1,Steps=3,Steps=5 => DataSets=TS
+< 13> Approach=FP-Growth,EstSliding,Accuracy=Exact,Structures=TR,Steps=1,Steps=3,Steps=5 => Window=FsW/TransSW
+< 13> Approach=Apriori,Structures=LT,Steps=1,Steps=3,Steps=5 => DataSets=IP,Steps=2
+< 13> FWK/Pattern=Utility (HUI),Steps=1,Steps=3,Steps=5 => EstUtility

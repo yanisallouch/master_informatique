@@ -1,0 +1,10 @@
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

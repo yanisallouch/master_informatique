@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HelloAndroid</string>
+    <string name="helloAndroid">Hello, Android</string>
+    <string name="editText">Edit, Text</string>
+    <string name="maPremiereApplication">Ma première application Android</string>
+    <string name="menu_settings">Settings</string>
+    <string name="button_label">Show message</string>
+    <string name="image_content">image</string>
+</resources>

@@ -4,7 +4,7 @@ public class ENombre1 extends EtatCalculette {
 
 	public ENombre1(Calculette c) {
 		super(c);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override

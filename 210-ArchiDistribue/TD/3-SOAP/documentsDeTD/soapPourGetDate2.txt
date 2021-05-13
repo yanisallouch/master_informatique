@@ -1,0 +1,29 @@
+POST /ws.asmx HTTP/1.1
+Host: localhost
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: length
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+  <soap12:Body>
+    <getDate2 xmlns="http://mondomaine.fr/monAppli">
+      <f>JMA or HMS or HMSJMA</f>
+    </getDate2>
+  </soap12:Body>
+</soap12:Envelope>
+
+
+HTTP/1.1 200 OK
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: length
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+  <soap12:Body>
+    <getDate2Response xmlns="http://mondomaine.fr/monAppli">
+      <getDate2Result>string</getDate2Result>
+    </getDate2Response>
+  </soap12:Body>
+</soap12:Envelope>
+
+<!-- style Document/literal wrapped -->

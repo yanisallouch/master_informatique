@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "TPE/1.0.0": {
+        "dependencies": {
+          "Ninject": "3.2.2"
+        },
+        "runtime": {
+          "TPE.dll": {}
+        }
+      },
+      "Ninject/3.2.2": {
+        "runtime": {
+          "lib/net45-full/Ninject.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.2.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TPE/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Ninject/3.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vDyKaDZ1RgmPxD87u3om3La34r4RHBZfap3tCsJtUbSGkIWjQJ8La1s61BR/C0LgO1+3xGEC6UfI7D594MNl5Q==",
+      "path": "ninject/3.2.2",
+      "hashPath": "ninject.3.2.2.nupkg.sha512"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+< 11> DataSets=IP,Structures=TR,Update=PB,Steps=1,Steps=2,Steps=3,Steps=5 => DataSets=SP
+< 11> EstSliding,Accuracy=Exact,DataSets=IP,Update=PT,Steps=1,Steps=2,Steps=3,Steps=5 => Window=FsW/TransSW
+< 11> Window=FsW/TransSW,EstSliding,DataSets=IP,Update=PT,Steps=1,Steps=2,Steps=3,Steps=5 => Accuracy=Exact
+< 11> Year=2012-2016,EstSliding,Steps=1,Steps=3,Steps=5 => Window=FsW/TransSW,DataSets=TS

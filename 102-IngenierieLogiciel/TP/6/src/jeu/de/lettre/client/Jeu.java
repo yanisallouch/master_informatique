@@ -33,8 +33,8 @@ public class Jeu {
 	
 	private void start(int nbJoueurs) {
 		// @argument nbJoueurs ==> nombre de joueurs
-		// pour le moment est ignoré
-		// TODO Auto-generated method stub
+		// pour le moment est ignorï¿½
+		
 		System.out.println("Initialisation du jeu terminer !");
 		System.out.println("Le jeu a ete lancer avec " + nbJoueurs + " joueur" + (nbJoueurs==1?"":"s")
 				+ " en difficulte " + fabrique);

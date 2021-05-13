@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Interface Simple</string>
+    <string name="ask_user">Saisir les champs s\'il vous plait</string>
+    <string name="enter_name">Saisir le nom</string>
+    <string name="enter_lastName">Saisir le prénom</string>
+    <string name="enter_skillField">Saisir le domaine de compétence</string>
+    <string name="enter_validate">Entrer pour valider</string>
+    <string name="enter_age">Saisir l\'age</string>
+    <string name="enter_phone">Saisir le numéro de téléphone</string>
+    <string name="dialog_ask_confirmation">Confirmez vous la saisi ?</string>
+    <string name="dialog_confirmation">Confirmez ?</string>
+    <string name="dialog_cancel">Annuler</string>
+</resources>

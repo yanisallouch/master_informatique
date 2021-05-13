@@ -1,0 +1,275 @@
+14:29:37 De Marianne Huchard à Tout le monde : Bonjour à tous ! J’attends encore quelques minutes avant de démarre.
+14:32:24 De guilhem blanchard à Tout le monde : bonjour
+14:34:57 De Denis Beauget à Tout le monde : Bonjour !
+14:34:59 De Benjamin ADOLPHE à Tout le monde : Bonjour
+14:35:20 De Xavier Noel à Tout le monde : Bonjour :-)
+14:37:01 De Xavier Noel à Tout le monde : IA Symbolique ?
+14:37:07 De Xavier Noel à Tout le monde : En opposition a quoi ?
+14:37:23 De Marianne Huchard à Tout le monde : IA subsymbolique
+14:37:29 De Marianne Huchard à Tout le monde : IA statistique
+14:38:54 De Xavier Noel à Tout le monde : Oui
+14:40:15 De Yasmine AIT ALI YAHIA à Tout le monde : Madame je m'excuse de vous interrompre mais la séance après les vacances, nous avons un examen programmé de 16H à 18H 
+14:41:03 De Yasmine AIT ALI YAHIA à Tout le monde : Oui 
+14:41:09 De Marianne Huchard à Tout le monde : Mardi 4 mai : examen ?
+14:41:11 De CAMARAZO David à Tout le monde : Oui
+14:41:18 De Yasmine AIT ALI YAHIA à Tout le monde : Nous avons l'examen du module Web Sémantique 
+14:41:55 De Yasmine AIT ALI YAHIA à Tout le monde : D'accord je vous remercie !
+14:42:03 De quentin à Tout le monde : j'ai un deuxième examen programmé à cette heure donc bon
+14:42:42 De Nam à Tout le monde : :;OOO
+14:44:20 De   à Tout le monde : convoqué à la fac cet examen, pour vous aussi ?
+14:55:11 De quentin à Tout le monde : le fait que f o g est un closure operator c'est une simple conséquence du fait que g = f^-1 ?
+14:56:40 De quentin à Tout le monde : par f^-1 j'entends la fonction qui associe les antécédents de l'image
+14:57:21 De quentin à Tout le monde : oui c'est normal au sens mathématique
+15:07:41 De Alexandre Canton Condes à Tout le monde : il n'y a pas de borne inférieur et supérieur dans l'exemple avec les 5 concepts ?
+15:08:00 De Alexandre Canton Condes à Tout le monde : oui
+15:08:31 De Alexandre Canton Condes à Tout le monde : ah d'accord
+15:08:45 De Alexandre Canton Condes à Tout le monde : oui
+15:09:28 De guilhem blanchard à Tout le monde : c'est de l'héritage
+15:28:57 De quentin à Tout le monde : pourquoi une union plutôt qu'une intersection pour la confiance?
+15:30:42 De Nam à Tout le monde : c'est la division?
+15:30:45 De Benjamin ADOLPHE à Tout le monde : oui on voit
+15:33:32 De CAMARAZO David à Tout le monde : Ca va
+15:33:39 De quentin à Tout le monde : je comprends toujours pas cette notion de confiance. Je peux constuire deux situations ou tous les objets qui ont A1 ont A2, et on aura une confiance qui n'est pas égale
+15:39:56 De guilhem blanchard à Tout le monde : millier de km
+15:40:32 De guilhem blanchard à Tout le monde : ou gigametre
+15:40:46 De Alexandre Canton Condes à Tout le monde : Mercure 4 878 58 0Vénus 12 400 108 0Terre 12 756 150 1Mars 6 800 228 2Jupiter 142 800 778 16Saturne 120 800 1 427 19Uranus 47 600 2 870 5Neptune 44 600 4 500 8Pluton 2 320 9 950 1
+15:41:00 De guilhem blanchard à Tout le monde : à non megametre
+15:48:37 De quentin à Tout le monde : c'est bon j'ai compris en reprenant la formule
+15:49:19 De CAMARAZO David à Tout le monde : Non c'est bon pour le moment.
+15:49:43 De Marianne Huchard à Tout le monde : PAUSE 15h50 -> 16h05
+15:52:15 De Antoine Luciani à Tout le monde : pause musique : https://www.youtube.com/watch?v=4ytX3IaFHGk
+15:53:37 De Antoine Luciani à Tout le monde : https://www.youtube.com/watch?v=5Ed0_yuDjK0
+16:05:20 De Xavier Noel à Tout le monde : @Antoine, tu a des bons goûts, même si je suis pas fan du remix ... hit that jive ! 
+16:06:05 De Antoine Luciani à Tout le monde : oui l'original est très quali !
+16:07:18 De Nam à Tout le monde : vs parlez de Hit that jive de Gramatik?
+16:08:59 De Xavier Noel à Tout le monde : @Nam, tout a fait
+16:09:17 De Marianne Huchard à Tout le monde : Je vais reprendre mais merci pour la musique !!!
+16:09:18 De guilhem blanchard à Tout le monde : quelqu'un est pas mute
+16:09:22 De Xavier Noel à Tout le monde : merci pour la musique @ lpm
+16:09:38 De Marianne Huchard à Tout le monde : Vous pouvez la laisser juste moins fort :-)
+16:10:07 De Xavier Noel à Marianne Huchard(Message direct) : Vous avez la possibilité de mettre en sourdine les étudiants
+16:10:09 De quentin à Tout le monde : la radio pirate 3.0 qu'on peut pas éteindre -_-
+16:12:09 De Alexandre Canton Condes à Tout le monde : J'ai des soucis avec coGui du coup je pense utiliser RCAExplore, je pourrais faire tout ce qui est demandé ?
+16:12:43 De Maël Bonneaud à Tout le monde : quelqu'un pour le faire avec moi ? :)
+16:13:25 De CAMARAZO David à Tout le monde : Cogui peut-être emmerdant puisqu'il faut installer un environnement Java....
+16:15:08 De Antoine Luciani à Tout le monde : c'est ce que je suis en train d'essayer de faire :')
+16:16:09 De Xavier Noel à Tout le monde : CC BY-NC : Attribution - Pas d’Utilisation Commerciale
+16:22:59 De Antoine Luciani à Tout le monde : pour cogui, même en ayant installé jdk 7 il refuse de s'installer...
+16:23:10 De Maël Bonneaud à Tout le monde : Donc la première chose à faire c'est installer et rentrer les données dans notre Excell ?
+16:23:50 De Camille AISSANI à Tout le monde : ma question peut être bête: mais si on travail a deux et donc sur deux tableaux, on combine les concepts et les structures ou on en fait deux distincts?
+16:23:53 De Antoine Luciani à Tout le monde : sisi, il faut un jdk 7 pour cogui...
+16:24:24 De Marianne Huchard à Tout le monde : Vous faites 1 unique tableau contenant tout :
+16:24:31 De Marianne Huchard à Tout le monde : - soit les données du tab1
+16:24:45 De Marianne Huchard à Tout le monde : -soit les données des tab1 et 2
+16:24:53 De Marianne Huchard à Tout le monde : - soit les données des tab1 2 et 3
+16:25:03 De Camille AISSANI à Tout le monde : d'accord, merci
+16:25:36 De CAMARAZO David à Tout le monde : Oui on a une convocation.
+16:26:11 De Kaoutar Majdoul à Tout le monde : ducoup ce TP on a jusqu'au 27 pour le faire ? 
+16:26:24 De Marianne Huchard à Tout le monde : Google sheet si vous voulez et vous me les partagez
+16:27:30 De Antoine Luciani à Tout le monde : est-ce qu'on a les autres TP notés du coup ?
+16:28:10 De Kaoutar Majdoul à Tout le monde : et les autres TP s'étaleront au mois de mai donc?
+16:28:44 De quentin à Tout le monde : le lien Moodle pour la documentation de COGUI ne semble pas fonctionner
+16:28:51 De quentin à Tout le monde : "Identifiant de module de cours non valide"
+16:29:03 De Xavier Noel à Tout le monde : j'ai réussi a le DL
+16:29:09 De Xavier Noel à Tout le monde : je te l'envois en PV
+16:29:27 De Marianne Huchard à Tout le monde : je l’ai changé tout à l’heure j’ai peut être fait une erreur ?
+16:34:41 De Maël Bonneaud à Tout le monde : quelqu'un d'autre à cette erreur ?
+16:34:59 De Maël Bonneaud à Tout le monde : lors de l'installation
+16:35:50 De Marianne Huchard à Tout le monde : Est-ce que vous avez 1 ou 2 examens différents le 4 après-miid ?
+16:36:28 De quentin à Tout le monde : moi j'ai graphes et web sémantique en même temps
+16:36:40 De quentin à Tout le monde : le problème a été remonté à la scolarité aujourd'hui, à voir la suite
+16:37:02 De Alexandre Canton Condes à Tout le monde : Ouais j'ai eu la même @Mael
+16:37:53 De Maël Bonneaud à Tout le monde : et tu as fais comment pour le résoudre ?
+16:38:43 De Alexandre Canton Condes à Tout le monde : je me suis rabattu sur RCAExplore
+16:39:00 De Alexandre Canton Condes à Tout le monde : c'est peut-être pas la solution que t'espérais xD
+16:39:22 De Alexandre Canton Condes à Tout le monde : (le jar ne fonctionnais pas non plus)
+16:40:20 De Antoine Luciani à Tout le monde : avec le .zip ça fonctionne
+16:41:00 De Antoine Luciani à Tout le monde : le décompresser où vous voulez et dans bin/ vous avez les exécutables
+16:41:51 De Antoine Luciani à Tout le monde : @Mariannne Huchard, dans le cas où on travaille sur les 3 tableaux, on a pas compris comment fusionner les tableaux (1+2) et 3
+16:42:45 De Antoine Luciani à Tout le monde : 1 et 2 c'est une concaténation ça oui pas de problème
+16:42:56 De Marianne Huchard à Tout le monde : Pour 3 : vous ajoutez des colonnes
+16:43:10 De Marianne Huchard à Tout le monde : vous séparez les Ci par références
+16:44:04 De Marianne Huchard à Tout le monde : Sur tableau 3 : C1 -> complément de description des objets 13 et 44
+16:44:32 De Antoine Luciani à Tout le monde : ah donc pour les objets 13 et 44 on va marquer les colonnes qui sont bonnes avec une croix
+16:44:40 De Marianne Huchard à Tout le monde : 13 dans tab2 et 44 dans tab1
+16:45:12 De Antoine Luciani à Tout le monde : on peut rajouter un id à part dans une colonne au lieu de le mettre à la fin du nom ?
+16:45:32 De Antoine Luciani à Tout le monde : [13] par ex
+16:45:51 De Marianne Huchard à Tout le monde : Essayez les 2
+16:46:35 De Antoine Luciani à Tout le monde : hum d'accord
+16:47:42 De guilhem blanchard à Marianne Huchard(Message direct) : notre tableau pour moi, Yanis et Ahmed https://docs.google.com/spreadsheets/d/1TtOuA5FxJwrkWpMCaGghbfPZCv_TSElZD0FCLbhIghA/edit?usp=sharing
+16:48:04 De Yasmine AIT ALI YAHIA à Tout le monde : Zoom est fait ainsi ...
+16:48:05 De Kaoutar Majdoul à Tout le monde : savez vous si Cogui est disponible sur mac ?
+16:48:06 De Maël Bonneaud à Tout le monde : je peux le renvoyer si besoin
+16:48:38 De Maël Bonneaud à Tout le monde : d'accord !
+16:49:45 De Massy Kezzoul à Tout le monde : Même avec le ZIP le programme ne se lance pas
+16:49:52 De Marianne Huchard à guilhem blanchard(Message direct) : je suis dessus, je ne sais pas sous quelle forme animale
+16:49:56 De Maël Bonneaud à Tout le monde : pareil pour moi
+16:50:02 De Xavier Noel à Tout le monde : tu lance version dans le dossier bin ?
+16:50:02 De Maël Bonneaud à Tout le monde : il charge puis ne se lance pas
+16:50:07 De Benjamin ADOLPHE à Marianne Huchard(Message direct) : https://docs.google.com/spreadsheets/d/18ves27fPcbpk84Vpr21pXSDWwmdvi0-zgLcgAUdizs8/edit?usp=sharing
+16:50:13 De agutierr à Tout le monde : avec le même message affiché ?
+16:50:18 De Maël Bonneaud à Tout le monde : oui dans le bin l'executable
+16:50:20 De Massy Kezzoul à Tout le monde : non pas de message
+16:50:28 De Maël Bonneaud à Tout le monde : non aucun message sa charge puis sa coupe
+16:50:29 De Massy Kezzoul à Tout le monde : juste il se charge puis s'arrete
+16:50:32 De Marianne Huchard à guilhem blanchard(Message direct) : Je suis là
+16:50:35 De Maël Bonneaud à Tout le monde : voilà j'ai pareil
+16:50:40 De agutierr à Tout le monde : sur quel systeme
+16:50:51 De Massy Kezzoul à Tout le monde : Windows
+16:50:52 De Maël Bonneaud à Tout le monde : Windows10
+16:51:10 De Massy Kezzoul à Tout le monde : Justement on a pas d'erreur
+16:51:29 De guilhem blanchard à Marianne Huchard(Message direct) : pour le moment on à copié les tableau 1 et 2 mais pas le 3
+16:51:48 De Marianne Huchard à Benjamin ADOLPHE(Message direct) : je suis dessus
+16:52:05 De Marianne Huchard à Benjamin ADOLPHE(Message direct) : Sous une forme animale quelconque ou en tant que moi je ne sais pas
+16:52:26 De Yassine El Atillah à Marianne Huchard(Message direct) : https://docs.google.com/spreadsheets/d/1uK5VdosH8qP3ybxwpRB4j1Gez9ckFOUgK91FYKK2na4/edit?usp=sharing
+16:52:44 De Xavier Noel à Tout le monde : Bonjour
+16:52:52 De Xavier Noel à Tout le monde : Dans le sujet, il est dis
+16:53:07 De Xavier Noel à Tout le monde : << On peut convertir les fichiers HDF5 qui contiennent une famille entière dans 3 autres formats RCFT, RCFT compressé et RCFTAL ...>> 
+16:53:41 De Xavier Noel à Tout le monde : Est ce que le "AL" de RCFTAL fait référence a la classe de langage AL étudié avec M. Baget ?
+16:53:56 De Maël Bonneaud à Tout le monde : je peux partager mon écran pour vous montrer ce que sa fais ? même si sa affiche pas d'erreur
+16:53:57 De agutierr à Tout le monde : non
+16:54:07 De agutierr à Tout le monde : AL pour adjacency list
+16:54:31 De agutierr à Tout le monde : oui pour partager l'écran
+16:54:39 De Benjamin ADOLPHE à Marianne Huchard(Message direct) : Oui nous vous voyons dessus
+16:54:52 De Maël Bonneaud à Tout le monde : je crois pas avoir les droits pour partager mon écran
+16:54:58 De Maël Bonneaud à Tout le monde : ah si
+16:55:36 De Maël Bonneaud à Tout le monde : vous voyez ?
+16:55:48 De Kaoutar Majdoul à Tout le monde : oui
+16:56:17 De Alexandre Canton Condes à Tout le monde : j'ai la même que mael
+16:58:52 De Yassine El Atillah à Marianne Huchard(Message direct) : est-ce que le google sheet doit avoir un format spécifique ?
+16:59:01 De Maxime SANGALLI à Tout le monde : pour windows installez avec le zip ça marche
+16:59:25 De Maël Bonneaud à Tout le monde : d'acoord je vais essayer
+16:59:40 De agutierr à Tout le monde : jdk 1.8 minimun
+16:59:53 De quentin à Tout le monde : moi l'exécutable en x64 me renvoyait une erreur pour du <1.8, mais le cogui.exe se lance sans problème
+17:00:40 De Yassine El Atillah à Tout le monde : Pour specifier entre les Object et les attributs
+17:00:46 De Xavier Noel à Tout le monde : http://www.lirmm.fr/AOC-poset-Builder/example.csv
+17:01:39 De Xavier Noel à Tout le monde : votre pdf explicite tout cela
+17:03:10 De agutierr à Tout le monde : http://www.lirmm.fr/AOC-poset-Builder/example.cxt
+17:03:33 De agutierr à Tout le monde : http://www.lirmm.fr/AOC-poset-Builder/example.cxt
+17:04:31 De Yassine El Atillah à Tout le monde : merci
+17:04:44 De Maël Bonneaud à Tout le monde : j'ai désinstaller le jsk 7 et gardé le 16 et sa se lance toujours pas :/
+17:05:27 De CAMARAZO David à Tout le monde : Faut le jre aussi.
+17:05:43 De agutierr à Tout le monde : essayez le 1.8 https://www.java.com/fr/download/
+17:09:22 De Maël Bonneaud à Tout le monde : j'ai installé celui que tu as envoyé mais toujours pareil, peut être faut-il redémarré mon pc vu que j'ai installé java ?
+17:09:35 De Anthony WYSZYNSKI à Tout le monde : Same
+17:10:37 De Maxime SANGALLI à Tout le monde : pour le 3e tableau on a besoin que de la classe algorithmique ou de toutes les infos détaillées (datasets, structure...)
+17:12:14 De quentin à Tout le monde : j'essaie de suivre le PDF Mode d'emploi. Lorsque j'essaie de créer un fichier HDF5 quand j'ai spécifié le nom et le dossier parent, et que je clique sur Finish, il se passe rien
+17:12:23 De agutierr à Tout le monde : pour la version de java on peut modifier le fichier de configuration dans etc/cogui.conf
+17:12:57 De Maxime SANGALLI à Tout le monde : euh en fait j'ai perdu la connexion ..
+17:13:22 De Maxime SANGALLI à Tout le monde : donc il faut tout prendre
+17:13:30 De Benjamin ADOLPHE à Tout le monde : vous pouvez réexpliquer?
+17:13:47 De Benjamin ADOLPHE à Tout le monde : pour le tableau 3
+17:15:23 De Xavier Noel à Tout le monde : Quels seraient les classles pour la colonne "Year" pour la table 1 et 2 ?
+17:16:08 De Kevin Gracia Moulis à Tout le monde : En mettant le path du jre1.8 dans le fichier cogui.conf ça fonctionne de mon côté, merci agutierr
+17:17:25 De Maël Bonneaud à Tout le monde : Kevin il est ou le cogui.conf et tu insere ou le path ?
+17:17:28 De CAMARAZO David à Tout le monde : Mais on fait pas un script pour faire ça ?
+17:18:48 De agutierr à Tout le monde : le fichier est dans le répertoire d'install de cogui
+17:19:17 De agutierr à Tout le monde : il faut décommenter cette ligne:
+17:19:19 De agutierr à Tout le monde : #jdkhome="/path/to/jdk"
+17:20:10 De Yassine El Atillah à Tout le monde : oui mais il faut faire attention au format du csv pour l'importer aprés
+17:20:38 De Maël Bonneaud à Tout le monde : d'accord et ensuie je remplace par mon path ?
+17:20:51 De agutierr à Tout le monde : oui
+17:21:34 De CAMARAZO David à Tout le monde : Perso j'ai pris 4 morceaux de 5 ans
+17:22:01 De Lucas Rouquette à Marianne Huchard(Message direct) : voila mon lien https://docs.google.com/spreadsheets/d/1HfhToYGUwVyJX2QpYc7OGGqbyw2G5MrNdp3poP1DKkQ/edit?usp=sharing
+17:22:12 De CAMARAZO David à Tout le monde : 2000-2004 = très vieux
+2005-2009 = vieux
+2010-2014 = récent
+2015-2019 = très récent.
+17:24:08 De Maël Bonneaud à Tout le monde : merci sa fonctionne enfin !
+17:25:22 De Camille AISSANI à Tout le monde : oui beaucoup mieux
+17:25:23 De quentin à Tout le monde : Question bête pour vérifier: aucune de ces transformations ne se fait dans COGUI, c'est tout en amont de l'importation, c'est ça?
+17:25:26 De CAMARAZO David à Tout le monde : Lossy Counting [47]
+FP-Stream [19]
+EstDec [8]
+FDPM [62]
+DSM-FI [39]
+INSTANT [48]
+FUFP-Tree [24]
+Pre-FUFP [43]
+EstMax [59]
+CLICI [20]
+TUF-Streaming [33]
+GUIDE [54]
+FUP-HU [44]
+UHS-Stream [22]
+TFUHS-Stream [22]
+PRE-HUI [42]
+HUPID [66]
+HUI-LIST-INS [45]
+GENHUI [26]
+FCIMinning [7]
+TDUP [40]
+LIHUP [67]
+IMHAUT [27]
+MPM [64]
+PIHUP [30]
+IIHUM [65]
+
+17:25:46 De CAMARAZO David à Tout le monde : Non je me suis mélangé...
+17:26:54 De quentin à Tout le monde : D'accord. Mais j'ai toujours mon problème original. Je ne peux pas créer un fichier HDF5 dans Cogui, l'assistant de création n'a pas l'air de fonctionner
+17:26:57 De CAMARAZO David à Tout le monde : Pour la taxonomie sur les framework, on a 1 attribut Support, et 3 attributs FI, MFI et CI c'est bien ça.
+17:28:03 De Marianne Huchard à Tout le monde : Taxonomie : niveau 1 (framework/pattern)
+17:28:13 De Marianne Huchard à Tout le monde : Niveau 2 : support, uncertain, …
+17:28:35 De agutierr à Tout le monde : pour dréer un fichier hdf5 menu File/New file
+17:29:02 De agutierr à Tout le monde : le format est disponible dans la catégorie RCAExplore
+17:29:06 De Marianne Huchard à Tout le monde : Niveau 3 exemple sous Utility : HUI HAUI
+17:29:10 De quentin à Tout le monde : oui, j'ai suivi les étapes, au moment de faire "Finish" sur l'éditeur, il ne se passe rien. Le dossier parent à été créé dans l'arborescence du projet, mais aucun fichier ne se crée
+17:29:34 De CAMARAZO David à Tout le monde : Mais à quoi sert le niveau Framework du coup ? Puisqu'il serait partagé par tous les objets... Il apporterait vraiment quelque chose ?
+17:30:25 De CAMARAZO David à Tout le monde : Ah j'avais pensé à ça.
+17:30:29 De agutierr à Tout le monde : essayer de créer un fichier RCFT de la même façon.
+17:30:44 De agutierr à Tout le monde : vous pourrez ensuite le convertir en fichier hdf5
+17:30:59 De quentin à Tout le monde : RCFT ça a l'air de fonctionner
+17:32:19 De quentin à Tout le monde : j'imagine qu'il faut exporter le RCFT en HDF5. Quand j'essaie de le faire, rebelotte dans la fenêtre d'enregistrement, cliquer Enregistrer ne fait rien
+17:34:14 De agutierr à Tout le monde : je vous fourni un fichier au format vous pouvez le recopier dans votre projet
+17:35:10 De Xavier Noel à Tout le monde : @agutierr, ou ça s'il vous plait ?
+17:35:26 De Hayaat Hebiret à Tout le monde : 21 , je le vois pas
+17:35:48 De agutierr à Tout le monde : fichier joint dans le chat
+17:36:02 De Xavier Noel à Tout le monde : dans le navigateur web, je ne le vois pas
+17:36:09 De Maxime SANGALLI à Tout le monde : je crois qu'il n'y a pas d'algo 21
+17:36:15 De quentin à Tout le monde : je te le passe sur Discord si tu veux Xavier
+17:36:19 De Xavier Noel à Tout le monde : oui, merci !
+17:37:12 De Marianne Huchard à Tout le monde : 22 UHS-Stream et TFUHS-Stream
+17:37:35 De quentin à Tout le monde : @agutierr j'ai réussi à importer votre fichier. Par contre quand je clique sur l'arborescence de test.h5, cela affiche "Please wait". Est-ce que c'est juste parce que le fichier est vide?
+17:37:48 De agutierr à Tout le monde : non
+17:38:06 De agutierr à Tout le monde : apparemment il y a un problème avec ce format sur votre machine
+17:38:17 De agutierr à Tout le monde : sur quel systeme estes vous ?
+17:38:28 De quentin à Tout le monde : Windows 1
+17:38:29 De quentin à Tout le monde : 0
+17:38:35 De agutierr à Tout le monde : parce qu'il contient des librairies java native (jni)
+17:39:24 De agutierr à Tout le monde : du coup il y a peut-être un problèlme de droit
+17:39:29 De quentin à Tout le monde : j'ai du lancer cogui.exe au lieu de cogui64.exe (la version 64 se plaignait de ma version de java), est-ce que ça pourrait être le problème?N
+17:39:39 De quentin à Tout le monde : et qu'il me faut vraiment une version plus récente
+17:39:42 De agutierr à Tout le monde : essayez de lancer cogui en mode adminsitrateur
+17:40:19 De agutierr à Tout le monde : exact, je ne pense pas que hdf5 fonctionne en 16 bit
+17:40:27 De agutierr à Tout le monde : euh 32
+17:42:29 De agutierr à Tout le monde : vérifiez aussi que vous avez la dernière version (commande Help/Check for updates)
+17:45:02 De quentin à Tout le monde : okay tous mes problèmes ont l'air réglés maintenant que je suis sur la version x64 du programme
+17:46:20 De Antoine Luciani à Tout le monde : dans le tableau 3 il semblerait que l'algo 55 ne soit dans aucune classe...
+17:47:18 De Xavier Noel à Tout le monde : la somme de la colonne steps 4 c'est 12 et pas 13
+17:47:21 De Xavier Noel à Tout le monde : du tableau 3
+17:47:47 De Xavier Noel à Tout le monde : je l'ai corrigé par 21
+17:47:59 De Antoine Luciani à Tout le monde : oui mais il y a 2 algos qui ont le numéro 22...
+17:48:13 De Xavier Noel à Tout le monde : d'accord
+17:48:16 De Xavier Noel à Tout le monde : je le nomme 22"
+17:48:49 De Antoine Luciani à Tout le monde : c'est ça, il apparait pas ici
+17:51:40 De Xavier Noel à Marianne Huchard(Message direct) : vous avez commencé un spreadsheet pour la représentation binaire, est ce quer vous l'avez partagé s'il vous plait ?
+17:51:55 De quentin à Tout le monde : bon maintenant le problème c'est d'importer un CSV. quand j'essaie d'ouvrir un CSV il ne se passe rien (je pense?)
+17:54:58 De quentin à Tout le monde : Merci, mais c'est une information qu'il aurait été utile de nous donner en amont
+17:55:06 De Maël Bonneaud à Tout le monde : j'ai une question, après avoir repporté nos données sur notre csv faut-il les changé pour n'avoir que boolean comme dans le cours avec les planètes ou on avait fait des intervalle , puisque je vois que dans le logiciel les attributs ne sont que des case à coher ou non
+17:55:28 De Maël Bonneaud à Tout le monde : et puis aussi faut-il re entrer nos données à la main dans le logiciel ? (objet et attribut)
+17:55:37 De Maël Bonneaud à Tout le monde : d'accord
+17:56:26 De Hayaat Hebiret à Tout le monde : dans le pfd il y a des exemples non ?
+17:56:56 De quentin à Tout le monde : vous pouvez zoomer? on voit vraiment pas grand chose dans votre grande fenêtre
+17:57:28 De Maël Bonneaud à Tout le monde : d'accord donc faut convertir notre csv en ce format
+18:00:37 De Camille AISSANI à Tout le monde : ouii
+18:02:38 De Anthony WYSZYNSKI à Tout le monde : Du coup pour ceux dont Cogui ne marche toujours pas malgré l'installation du java donné par agutierr on fait quoi ?
+18:06:24 De Marianne Huchard à Tout le monde : Latviz
+18:06:29 De Marianne Huchard à Tout le monde : rcaexplore
+18:07:55 De Nizar Tialati à Marianne Huchard(Message direct) : pouvez voir mon tableau, pour savoir si je suis dans la bonne voie, voici le lien : https://docs.google.com/spreadsheets/d/1t2c7TOVWKsi-pxcx-j5oLKWjMqf_XolUkKG3Vw0xhvQ/edit?usp=sharing
+18:11:28 De Marianne Huchard à Nizar Tialati(Message direct) : Je viens voir
+18:12:34 De agutierr à Marianne Huchard(Message direct) : marre de netbeans il faudra qu'on en reviennt au bon vieux jar executable
+18:12:44 De Marianne Huchard à Nizar Tialati(Message direct) : c’est bien et remonter vers 17h28
+18:13:08 De Marianne Huchard à Nizar Tialati(Message direct) : Pour voir la taxonomie possible (3 niveaux pour framework)
+18:13:43 De Marianne Huchard à Nizar Tialati(Message direct) : et pour d’autres attributs, il y a peut-être aussi des taxonomies à faire
+18:14:47 De Nizar Tialati à Marianne Huchard(Message direct) : Ah d'accord 
+18:14:53 De Nizar Tialati à Marianne Huchard(Message direct) : Oui c'est bon

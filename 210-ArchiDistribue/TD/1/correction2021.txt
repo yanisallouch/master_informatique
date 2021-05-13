@@ -1,0 +1,46 @@
+Q1.On se place dans le répertoire où est présent le répertoire helloWorld. 
+On commence par lancer le registre (qui tourne donc dans une JVM tierce sur localhost:1099) : 
+> rmiregistry &
+Ensuite on lancer je serveur, qui récupère le registre via le RmiRegistry.locateRegistry(); :
+> java helloWorld.Server 
+ENfin on lance le client en lui passant en paramètre le port sur lequel le registre écoute.
+> java helloWorld.Client 1099
+
+Q2. SI on commente la ligne 15 et décommente la ligne 14, alors le registre est lancé depuis le Serveur, et tourne donc dans la même machine virtuelle que le serveur.
+Pour lancer le serveur et le client, on fait alors (on ne lance plus le registre): 
+> java helloWorld.Server 
+ENfin on lance le client en lui passant en paramètre le port sur lequel le registre écoute.
+> java helloWorld.Client 1099
+
+Q3. 
+SERVEUR
+Server ready
+The server prints : Hello, world !
+
+
+CLIENT
+response : Hello, World !
+
+Q4. Dans la JVM du serveur
+
+Q5. 
+* à typer côté client le proxy reçu à la suite du lookup --> mise en peuvre du patron de conception Proxy
+* à spécifier les méthodes accessibles à distance pour les classes implémentant cette interface (ici : HelloImpl).
+
+Q6.
+A cause du bind :
+    AlreadyBoundException - if name is already bound
+    RemoteException - if remote communication with the registry failed; if exception is a ServerException containing an AccessException, then the registry denies the caller access to perform this operation (if originating from a non-local host, for example)
+    AccessException - if this registry is local and it denies the caller access to perform this operation
+    NullPointerException - if name is null, or if obj is null
+    
+A cause du getRegistry :
+RemoteException - if the reference could not be created
+
+Q7. bind jette une exception AlreadyBoundException si le nom est déjà utilisé dans e registre, alors que rebind remplace dans ce cas l'ancien objet associé par le nouveau passé en paramètre
+
+Q8. Cela fonctionne quand même en allant chercher le registre avec les paramètres par défaut (localhost, 1099) ce qui convient bien dans notre cas.
+
+Q9. pas faites en TD, on le fera la semaine prochaine.
+
+

@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.umontpellier.fr/yallouch/Familles.owl#"
+     xml:base="http://www.umontpellier.fr/yallouch/Familles.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLObjectProperty_217da801_9f8e_421b_b6fe_509c694b923b -->
+
+    <owl:ObjectProperty rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLObjectProperty_217da801_9f8e_421b_b6fe_509c694b923b">
+        <rdfs:domain rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_9489bfe1_a188_4444_857b_1887b4898b1e"/>
+        <rdfs:range rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_9489bfe1_a188_4444_857b_1887b4898b1e"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">aEnfant</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLObjectProperty_a85a123f_2b5d_4c9a_b015_8c387f16961f -->
+
+    <owl:ObjectProperty rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLObjectProperty_a85a123f_2b5d_4c9a_b015_8c387f16961f">
+        <rdfs:domain rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_e1cf6a6e_9f80_49b2_a2b6_6195a0e0fb98"/>
+        <rdfs:range rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_9fb7b90a_3773_4c14_823a_f907a6d5e015"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">aCommeMari</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_0327fa82_c95c_4c72_8d9f_6dfde0bc0b00 -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_0327fa82_c95c_4c72_8d9f_6dfde0bc0b00">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_fdab78d2_58e4_498a_a3e2_150676afe75a"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLObjectProperty_217da801_9f8e_421b_b6fe_509c694b923b"/>
+                        <owl:someValuesFrom rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_2ecbba44_5506_4540_b771_8116c4ccb9d5"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">GrandMere</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_2ecbba44_5506_4540_b771_8116c4ccb9d5 -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_2ecbba44_5506_4540_b771_8116c4ccb9d5">
+        <rdfs:subClassOf rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_9489bfe1_a188_4444_857b_1887b4898b1e"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_c206cdcc_bffc_437e_a2ec_bb841e0ee4ba"/>
+                    <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_fdab78d2_58e4_498a_a3e2_150676afe75a"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Parent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_4f81da80_ec05_40b2_9a9e_168ac23ae065 -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_4f81da80_ec05_40b2_9a9e_168ac23ae065">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_fdab78d2_58e4_498a_a3e2_150676afe75a"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLObjectProperty_217da801_9f8e_421b_b6fe_509c694b923b"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_9489bfe1_a188_4444_857b_1887b4898b1e"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">MereAvecPlusieursEnfants</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_601009ee_9bbd_4c87_bcb8_fe16a0cdc55c -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_601009ee_9bbd_4c87_bcb8_fe16a0cdc55c">
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Femelle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_9489bfe1_a188_4444_857b_1887b4898b1e -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_9489bfe1_a188_4444_857b_1887b4898b1e">
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Personne</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_9fb7b90a_3773_4c14_823a_f907a6d5e015 -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_9fb7b90a_3773_4c14_823a_f907a6d5e015">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_9489bfe1_a188_4444_857b_1887b4898b1e"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_601009ee_9bbd_4c87_bcb8_fe16a0cdc55c"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_e1cf6a6e_9f80_49b2_a2b6_6195a0e0fb98"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Homme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_c206cdcc_bffc_437e_a2ec_bb841e0ee4ba -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_c206cdcc_bffc_437e_a2ec_bb841e0ee4ba">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_9fb7b90a_3773_4c14_823a_f907a6d5e015"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLObjectProperty_217da801_9f8e_421b_b6fe_509c694b923b"/>
+                        <owl:someValuesFrom rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_9489bfe1_a188_4444_857b_1887b4898b1e"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Pere</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_cec89919_92ba_4929_a390_cc232a3507b3 -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_cec89919_92ba_4929_a390_cc232a3507b3">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_fdab78d2_58e4_498a_a3e2_150676afe75a"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLObjectProperty_217da801_9f8e_421b_b6fe_509c694b923b"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:complementOf rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_e1cf6a6e_9f80_49b2_a2b6_6195a0e0fb98"/>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">MereSansFille</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_e1cf6a6e_9f80_49b2_a2b6_6195a0e0fb98 -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_e1cf6a6e_9f80_49b2_a2b6_6195a0e0fb98">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_601009ee_9bbd_4c87_bcb8_fe16a0cdc55c"/>
+                    <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_9489bfe1_a188_4444_857b_1887b4898b1e"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Femme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_fdab78d2_58e4_498a_a3e2_150676afe75a -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_fdab78d2_58e4_498a_a3e2_150676afe75a">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_e1cf6a6e_9f80_49b2_a2b6_6195a0e0fb98"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLObjectProperty_217da801_9f8e_421b_b6fe_509c694b923b"/>
+                        <owl:someValuesFrom rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_9489bfe1_a188_4444_857b_1887b4898b1e"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Mere</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_fe7590e2_35af_47ab_93a5_a8e341d701ae -->
+
+    <owl:Class rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_fe7590e2_35af_47ab_93a5_a8e341d701ae">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_e1cf6a6e_9f80_49b2_a2b6_6195a0e0fb98"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLObjectProperty_a85a123f_2b5d_4c9a_b015_8c387f16961f"/>
+                        <owl:someValuesFrom rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_9fb7b90a_3773_4c14_823a_f907a6d5e015"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Epouse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLNamedIndividual_4dd88698_ea35_49a2_bb69_b90d971d85b9 -->
+
+    <owl:NamedIndividual rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLNamedIndividual_4dd88698_ea35_49a2_bb69_b90d971d85b9">
+        <rdf:type rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_cec89919_92ba_4929_a390_cc232a3507b3"/>
+        <OWLObjectProperty_217da801_9f8e_421b_b6fe_509c694b923b rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLNamedIndividual_c16a95aa_028e_4caf_9eb0_509be94968f2"/>
+        <OWLObjectProperty_217da801_9f8e_421b_b6fe_509c694b923b rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLNamedIndividual_d383687d_51f1_40d6_bd10_2299c3cb0340"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Marie</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLNamedIndividual_4e88fbc8_bd72_47fb_a698_74ada24dd0fe -->
+
+    <owl:NamedIndividual rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLNamedIndividual_4e88fbc8_bd72_47fb_a698_74ada24dd0fe">
+        <rdf:type rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_e1cf6a6e_9f80_49b2_a2b6_6195a0e0fb98"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Alice</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLNamedIndividual_c16a95aa_028e_4caf_9eb0_509be94968f2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLNamedIndividual_c16a95aa_028e_4caf_9eb0_509be94968f2">
+        <rdf:type rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_9fb7b90a_3773_4c14_823a_f907a6d5e015"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Paul</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.umontpellier.fr/yallouch/Familles.owl#OWLNamedIndividual_d383687d_51f1_40d6_bd10_2299c3cb0340 -->
+
+    <owl:NamedIndividual rdf:about="http://www.umontpellier.fr/yallouch/Familles.owl#OWLNamedIndividual_d383687d_51f1_40d6_bd10_2299c3cb0340">
+        <rdf:type rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLClass_c206cdcc_bffc_437e_a2ec_bb841e0ee4ba"/>
+        <OWLObjectProperty_217da801_9f8e_421b_b6fe_509c694b923b rdf:resource="http://www.umontpellier.fr/yallouch/Familles.owl#OWLNamedIndividual_4e88fbc8_bd72_47fb_a698_74ada24dd0fe"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanis Allouch</dc:creator>
+        <rdfs:label xml:lang="en">Pierre</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

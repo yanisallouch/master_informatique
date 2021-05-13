@@ -5,7 +5,7 @@ import fake.compiler.product.ILexer;
 public class LexerJAVA implements ILexer {
 
 	public LexerJAVA() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override

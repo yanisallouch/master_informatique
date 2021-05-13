@@ -1,0 +1,145 @@
+ Reprise de l'exercice sur West, en réécriture de requête
+
+K = (F,R)
+
+R :
+
+    R1 : Américain(x), Vend(x, y, z), Arme(y), PaysHostile(z) →  Criminel(x)
+
+    R2 : Ennemi(x,Amérique) →  PaysHostile(x)
+
+    R3 : Possede(Nono, y), Missile(y) → Vend(West, y, Nono)
+
+    R4 : Missile(x) →  Arme(x)
+    
+F : 
+
+    Possède(Nono,M1)
+
+    Missile(M1)
+
+    Ennemi(Nono, Amérique)
+
+    Américain(West)
+    
+On va réécrire la requête  q0(x) = Criminel(x). Ensuite, pour trouver les réponses à q0 sur K, on va chercher les réponses à la requête réécrite sur F
+
+---
+Algorithme de réécriture de requête
+Réécrire(q,R) // retourne l'ensemble des réécritures de q avec R
+Début
+Résultat = Ø // va contenir l'ensemble des réécritures de q (y compris q)
+AExplorer = {q} // contient l'ensemble des réécritures pas encore explorées
+TQ AExplorer n'est pas vide
+	Retirer qi de AExplorer
+	Ajouter qi à Résultat 
+	Pour toute règle Rj de R 
+	    Pour tout unificateur u entre tête(Rj) et un atome de qi
+		    Calculer qk la réécriture directe de qi avec Rj et u
+		    Ajouter qk à AExplorer s'il n'est pas déjà dans AExplorer ou dans Résultat
+								  ("à un renommage bijectif des variables près" 
+	                                = "à un isomorphisme près")
+		FinPour
+    FinPour
+FinTQ    
+Retourner Résultat
+Fin
+
+Application à q(x) : Criminel(x')
+ R1 : Américain(x'), Vend(x', y', z'), Arme(y'), PaysHostile(z') →  Criminel(x')
+ R2 : Ennemi(x',Amérique) →  PaysHostile(x')
+ R3 : Possede(Nono, y'), Missile(y') → Vend(West, y', Nono)
+ R4 : Missile(x') →  Arme(x')
+ 
+ 1) [Premier tour du TQ]
+ AExplorer = {q}
+ Résultat = Ø
+ 
+ q1 = réécriture directe de q avec R1 et u : x' --> x
+ [On va supposer qu'on met des "prime" dans la règle si besoin
+ q1(x) : Américain(x), Vend(x, y, z), Arme(y), PaysHostile(z) 
+ 
+ Resultat = {q}
+ AExplorer = {q1}
+ 
+ 2) [Deuxième tour du TQ]
+ // on explore q1
+ AExplorer = {}
+ Résultat = {q1}
+ 
+ q2 = réécriture directe de q1 avec R3 et u : x --> West, y' --> y z --> Nono
+ q2(x) : Possede(Nono, y), Missile(y), Americain(West), Arme(y), PaysHostile(Nono)
+  
+q3 = réécriture directe de q1 avec R4 avec u : x' --> y
+q3(x) = Americain(x), Vend(x,y,z), Missile(y), PaysHostile(z)
+
+q4 = réécriture directe de q1 avec R2 et u [x' -> z]
+q4(x) : Américain(x), Vend(x, y, z), Arme(y),Ennemi(z,Amérique)
+
+AExplorer = {q2,q3,q4}
+
+ 3) [Troisième tour du TQ]
+ // on explore q2
+ AExplorer = {q3,q4}
+ Résultat = {q1,q2}
+ 
+ q5 = réécriture directe de q2 avec R4
+ avec u[y' --> y]
+ q5(x)=Americain(West), Possede(Nono, y), Missile(y), PaysHostile(Nono)
+ 
+ q6 = réécriture directe de q2 avec R2
+avec u[x' -> Nono]
+q6(x)=Americain(West), Possede(Nono,y), Missile(y), Arme(y),Ennemi(Nono, Amérique)
+
+C'est fini pour q2
+AExplorer = {q3,q4,q5,q6}
+
+4) [Quatrième tour du TQ]
+
+// on explore q3
+AExplorer = {q4, q5,q6}
+Résultat = {q1,q2,q3}
+
+ 
+q7 = réécriture directe de q3 avec R3 avec u : x --> West, y' --> y z --> Nono
+ 
+ q7(x) = Americain(West), Possede(Nono, y), Missile(y), Missile(y), PaysHostile(Nono)
+ 
+ 
+ On a 1 autre réécriture de q3 avec R2
+ 
+ q8 = réécriture directe de q3 avec R2 et u : x' --> z
+ q8(x) = Americain(x), Vend(x,y,z), Missile(y), Ennemi(z,Amerique)
+ 
+ 
+ C'est fini pour q3
+ AExplorer = {q4, q5,q6,q7,q8}
+ 
+
+A continuer ... 
+ 
+Penser à vérifier avant d'insérer une réécriture dans Résultat ou dans AExplorer qu'on ne l'a pas déjà (la même requête ou une requête qui s'obtient en renommant bijectivement les variables)
+
+---- la suite à vos risques et périls -----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

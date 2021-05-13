@@ -1,0 +1,1 @@
+Workspace pour la mise en pratique des codes de : C# and .NET 5 : Modern Cross-Platform Development - by Mark J. Price

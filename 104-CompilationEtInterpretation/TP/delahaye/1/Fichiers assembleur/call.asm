@@ -9,7 +9,7 @@ main:	li $a0, 1
 	syscall
 	li $v0, 10
 	syscall
-	
+
 sum:	addiu $sp, $sp, -8
 	sw $ra, 4($sp)
 	sw $s0, ($sp)

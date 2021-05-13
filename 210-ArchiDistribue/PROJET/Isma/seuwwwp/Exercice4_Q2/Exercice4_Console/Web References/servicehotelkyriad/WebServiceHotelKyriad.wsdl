@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Authentification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthentificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AuthentificationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListeOffre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dateDebut" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateFin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nombrePersonne" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListeOffreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListeOffreResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyOffer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idOffer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyOfferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyOfferResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookingRegistration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idOffre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client" type="tns:Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Client">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdClient" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomClient" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrenomClient" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarteCredit" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BookingRegistrationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookingRegistrationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AuthentificationSoapIn">
+    <wsdl:part name="parameters" element="tns:Authentification" />
+  </wsdl:message>
+  <wsdl:message name="AuthentificationSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthentificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListeOffreSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListeOffre" />
+  </wsdl:message>
+  <wsdl:message name="GetListeOffreSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListeOffreResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyOfferSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyOffer" />
+  </wsdl:message>
+  <wsdl:message name="VerifyOfferSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyOfferResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookingRegistrationSoapIn">
+    <wsdl:part name="parameters" element="tns:BookingRegistration" />
+  </wsdl:message>
+  <wsdl:message name="BookingRegistrationSoapOut">
+    <wsdl:part name="parameters" element="tns:BookingRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService3Soap">
+    <wsdl:operation name="Authentification">
+      <wsdl:input message="tns:AuthentificationSoapIn" />
+      <wsdl:output message="tns:AuthentificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListeOffre">
+      <wsdl:input message="tns:GetListeOffreSoapIn" />
+      <wsdl:output message="tns:GetListeOffreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOffer">
+      <wsdl:input message="tns:VerifyOfferSoapIn" />
+      <wsdl:output message="tns:VerifyOfferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookingRegistration">
+      <wsdl:input message="tns:BookingRegistrationSoapIn" />
+      <wsdl:output message="tns:BookingRegistrationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService3Soap" type="tns:WebService3Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authentification">
+      <soap:operation soapAction="http://tempuri.org/Authentification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListeOffre">
+      <soap:operation soapAction="http://tempuri.org/GetListeOffre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOffer">
+      <soap:operation soapAction="http://tempuri.org/VerifyOffer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookingRegistration">
+      <soap:operation soapAction="http://tempuri.org/BookingRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService3Soap12" type="tns:WebService3Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authentification">
+      <soap12:operation soapAction="http://tempuri.org/Authentification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListeOffre">
+      <soap12:operation soapAction="http://tempuri.org/GetListeOffre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOffer">
+      <soap12:operation soapAction="http://tempuri.org/VerifyOffer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookingRegistration">
+      <soap12:operation soapAction="http://tempuri.org/BookingRegistration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService3">
+    <wsdl:port name="WebService3Soap" binding="tns:WebService3Soap">
+      <soap:address location="https://localhost:44300/WebServiceHotelKyriad.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService3Soap12" binding="tns:WebService3Soap12">
+      <soap12:address location="https://localhost:44300/WebServiceHotelKyriad.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

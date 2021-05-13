@@ -1,0 +1,337 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+            "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Assembleur MIPS
+</TITLE>
+
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META name="GENERATOR" content="hevea 1.10">
+<STYLE type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.li-enumerate{margin:1ex 0ex;}
+.title{margin:2ex auto;text-align:center}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+.flushright{text-align:right;margin-left:auto;margin-right:0ex;}
+DIV TABLE{margin-left:inherit;margin-right:inherit;}
+PRE{text-align:left;margin-left:0ex;margin-right:auto;}
+BLOCKQUOTE{margin-left:4ex;margin-right:4ex;text-align:left;}
+TD P{margin:0px;}
+.part{margin:2ex auto;text-align:center}
+.lstlisting{font-family:monospace;white-space:pre;margin-right:auto;margin-left:0pt;text-align:left}
+BODY{background:white;}
+.title{padding:1ex;background:#00B200;}
+.titlemain{padding:1ex;background:#00B200;}
+.part{padding:1ex;background:#00CC00;}
+.section{padding:.5ex;background:#2DE52D;}
+.subsection{padding:0.3ex;background:#66FF66;}
+</STYLE>
+
+<style type="text/css">
+pre, code, tt {font:12pt monospace;*font-size:100%;font-weight: bold;}
+</style>
+</HEAD>
+<BODY >
+<!--HEVEA command line is: hevea -entities -fix -O index.tex -->
+<!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Assembleur MIPS</H1></TD></TR>
+</TABLE><DIV CLASS="center">
+Voici le <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/cours01.pdf">cours</A> correspondant. La solution est <A HREF="sol.html">ici</A>.
+</DIV><!--TOC part Programmation assembleur-->
+<TABLE CLASS="center"><TR><TD><H1 CLASS="part"><!--SEC ANCHOR --><A NAME="htoc1">Partie I</A><BR>
+Programmation assembleur</H1></TD></TR>
+</TABLE><!--SEC END --><!--TOC section Fonction de Fibonacci-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Fonction de Fibonacci</H2><!--SEC END --><!--TOC subsection Comme fonction récursive-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Comme fonction récursive</H3><!--SEC END --><P>La définition de la fonction de Fibonacci est bien connue:</P><DIV CLASS="lstlisting">$ ocaml
+        OCaml version 4.02.1
+
+<B># let rec</B> fib n = <B>if</B> n &lt;= 1 <B>then</B> 1 <B>else</B> fib (n-1) + fib (n-2);;
+<B>val</B> fib : int -&gt; int = &lt;<B>fun</B>&gt;
+<B>#</B> fib 7;;
+- : int = 21</DIV><P>On souhaite traduire cette fonction en assembleur MIPS. Le programme
+assembleur <TT>fib.spi</TT> devra lire l&#X2019;argument (un entier) sur l&#X2019;entrée
+standard, effectuer le calcul, puis afficher le résultat (un entier, suivi
+d&#X2019;un retour à la ligne) sur la sortie standard.</P><P>La démarche suggérée est de structurer le programme en trois fonctions,
+<TT>read</TT>, <TT>writeln</TT> et <TT>fib</TT>. La fonction <TT>read</TT>
+lit un entier sur l&#X2019;entrée standard via un appel système (consulter la liste
+des appels système dans le <A HREF="../../spim/HP_AppA.pdf">manuel de spim</A>
+ou bien <A HREF="http://www.doc.ic.ac.uk/lab/secondyear/spim/node8.html">en ligne</A>).
+La fonction <TT>writeln</TT> affiche un entier suivi d&#X2019;un retour à la ligne
+(on pourra s&#X2019;aider de la fonction <TT>hello_world</TT> donnée en cours). La
+fonction <TT>fib</TT> proprement dite se déduit de la fonction <TT>fact</TT>
+du cours. Enfin, le code de lancement appelle ces trois fonctions. Ce code
+reçoit par convention l&#X2019;étiquette <CODE>__start</CODE>:
+</P><PRE CLASS="verbatim">        .globl __start
+__start:
+        jal  read
+        move $a0, $v0
+        jal  fib
+        move $a0, $v0
+        jal  writeln
+        li   $v0, 10      # Exit
+        syscall
+</PRE><P>Pour commencer, vous pouvez copier le code ci-dessus dans un nouveau fichier
+<TT>fib.spi</TT>, puis lancer l&#X2019;éditeur <TT>mars</TT> et ouvrir ce fichier.</P><P>Complétez le code. Si vous voulez, commencer par écrire les fonctions
+<TT>read</TT> et <TT>writeln</TT>, avec une fonction <TT>fib</TT> identité
+(qui renvoie son argument). Assemblez (<TT>Run/Assemble</TT>) puis exécutez le
+code (<TT>Run/Go</TT>) pour voir s&#X2019;il fonctionne. Ensuite, écrivez la
+véritable fonction <TT>fib</TT>, et testez à nouveau.</P><P>Si votre code est syntaxiquement correct, alors vous pouvez également
+l&#X2019;exécuter depuis la ligne de commande, à l&#X2019;aide de <TT>spim</TT>:
+</P><PRE CLASS="verbatim">  spim -notrap -file fib.spi
+</PRE><P>ou encore à l&#X2019;aide de <TT>mars</TT>:
+</P><PRE CLASS="verbatim">  mars nc fib.spi
+</PRE><P>L&#X2019;option <TT>nc</TT> supprime l&#X2019;affichage de la ligne de copyright de <TT>mars</TT>.</P><DIV CLASS="flushright">
+Voir la <A HREF="sol.html#un">solution</A>.
+</DIV><!--TOC subsection Comme boucle-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Comme boucle</H3><!--SEC END --><P>Modifier le programme précédent afin de calculer <TT>fib</TT> en
+utilisant une boucle:</P><DIV CLASS="lstlisting"><B>let</B> fib n =
+  <B>let</B> prec = ref 1
+  <B>and</B> cur = ref 1 <B>in
+  for</B> i = 2 <B>to</B> n <B>do
+    let</B> save = !cur <B>in</B>
+    cur := !prec + !cur ;
+    prec := save
+  <B>done</B> ;
+  !cur</DIV><P>Vous pouvez vous inspirer du codage de la boucle
+<TT>while</TT> du
+cours.</P><DIV CLASS="flushright">
+Voir la <A HREF="sol.html#deux">solution</A>.
+</DIV><P><BR>
+<BR>
+<BR>
+</P><!--TOC part Compilation des expressions arithmétiques-->
+<TABLE CLASS="center"><TR><TD><H1 CLASS="part"><!--SEC ANCHOR --><A NAME="htoc2">Partie II</A><BR>
+Compilation des expressions arithmétiques</H1></TD></TR>
+</TABLE><!--SEC END --><P>Le but de cet exercice est l&#X2019;écriture d&#X2019;un petit compilateur pour les
+expressions arithmétiques. Le compilateur sera de plus en plus malin.</P><P>Le compilateur <TT>zyva</TT> lit une expression sur son entrée
+standard et produit le code qui calcule cette expression sur sa sortie
+standard.</P><!--TOC section Environnement-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Environnement</H2><!--SEC END --><P>Le programme <TT>zyva</TT> est un compilateur complet.
+Tout ou presque est déjà écrit, les parties données
+(analyseurs lexicaux et syntaxiques, code de lancement) le sont sous
+forme d&#X2019;une archive.
+Pour démarrer, la démarche est la suivante:
+</P><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+Récupérer <TT><A HREF="pgm.tar.gz">pgm.tar.gz</A></TT>.
+</LI><LI CLASS="li-enumerate">Expanser l&#X2019;archive.
+<PRE CLASS="verbatim"># tar xvfz pgm.tar.gz
+</PRE></LI></OL><P>
+Le sous-répertoire <TT>pgm</TT> contient maintenant les sources, plus
+un <TT>Makefile</TT> adapté. On peut compiler le tout:
+</P><PRE CLASS="verbatim"># cd pgm
+# make
+ocamllex lexer.mll
+11 states, 267 transitions, table size 1134 bytes
+ocamlyacc parser.mly
+   ...
+ocamlc -o zyva lexer.cmo parser.cmo arithmetique.cmo zyva.cmo
+</PRE><P>Cependant, le compilateur ainsi produit ne fonctionne pas:
+</P><PRE CLASS="verbatim"># echo "x+2" | ./zyva
+Fatal error: exception Failure("Pas implémenté!")
+</PRE><P>C&#X2019;est bien logique, il manque un bout de source important.</P><!--TOC section Ce qu&#X2019;il faut faire-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Ce qu&#X2019;il faut faire</H2><!--SEC END --><P>Il faut compléter le fichier <TT>arithmetique.ml</TT>. L&#X2019;auteur de ce
+fichier a triché en écrivant <CODE>failwith "Pas implémenté!"</CODE> (ce qui
+provoque le lancement d&#X2019;une exception) au lieu d&#X2019;implémenter la génération
+de code pour les opérateurs arithmétiques.</P><P>La mission du compilateur, décrite dans l&#X2019;interface <TT>arithmetique.mli</TT>,
+est simple:</P><DIV CLASS="lstlisting"><EM>(* Ce module implante le compilateur proprement dit. *)</EM>
+
+<B>open</B> Expression
+
+<EM>(* La fonction [compile_expression e] produit un fragment de code assembleur. Ce
+   code suppose que la valeur de la variable [x] se trouve dans le registre [$a0].
+   Ce code doit calculer la valeur de l'expression [e] et placer cette valeur dans
+   le registre [$v0]. *)</EM>
+
+<B>val</B> compile_expression : expression -&gt; unit
+
+<EM>(* La fonction [compile e] produit un programme assembleur complet. Ce
+   programme, exécuté à l'aide de spim, effectue une boucle: il lit une valeur
+   entière sur l'entrée standard; si cette valeur est nulle, le programme
+   termine; si cette valeur est non nulle, alors le programme associe cette
+   valeur à la variable [x], puis calcule et affiche la valeur de l'expression
+   [e], et recommence. *)</EM>
+
+<B>val</B> compile : expression -&gt; unit</DIV><P>Avant de compléter le compilateur, commencez par examiner le code existant
+dans <TT>arithmetique.ml</TT>. Il s&#X2019;occupe de la génération du code de
+lancement (fonctions <CODE>prelude</CODE> et <CODE>postlude</CODE>). C&#X2019;est la fonction
+de compilation centrale (<TT>compile_expr</TT>) qui est incomplète: elle
+ne fonctionne que pour les variables et les constantes entières.
+En effet, le langage des expressions
+arithmétiques est donné par les déclarations de type du fichier
+<TT>expression.mli</TT> :</P><DIV CLASS="lstlisting"><EM>(* Les quatre opérateurs arithmétiques *)</EM>
+<B>type</B> binop = Plus | Minus | Times | Div
+
+<B>type</B> expression =
+<EM>(* Opération binaire *)</EM>
+  | Binexp <B>of</B> binop * expression * expression
+<EM>(* Constante entière *)</EM>
+  | Int <B>of</B> int
+<EM>(* Variable *)</EM>
+  | X</DIV><P>Vous pouvez d&#X2019;ores et déjà utiliser <TT>zyva</TT> pour
+compiler une expression ne comportant pas
+d&#X2019;opérations binaires:
+</P><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+Compiler (ici l&#X2019;expression arithmétique est « <CODE>x</CODE> »):
+<PRE CLASS="verbatim"># echo "x" | ./zyva &gt; simple.spi
+</PRE></LI><LI CLASS="li-enumerate">Essayer:
+<PRE CLASS="verbatim"># spim -notrap -file simple.spi
+SPIM Version 7.0 of July 7, 2004
+Copyright 1990-2004 by James R. Larus (larus@cs.wisc.edu).
+All Rights Reserved.
+See the file README for a full copyright notice.
+3
+3
+4
+4
+0
+</PRE></LI></OL><P>
+Le code de lancement contient une boucle: lire une valeur entière au
+clavier, évaluer l&#X2019;expression en liant la variable <I>x</I> à cette valeur,
+afficher le résultat. La boucle continue tant que la valeur lue est non nulle.</P><!--TOC section Compilation à l&#X2019;aide de la pile-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Compilation à l&#X2019;aide de la pile</H2><!--SEC END --><P>Le plus simple est d&#X2019;utiliser la pile pour stocker les résultats des calculs
+intermédiaires, en n&#X2019;utilisant qu&#X2019;un nombre limité de registres pour effectuer
+les opérations arithmétiques.</P><P>La compilation consiste alors en un simple parcours de l&#X2019;arbre représentant
+l&#X2019;expression à compiler. Par exemple, pour l&#X2019;expression « <CODE>(x-1)*3 +
+x*x</CODE> », on peut obtenir le code machine suivant:
+</P><PRE CLASS="verbatim">eval:
+        move $v0, $a0
+        subu $sp, $sp, 4
+        sw   $v0, 0($sp)
+        li   $v0, 1
+        lw   $v1, 0($sp)
+        addu $sp, $sp, 4
+        sub  $v0, $v1, $v0
+        subu $sp, $sp, 4
+        sw   $v0, 0($sp)
+        li   $v0, 3
+        lw   $v1, 0($sp)
+        addu $sp, $sp, 4
+        mul  $v0, $v1, $v0
+        subu $sp, $sp, 4
+        sw   $v0, 0($sp)
+        move $v0, $a0
+        subu $sp, $sp, 4
+        sw   $v0, 0($sp)
+        move $v0, $a0
+        lw   $v1, 0($sp)
+        addu $sp, $sp, 4
+        mul  $v0, $v1, $v0
+        lw   $v1, 0($sp)
+        addu $sp, $sp, 4
+        add  $v0, $v1, $v0
+        jr $ra
+</PRE><P>On pourra utiliser la commande <TT>make test</TT>, qui automatise ce test.</P><DIV CLASS="flushright">
+Voir la <A HREF="sol.html#trois">solution</A>.
+</DIV><!--TOC section Compilation à l&#X2019;aide des registres-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Compilation à l&#X2019;aide des registres</H2><!--SEC END --><P>Le code ci-dessus est très mauvais.
+Le premier reproche majeur que l&#X2019;on peut lui faire est une très
+mauvaise exploitation des registres.</P><P>Donc, supposons que nous disposons d&#X2019;un nombre fini de registres, dont les noms
+sont donnés par le tableau suivant:</P><DIV CLASS="lstlisting"><B>let</B> registers : string array =
+  [| "$a0"; "$v0" ; "$a1" ; "$a2" ; "$t0" ; |]</DIV><P>Ce tableau étant fixé, nous pouvons faire références aux registres à l&#X2019;aide
+d&#X2019;indices entiers, par exemple 0, 1, 2, 3, 4.</P><P>Le compilateur allouera des registres dans l&#X2019;ordre, à l&#X2019;aide de ce tableau,
+et échouera s&#X2019;il tombe à court de registres.</P><P>On demande donc de modifier la fonction <TT>compile_expression</TT> pour
+prendre un argument un indice de registre <TT>r</TT> et une expression
+<TT>e</TT>. La fonction devra alors produire du code qui évalue l&#X2019;expression
+<TT>e</TT>, place le résultat de ce calcul dans le registre d&#X2019;indice
+<TT>r</TT>, et fait en sorte de ne pas modifier les valeurs stockées dans les
+registres d&#X2019;indice inférieur à <TT>r</TT>.</P><P>Nous avons fait en sorte que le registre d&#X2019;indice 0 soit <TT>a0</TT>, qui par
+convention contient la valeur de la variable <TT>x</TT>; ce registre est donc
+réservé et n&#X2019;est pas disponible. Nous avons fait en sorte que le registre
+d&#X2019;indice 1 soit <TT>v0</TT>, à savoir le registre dans lequel le résultat
+final est attendu. Ainsi, la fonction <TT>compile_expression 1</TT> produira
+du code qui place son résultat dans <TT>v0</TT>, comme
+<TT>compile_expression</TT> précédemment.</P><P>Ainsi, pour l&#X2019;expression « <CODE>(x-1)*3 + x*x</CODE> », on devrait obtenir plus ou
+moins ceci :
+</P><PRE CLASS="verbatim">eval:
+        move $v0, $a0
+        li   $a1, 1
+        sub  $v0, $v0, $a1
+        li   $a1, 3
+        mul  $v0, $v0, $a1
+        move $a1, $a0
+        move $a2, $a0
+        mul  $a1, $a1, $a2
+        add  $v0, $v0, $a1
+        jr $ra
+</PRE><DIV CLASS="flushright">
+Voir la <A HREF="sol.html#quatre">solution</A>.
+</DIV><!--TOC section Bonne utilisation du jeu d&#X2019;instructions-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Bonne utilisation du jeu d&#X2019;instructions</H2><!--SEC END --><P>Le code ci-dessus est encore criticable.
+Il contient des instructions inutiles.
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Des transferts de registre à registre. Par exemple, pour
+calculer « <CODE>x*x</CODE> » dans <CODE>$a1</CODE>, on a :
+<PRE CLASS="verbatim">        move $a1, $a0
+        move $a2, $a0
+        mul   $a1, $a1, $a2
+</PRE>C&#X2019;est quand même assez mauvais puisque le code suivant fait exactement
+le même travail.
+<PRE CLASS="verbatim">        mul   $a1, $a0, $a0
+</PRE></LI><LI CLASS="li-itemize">Par ailleurs on peut calculer « <CODE>x-1</CODE> » sans se donner la peine de
+ranger la constante 1 dans un registre, puisque le jeu d&#X2019;instructions
+du MIPS autorise un (petit) entier comme second argument des
+opérations. Ici, on pourrait gagner deux instructions en remplaçant
+<PRE CLASS="verbatim">        move $v0, $a0
+        li   $a1, 1
+        sub   $v0, $v0, $a1
+</PRE>par
+<PRE CLASS="verbatim">        sub   $v0, $a0, 1
+</PRE></LI></UL><P>
+On demande donc de modifier la solution afin de produire du bon code dans ces
+cas particuliers. En ce qui concerne le premier point, on fera en sorte que
+<TT>compile_expression r e</TT> renvoie l&#X2019;indice du registre dans lequel il a
+choisi de stocker le résultat &#X2013; soit <TT>r</TT>, soit un autre registre. En
+ce qui concerne le second point, on reconnaîtra les opérations binaires dont
+le second opérande est une constante.</P><P>Pour l&#X2019;expression « <CODE>(x-1)*3 + x*x</CODE> », on devrait obtenir:
+</P><PRE CLASS="verbatim">eval:
+        sub  $v0, $a0, 1
+        mul  $v0, $v0, 3
+        mul  $a1, $a0, $a0
+        add  $v0, $v0, $a1
+        jr $ra
+</PRE><DIV CLASS="flushright">
+Voir la <A HREF="sol.html#cinq">solution</A>.
+</DIV><!--TOC section Exploitation de la commutativité-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Exploitation de la commutativité</H2><!--SEC END --><P>On pourra ensuite chercher à exploiter la commutativité de l&#X2019;addition et de la
+multiplication. Ainsi, au lieu de compiler « <CODE>1+x</CODE> » comme:
+</P><PRE CLASS="verbatim">        li     $v0, 1
+        add   $v0, $v0, $a0
+</PRE><P>On pourrait produire :
+</P><PRE CLASS="verbatim">        add   $v0, $a0, 1
+</PRE><P>Cette même optimisation devrait permettre de compiler l&#X2019;expression
+« <CODE>1 + 2 * (x + 3 * (x + 4 * ( x + 5 * x)))</CODE> » en n&#X2019;utilisant qu&#X2019;un seul
+registre temporaire.</P><DIV CLASS="flushright">
+Voir la <A HREF="sol.html#six">solution</A>.
+</DIV><!--TOC section Exploitation de l&#X2019;ordre d&#X2019;évaluation-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Exploitation de l&#X2019;ordre d&#X2019;évaluation</H2><!--SEC END --><P>Notre traitement des expressions binaires évalue d&#X2019;abord <TT>e1</TT>, puis
+stocke son résultat dans un registre <TT>r1</TT> pendant le calcul de
+<TT>e2</TT>. Mais, si l&#X2019;ordre d&#X2019;évaluation des expressions n&#X2019;est pas important
+&#X2013; ce qui est bien le cas ici &#X2013; alors on pourrait aussi évaluer d&#X2019;abord
+<TT>e2</TT>, puis stocker son résultat dans un registre <TT>r2</TT> pendant le
+calcul de <TT>e1</TT>.</P><P>On voit que ce choix affecte le nombre <I>U</I>(<I>e</I>) de registres temporaires
+utilisés pour l&#X2019;évaluation de l&#X2019;expression <I>e</I>. Dans le premier cas, ce nombre
+est le maximum de <I>U</I>(<I>e</I><SUB>1</SUB>) et de 1+<I>U</I>(<I>e</I><SUB>2</SUB>). Dans le second cas, ce nombre est
+le maximum de <I>U</I>(<I>e</I><SUB>2</SUB>) et de 1+<I>U</I>(<I>e</I><SUB>1</SUB>). Si <I>U</I>(<I>e</I><SUB>1</SUB>) et <I>U</I>(<I>e</I><SUB>2</SUB>) diffèrent,
+alors la valeur de <I>U</I>(<I>e</I>) dépend du choix effectué. Or, on a intérêt à
+minimiser cette valeur, afin d&#X2019;éviter d&#X2019;employer un trop grand nombre de
+registres, ce qui pourrait nous amener à échouer ou bien à utiliser la pile.</P><P>Cette optimisation doit permettre de compiler l&#X2019;expression
+« <CODE>1 - (1 - (1 - (1 - (1 - (1 - x)))))</CODE> », très déséquilibrée à droite,
+en n&#X2019;utilisant que deux registres temporaires (l&#X2019;un pour stocker la constante
+1, l&#X2019;autre pour stocker le résultat intermédiaire du calcul, effectué de
+droite à gauche).</P><P>On demande d&#X2019;abord d&#X2019;écrire une fonction <TT>usage</TT> qui, appliquée à une
+expression <TT>e</TT>, indique combien de registres temporaires sont
+nécessaires pour l&#X2019;évaluation de <TT>e</TT>. On demande ensuite de modifier le
+traitement des expressions binaires dans <TT>compile_expression</TT> pour
+utiliser <TT>usage</TT> et choisir intelligemment dans quel ordre évaluer les
+deux sous-expressions. On prendra garde au fait que l&#X2019;existence même de cette
+optimisation doit être reflétée dans la définition de la fonction
+<TT>usage</TT>.</P><DIV CLASS="flushright">
+Voir la <A HREF="sol.html#sept">solution</A>.
+</DIV><!--TOC section Encore plus loin-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Encore plus loin</H2><!--SEC END --><P>Il reste quelques détails... Par exemple, on pourrait faire en sorte que le
+compilateur n&#X2019;échoue pas si le nombre de registres est insuffisant, mais
+utilise la pile.</P><!--CUT END -->
+<!--HTMLFOOT-->
+<!--ENDHTML-->
+<!--FOOTER-->
+<HR SIZE=2><BLOCKQUOTE CLASS="quote"><EM>Ce document a été traduit de L<sup>A</sup>T<sub>E</sub>X par <A HREF="http://hevea.inria.fr">H<FONT SIZE=2><sup>E</sup></FONT>V<FONT SIZE=2><sup>E</sup></FONT>A</A></EM></BLOCKQUOTE></BODY>
+</HTML>

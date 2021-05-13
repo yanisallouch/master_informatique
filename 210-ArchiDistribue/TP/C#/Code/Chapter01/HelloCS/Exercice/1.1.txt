@@ -1,0 +1,10 @@
+1. .NET is based on the CLR (CommonLanguageRuntime) which allows differents languages programming to run on dotnet.
+2. "dotnet new console".
+3. "dotnet run".
+4. The shortcut for to view the Terminal in the book is Ctrl + ' on Windows and backtick on macOS.
+5. No.
+6. .NET Core is not "better" than .NET Framework but have as goal to be cross-platform and to implement the .NET Standard, also by removing Windows dependant features from .NET Framework.
+7. .NET Standard is for .NET what HTML5 is for HTML. It defines a specifications to follows the roadmap Microsoft has set to have a cross-platform Framework.
+8. "static void Main(String[] args){ }".
+9. I would look for help about a C# keyword in the M$ Documentation.
+10. My solution to common programming problems can be found in stackoverflow.com or the .NET teams blog.

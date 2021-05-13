@@ -1,0 +1,14 @@
+C:\Users\nasse\source\repos\Exercice4_Console\Exercice4_Console\bin\Debug\Exercice4_Console.exe.config
+C:\Users\nasse\source\repos\Exercice4_Console\Exercice4_Console\bin\Debug\Exercice4_Console.exe
+C:\Users\nasse\source\repos\Exercice4_Console\Exercice4_Console\bin\Debug\Exercice4_Console.pdb
+C:\Users\nasse\source\repos\Exercice4_Console\Exercice4_Console\obj\Debug\Exercice4_Console.exe
+C:\Users\nasse\source\repos\Exercice4_Console\Exercice4_Console\obj\Debug\Exercice4_Console.pdb
+C:\Users\nasse\source\repos\Exercice4_Console\Exercice4_Console\obj\Debug\Exercice4_Console.csprojAssemblyReference.cache
+C:\Users\nasse\Downloads\Google\TP Soap\Exercice4_Q2\Exercice4_Console\bin\Debug\Exercice4_Console.exe.config
+C:\Users\nasse\Downloads\Google\TP Soap\Exercice4_Q2\Exercice4_Console\bin\Debug\Exercice4_Console.exe
+C:\Users\nasse\Downloads\Google\TP Soap\Exercice4_Q2\Exercice4_Console\bin\Debug\Exercice4_Console.pdb
+C:\Users\nasse\Downloads\Google\TP Soap\Exercice4_Q2\Exercice4_Console\obj\Debug\Exercice4_Console.csprojAssemblyReference.cache
+C:\Users\nasse\Downloads\Google\TP Soap\Exercice4_Q2\Exercice4_Console\obj\Debug\Exercice4_Console.exe
+C:\Users\nasse\Downloads\Google\TP Soap\Exercice4_Q2\Exercice4_Console\obj\Debug\Exercice4_Console.pdb
+C:\Users\nasse\Downloads\Google\TP Soap\Exercice4_Q2\Exercice4_Console\obj\Debug\Exercice4_Console.Form1.resources
+C:\Users\nasse\Downloads\Google\TP Soap\Exercice4_Q2\Exercice4_Console\obj\Debug\Exercice4_Console.csproj.GenerateResource.cache

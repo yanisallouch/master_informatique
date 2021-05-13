@@ -1,0 +1,277 @@
+1)
+___________________Ax
+A , B ⊢ A
+___________________⟹ R
+A ⊢ B ⟹ A
+___________________⟹ R
+\top ⊢ A ⟹ B ⟹ A
+
+
+2) longue a faire a la fin 
+
+
+3) LJ Et LK
+___________________Ax
+A,B ⊢ B
+___________________∧ L
+A ∧ B ⊢ B
+___________________⟹ R
+⊢ A ∧ B ⟹ B
+
+
+4) LJ
+
+___________________Ax
+B ⊢ B
+___________________∨ R2
+B ⊢ A ∨ B
+___________________⟹ R
+⊢B ⟹ A ∨ B
+
+
+LK
+
+___________________Ax
+B ⊢ A,B
+___________________∨ R
+B ⊢ A ∨ B
+___________________⟹ R
+⊢B ⟹ A ∨ B
+
+
+5) longue a faire a la fin
+
+
+6)
+___________________⊥ L
+A , ⊥ ⊢ ¬A
+___________________⟹ R
+A ⊢ ⊥ ⟹ ¬A
+___________________⟹ R
+⊢ A ⟹ ⊥ ⟹ ¬ A
+
+
+7)
+___________________⊥L
+⊥ ⊢ A
+___________________⟹ R
+⊢ ⊥ ⟹ A 
+
+
+8) LJ
+_______ax     _______ ax
+A ⊢A              A,B⊢B
+___________________⟺L 1
+A ⟺ B, A ⊢ B
+___________________⟹ R
+A ⟺ B ⊢ A ⟹ B
+___________________⟹ R
+⊢ (A ⟺ B) ⟹ (A ⟹ B)
+
+
+9)
+
+Preuves Coq :
+ 
+(* Propositional Logic *)
+
+Parameters A B : Prop.
+
+Goal A -> A.
+Proof.
+  intro.
+  assumption.
+Save prop1.
+
+Print prop1.
+Check prop1.
+
+Lemma prop2 : (A -> B) -> A -> B.
+Proof.
+  intros.
+  apply H.
+  assumption.
+Qed.
+
+Lemma prop2b : (A -> B) -> A -> B.
+Proof.
+  intros.
+  apply (H H0).
+Qed.
+
+Lemma prop3 : A /\ B -> A.
+Proof.
+  intro.
+  elim H.
+  clear H.
+  intros.
+  assumption.
+Qed.
+
+Lemma prop3b : A /\ B -> A.
+Proof.
+  intro.
+  elim H; intros.
+  assumption.
+Qed.
+
+Lemma prop4 : A -> B -> A /\ B.
+Proof.
+  intros.
+  split.
+  
+  Focus 2.
+  assumption.
+  assumption.
+Qed.
+
+Lemma prop4b : A -> B -> A /\ B.
+Proof.
+  intros.
+  split; assumption.
+Qed.
+
+Lemma prop5 : A \/ B -> B \/ A.
+Proof.
+  intro.
+  elim H.
+  intro.
+  right.
+  assumption.
+  intro.
+  left.
+  assumption.
+Qed.
+
+Lemma prop5b : A \/ B -> B \/ A.
+Proof.
+  intro.
+  elim H; intro; [right | left]; assumption.
+Qed.
+
+Lemma prop6 : A -> A \/ B.
+Proof.
+  intro.
+  left.
+  assumption.
+Qed.
+
+(* ~A = A -> False *)
+
+Print not.
+
+Lemma prop7 : A -> ~A -> False.
+Proof.
+  intros.
+  unfold not in H0.
+  apply (H0 H).
+Qed.
+
+Lemma prop7b : A -> ~A -> False.
+Proof.
+  intros.
+  apply (H0 H).
+Qed.
+
+Print iff.
+
+Lemma prop8 : A <-> B -> B <-> A.
+Proof.
+  unfold iff.
+  intro.
+  elim H; intros; clear H.
+  split; assumption.
+Qed.
+
+
+_______________________________
+
+
+Exercices :
+    
+    Lemma exo1 : A -> B -> A.
+Proof.
+  intros.
+  assumption.
+Qed.
+
+Lemma exo3 : A /\ B -> B.
+Proof.
+  intro.
+  elim H; clear H; intros.
+  assumption.
+Qed.
+
+Lemma exo4 : B -> A \/ B.
+Proof.
+  intro.
+  right.
+  assumption.
+Qed.
+
+Lemma exo6 : A -> False -> ~A.
+Proof.
+  intros.
+  elimtype False; assumption.
+Qed.
+
+Lemma exo7 : False -> A.
+Proof.
+  intro.
+  elimtype False; assumption.
+Qed.
+
+Lemma exo8 : (A <-> B) -> (A -> B).
+Proof.
+  intros.
+  elim H.
+  intros.
+  apply H1.
+  assumption.
+Qed.
+
+Lemma exo10 : (A -> B) -> (B -> A) -> (A <-> B).
+Proof.
+  intros.
+  split.
+  assumption.
+  assumption.
+Qed.
+
+Lemma exo5 : (A \/ B) -> (A -> C ) -> (B -> C ) -> C.
+Proof.
+  intros.
+  elim H; assumption.
+Qed.
+
+Lemma exo2 : (A -> B -> C ) -> (A -> B) -> A -> C.
+Proof.
+  intros.
+  apply H.
+  assumption.
+  apply H0.
+  assumption.
+Qed.
+
+Lemma exo2b : (A -> B -> C ) -> (A -> B) -> A -> C.
+Proof.
+  intros.
+  apply (H H1 (H0 H1)).
+Qed.
+
+Require Export Classical.
+
+Check NNPP.
+
+
+(* ~~A = ~A -> False. *)
+
+Goal A.
+apply NNPP.
+intro.
+
+
+
+
+
+

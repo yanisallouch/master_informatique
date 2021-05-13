@@ -1,0 +1,1 @@
+< 24> Approach=FP-Growth,Steps=1,Steps=3,Steps=5 => Structures=TR

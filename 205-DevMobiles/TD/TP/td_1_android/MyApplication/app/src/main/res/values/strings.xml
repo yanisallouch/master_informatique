@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AndroidToastExample</string>
+    <string name="menu_settings">Settings</string>
+    <string name="button_label">Show message</string>
+    <string name="image_content">image</string>
+    <string name="first_app">Ma première application Android</string>
+    <string name="mainbutton">Main button</string>
+    <string name="secondbutton">Second button</string>
+    <string name="linux_box">linux</string>
+    <string name="macos_box">macos</string>
+    <string name="windows_box">windows</string>
+    <string name="display_label">display</string>
+</resources>

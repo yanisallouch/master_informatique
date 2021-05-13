@@ -1,0 +1,32 @@
+Fonction factorielle (en récursif)
+f (n : integer) : integer
+if n = 0 then
+	f : = 1
+else
+	f : = n * f (n * 1)
+
+Traduction en LTL
+procedure f (1)
+var 8
+entry f 11
+f 11 : newframe => f 10
+f 10 : sets local (0); $ra => f 9
+f 9 : j => f 8
+f 8 : sets local (4); $s0 => f 7
+f 7 : move $s0; $a0 => f 6
+f 6 : j => f 5
+f 5 : blez $s0 => f 4; f 3
+f 3 : addiu $a0; $s0;-1 => f 2
+f 2 : j => f 20
+f 20 : j => f 19
+f 19 : call f => f 18
+f 18 : j => f 1
+f 1 : mul $v0; $s0; $v0 => f 0
+f 0 : j => f 17
+f 17 : j => f 16
+f 16 : gets $ra; local(0) => f 15
+f 15 : j => f 14
+f 14 : gets $s0; local(4) => f 13
+f 13 : delframe => f 12
+f 12 : jr $ra
+f 4 : li $v0; 1 => f 0

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Ma première application (International)</string>
+    <string name="fill_in">Remplir les champs s\'il vous plait</string>
+    <string name="firstName">Prénom</string>
+    <string name="lastName">Nom</string>
+    <string name="skillsField">Domaine de compétence</string>
+    <string name="validate">Valider</string>
+    <string name="age">Age</string>
+    <string name="phone">Téléphone</string>
+    <string name="confirmation">Confirmer</string>
+    <string name="cancel">Annuler</string>
+    <string name="ok">OK</string>
+    <string name="back">Retour</string>
+    <string name="call">Appeler</string>
+    <string name="numberToCall">Numéro a appeler</string>
+</resources>

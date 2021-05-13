@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+            "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Génération de code assembleur
+</TITLE>
+
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META name="GENERATOR" content="hevea 1.10">
+<STYLE type="text/css">
+.li-enumerate{margin:1ex 0ex;}
+.title{margin:2ex auto;text-align:center}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+DIV TABLE{margin-left:inherit;margin-right:inherit;}
+PRE{text-align:left;margin-left:0ex;margin-right:auto;}
+BLOCKQUOTE{margin-left:4ex;margin-right:4ex;text-align:left;}
+TD P{margin:0px;}
+BODY{background:white;}
+.title{padding:1ex;background:#00B200;}
+.titlemain{padding:1ex;background:#00B200;}
+.section{padding:.5ex;background:#2DE52D;}
+</STYLE>
+
+<style type="text/css">
+pre, code, tt {font:12pt monospace;*font-size:100%;font-weight: bold;}
+</style>
+</HEAD>
+<BODY >
+<!--HEVEA command line is: hevea -entities -fix -O index.tex -->
+<!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Génération de code assembleur</H1></TD></TR>
+</TABLE><DIV CLASS="center">
+Voici le <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/cours09.pdf">cours</A> correspondant. La solution est donnée par les
+fichiers <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/ltl2linI.ml.html">ltl2linI.ml</A> et <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/lin2asm.ml.html">lin2asm.ml</A>.
+</DIV><!--TOC section Présentation-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Présentation</H2><!--SEC END --><P>Le sujet est donné par l&#X2019;archive <TT><A HREF="td9.tar.gz">td9.tar.gz</A></TT>.</P><P>Il vous reste deux traductions à implémenter dans le petit compilateur:
+</P><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+de <TT><SPAN STYLE="font-variant:small-caps">LTL</SPAN></TT> vers <TT><SPAN STYLE="font-variant:small-caps">LIN</SPAN></TT>: linéarisation du code;
+</LI><LI CLASS="li-enumerate">de <TT><SPAN STYLE="font-variant:small-caps">LIN</SPAN></TT> vers <TT><SPAN STYLE="font-variant:small-caps">ASM</SPAN></TT>: réalisation des trames de pile.
+</LI></OL><P>Les langages <TT><SPAN STYLE="font-variant:small-caps">LIN</SPAN></TT> et <TT><SPAN STYLE="font-variant:small-caps">ASM</SPAN></TT> sont décrits dans
+<A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/LIN.mli.html">LIN.mli</A> et <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/ASM.mli.html">ASM.mli</A>.</P><P>Vous allez compléter les fichiers <TT>ltl2linI.ml</TT> et
+<TT>lin2asm.ml</TT>.</P><!--TOC section Linéarisation du code-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Linéarisation du code</H2><!--SEC END --><P>Il s&#X2019;agit de compléter le fichier <TT>ltl2linI.ml</TT>, dont l&#X2019;interface est
+donnée par <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/ltl2linI.mli.html">ltl2linI.mli</A>. Encore une fois, ce module prend la
+forme d&#X2019;un foncteur, ce qui signifie que vous pouvez supposer données les
+fonctions suivantes:
+</P><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<FONT COLOR="red"><TT>fetch</TT></FONT> associe à une étiquette <FONT COLOR="red"><TT>l</TT></FONT> l&#X2019;instruction
+correspondante dans le programme <TT><SPAN STYLE="font-variant:small-caps">LTL</SPAN></TT> que l&#X2019;on souhaite traduire;
+</LI><LI CLASS="li-enumerate"><FONT COLOR="red"><TT>translate_instruction</TT></FONT> traduit une instruction <TT><SPAN STYLE="font-variant:small-caps">LTL</SPAN></TT> en
+une instruction <TT><SPAN STYLE="font-variant:small-caps">LIN</SPAN></TT>; on notera que cette traduction provoque une
+perte d&#X2019;information, puisqu&#X2019;une instruction <TT><SPAN STYLE="font-variant:small-caps">LTL</SPAN></TT> porte un ou deux
+successeurs explicites, tandis que l&#X2019;instruction <TT><SPAN STYLE="font-variant:small-caps">LIN</SPAN></TT> correspondante
+aura zéro ou un successeurs explicites;
+</LI><LI CLASS="li-enumerate"><FONT COLOR="red"><TT>generate</TT></FONT> produit une instruction <TT><SPAN STYLE="font-variant:small-caps">LIN</SPAN></TT>; un programme <TT><SPAN STYLE="font-variant:small-caps">LIN</SPAN></TT>,
+c&#X2019;est-à-dire une suite d&#X2019;instructions <TT><SPAN STYLE="font-variant:small-caps">LIN</SPAN></TT>, est obtenu via une
+suite d&#X2019;appels à <FONT COLOR="red"><TT>generate</TT></FONT>;
+</LI><LI CLASS="li-enumerate">l&#X2019;appel <FONT COLOR="red"><TT>require l</TT></FONT>, où <FONT COLOR="red"><TT>l</TT></FONT> est une étiquette, demande
+que l&#X2019;instruction <FONT COLOR="red"><TT>ILabel l</TT></FONT> soit conservée dans le programme
+<TT><SPAN STYLE="font-variant:small-caps">LIN</SPAN></TT> obtenu; en effet, par défaut, toutes les instructions <FONT COLOR="red"><TT>ILabel</TT></FONT>
+produites via <FONT COLOR="red"><TT>generate</TT></FONT> sont supprimées;
+</LI><LI CLASS="li-enumerate">les fonctions <FONT COLOR="red"><TT>mark</TT></FONT> et <FONT COLOR="red"><TT>marked</TT></FONT> permettent de marquer
+une étiquette et de déterminer si une étiquette est marquée; elles
+facilitent le parcours du graphe de flot de contrôle.
+</LI></OL><P>
+Si vous le souhaitez, vous pouvez consulter <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/ltl2lin.ml.html">ltl2lin.ml</A> pour
+voir comment ces fonctions sont implémentées. Il n&#X2019;y a là rien de très
+compliqué.</P><P>On vous demande d&#X2019;écrire la fonction <FONT COLOR="red"><TT>visit</TT></FONT>, qui parcourt le graphe
+de flot de contrôle en profondeur d&#X2019;abord, et engendre pendant ce parcours
+une suite d&#X2019;instructions <TT><SPAN STYLE="font-variant:small-caps">LIN</SPAN></TT>.</P><P>Vous pouvez tester à l&#X2019;aide de la commande <TT>make lin</TT>,
+et visualiser le code produit avec:
+</P><PRE CLASS="verbatim"># ./compilo -dlin &lt;programme&gt;
+</PRE><!--TOC section Réalisation des trames de pile-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Réalisation des trames de pile</H2><!--SEC END --><P>Il s&#X2019;agit de compléter le fichier <TT>lin2asm.ml</TT>.</P><P>Les deux problèmes posés par cette traduction sont les suivants:
+</P><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+les instructions <FONT COLOR="red"><TT>INewFrame</TT></FONT> et <FONT COLOR="red"><TT>IDeleteFrame</TT></FONT> doivent
+être remplacées par des décrémentations et incrémentations du registre <FONT COLOR="red"><TT>$sp</TT></FONT>;
+</LI><LI CLASS="li-enumerate">les <EM>slots</EM> symboliques utilisés pour faire référence aux emplacements de pile doivent être remplacés
+par des décalages (<EM>offsets</EM>) relatifs à <FONT COLOR="red"><TT>$sp</TT></FONT>.
+</LI></OL><P>Pour effectuer cette traduction, il est nécessaire de comprendre
+l&#X2019;organisation des trames de pile dans le petit compilateur. Celle-ci est
+décrite par un long commentaire en haut du fichier <TT>lin2asm.ml</TT>. La figure
+suivante récapitule cette organisation et son évolution lors d&#X2019;un appel de
+fonction de <FONT COLOR="red"><TT>f</TT></FONT> à <FONT COLOR="red"><TT>g</TT></FONT>:</P><DIV CLASS="center">
+
+<IMG SRC=stack-frame-layout.png>
+</DIV><P>Lorsque vous aurez complété les cinq fonctions à trou, vous pourrez tester
+votre code via <TT>make test</TT>, et visualiser le code produit avec:
+</P><PRE CLASS="verbatim"># ./compilo -dasm &lt;programme&gt;
+</PRE><P>Bravo, vous avez maintenant &#X2013; du moins je l&#X2019;espère &#X2013; une vision d&#X2019;ensemble
+du fonctionnement d&#X2019;un compilateur d&#X2019;un langage procédural vers un langage
+assembleur.</P><!--CUT END -->
+<!--HTMLFOOT-->
+<!--ENDHTML-->
+<!--FOOTER-->
+<HR SIZE=2><BLOCKQUOTE CLASS="quote"><EM>Ce document a été traduit de L<sup>A</sup>T<sub>E</sub>X par <A HREF="http://hevea.inria.fr">H<FONT SIZE=2><sup>E</sup></FONT>V<FONT SIZE=2><sup>E</sup></FONT>A</A></EM></BLOCKQUOTE></BODY>
+</HTML>

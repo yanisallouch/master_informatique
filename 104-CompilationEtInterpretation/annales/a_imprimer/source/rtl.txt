@@ -1,0 +1,50 @@
+function f(%0) : %1
+var %0, %1, %2, %3
+entry f6
+exit f0
+f6: l i %1, 0 =>f5
+f5: blez %0 =>f4, f3
+
+La traduction la plus simple de la conditionnelle consiste à
+évaluer la condition vers un pseudo-registre, qui contient alors 0
+ou 1, puis à utiliser (par exemple) l'instruction bgtz.
+
+Une conditionnelle peut parfois être traduite sans évaluer
+explicitement la condition: c'est ce que permettent les
+instructions spécialisées bgez, bgtz, blez, bltz, ble, bne.
+
+L'élimination des « sous-expressions communes» vise à supprimer
+certains calculs redondants.
+Considérons par exemple le fragment de code suivant:
+x := t[ i ] ;
+t[ i ] := t[ i−1] ;
+t[ i−1] := x ;
+
+Que vont produire les traductions de PP vers UPP puis RTL ?
+Une traduction naive calcule quatre fois $a0 + 4 × $a3:
+
+sll $v0, $a3, 2
+addu $v0, $a0, $v0
+lw $a2, 0($v0)
+sll $v0, $a3, 2
+addu $a1, $a0, $v0
+sll $v0, $a3, 2
+addu $v0, $a0, $v0
+lw $v0, −4($v0)
+sw $v0, 0($a1)
+sll $v0, $a3, 2
+addu $v0, $a0, $v0
+sw $a2, −4($v0)
+
+Ce calcul redondant est celui de l'adresse que l'on pourrait écrire, en
+C, sous la forme t + i.
+
+On préférerait obtenir ceci:
+sll $v0, $a2, 2
+addu $a1, $a0, $v0
+lw $a3, 0($a1)
+lw $v0, −4($a1)
+sw $v0, 0($a1)
+sw $a3, −4($a1)
+La multiplication et l'addition ne sont effectuées qu'une fois et leur
+résultat, à savoir l'adresse $a1, est utilisée quatre fois.

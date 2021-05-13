@@ -1,0 +1,13 @@
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\Complexe\bin\Debug\netcoreapp3.1\Complexe.exe
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\Complexe\bin\Debug\netcoreapp3.1\Complexe.deps.json
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\Complexe\bin\Debug\netcoreapp3.1\Complexe.runtimeconfig.json
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\Complexe\bin\Debug\netcoreapp3.1\Complexe.runtimeconfig.dev.json
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\Complexe\bin\Debug\netcoreapp3.1\Complexe.dll
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\Complexe\bin\Debug\netcoreapp3.1\Complexe.pdb
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\Complexe\obj\Debug\netcoreapp3.1\Complexe.csprojAssemblyReference.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\Complexe\obj\Debug\netcoreapp3.1\Complexe.AssemblyInfoInputs.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\Complexe\obj\Debug\netcoreapp3.1\Complexe.AssemblyInfo.cs
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\Complexe\obj\Debug\netcoreapp3.1\Complexe.csproj.CoreCompileInputs.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\Complexe\obj\Debug\netcoreapp3.1\Complexe.dll
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\Complexe\obj\Debug\netcoreapp3.1\Complexe.pdb
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Moodle\ConsoleApp1\ConsoleApp1\Complexe\obj\Debug\netcoreapp3.1\Complexe.genruntimeconfig.cache

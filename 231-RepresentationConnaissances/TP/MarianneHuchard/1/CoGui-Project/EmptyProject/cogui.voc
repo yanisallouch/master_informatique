@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<cogui>
+<namespace name="http://www.lirmm.fr/cogui#" prefix="cogui"/>
+<support name="vocabulary">
+<conceptTypes>
+<ctype id="http://www.lirmm.fr/cogui#_ct_213599d0-0654-41fa-80e3-cdb18d0ddac0" label="Top" namespace="cogui">
+<translation descr="" label="Top" lang="en"/>
+</ctype>
+</conceptTypes>
+<relationTypes>
+<rtype id="http://www.lirmm.fr/cogui#_rt_288d737b-c700-4792-aa39-9ebf83e8cdb1" idSignature="http://www.lirmm.fr/cogui#_ct_213599d0-0654-41fa-80e3-cdb18d0ddac0 http://www.lirmm.fr/cogui#_ct_213599d0-0654-41fa-80e3-cdb18d0ddac0" label="link" namespace="cogui">
+<translation descr="" label="link" lang="en"/>
+</rtype>
+</relationTypes>
+<nestingTypes>
+<ntype id="http://www.lirmm.fr/cogui#_nt_9249d2f6-e884-4511-8885-3a2b5daec93f" label="Nesting">
+<translation descr="" label="Nesting" lang="en"/>
+</ntype>
+</nestingTypes>
+<conformity/>
+<modules/>
+</support>
+<localeTypes name="undefined_vocabulary">
+<conceptTypes/>
+<relationTypes/>
+<nestingTypes/>
+<conformity/>
+<modules/>
+</localeTypes>
+</cogui>

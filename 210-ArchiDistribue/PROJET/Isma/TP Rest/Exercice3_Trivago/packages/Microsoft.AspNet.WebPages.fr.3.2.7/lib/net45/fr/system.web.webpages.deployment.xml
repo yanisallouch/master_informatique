@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Web.WebPages.Deployment</name>
+  </assembly>
+  <members>
+    <member name="T:System.Web.WebPages.Deployment.PreApplicationStartCode">
+      <summary>Fournit un point de référence pour le code de pré-démarrage de l'application pour les déploiements Web Pages.</summary>
+    </member>
+    <member name="M:System.Web.WebPages.Deployment.PreApplicationStartCode.Start">
+      <summary>Inscrit le code de pré-démarrage de l'application pour le déploiement Web Pages.</summary>
+    </member>
+    <member name="T:System.Web.WebPages.Deployment.WebPagesDeployment">
+      <summary>Ce type/membre prend en charge l'infrastructure .NET Framework et n'est pas destiné à être directement utilisé à partir de votre code.Fournit des méthodes qui sont utilisées pour obtenir des informations sur le déploiement de l'application Web.</summary>
+    </member>
+    <member name="M:System.Web.WebPages.Deployment.WebPagesDeployment.GetAssemblyPath(System.Version)">
+      <summary>Ce type/membre prend en charge l'infrastructure .NET Framework et n'est pas destiné à être directement utilisé à partir de votre code.Obtient le chemin d'accès de l'assembly pour le déploiement de Web Pages.</summary>
+      <returns>Chemin d'accès de l'assembly pour le déploiement de Web Pages.</returns>
+      <param name="version">La version de Web Pages.</param>
+    </member>
+    <member name="M:System.Web.WebPages.Deployment.WebPagesDeployment.GetExplicitWebPagesVersion(System.String)">
+      <summary>Ce type/membre prend en charge l'infrastructure .NET Framework et n'est pas destiné à être directement utilisé à partir de votre code.Obtient la version de Web Pages à partir du chemin d'accès binaire donné.</summary>
+      <returns>La version de Web Pages.</returns>
+      <param name="path">Chemin d'accès binaire de Web Pages.</param>
+    </member>
+    <member name="M:System.Web.WebPages.Deployment.WebPagesDeployment.GetIncompatibleDependencies(System.String)">
+      <summary>Ce type/membre prend en charge l'infrastructure .NET Framework et n'est pas destiné à être directement utilisé à partir de votre code.Obtient les références d'assembly du chemin d'accès donné indépendamment de la version de Web Pages.</summary>
+      <returns>Le dictionnaire contenant les références d'assembly de Web Pages et de sa version.</returns>
+      <param name="appPath">Chemin d'accès de l'application Web Pages.</param>
+    </member>
+    <member name="M:System.Web.WebPages.Deployment.WebPagesDeployment.GetMaxVersion">
+      <summary>Ce type/membre prend en charge l'infrastructure .NET Framework et n'est pas destiné à être directement utilisé à partir de votre code.Obtient la version maximale des assemblies chargés de Web Pages.</summary>
+      <returns>Version maximale des assemblies chargés de Web Pages.</returns>
+    </member>
+    <member name="M:System.Web.WebPages.Deployment.WebPagesDeployment.GetVersion(System.String)">
+      <summary>Obtient la version de Web Pages à partir du chemin d'accès donné.</summary>
+      <returns>La version de Web Pages.</returns>
+      <param name="path">Chemin d'accès du répertoire racine de l'application.</param>
+    </member>
+    <member name="M:System.Web.WebPages.Deployment.WebPagesDeployment.GetVersionWithoutEnabledCheck(System.String)">
+      <summary>Ce type/membre prend en charge l'infrastructure .NET Framework et n'est pas destiné à être directement utilisé à partir de votre code.Obtient la version de Web Pages en utilisant les paramètres de configuration avec le chemin d'accès spécifié.</summary>
+      <returns>La version de Web Pages.</returns>
+      <param name="path">Chemin d'accès des paramètres de l'application.</param>
+    </member>
+    <member name="M:System.Web.WebPages.Deployment.WebPagesDeployment.GetWebPagesAssemblies">
+      <summary>Ce type/membre prend en charge l'infrastructure .NET Framework et n'est pas destiné à être directement utilisé à partir de votre code.Retourne les assemblies pour ce déploiement de Web Pages.</summary>
+      <returns>Liste contenant les assemblies pour ce déploiement de Web Pages.</returns>
+    </member>
+    <member name="M:System.Web.WebPages.Deployment.WebPagesDeployment.IsEnabled(System.String)">
+      <summary>Ce type/membre prend en charge l'infrastructure .NET Framework et n'est pas destiné à être directement utilisé à partir de votre code.Indique si le déploiement de Web Pages est activé.</summary>
+      <returns>true si le déploiement de Web Pages est activé ; sinon, false.</returns>
+      <param name="path">Chemin d'accès du déploiement de Web Pages.</param>
+    </member>
+    <member name="M:System.Web.WebPages.Deployment.WebPagesDeployment.IsExplicitlyDisabled(System.String)">
+      <summary>Ce type/membre prend en charge l'infrastructure .NET Framework et n'est pas destiné à être directement utilisé à partir de votre code.Indique si le déploiement de Web Pages est explicitement désactivé.</summary>
+      <returns>true si le déploiement de Web Pages est explicitement désactivé ; sinon, false.</returns>
+      <param name="path">Chemin d'accès du déploiement de Web Pages.</param>
+    </member>
+  </members>
+</doc>

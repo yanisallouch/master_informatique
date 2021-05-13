@@ -1,0 +1,16 @@
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Basics\obj\Debug\net5.0\Basics.csprojAssemblyReference.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Basics\obj\Debug\net5.0\Basics.GeneratedMSBuildEditorConfig.editorconfig
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Basics\obj\Debug\net5.0\Basics.AssemblyInfoInputs.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Basics\obj\Debug\net5.0\Basics.AssemblyInfo.cs
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Basics\obj\Debug\net5.0\Basics.csproj.CoreCompileInputs.cache
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Basics\bin\Debug\net5.0\Basics.exe
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Basics\bin\Debug\net5.0\Basics.deps.json
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Basics\bin\Debug\net5.0\Basics.runtimeconfig.json
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Basics\bin\Debug\net5.0\Basics.runtimeconfig.dev.json
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Basics\bin\Debug\net5.0\Basics.dll
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Basics\bin\Debug\net5.0\ref\Basics.dll
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Basics\bin\Debug\net5.0\Basics.pdb
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Basics\obj\Debug\net5.0\Basics.dll
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Basics\obj\Debug\net5.0\ref\Basics.dll
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Basics\obj\Debug\net5.0\Basics.pdb
+E:\gitlab.com\master_informatique\210-ArchiDistribue\TP\C#\Code\Chapter02\Basics\obj\Debug\net5.0\Basics.genruntimeconfig.cache

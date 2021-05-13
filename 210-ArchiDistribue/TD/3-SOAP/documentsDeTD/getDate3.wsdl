@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://mondomaine.fr/monAppli" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://mondomaine.fr/monAppli" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://mondomaine.fr/monAppli">
+      <s:element name="getDate3">
+        <s:complexType/>
+      </s:element>
+      <s:element name="getDate3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDate3Result" type="tns:Date"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Date">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="jour" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="mois" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="annee" type="s:int"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getDate3SoapIn">
+    <wsdl:part name="parameters" element="tns:getDate3"/>
+  </wsdl:message>
+  <wsdl:message name="getDate3SoapOut">
+    <wsdl:part name="parameters" element="tns:getDate3Response"/>
+  </wsdl:message>
+  <wsdl:portType name="ServiceDateSoap">
+    <wsdl:operation name="getDate3">
+      <wsdl:input message="tns:getDate3SoapIn"/>
+      <wsdl:output message="tns:getDate3SoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceDateSoap" type="tns:ServiceDateSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getDate3">
+      <soap:operation soapAction="http://mondomaine.fr/monAppli/getDate3" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceDateSoap12" type="tns:ServiceDateSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getDate3">
+      <soap12:operation soapAction="http://mondomaine.fr/monAppli/getDate3" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceDate">
+    <wsdl:port name="ServiceDateSoap" binding="tns:ServiceDateSoap">
+      <soap:address location="http://localhost/ws.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="ServiceDateSoap12" binding="tns:ServiceDateSoap12">
+      <soap12:address location="http://localhost/ws.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

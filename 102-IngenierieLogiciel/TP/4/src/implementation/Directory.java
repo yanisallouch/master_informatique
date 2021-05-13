@@ -12,19 +12,19 @@ public class Directory extends Composite {
 	
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 
 	@Override
 	public Collection<Composant> find(String name) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public Collection<Composant> findR(String name) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

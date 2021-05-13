@@ -1,0 +1,21 @@
+C:\Users\nasse\Downloads\Google\Exercice4_Q1\Hotel1\bin\Debug\netcoreapp3.1\Exercice4_Q1.exe
+C:\Users\nasse\Downloads\Google\Exercice4_Q1\Hotel1\bin\Debug\netcoreapp3.1\Exercice4_Q1.deps.json
+C:\Users\nasse\Downloads\Google\Exercice4_Q1\Hotel1\bin\Debug\netcoreapp3.1\Exercice4_Q1.runtimeconfig.json
+C:\Users\nasse\Downloads\Google\Exercice4_Q1\Hotel1\bin\Debug\netcoreapp3.1\Exercice4_Q1.runtimeconfig.dev.json
+C:\Users\nasse\Downloads\Google\Exercice4_Q1\Hotel1\bin\Debug\netcoreapp3.1\Exercice4_Q1.dll
+C:\Users\nasse\Downloads\Google\Exercice4_Q1\Hotel1\bin\Debug\netcoreapp3.1\Exercice4_Q1.pdb
+C:\Users\nasse\Downloads\Google\Exercice4_Q1\Hotel1\obj\Debug\netcoreapp3.1\Exercice4_Q1.AssemblyInfoInputs.cache
+C:\Users\nasse\Downloads\Google\Exercice4_Q1\Hotel1\obj\Debug\netcoreapp3.1\Exercice4_Q1.AssemblyInfo.cs
+C:\Users\nasse\Downloads\Google\Exercice4_Q1\Hotel1\obj\Debug\netcoreapp3.1\Exercice4_Q1.dll
+C:\Users\nasse\Downloads\Google\Exercice4_Q1\Hotel1\obj\Debug\netcoreapp3.1\Exercice4_Q1.pdb
+D:\M1\Architectures-logicielles-distribuées\TP Soap\TP Soap\Exercice4_Q1\Hotel1\bin\Debug\netcoreapp3.1\Exercice4_Q1.exe
+D:\M1\Architectures-logicielles-distribuées\TP Soap\TP Soap\Exercice4_Q1\Hotel1\bin\Debug\netcoreapp3.1\Exercice4_Q1.deps.json
+D:\M1\Architectures-logicielles-distribuées\TP Soap\TP Soap\Exercice4_Q1\Hotel1\bin\Debug\netcoreapp3.1\Exercice4_Q1.runtimeconfig.json
+D:\M1\Architectures-logicielles-distribuées\TP Soap\TP Soap\Exercice4_Q1\Hotel1\bin\Debug\netcoreapp3.1\Exercice4_Q1.runtimeconfig.dev.json
+D:\M1\Architectures-logicielles-distribuées\TP Soap\TP Soap\Exercice4_Q1\Hotel1\bin\Debug\netcoreapp3.1\Exercice4_Q1.dll
+D:\M1\Architectures-logicielles-distribuées\TP Soap\TP Soap\Exercice4_Q1\Hotel1\bin\Debug\netcoreapp3.1\Exercice4_Q1.pdb
+D:\M1\Architectures-logicielles-distribuées\TP Soap\TP Soap\Exercice4_Q1\Hotel1\obj\Debug\netcoreapp3.1\Exercice4_Q1.csprojAssemblyReference.cache
+D:\M1\Architectures-logicielles-distribuées\TP Soap\TP Soap\Exercice4_Q1\Hotel1\obj\Debug\netcoreapp3.1\Exercice4_Q1.AssemblyInfoInputs.cache
+D:\M1\Architectures-logicielles-distribuées\TP Soap\TP Soap\Exercice4_Q1\Hotel1\obj\Debug\netcoreapp3.1\Exercice4_Q1.AssemblyInfo.cs
+D:\M1\Architectures-logicielles-distribuées\TP Soap\TP Soap\Exercice4_Q1\Hotel1\obj\Debug\netcoreapp3.1\Exercice4_Q1.dll
+D:\M1\Architectures-logicielles-distribuées\TP Soap\TP Soap\Exercice4_Q1\Hotel1\obj\Debug\netcoreapp3.1\Exercice4_Q1.pdb

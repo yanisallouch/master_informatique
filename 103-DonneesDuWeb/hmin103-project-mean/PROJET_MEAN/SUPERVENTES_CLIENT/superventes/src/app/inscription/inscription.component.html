@@ -1,0 +1,17 @@
+<form (ngSubmit)="onSubmit()" #inscriptionForm="ngForm">
+  <label> Email </label>
+  <input type="text" class="form-control" required [(ngModel)]="futureUser['email']" name="email"  value ="aa"/>
+
+  <label> Mot de passe </label>
+  <input type="password" class="form-control" required="required" [(ngModel)]="futureUser['password']" name="password" />
+  <label> Nom </label>
+  <input type="text" class="form-control" required [(ngModel)]="futureUser['nom']" name="nom" />
+
+  <label> Prénom </label>
+  <input type="text" class="form-control" required [(ngModel)]="futureUser['prénom']" name="prénom" />
+
+
+  <input type="submit" value="S'inscrire"/>
+</form>
+<p> {{message}} </p>
+<p *ngIf="proposerConnexion"> Voulez-vous plutôt <a [routerLink]="['/connexion']" >vous connecter</a>?</p>

@@ -8,7 +8,7 @@ import jeu.de.lettre.product.implementation.GestPhraseMystereNonGuider;
 public class FabriqueJeuDifficile implements IFabriqueJeu {
 
 	public FabriqueJeuDifficile() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
@@ -18,7 +18,7 @@ public class FabriqueJeuDifficile implements IFabriqueJeu {
 
 	@Override
 	public IAlphabet createAlphabetEncodage(String aDeviner) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

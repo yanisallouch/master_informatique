@@ -1,0 +1,19 @@
+
+<form (ngSubmit)="onSubmit()" #rechercheForm="ngForm">
+	<div *ngFor="let crit of getTextKeys()">
+		<label > {{ crit }} </label>
+		<select name = "dropdown" [(ngModel)]="criteresChoisis['text'][crit]">
+			<option selected name="any" value="">any</option>
+			<option *ngFor="let val of criteres['text'][crit]"> {{ val }} </option>
+ 		</select>
+	</div>
+	<div *ngFor="let crit of getNumberKeys()" >
+		<label > {{ crit }} </label>
+		<label> Min </label>
+		<input style="width:5em" type="number" name="{{ crit }}Min" [(ngModel)]="criteresChoisis['number'][crit]['min']"/>
+		<label> Max </label>
+		<input style="width:5em" type="number" name="{{ crit }}Max" [(ngModel)]="criteresChoisis['number'][crit]['max']" />
+	</div>
+ <input type="submit" value="J'ai de la chance"/>
+</form>
+<p> {{message}} </p>

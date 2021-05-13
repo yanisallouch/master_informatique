@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+            "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Allocation de registres
+</TITLE>
+
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META name="GENERATOR" content="hevea 1.10">
+<STYLE type="text/css">
+.title{margin:2ex auto;text-align:center}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+DIV TABLE{margin-left:inherit;margin-right:inherit;}
+PRE{text-align:left;margin-left:0ex;margin-right:auto;}
+BLOCKQUOTE{margin-left:4ex;margin-right:4ex;text-align:left;}
+TD P{margin:0px;}
+BODY{background:white;}
+.title{padding:1ex;background:#00B200;}
+.titlemain{padding:1ex;background:#00B200;}
+.section{padding:.5ex;background:#2DE52D;}
+.subsection{padding:0.3ex;background:#66FF66;}
+</STYLE>
+
+<style type="text/css">
+pre, code, tt {font:12pt monospace;*font-size:100%;font-weight: bold;}
+</style>
+</HEAD>
+<BODY >
+<!--HEVEA command line is: hevea -entities -fix -O index.tex -->
+<!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Allocation de registres</H1></TD></TR>
+</TABLE><DIV CLASS="center">
+Voici le <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/cours08.pdf">cours</A> correspondant. La solution est donnée par les
+fichiers <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/coloring.ml.html">coloring.ml</A> et <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/spill.ml.html">spill.ml</A>.
+</DIV><!--TOC section Présentation-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Présentation</H2><!--SEC END --><P>Le sujet est donné par l&#X2019;archive <TT><A HREF="td8.tar.gz">td8.tar.gz</A></TT>.</P><P>La qualité du code produit par un compilateur dépend beaucoup de la qualité de
+l&#X2019;allocation de registres. On cherche à minimiser d&#X2019;une part le temps passé à
+accéder à la pile, d&#X2019;autre part l&#X2019;espace alloué sur la pile. Pour cela, nous
+allons résoudre deux problèmes de coloriage de graphe.</P><P>Le premier problème est traité dans le fichier <TT>coloring.ml</TT>. Consultez
+son interface <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/coloring.mli.html">coloring.mli</A>. Le problème consiste à construire un
+coloriage du graphe. Un coloriage (<FONT COLOR="red"><TT>coloring</TT></FONT>) est défini comme une table
+(<FONT COLOR="red"><TT>map</TT></FONT>) qui à chaque sommet du graphe d&#X2019;interférences associe une
+décision. Une décision est soit <FONT COLOR="red"><TT>Spill</TT></FONT>, si le pseudo-registre concerné
+doit être représenté par un emplacement de pile, soit <FONT COLOR="red"><TT>Color hwr</TT></FONT>, si ce
+pseudo-registre doit être représenté par le registre physique <FONT COLOR="red"><TT>hwr</TT></FONT>.</P><P>Une fois ce premier problème résolu, reste à décider, pour chaque sommet qui a
+reçu la décision <FONT COLOR="red"><TT>Spill</TT></FONT>, quel emplacement de pile utiliser; et combien
+d&#X2019;emplacements de pile sont nécessaires en tout. Ce second problème est traité
+dans le fichier <TT>spill.ml</TT>. Consultez son interface
+<A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/spill.mli.html">spill.mli</A>. Celle-ci est analogue, à ceci près que cette fois, une
+décision est simplement un «offset», qui représente un emplacement de
+pile dans la zone des données locales.</P><P>Les fichiers <TT>coloring.ml</TT> et <TT>spill.ml</TT> sont incomplets. À vous de
+les compléter pour obtenir un compilateur en état de marche.</P><!--TOC section Une première solution-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Une première solution</H2><!--SEC END --><!--TOC subsection Choix des registres-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Choix des registres</H3><!--SEC END --><P>Complétez le code de <TT>coloring.ml</TT>. Il faut écrire les fonctions
+<FONT COLOR="red"><TT>forbidden_colors</TT></FONT> et <FONT COLOR="red"><TT>simplification</TT></FONT>.</P><P>Ici, l&#X2019;ensemble des couleurs permises est fini. On appliquera l&#X2019;algorithme
+de coloriage optimiste de Briggs.</P><P>L&#X2019;ensemble des couleurs permises est <FONT COLOR="red"><TT>colors</TT></FONT>. Il s&#X2019;agit d&#X2019;une simple
+abréviation pour <FONT COLOR="red"><TT>MIPS.allocatable</TT></FONT>. De même, <FONT COLOR="red"><TT>ColorSet</TT></FONT> est ici
+une abréviation pour <FONT COLOR="red"><TT>MIPS.RegisterSet</TT></FONT>.</P><P>Vous aurez besoin des fonctions <FONT COLOR="red"><TT>iph</TT></FONT>, <FONT COLOR="red"><TT>ipp</TT></FONT>, <FONT COLOR="red"><TT>remove</TT></FONT> et
+<FONT COLOR="red"><TT>lowest</TT></FONT> du module <FONT COLOR="red"><TT>Interference</TT></FONT>. La fonction
+<FONT COLOR="red"><TT>ColorSet.choose</TT></FONT> vous permettra de choisir arbitrairement une couleur
+parmi un ensemble non vide.</P><P>On notera que si on choisit toujours le sommet de plus faible degré, alors
+l&#X2019;algorithme de Briggs se simplifie. Il n&#X2019;est plus nécessaire de tester si ce
+sommet est trivialement colorable ou non, car dans les deux cas, on procède de
+la même manière: construire le graphe privé de ce sommet, colorier ce graphe,
+puis déterminer si on peut colorier ce sommet.</P><!--TOC subsection Choix des emplacements de pile-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Choix des emplacements de pile</H3><!--SEC END --><P>Complétez le code de <TT>spill.ml</TT>. Il faut écrire les fonctions
+<FONT COLOR="red"><TT>forbidden_slots</TT></FONT>, <FONT COLOR="red"><TT>coalescing</TT></FONT> et <FONT COLOR="red"><TT>simplification</TT></FONT>.</P><P>Ici, l&#X2019;ensemble des couleurs permises est infini, puisqu&#X2019;on dispose d&#X2019;autant
+d&#X2019;emplacements de pile qu&#X2019;on le souhaite. Les sommets de très haut degré ne
+posent donc pas de problème particulier. Ceci nous amène à effectuer une
+fusion («coalescing») agressive des sommets reliés par des arêtes de
+préférence.</P><P>S&#X2019;il existe une arête de préférence, <FONT COLOR="red"><TT>coalescing</TT></FONT> fusionnera cette arête
+puis s&#X2019;appellera récursivement, pour continuer la fusion; sinon,
+<FONT COLOR="red"><TT>coalescing</TT></FONT> appellera <FONT COLOR="red"><TT>simplification</TT></FONT>.</P><P>La fonction <FONT COLOR="red"><TT>simplification</TT></FONT> effectuera un coloriage en temps linéaire, à la
+Chaitin. Le graphe est toujours colorable, puisque le nombre de couleurs est
+non borné. La fonction <FONT COLOR="red"><TT>allocate_slot</TT></FONT>, fournie, produit une couleur
+hors d&#X2019;un ensemble fini donné.</P><P>Vous aurez besoin des fonctions <FONT COLOR="red"><TT>ipp</TT></FONT>, <FONT COLOR="red"><TT>remove</TT></FONT>, <FONT COLOR="red"><TT>lowest</TT></FONT>,
+<FONT COLOR="red"><TT>pppick</TT></FONT> et <FONT COLOR="red"><TT>coalesce</TT></FONT> du module <FONT COLOR="red"><TT>Interference</TT></FONT>. Attention: la
+fonction <FONT COLOR="red"><TT>coalesce</TT></FONT> produit un graphe où ne reste qu&#X2019;un seul des deux
+sommets passés en argument, à savoir le deuxième. L&#X2019;appel récursif à
+<FONT COLOR="red"><TT>coalescing</TT></FONT> produira donc un coloriage qui ne concerne que ce deuxième
+sommet, et il restera à colorier le premier.</P><P>Vous pouvez désormais tester votre compilateur avec <TT>make test</TT> ou
+<TT>make ltl</TT>.</P><!--TOC section Du coloriage à l&#X2019;art pictural-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Du coloriage à l&#X2019;art pictural</H2><!--SEC END --><P>Le compilateur fonctionne à présent, mais produit du code de mauvaise qualité.
+En effet, notre implémentation de <TT>Coloring</TT> ignore totalement les arêtes
+de préférence.</P><P>Après avoir fait <TT>make test</TT>, vous pouvez faire une copie de tout votre
+répertoire. Vous pourrez ensuite comparer le code produit par votre
+compilateur sans et avec les optimisations qui suivent.
+</P><PRE CLASS="verbatim"># cp -r td8 td8-simple
+# (cd td8-simple/test &amp;&amp; for i in *.spi ; do diff $i ../../td8/test/$i ; done)
+</PRE><!--TOC subsection Fusion conservative-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Fusion conservative</H3><!--SEC END --><P>On souhaite fusionner les deux extrémités d&#X2019;une arête de préférence lorsque
+cela est permis par le critère de George. La phase de fusion commence après la
+simplification, car la simplification peut créer des opportunités de fusion.</P><P>La fonction <FONT COLOR="red"><TT>simplification</TT></FONT> simplifiera un sommet de bas degré, s&#X2019;il en
+existe un; sinon, elle passera la main à la fonction <FONT COLOR="red"><TT>coalescing</TT></FONT>.</P><P>La fonction <FONT COLOR="red"><TT>coalescing</TT></FONT> fusionnera une arête de préférence qui satisfait
+le critère de George, s&#X2019;il en existe une, puis passera la main à
+<FONT COLOR="red"><TT>simplification</TT></FONT>; sinon, elle passera à la fonction <FONT COLOR="red"><TT>spilling</TT></FONT>,
+qui choisira un sommet et le considérera comme potentiellement «spillé».</P><P>Vous aurez donc trois fonctions mutuellement récursives: <FONT COLOR="red"><TT>simplification</TT></FONT>,
+<FONT COLOR="red"><TT>coalescing</TT></FONT>, <FONT COLOR="red"><TT>spilling</TT></FONT>.</P><P>Vous aurez besoin des fonctions <FONT COLOR="red"><TT>pppick</TT></FONT>, <FONT COLOR="red"><TT>coalesce</TT></FONT>, <FONT COLOR="red"><TT>phpick</TT></FONT>,
+et <FONT COLOR="red"><TT>coalesceh</TT></FONT> du module <FONT COLOR="red"><TT>Interference</TT></FONT>. Les fonctions qui
+implémentent le critère de George sont <FONT COLOR="red"><TT>georgepp</TT></FONT> et <FONT COLOR="red"><TT>georgeph</TT></FONT>.</P><!--TOC subsection Fusion conservative avec congélation-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Fusion conservative avec congélation</H3><!--SEC END --><P>Ci-dessus, on a effectué la simplification avant la fusion, au prétexte que la
+simplification peut créer des opportunités de fusion. C&#X2019;est vrai; mais cela
+signifie que tant qu&#X2019;il existe des sommets simplifiables, on n&#X2019;effectue aucune
+fusion, donc on ignore les arêtes de préférence. Ce n&#X2019;est pas très bon.</P><P>Pour remédier à cela, Appel et George restreignent la phase de simplification
+pour ne simplifier que des sommets qui ne portent aucune arête de préférence.</P><P>Par ailleurs, à la fin de la phase de fusion, donc dans la fonction
+<FONT COLOR="red"><TT>coalescing</TT></FONT>, lorsqu&#X2019;on constate que plus aucune fusion n&#X2019;est possible,
+au lieu de passer directement au «spilling», on cherche d&#X2019;abord s&#X2019;il
+existe un sommet de bas degré portant une arête de préférence; si oui, on
+supprime cette arête et on passe la main à <FONT COLOR="red"><TT>simplification</TT></FONT>; sinon, alors
+on passe au «spilling».</P><P>Vous aurez besoin de la fonction <FONT COLOR="red"><TT>lowest_non_move_related</TT></FONT> du module
+<FONT COLOR="red"><TT>Interference</TT></FONT>.</P><!--TOC subsection Heuristique de spill-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Heuristique de spill</H3><!--SEC END --><P>Lorsque ni simplification, ni fusion, ni dégel ne sont possible, il faut
+choisir un sommet pour un «spill» potentiel. Jusqu&#X2019;ici, nous avons
+choisi ce sommet de façon arbitraire. En pratique, il est souhaitable de
+choisir un pseudo-registre qui sert peu dans le code, et dont le degré
+est élevé.</P><P>Définissez une fonction de coût qui reflète cela, et faites en sorte que
+le sommet choisi soit un sommet de moindre coût.</P><P>Vous utiliserez la fonction <FONT COLOR="red"><TT>minimum</TT></FONT> du module <FONT COLOR="red"><TT>Interference</TT></FONT>.</P><!--CUT END -->
+<!--HTMLFOOT-->
+<!--ENDHTML-->
+<!--FOOTER-->
+<HR SIZE=2><BLOCKQUOTE CLASS="quote"><EM>Ce document a été traduit de L<sup>A</sup>T<sub>E</sub>X par <A HREF="http://hevea.inria.fr">H<FONT SIZE=2><sup>E</sup></FONT>V<FONT SIZE=2><sup>E</sup></FONT>A</A></EM></BLOCKQUOTE></BODY>
+</HTML>

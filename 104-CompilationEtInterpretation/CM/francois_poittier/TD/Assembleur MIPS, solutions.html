@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+            "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Assembleur MIPS, solutions
+</TITLE>
+
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META name="GENERATOR" content="hevea 1.10">
+<STYLE type="text/css">
+.title{margin:2ex auto;text-align:center}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+DIV TABLE{margin-left:inherit;margin-right:inherit;}
+PRE{text-align:left;margin-left:0ex;margin-right:auto;}
+BLOCKQUOTE{margin-left:4ex;margin-right:4ex;text-align:left;}
+TD P{margin:0px;}
+.lstlisting{font-family:monospace;white-space:pre;margin-right:auto;margin-left:0pt;text-align:left}
+BODY{background:white;}
+.title{padding:1ex;background:#00B200;}
+.titlemain{padding:1ex;background:#00B200;}
+.section{padding:.5ex;background:#2DE52D;}
+</STYLE>
+
+<style type="text/css">
+pre, code, tt {font:12pt monospace;*font-size:100%;font-weight: bold;}
+</style>
+</HEAD>
+<BODY >
+<!--HEVEA command line is: hevea -entities -fix -O sol.tex -->
+<!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Assembleur MIPS, solutions</H1></TD></TR>
+</TABLE><DIV CLASS="center">
+L&#X2019;énoncé est <A HREF="index.html">ici</A>.
+</DIV><!--TOC section Fibonacci récursif-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Fibonacci <A NAME="un">récursif</A></H2><!--SEC END --><P>
+Une solution est donnée dans le fichier <TT><A HREF="fib.spi">fib.spi</A></TT>.
+Notons que la solution n&#X2019;est pas unique, car on peut employer
+les registres et les emplacements de pile de différentes manières.
+Une autre solution est donnée dans <TT><A HREF="fibvariant.spi">fibvariant.spi</A></TT>.
+Elle est probablement plus efficace, car le c&#X153;ur de la
+fonction <TT>fib</TT> utilise seulement quatre instructions
+<TT>lw</TT> et <TT>sw</TT>, contre six pour la solution
+précédente.</P><!--TOC section Fibonacci itératif-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Fibonacci <A NAME="deux">itératif</A></H2><!--SEC END --><P>
+La solution est le fichier <TT><A HREF="fibiter.spi">fibiter.spi</A></TT>.</P><!--TOC section Compilation à l&#X2019;aide de la pile-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Compilation <A NAME="trois">à l&#X2019;aide de la pile</A></H2><!--SEC END --><P>Voici une solution. On se donne deux fonctions auxiliaires <TT>push</TT> et
+<TT>pop</TT>. L&#X2019;appel <TT>push r</TT>, où <TT>r</TT> est le nom d&#X2019;un registre,
+(produit du code qui) empile le mot contenu dans <TT>r</TT>. L&#X2019;appel
+<TT>pop r</TT> (produit du code qui) dépile un mot et le stocke dans le
+registre <TT>r</TT>.</P><DIV CLASS="lstlisting"><B>let</B> push r =
+  printf "\t\
+        subu $sp, $sp, 4
+        sw   %s, 0($sp)
+" r
+
+<B>let</B> pop r =
+  printf "\t\
+        lw   %s, 0($sp)
+        addu $sp, $sp, 4
+" r</DIV><P>La fonction <TT>compile_op</TT> traduit directement les quatre opérateurs
+arithmétiques en instructions MIPS.
+</P><DIV CLASS="lstlisting"><B>let</B> compile_op = <B>function</B>
+  | Plus -&gt;
+      "add "
+  | Minus -&gt;
+      "sub "
+  | Times -&gt;
+      "mul "
+  | Div -&gt;
+      "div "</DIV><P>Pour évaluer une expression de la forme <TT>e1 op e2</TT>, on évalue d&#X2019;abord
+la sous-expression <TT>e1</TT>, et on sauvegarde son résultat, qui par
+convention est situé dans <TT>v0</TT>, sur la pile. Puis on évalue la
+sous-expression <TT>e2</TT>, dont le résultat se trouve alors dans <TT>v0</TT>. On place alors dans <FONT COLOR=blue><TT>v1</TT></FONT> le résultat précédent, et il ne
+reste plus qu&#X2019;à appliquer l&#X2019;opérateur binaire souhaité aux registres <TT>v1</TT>
+et <TT>v0</TT>, en plaçant bien sûr le résultat dans <TT>v0</TT>.
+</P><DIV CLASS="lstlisting"><B>let rec</B> compile_expression = <B>function</B>
+  | Int i -&gt;
+      printf "        li   $v0, %d\n" i
+  | X     -&gt;
+      printf "        move $v0, $a0\n"
+  | Binexp (op, e1, e2) -&gt;
+      compile_expression e1;
+      push "$v0";
+      compile_expression e2;
+      pop "$v1";
+      printf "        %s $v0, $v1, $v0\n" (compile_op op)</DIV><!--TOC section Compilation à l&#X2019;aide des registres-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Compilation <A NAME="quatre">à l&#X2019;aide des registres</A></H2><!--SEC END --><P>Voici une solution:
+</P><DIV CLASS="lstlisting"><B>let</B> registers : string array =
+  [| "$a0"; "$v0" ; "$a1" ; "$a2" ; "$t0" ; |]
+
+<B>let rec</B> compile_expression r = <B>function</B>
+  | Int i -&gt;
+      printf "        li   %s, %d\n" registers.(r) i
+  | X     -&gt;
+      printf "        move %s, $a0\n" registers.(r)
+  | Binexp (op, e1, e2) -&gt;
+      <B>assert</B> (r+1 &lt; Array.length registers);
+      compile_expression r e1;
+      compile_expression (r+1) e2;
+      printf "        %s %s, %s, %s\n" (compile_op op) registers.(r) registers.(r) registers.(r+1)
+
+<B>let</B> compile_expression =
+  compile_expression 1</DIV><P>Il n&#X2019;est pas tout-à-fait immédiat que cette solution est correcte. Le code
+produit par le premier appel récursif à <TT>compile_expression</TT> place son
+résultat dans le registre d&#X2019;indice <TT>r</TT>. Ce registre ne doit donc pas
+être affecté par le code qui évalue <TT>e2</TT>. De fait, c&#X2019;est bien le cas,
+car le code produit par <TT>compile_expression r e2</TT> ne modifie que des
+registres d&#X2019;indice supérieur ou égal à <TT>r</TT>. Cette question a été
+étudiée dès 1967 par
+<A HREF="http://www-formal.stanford.edu/jmc/mcpain.ps">McCarthy et Painter</A>, qui
+furent ainsi les pionniers de la preuve de correction de compilateurs.</P><!--TOC section Bonne utilisation du jeu d&#X2019;instructions-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Bonne utilisation du <A NAME="cinq">jeu d&#X2019;instructions</A></H2><!--SEC END --><P>Voici une solution possible. </P><DIV CLASS="lstlisting"><B>let</B> preserve result r =
+  <B>assert</B> (result &lt;= r);
+  <B>if</B> result = r <B>then</B> r + 1 <B>else</B> r
+
+<B>let rec</B> compile_expression r = <B>function</B>
+  | Int i -&gt;
+      printf "        li   %s, %d\n" registers.(r) i;
+      r
+  | X     -&gt;
+      0
+  | Binexp (op, e1, Int i) -&gt;
+      <B>let</B> r1 = compile_expression r e1 <B>in</B>
+      printf "        %s %s, %s, %d\n" (compile_op op) registers.(r) registers.(r1) i;
+      r
+  | Binexp (op, e1, e2) -&gt;
+      <B>let</B> r1 = compile_expression r e1 <B>in
+      let</B> r2 = compile_expression (preserve r1 r) e2 <B>in</B>
+      printf "        %s %s, %s, %s\n" (compile_op op) registers.(r) registers.(r1) registers.(r2);
+      r
+
+<B>let</B> compile_expression e =
+  <B>let</B> r = compile_expression 1 e <B>in
+  if</B> r &lt;&gt; 1 <B>then</B>
+    printf "        move $v0, %s\n" registers.(r)</DIV><P>La fonction <TT>compile_expression</TT> est modifiée pour renvoyer l&#X2019;indice
+du registre où le résultat est stocké. Cet indice est en fait toujours
+<TT>r</TT>, sauf lorsque l&#X2019;expression est la variable <TT>x</TT>, auquel cas
+on sait que la valeur est disponible dans le registre d&#X2019;indice 0 (c&#X2019;est-à-dire
+le registre <TT>a0</TT>) et on ne produit donc aucune instruction.</P><P>Les expressions binaires sont traitées en produisant d&#X2019;abord le code
+correspondant à l&#X2019;expression <TT>e1</TT>, qui produit un résultat dans le
+registre <TT>r1</TT>, puis le code correspondant à l&#X2019;expression <TT>e2</TT>,
+qui produit un résultat dans le registre <TT>r2</TT>. Bien sûr, il faut éviter
+que ce second calcul écrase le contenu de <TT>r1</TT>, d&#X2019;où l&#X2019;appel à la
+fonction auxiliaire <TT>preserve r1 r</TT>, qui ajuste la valeur de <TT>r</TT>
+de façon à garantir <TT>r1 &lt; r</TT>.</P><P>Les expressions binaires dont le second opérande est un entier sont reconnues
+et traitées spécialement. Ce traitement est trivial &#X2013; de fait, ce sont des
+expressions unaires.</P><P>La version finale, non récursive, de <TT>compile_expression</TT> initialise
+<TT>r</TT> à la valeur 1, comme précédemment, et de plus, déplace si besoin le
+résultat du calcul du registre où il a été stocké (<TT>r</TT>) vers le
+registre où il est attendu (<TT>v0</TT>).</P><P>Bien sûr, ce code est un peu <EM>ad-hoc</EM>: il n&#X2019;emploie pas les techniques
+modernes de genération de code et d&#X2019;allocation de registres que nous verrons
+en cours.</P><!--TOC section Exploitation de la commutativité-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Exploitation de la <A NAME="six">commutativité</A></H2><!--SEC END --><P>Cette optimisation se fait en une ligne. Le motif qui décrivait les
+expressions binaires dont le second opérande est une constante entière est
+modifié pour filtrer également les expressions binaires dont l&#X2019;opérateur est
+commutatif et dont le premier opérande est une constante entière.
+</P><DIV CLASS="lstlisting"><B>let rec</B> compile_expression r = <B>function</B>
+  ...
+  | Binexp ((Plus | Times) <B>as</B> op, Int i, e1)
+  | Binexp (op, e1, Int i) -&gt;
+      <B>let</B> r1 = compile_expression r e1 <B>in</B>
+      printf "        %s %s, %s, %d\n" (compile_op op) registers.(r) registers.(r1) i;
+      r
+  ...</DIV><P>On notera que les motifs <CODE>Binexp ((Plus | Times) as op, Int i, e1)</CODE> et
+<CODE>Binexp (op, e1, Int i)</CODE> sont séparés par une disjonction: on accepte
+l&#X2019;un ou l&#X2019;autre. Cela est permis et a un sens car ces motifs lient les mêmes
+variables, à savoir <CODE>op</CODE>, <CODE>e1</CODE> et <CODE>i</CODE>.</P><!--TOC section Exploitation de l&#X2019;ordre d&#X2019;évaluation-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Exploitation de <A NAME="sept">l&#X2019;ordre d&#X2019;évaluation</A></H2><!--SEC END --><P>Voici la définition de la fonction <TT>usage</TT>:
+</P><DIV CLASS="lstlisting"><B>let rec</B> usage = <B>function</B>
+  | Int _ -&gt;
+      1
+  | X -&gt;
+      0
+  | Binexp ((Plus | Times), Int _, e1)
+  | Binexp (_, e1, Int _) -&gt;
+      max (usage e1) 1
+  | Binexp (op, e1, e2) -&gt;
+      <B>let</B> u1 = usage e1
+      <B>and</B> u2 = usage e2 <B>in</B>
+      min
+        (max u1 ((<B>if</B> u1 = 0 <B>then</B> 0 <B>else</B> 1) + u2))
+        (max u2 ((<B>if</B> u2 = 0 <B>then</B> 0 <B>else</B> 1) + u1))</DIV><P>L&#X2019;idée est de calculer le nombre de registres temporaires utilisés par
+<TT>compile_expression</TT>.</P><P>On sait que pour évaluer une constante entière, celle-ci utilise un registre,
+à savoir le registre <TT>r</TT>, dans lequel le résultat est placé.</P><P>Pour évaluer la variable <TT>x</TT>, on n&#X2019;utilise aucun registre temporaire,
+car le résultat est disponible dans le registre <TT>a0</TT>.</P><P>Dans le cas particulier des expressions binaires dont un opérande est entier,
+on sait que l&#X2019;on évalue d&#X2019;abord <TT>e1</TT>, puis on effectue une opération
+dont le résultat est stocké dans <TT>r</TT>, donc on utilise successivement
+<TT>usage e1</TT> registres puis 1 registre, soit au maximum <TT>max
+(usage e1) 1</TT> registres.</P><P>Dans le cas des expressions binaires, supposons que l&#X2019;on choisisse d&#X2019;évaluer
+d&#X2019;abord <TT>e1</TT> puis <TT>e2</TT>. Alors, on utilisera d&#X2019;abord <TT>u1</TT>
+registres pour évaluer <TT>e1</TT>, puis on stockera le résultat de
+<TT>e1</TT> pendant que l&#X2019;on évalue <TT>e2</TT>. Stocker le résultat de
+<TT>e1</TT> exige en général 1 registre, sauf dans le cas particulier où
+<TT>u1 = 0</TT>, car alors <TT>e1</TT> est la variable <TT>x</TT>, l&#X2019;appel
+<TT>preserve r1 r</TT> renvoie <TT>r</TT>, et on utilise en fait 0 registre.
+Stocker le résultat de <TT>e1</TT> nécessite donc en général
+<CODE>(if u1 = 0 then 0 else 1)</CODE> registres. Stocker ce résultat tout en
+évaluant <TT>e2</TT> exige donc <CODE>(if u1 = 0 then 0 else 1) + u2</CODE>
+registres. Évaluer d&#X2019;abord <TT>e1</TT> puis <TT>e2</TT> exige donc
+<CODE>max u1 ((if u1 = 0 then 0 else 1) + u2)</CODE> registres. Si l&#X2019;on fait le
+choix opposé, à savoir évaluer d&#X2019;abord <TT>e2</TT> puis <TT>e1</TT>, il faudra
+donc, symétriquement, <CODE>max u2 ((if u2 = 0 then 0 else 1) + u1)</CODE>
+registres. Si l&#X2019;on fait le meilleur choix, ce qui est notre intention, le
+nombre de registres nécessaires sera le minimum de ces deux valeurs.</P><P>La définition de la fonction <TT>usage</TT>, qui va guider l&#X2019;optimisation,
+doit donc tenir compte de l&#X2019;existence même de l&#X2019;optimisation! Il y a là une
+apparente circularité qui est assez surprenante et élégante.</P><P>Une fois <TT>usage</TT> définie, il ne reste plus qu&#X2019;à modifier
+<TT>compile_expression</TT> pour effectuer le meilleur choix.
+Seul le cas des expressions binaires est affecté:
+</P><DIV CLASS="lstlisting"><B>let rec</B> compile_expression r = <B>function</B>
+  | Int i -&gt;
+      printf "        li   %s, %d\n" registers.(r) i;
+      r
+  | X     -&gt;
+      0
+  | Binexp ((Plus | Times) <B>as</B> op, Int i, e1)
+  | Binexp (op, e1, Int i) -&gt;
+      <B>let</B> r1 = compile_expression r e1 <B>in</B>
+      printf "        %s %s, %s, %d\n" (compile_op op) registers.(r) registers.(r1) i;
+      r
+  | Binexp (op, e1, e2) -&gt;
+      <B>let</B> u1 = usage e1
+      <B>and</B> u2 = usage e2 <B>in
+      if</B>
+        (max u1 ((<B>if</B> u1 = 0 <B>then</B> 0 <B>else</B> 1) + u2))
+        &lt;
+        (max u2 ((<B>if</B> u2 = 0 <B>then</B> 0 <B>else</B> 1) + u1))
+      <B>then
+        let</B> r1 = compile_expression r e1 <B>in
+        let</B> r2 = compile_expression (preserve r1 r) e2 <B>in</B>
+        printf "        %s %s, %s, %s\n" (compile_op op) registers.(r) registers.(r1) registers.(r2);
+        r
+      <B>else
+        let</B> r2 = compile_expression r e2 <B>in
+        let</B> r1 = compile_expression (preserve r2 r) e1 <B>in</B>
+        printf "        %s %s, %s, %s\n" (compile_op op) registers.(r) registers.(r1) registers.(r2);
+        r</DIV><P>Cette version du code est inefficace, car l&#X2019;appel à <TT>usage</TT> depuis <TT>compile_expression</TT>
+induit une complexité quadratique. Pour cet exercice, ce n&#X2019;est pas grave. Si l&#X2019;on voulait faire mieux,
+on pourrait calculer une fois pour toutes la valeur de <TT>usage</TT> en chaque n&#X153;ud de l&#X2019;arbre, ce qui aurait
+un coût linéaire.</P><P>Cet algorithme de compilation a été étudié par
+<A HREF="http://portal.acm.org/citation.cfm?id=321620">Sethi et Ullman</A>, qui en
+démontré la correction et l&#X2019;optimalité. Voir également le livre d&#X2019;Andrew
+Appel, <A HREF="http://www.cs.princeton.edu/%7Eappel/modern/ml/">Modern compiler
+implementation in ML</A>, pages 250&#X2013;253.</P><!--CUT END -->
+<!--HTMLFOOT-->
+<!--ENDHTML-->
+<!--FOOTER-->
+<HR SIZE=2><BLOCKQUOTE CLASS="quote"><EM>Ce document a été traduit de L<sup>A</sup>T<sub>E</sub>X par <A HREF="http://hevea.inria.fr">H<FONT SIZE=2><sup>E</sup></FONT>V<FONT SIZE=2><sup>E</sup></FONT>A</A></EM></BLOCKQUOTE></BODY>
+</HTML>

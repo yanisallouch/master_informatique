@@ -1,0 +1,1 @@
+< 27> Window=FsW/TransSW,Steps=1,Steps=3,Steps=5 => EstSliding

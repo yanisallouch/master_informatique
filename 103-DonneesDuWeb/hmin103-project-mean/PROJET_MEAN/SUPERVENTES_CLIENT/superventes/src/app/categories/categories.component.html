@@ -1,0 +1,5 @@
+Liste des catégories
+
+<ul>
+    <li *ngFor="let categorie of categories"><a [routerLink]="['/produits', categorie]">{{categorie}}</a></li>
+</ul>

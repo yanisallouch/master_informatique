@@ -21,7 +21,7 @@ var n:integer  i:integer k: new array of integer[n]
 f(n : integer)
 i:=0; while i<=n do k[i]=0
 
-n:=read()
+n:=read();
 f(n)
 
 4)  Écrire une fonction qui teste si tous les éléments d’un tableau d’entiers passé en paramètre sont positifs.

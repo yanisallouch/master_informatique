@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Simple Interface</string>
+    <string name="ask_user">Please fill the following</string>
+    <string name="enter_name">Enter a name</string>
+    <string name="enter_lastName">Enter lastname</string>
+    <string name="enter_skillField">Enter skill field</string>
+    <string name="enter_validate">Enter to validate</string>
+    <string name="enter_age">Enter age</string>
+    <string name="enter_phone">Enter a phone number</string>
+    <string name="dialog_ask_confirmation">Do you confirm the inputs field ?</string>
+    <string name="dialog_confirmation">Confirm</string>
+    <string name="dialog_cancel">Cancel</string>
+</resources>

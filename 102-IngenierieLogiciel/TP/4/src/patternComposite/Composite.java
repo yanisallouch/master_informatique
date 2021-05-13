@@ -11,7 +11,7 @@ public abstract class Composite extends Composant {
 	
 	@Override
 	public int nbElem() {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 }

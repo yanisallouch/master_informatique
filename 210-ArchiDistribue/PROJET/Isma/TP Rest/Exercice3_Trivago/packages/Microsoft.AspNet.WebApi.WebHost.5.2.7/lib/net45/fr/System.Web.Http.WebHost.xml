@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Web.Http.WebHost</name>
+  </assembly>
+  <members>
+    <member name="T:System.Web.Http.GlobalConfiguration">
+      <summary> Fournit une <see cref="T:System.Web.Http.HttpConfiguration" /> globale pour les applications ASP.NET. </summary>
+    </member>
+    <member name="P:System.Web.Http.GlobalConfiguration.Configuration"></member>
+    <member name="M:System.Web.Http.GlobalConfiguration.Configure(System.Action{System.Web.Http.HttpConfiguration})"></member>
+    <member name="P:System.Web.Http.GlobalConfiguration.DefaultHandler"></member>
+    <member name="P:System.Web.Http.GlobalConfiguration.DefaultServer">
+      <summary> Obtient la <see cref="T:System.Web.Http.HttpServer" /> globale. </summary>
+      <returns>
+        <see cref="T:System.Web.Http.HttpServer" /> globale.</returns>
+    </member>
+    <member name="T:System.Web.Http.RouteCollectionExtensions">
+      <summary> Méthodes d'extension pour <see cref="T:System.Web.Routing.RouteCollection" /></summary>
+    </member>
+    <member name="M:System.Web.Http.RouteCollectionExtensions.MapHttpRoute(System.Web.Routing.RouteCollection,System.String,System.String)">
+      <summary>Mappe le modèle d'itinéraire spécifié.</summary>
+      <returns>Référence à l'itinéraire mappé.</returns>
+      <param name="routes">Collection des itinéraires de l'application.</param>
+      <param name="name">Nom de l'itinéraire à mapper.</param>
+      <param name="routeTemplate">Modèle de l'itinéraire.</param>
+    </member>
+    <member name="M:System.Web.Http.RouteCollectionExtensions.MapHttpRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object)">
+      <summary>Mappe le modèle d'itinéraire spécifié et définit l'itinéraire par défaut.</summary>
+      <returns>Référence à l'itinéraire mappé.</returns>
+      <param name="routes">Collection des itinéraires de l'application.</param>
+      <param name="name">Nom de l'itinéraire à mapper.</param>
+      <param name="routeTemplate">Modèle de l'itinéraire.</param>
+      <param name="defaults">Objet qui contient les valeurs d'itinéraire par défaut.</param>
+    </member>
+    <member name="M:System.Web.Http.RouteCollectionExtensions.MapHttpRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object,System.Object)">
+      <summary>Mappe le modèle d'itinéraire spécifié et définit des valeurs d'itinéraire par défaut et des contraintes.</summary>
+      <returns>Référence à l'itinéraire mappé.</returns>
+      <param name="routes">Collection des itinéraires de l'application.</param>
+      <param name="name">Nom de l'itinéraire à mapper.</param>
+      <param name="routeTemplate">Modèle de l'itinéraire.</param>
+      <param name="defaults">Objet qui contient les valeurs d'itinéraire par défaut.</param>
+      <param name="constraints">Ensemble d'expressions qui spécifient des valeurs pour routeTemplate.</param>
+    </member>
+    <member name="M:System.Web.Http.RouteCollectionExtensions.MapHttpRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object,System.Object,System.Net.Http.HttpMessageHandler)">
+      <summary>Mappe le modèle d'itinéraire spécifié et définit des valeurs d'itinéraire par défaut, des contraintes et le gestionnaire de messages de point de terminaison.</summary>
+      <returns>Référence à l'itinéraire mappé.</returns>
+      <param name="routes">Collection des itinéraires de l'application.</param>
+      <param name="name">Nom de l'itinéraire à mapper.</param>
+      <param name="routeTemplate">Modèle de l'itinéraire.</param>
+      <param name="defaults">Objet qui contient les valeurs d'itinéraire par défaut.</param>
+      <param name="constraints">Ensemble d'expressions qui spécifient des valeurs pour routeTemplate.</param>
+      <param name="handler">Gestionnaire dans lequel la demande est répartie.</param>
+    </member>
+    <member name="T:System.Web.Http.WebHost.HttpControllerHandler">
+      <summary>
+        <see cref="T:System.Web.IHttpTaskAsyncHandler" /> qui transmet les demandes ASP.NET au pipeline <see cref="T:System.Web.Http.HttpServer" /> et écrit le résultat en retour.</summary>
+    </member>
+    <member name="M:System.Web.Http.WebHost.HttpControllerHandler.#ctor(System.Web.Routing.RouteData)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Web.Http.WebHost.HttpControllerHandler" />.</summary>
+      <param name="routeData">Données d'itinéraire.</param>
+    </member>
+    <member name="M:System.Web.Http.WebHost.HttpControllerHandler.#ctor(System.Web.Routing.RouteData,System.Net.Http.HttpMessageHandler)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Web.Http.WebHost.HttpControllerHandler" />.</summary>
+      <param name="routeData">Données d'itinéraire.</param>
+      <param name="handler">Le gestionnaire de messages auquel transférer les requêtes.</param>
+    </member>
+    <member name="M:System.Web.Http.WebHost.HttpControllerHandler.ProcessRequestAsync(System.Web.HttpContext)">
+      <summary>Fournit un code permettant de gérer une tâche asynchrone</summary>
+      <returns>Tâche asynchrone.</returns>
+      <param name="context">Contexte HTTP.</param>
+    </member>
+    <member name="T:System.Web.Http.WebHost.HttpControllerRouteHandler">
+      <summary>
+        <see cref="T:System.Web.Routing.IRouteHandler" /> qui retourne les instances de <see cref="T:System.Web.Http.WebHost.HttpControllerHandler" /> pouvant transmettre des demandes à une instance <see cref="T:System.Web.Http.HttpServer" /> donnée. </summary>
+    </member>
+    <member name="M:System.Web.Http.WebHost.HttpControllerRouteHandler.#ctor">
+      <summary> Initialise une nouvelle instance de la classe <see cref="T:System.Web.Http.WebHost.HttpControllerRouteHandler" />. </summary>
+    </member>
+    <member name="M:System.Web.Http.WebHost.HttpControllerRouteHandler.GetHttpHandler(System.Web.Routing.RequestContext)">
+      <summary> Fournit l'objet qui traite la demande. </summary>
+      <returns> Objet qui traite la demande. </returns>
+      <param name="requestContext">Objet qui encapsule des informations sur la demande.</param>
+    </member>
+    <member name="P:System.Web.Http.WebHost.HttpControllerRouteHandler.Instance">
+      <summary> Obtient l'instance <see cref="T:System.Web.Http.WebHost.HttpControllerRouteHandler" /> de singleton. </summary>
+    </member>
+    <member name="M:System.Web.Http.WebHost.HttpControllerRouteHandler.System#Web#Routing#IRouteHandler#GetHttpHandler(System.Web.Routing.RequestContext)">
+      <summary> Fournit l'objet qui traite la demande. </summary>
+      <returns> Objet qui traite la demande. </returns>
+      <param name="requestContext">Objet qui encapsule des informations sur la demande.</param>
+    </member>
+    <member name="T:System.Web.Http.WebHost.PreApplicationStartCode">
+      <summary>Fournit un point de référence pour le code de pré-démarrage de l'application d'appartenance simple.</summary>
+    </member>
+    <member name="M:System.Web.Http.WebHost.PreApplicationStartCode.Start">
+      <summary>Inscrit le code de pré-démarrage de l'application de l'appartenance simple.</summary>
+    </member>
+    <member name="T:System.Web.Http.WebHost.WebHostBufferPolicySelector">
+      <summary>Représente le sélecteur de stratégie pour la mémoire tampon de l'hôte Web.</summary>
+    </member>
+    <member name="M:System.Web.Http.WebHost.WebHostBufferPolicySelector.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Web.Http.WebHost.WebHostBufferPolicySelector" />.</summary>
+    </member>
+    <member name="M:System.Web.Http.WebHost.WebHostBufferPolicySelector.UseBufferedInputStream(System.Object)">
+      <summary>Obtient une valeur qui indique si l'hôte doit mettre en mémoire tampon le corps d'entité de la requête HTTP.</summary>
+      <returns>true si la mise en mémoire tampon doit être utilisée ; sinon la demande doit être diffusée en continu.</returns>
+      <param name="hostContext">Contexte de l'hôte.</param>
+    </member>
+    <member name="M:System.Web.Http.WebHost.WebHostBufferPolicySelector.UseBufferedOutputStream(System.Net.Http.HttpResponseMessage)">
+      <summary>Utilise un flux de sortie mis en mémoire tampon pour l'hôte Web.</summary>
+      <returns>Flux de sortie mis en mémoire tampon.</returns>
+      <param name="response">Réponse.</param>
+    </member>
+    <member name="T:System.Web.Http.WebHost.WebHostExceptionCatchBlocks">
+      <summary>Fournit les blocs catch utilisés dans cet assembly.</summary>
+    </member>
+    <member name="P:System.Web.Http.WebHost.WebHostExceptionCatchBlocks.HttpControllerHandlerBufferContent">
+      <summary>Obtient une étiquette pour le bloc catch dans System.Web.Http.WebHost.HttpControllerHandler.WriteBufferedResponseContentAsync.</summary>
+      <returns>Étiquette pour le bloc catch dans System.Web.Http.WebHost.HttpControllerHandler.WriteBufferedResponseContentAsync.</returns>
+    </member>
+    <member name="P:System.Web.Http.WebHost.WebHostExceptionCatchBlocks.HttpControllerHandlerBufferError">
+      <summary>Obtient une étiquette pour le bloc catch dans System.Web.Http.WebHost.HttpControllerHandler.WriteErrorResponseContentAsync.</summary>
+      <returns>Étiquette pour le bloc catch dans System.Web.Http.WebHost.HttpControllerHandler.WriteErrorResponseContentAsync.</returns>
+    </member>
+    <member name="P:System.Web.Http.WebHost.WebHostExceptionCatchBlocks.HttpControllerHandlerComputeContentLength">
+      <summary>Obtient une étiquette pour le bloc catch dans System.Web.Http.WebHost.HttpControllerHandler.ComputeContentLength.</summary>
+      <returns>Étiquette pour le bloc catch dans System.Web.Http.WebHost.HttpControllerHandler.ComputeContentLength.</returns>
+    </member>
+    <member name="P:System.Web.Http.WebHost.WebHostExceptionCatchBlocks.HttpControllerHandlerStreamContent">
+      <summary>Obtient l'étiquette pour le bloc catch dans System.Web.Http.WebHost.HttpControllerHandler.WriteStreamedResponseContentAsync.</summary>
+      <returns>Étiquette pour le bloc catch dans System.Web.Http.WebHost.HttpControllerHandler.WriteStreamedResponseContentAsync.</returns>
+    </member>
+    <member name="P:System.Web.Http.WebHost.WebHostExceptionCatchBlocks.HttpWebRoute">
+      <summary>Obtient une étiquette pour le bloc catch dans System.Web.Http.WebHost.WebHostExceptionCatchBlocks.HttpWebRoute.GetRouteData.</summary>
+      <returns>Bloc catch dans System.Web.Http.WebHost.WebHostExceptionCatchBlocks.HttpWebRoute.GetRouteData.</returns>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,138 @@
+digraph G { 
+	rankdir=BT;
+1 [shape=record,style=filled,fillcolor=orange,label="{1 (I: 5, E: 10)|Year=2002-2006\nEstSupport \nSteps=1\nSteps=3\nSteps=5\n|Lossy Counting [47]\nFP-Stream [19]\nestDec [8]\nFDPM [61]\nDSM-FI [39]\nMoment [12]\nSWM [9]\nPFP [41]\nDSTree [34]\nCFI-Stream [25]\n}"];
+2 [shape=record,style=filled,fillcolor=orange,label="{2 (I: 3, E: 19)|Steps=1\nSteps=3\nSteps=5\n|INSTANT [48]\nFUFP-Tree [24]\nPre-FUFP [43]\nEstMax [58]\nCLICI [20]\nTUF-Streaming [33]\nTHUI-Mine [13]\nMHUI [37]\nSWIM [49]\nIncmine [11]\nNewMoment [36]\nCPS-tree [55]\nIHUP [2]\nMFI-TransSW [38]\nMFI-TimeSW [38]\nUF-Streaming [32]\nSUF-Growth [32]\nFCDT [28]\nClostream [60]\n}"];
+3 [shape=record,style=filled,fillcolor=lightblue,label="{3 (I: 3, E: 20)|Steps=1\nSteps=3\nSteps=5\n|GUIDE [54]\nFUP-HU [44]\nUHS-Stream [22]\nTFUHS-Stream [22]\nPRE-HUI [42]\nHUPID [65]\nHUI-LIST-INS [45]\nGENHUI [26]\nFCIMining [7]\nVSW [16]\nSWP-Tree [10]\nLDS [15]\nMAX-FISM [18]\nStreamFCI [56]\nTmoment [51]\npWin [17]\nFEMP [3]\nUDS-FIM [29]\nSHU-Growth [53]\nSHAU [62]\n}"];
+4 [shape=record,style=filled,fillcolor=lightblue,label="{4 (I: 3, E: 9)|Steps=1\nSteps=3\nSteps=5\n|TDUP [40]\nLIHUP [66]\nIMHAUI [27]\nMPM [63]\nPIHUP [30]\nIIHUM [64]\nPFIMoS [35]\nConPatSet [50]\nRMFIsM [6]\n}"];
+5 [shape=record,style=filled,fillcolor=lightblue,label="{5 (I: 6, E: 10)|EstSupport \nDataSets=IP\nSteps=1\nSteps=2\nSteps=3\nSteps=5\n|CLICI [20]\nFCIMining [7]\nMoment [12]\nCFI-Stream [25]\nIncmine [11]\nNewMoment [36]\nClostream [60]\nStreamFCI [56]\nTmoment [51]\nConPatSet [50]\n}"];
+6 [shape=record,style=filled,fillcolor=orange,label="{6 (I: 4, E: 20)|EstSupport \nSteps=1\nSteps=3\nSteps=5\n|Lossy Counting [47]\nFP-Stream [19]\nestDec [8]\nFDPM [61]\nDSM-FI [39]\nFUFP-Tree [24]\nPre-FUFP [43]\nTDUP [40]\nSWM [9]\nPFP [41]\nDSTree [34]\nSWIM [49]\nCPS-tree [55]\nMFI-TransSW [38]\nMFI-TimeSW [38]\nFCDT [28]\nVSW [16]\nSWP-Tree [10]\nLDS [15]\npWin [17]\n}"];
+7 [shape=record,style=filled,fillcolor=lightblue,label="{7 (I: 5, E: 4)|EstSupport \nUpdate=PT\nSteps=1\nSteps=3\nSteps=5\n|INSTANT [48]\nEstMax [58]\nMAX-FISM [18]\nRMFIsM [6]\n}"];
+8 [shape=record,style=filled,fillcolor=lightblue,label="{8 (I: 7, E: 6)|EstUncertain\nApproach=FP-Growth\nStructures=TR\nUpdate=PB\nSteps=1\nSteps=3\nSteps=5\n|TUF-Streaming [33]\nUHS-Stream [22]\nTFUHS-Stream [22]\nUF-Streaming [32]\nSUF-Growth [32]\nUDS-FIM [29]\n}"];
+9 [shape=record,style=filled,fillcolor=lightblue,label="{9 (I: 11, E: 2)|EstUncertain\nWindow=FsW/TransSW\nEstSliding\nAccuracy=Exact\n#Citations=Publié >0 & < 15\nDataSets=IP\nUpdate=PT\nSteps=1\nSteps=2\nSteps=3\nSteps=5\n|FEMP [3]\nPFIMoS [35]\n}"];
+10 [shape=record,style=filled,fillcolor=lightblue,label="{10 (I: 8, E: 3)|EstUtility\nApproach=FP-Growth\nAccuracy=Exact\nDataSets=TS\nStructures=TR\nSteps=1\nSteps=3\nSteps=5\n|IMHAUI [27]\nMPM [63]\nSHAU [62]\n}"];
+11 [shape=record,style=filled,fillcolor=lightblue,label="{11 (I: 4, E: 13)|EstUtility\nSteps=1\nSteps=3\nSteps=5\n|GUIDE [54]\nFUP-HU [44]\nPRE-HUI [42]\nHUPID [65]\nHUI-LIST-INS [45]\nGENHUI [26]\nLIHUP [66]\nPIHUP [30]\nIIHUM [64]\nTHUI-Mine [13]\nMHUI [37]\nIHUP [2]\nSHU-Growth [53]\n}"];
+12 [shape=record,style=filled,fillcolor=lightblue,label="{12 (I: 3, E: 34)|Steps=1\nSteps=3\nSteps=5\n|Lossy Counting [47]\nFP-Stream [19]\nestDec [8]\nFDPM [61]\nDSM-FI [39]\nINSTANT [48]\nFUFP-Tree [24]\nPre-FUFP [43]\nEstMax [58]\nCLICI [20]\nFCIMining [7]\nTDUP [40]\nMoment [12]\nSWM [9]\nPFP [41]\nDSTree [34]\nCFI-Stream [25]\nSWIM [49]\nIncmine [11]\nNewMoment [36]\nCPS-tree [55]\nMFI-TransSW [38]\nMFI-TimeSW [38]\nFCDT [28]\nClostream [60]\nVSW [16]\nSWP-Tree [10]\nLDS [15]\nMAX-FISM [18]\nStreamFCI [56]\nTmoment [51]\npWin [17]\nConPatSet [50]\nRMFIsM [6]\n}"];
+13 [shape=record,style=filled,fillcolor=lightblue,label="{13 (I: 3, E: 16)|Steps=1\nSteps=3\nSteps=5\n|GUIDE [54]\nFUP-HU [44]\nPRE-HUI [42]\nHUPID [65]\nHUI-LIST-INS [45]\nGENHUI [26]\nLIHUP [66]\nIMHAUI [27]\nMPM [63]\nPIHUP [30]\nIIHUM [64]\nTHUI-Mine [13]\nMHUI [37]\nIHUP [2]\nSHU-Growth [53]\nSHAU [62]\n}"];
+14 [shape=record,style=filled,fillcolor=lightblue,label="{14 (I: 3, E: 8)|Steps=1\nSteps=3\nSteps=5\n|TUF-Streaming [33]\nUHS-Stream [22]\nTFUHS-Stream [22]\nUF-Streaming [32]\nSUF-Growth [32]\nFEMP [3]\nUDS-FIM [29]\nPFIMoS [35]\n}"];
+15 [shape=record,style=filled,fillcolor=lightblue,label="{15 (I: 3, E: 19)|Steps=1\nSteps=3\nSteps=5\n|Lossy Counting [47]\nestDec [8]\nFDPM [61]\nDSM-FI [39]\nINSTANT [48]\nFUFP-Tree [24]\nPre-FUFP [43]\nEstMax [58]\nFUP-HU [44]\nPRE-HUI [42]\nTDUP [40]\nPIHUP [30]\nSWM [9]\nTHUI-Mine [13]\nIncmine [11]\nClostream [60]\nMAX-FISM [18]\npWin [17]\nConPatSet [50]\n}"];
+16 [shape=record,style=filled,fillcolor=lightblue,label="{16 (I: 4, E: 24)|Structures=TR\nSteps=1\nSteps=3\nSteps=5\n|FP-Stream [19]\nTUF-Streaming [33]\nUHS-Stream [22]\nTFUHS-Stream [22]\nHUPID [65]\nGENHUI [26]\nFCIMining [7]\nIMHAUI [27]\nMPM [63]\nMoment [12]\nDSTree [34]\nCFI-Stream [25]\nNewMoment [36]\nCPS-tree [55]\nIHUP [2]\nUF-Streaming [32]\nSUF-Growth [32]\nSWP-Tree [10]\nStreamFCI [56]\nTmoment [51]\nUDS-FIM [29]\nSHU-Growth [53]\nSHAU [62]\nPFIMoS [35]\n}"];
+17 [shape=record,style=filled,fillcolor=lightblue,label="{17 (I: 6, E: 7)|Accuracy=Exact\nDataSets=TS\nStructures=LT\nSteps=1\nSteps=3\nSteps=5\n|HUI-LIST-INS [45]\nLIHUP [66]\nIIHUM [64]\nMHUI [37]\nMFI-TransSW [38]\nMFI-TimeSW [38]\nLDS [15]\n}"];
+18 [shape=record,style=filled,fillcolor=lightblue,label="{18 (I: 3, E: 8)|Steps=1\nSteps=3\nSteps=5\n|CLICI [20]\nGUIDE [54]\nPFP [41]\nSWIM [49]\nFCDT [28]\nVSW [16]\nFEMP [3]\nRMFIsM [6]\n}"];
+19 [shape=record,style=filled,fillcolor=lightblue,label="{19 (I: 4, E: 7)|EstIncremental\nSteps=1\nSteps=3\nSteps=5\n|Pre-FUFP [43]\nEstMax [58]\nCLICI [20]\nUHS-Stream [22]\nHUI-LIST-INS [45]\nGENHUI [26]\nIMHAUI [27]\n}"];
+20 [shape=record,style=filled,fillcolor=lightblue,label="{20 (I: 4, E: 17)|EstIncremental\nSteps=1\nSteps=3\nSteps=5\n|Lossy Counting [47]\nestDec [8]\nFDPM [61]\nDSM-FI [39]\nINSTANT [48]\nFUFP-Tree [24]\nTUF-Streaming [33]\nGUIDE [54]\nFUP-HU [44]\nTFUHS-Stream [22]\nPRE-HUI [42]\nHUPID [65]\nFCIMining [7]\nTDUP [40]\nLIHUP [66]\nMPM [63]\nPIHUP [30]\n}"];
+21 [shape=record,style=filled,label="{21 (I: 15, E: 1)|Year=2002-2006\nEstSupport \nWindow=Titled\nEstIncremental\nAccuracy=False-positive\n#Citations=Très populaire >400 & <1601\nDataSets=SP\nDataSets=IP\nStructures=TR\nUpdate=PB\nSteps=1\nSteps=2\nSteps=3\nSteps=4\nSteps=5\n|FP-Stream [19]\n}"];
+22 [shape=record,style=filled,fillcolor=orange,label="{22 (I: 9, E: 3)|EstSupport \nWindow=FsW/TimeSW\nEstSliding\n#Citations=Populaire >100 & <301\nDataSets=TS\nStructures=LT\nSteps=1\nSteps=3\nSteps=5\n|SWM [9]\nSWIM [49]\nMFI-TransSW [38]\n}"];
+23 [shape=record,style=filled,fillcolor=lightblue,label="{23 (I: 4, E: 27)|EstSliding\nSteps=1\nSteps=3\nSteps=5\n|IIHUM [64]\nMoment [12]\nPFP [41]\nDSTree [34]\nCFI-Stream [25]\nTHUI-Mine [13]\nMHUI [37]\nIncmine [11]\nNewMoment [36]\nCPS-tree [55]\nIHUP [2]\nSUF-Growth [32]\nClostream [60]\nVSW [16]\nSWP-Tree [10]\nLDS [15]\nMAX-FISM [18]\nStreamFCI [56]\nTmoment [51]\npWin [17]\nFEMP [3]\nUDS-FIM [29]\nSHU-Growth [53]\nSHAU [62]\nPFIMoS [35]\nConPatSet [50]\nRMFIsM [6]\n}"];
+24 [shape=record,style=filled,fillcolor=orange,label="{24 (I: 5, E: 3)|Window=VsW/TransSW\nEstSliding\nSteps=1\nSteps=3\nSteps=5\n|MFI-TimeSW [38]\nUF-Streaming [32]\nFCDT [28]\n}"];
+25 [shape=record,style=filled,fillcolor=lightblue,label="{25 (I: 3, E: 25)|Steps=1\nSteps=3\nSteps=5\n|Lossy Counting [47]\nFP-Stream [19]\nestDec [8]\nFDPM [61]\nDSM-FI [39]\nINSTANT [48]\nFUFP-Tree [24]\nPre-FUFP [43]\nEstMax [58]\nCLICI [20]\nTUF-Streaming [33]\nGUIDE [54]\nFUP-HU [44]\nUHS-Stream [22]\nTFUHS-Stream [22]\nPRE-HUI [42]\nHUPID [65]\nHUI-LIST-INS [45]\nGENHUI [26]\nFCIMining [7]\nTDUP [40]\nLIHUP [66]\nIMHAUI [27]\nMPM [63]\nPIHUP [30]\n}"];
+26 [shape=record,style=filled,fillcolor=lightblue,label="{26 (I: 3, E: 33)|Steps=1\nSteps=3\nSteps=5\n|IIHUM [64]\nMoment [12]\nSWM [9]\nPFP [41]\nDSTree [34]\nCFI-Stream [25]\nTHUI-Mine [13]\nMHUI [37]\nSWIM [49]\nIncmine [11]\nNewMoment [36]\nCPS-tree [55]\nIHUP [2]\nMFI-TransSW [38]\nMFI-TimeSW [38]\nUF-Streaming [32]\nSUF-Growth [32]\nFCDT [28]\nClostream [60]\nVSW [16]\nSWP-Tree [10]\nLDS [15]\nMAX-FISM [18]\nStreamFCI [56]\nTmoment [51]\npWin [17]\nFEMP [3]\nUDS-FIM [29]\nSHU-Growth [53]\nSHAU [62]\nPFIMoS [35]\nConPatSet [50]\nRMFIsM [6]\n}"];
+27 [shape=record,style=filled,fillcolor=lightblue,label="{27 (I: 3, E: 38)|Steps=1\nSteps=3\nSteps=5\n|INSTANT [48]\nFUFP-Tree [24]\nPre-FUFP [43]\nFUP-HU [44]\nPRE-HUI [42]\nHUPID [65]\nHUI-LIST-INS [45]\nGENHUI [26]\nLIHUP [66]\nIMHAUI [27]\nMPM [63]\nPIHUP [30]\nIIHUM [64]\nMoment [12]\nDSTree [34]\nCFI-Stream [25]\nTHUI-Mine [13]\nMHUI [37]\nSWIM [49]\nNewMoment [36]\nCPS-tree [55]\nIHUP [2]\nMFI-TransSW [38]\nMFI-TimeSW [38]\nSUF-Growth [32]\nClostream [60]\nVSW [16]\nLDS [15]\nMAX-FISM [18]\nStreamFCI [56]\nTmoment [51]\nFEMP [3]\nUDS-FIM [29]\nSHU-Growth [53]\nSHAU [62]\nPFIMoS [35]\nConPatSet [50]\nRMFIsM [6]\n}"];
+28 [shape=record,style=filled,label="{28 (I: 14, E: 1)|Year=2002-2006\nEstSupport \nEstIncremental\nAccuracy=False-negative\n#Citations=Populaire >100 & <301\nDataSets=SP\nDataSets=IP\nStructures=LT\nUpdate=PB\nSteps=1\nSteps=2\nSteps=3\nSteps=4\nSteps=5\n|FDPM [61]\n}"];
+29 [shape=record,style=filled,fillcolor=lightblue,label="{29 (I: 3, E: 16)|Steps=1\nSteps=3\nSteps=5\n|Lossy Counting [47]\nFP-Stream [19]\nestDec [8]\nDSM-FI [39]\nEstMax [58]\nCLICI [20]\nTUF-Streaming [33]\nUHS-Stream [22]\nTFUHS-Stream [22]\nFCIMining [7]\nTDUP [40]\nSWM [9]\nIncmine [11]\nUF-Streaming [32]\nFCDT [28]\nSWP-Tree [10]\n}"];
+30 [shape=record,style=filled,fillcolor=lightblue,label="{30 (I: 3, E: 3)|Steps=1\nSteps=3\nSteps=5\n|GUIDE [54]\nPFP [41]\npWin [17]\n}"];
+31 [shape=record,style=filled,fillcolor=lightblue,label="{31 (I: 3, E: 6)|Steps=1\nSteps=3\nSteps=5\n|FCIMining [7]\nFEMP [3]\nUDS-FIM [29]\nPFIMoS [35]\nConPatSet [50]\nRMFIsM [6]\n}"];
+32 [shape=record,style=filled,fillcolor=lightblue,label="{32 (I: 3, E: 13)|Steps=1\nSteps=3\nSteps=5\n|CLICI [20]\nUHS-Stream [22]\nTFUHS-Stream [22]\nHUI-LIST-INS [45]\nGENHUI [26]\nIMHAUI [27]\nPIHUP [30]\nIIHUM [64]\nFCDT [28]\nLDS [15]\nStreamFCI [56]\npWin [17]\nSHAU [62]\n}"];
+33 [shape=record,style=filled,fillcolor=lightblue,label="{33 (I: 3, E: 17)|Steps=1\nSteps=3\nSteps=5\n|INSTANT [48]\nEstMax [58]\nTUF-Streaming [33]\nGUIDE [54]\nPRE-HUI [42]\nHUPID [65]\nTDUP [40]\nLIHUP [66]\nMPM [63]\nIncmine [11]\nNewMoment [36]\nClostream [60]\nVSW [16]\nSWP-Tree [10]\nMAX-FISM [18]\nTmoment [51]\nSHU-Growth [53]\n}"];
+34 [shape=record,style=filled,fillcolor=lightblue,label="{34 (I: 3, E: 17)|Steps=1\nSteps=3\nSteps=5\n|FDPM [61]\nDSM-FI [39]\nFUFP-Tree [24]\nPre-FUFP [43]\nFUP-HU [44]\nSWM [9]\nPFP [41]\nDSTree [34]\nCFI-Stream [25]\nTHUI-Mine [13]\nMHUI [37]\nSWIM [49]\nCPS-tree [55]\nMFI-TransSW [38]\nMFI-TimeSW [38]\nUF-Streaming [32]\nSUF-Growth [32]\n}"];
+35 [shape=record,style=filled,fillcolor=lightblue,label="{35 (I: 4, E: 4)|Structures=TR\nSteps=1\nSteps=3\nSteps=5\n|FP-Stream [19]\nestDec [8]\nMoment [12]\nIHUP [2]\n}"];
+36 [shape=record,style=filled,label="{36 (I: 12, E: 1)|Year=2002-2006\nEstSupport \nEstIncremental\n#Citations=Exceptionnel >1600\nDataSets=SP\nDataSets=IP\nStructures=TR\nUpdate=PB\nSteps=1\nSteps=2\nSteps=3\nSteps=5\n|Lossy Counting [47]\n}"];
+37 [shape=record,style=filled,fillcolor=lightblue,label="{37 (I: 3, E: 34)|Steps=1\nSteps=3\nSteps=5\n|DSM-FI [39]\nFUFP-Tree [24]\nPre-FUFP [43]\nGUIDE [54]\nHUPID [65]\nHUI-LIST-INS [45]\nGENHUI [26]\nLIHUP [66]\nIMHAUI [27]\nMPM [63]\nPIHUP [30]\nIIHUM [64]\nSWM [9]\nDSTree [34]\nMHUI [37]\nSWIM [49]\nNewMoment [36]\nCPS-tree [55]\nIHUP [2]\nMFI-TransSW [38]\nMFI-TimeSW [38]\nUF-Streaming [32]\nVSW [16]\nSWP-Tree [10]\nLDS [15]\nMAX-FISM [18]\nStreamFCI [56]\nTmoment [51]\npWin [17]\nFEMP [3]\nUDS-FIM [29]\nSHU-Growth [53]\nSHAU [62]\nRMFIsM [6]\n}"];
+38 [shape=record,style=filled,fillcolor=lightblue,label="{38 (I: 5, E: 19)|DataSets=IP\nSteps=1\nSteps=2\nSteps=3\nSteps=5\n|Lossy Counting [47]\nFP-Stream [19]\nestDec [8]\nFDPM [61]\nPre-FUFP [43]\nEstMax [58]\nTUF-Streaming [33]\nUHS-Stream [22]\nTFUHS-Stream [22]\nPRE-HUI [42]\nTDUP [40]\nPIHUP [30]\nSWM [9]\nPFP [41]\nSWIM [49]\nIncmine [11]\nSUF-Growth [32]\nVSW [16]\npWin [17]\n}"];
+39 [shape=record,style=filled,fillcolor=lightblue,label="{39 (I: 4, E: 36)|Steps=1\nSteps=2\nSteps=3\nSteps=5\n|Lossy Counting [47]\nFP-Stream [19]\nestDec [8]\nFDPM [61]\nINSTANT [48]\nPre-FUFP [43]\nEstMax [58]\nCLICI [20]\nTUF-Streaming [33]\nFUP-HU [44]\nUHS-Stream [22]\nTFUHS-Stream [22]\nPRE-HUI [42]\nFCIMining [7]\nTDUP [40]\nPIHUP [30]\nMoment [12]\nSWM [9]\nPFP [41]\nCFI-Stream [25]\nTHUI-Mine [13]\nMHUI [37]\nSWIM [49]\nIncmine [11]\nNewMoment [36]\nSUF-Growth [32]\nFCDT [28]\nClostream [60]\nVSW [16]\nMAX-FISM [18]\nStreamFCI [56]\nTmoment [51]\npWin [17]\nFEMP [3]\nPFIMoS [35]\nConPatSet [50]\n}"];
+40 [shape=record,style=filled,fillcolor=orange,label="{40 (I: 6, E: 10)|DataSets=Not (FP)\nUpdate=PT\nSteps=1\nSteps=2\nSteps=3\nSteps=5\n|INSTANT [48]\nCLICI [20]\nFCIMining [7]\nMoment [12]\nCFI-Stream [25]\nFCDT [28]\nClostream [60]\nMAX-FISM [18]\nTmoment [51]\nConPatSet [50]\n}"];
+41 [shape=record,style=filled,fillcolor=lightblue,label="{41 (I: 3, E: 40)|Steps=1\nSteps=3\nSteps=5\n|Lossy Counting [47]\nFP-Stream [19]\nestDec [8]\nDSM-FI [39]\nFUFP-Tree [24]\nPre-FUFP [43]\nEstMax [58]\nCLICI [20]\nTUF-Streaming [33]\nGUIDE [54]\nUHS-Stream [22]\nTFUHS-Stream [22]\nHUPID [65]\nGENHUI [26]\nFCIMining [7]\nIMHAUI [27]\nMPM [63]\nPIHUP [30]\nMoment [12]\nSWM [9]\nDSTree [34]\nCFI-Stream [25]\nMHUI [37]\nSWIM [49]\nNewMoment [36]\nCPS-tree [55]\nIHUP [2]\nUF-Streaming [32]\nSUF-Growth [32]\nFCDT [28]\nVSW [16]\nSWP-Tree [10]\nMAX-FISM [18]\nStreamFCI [56]\nTmoment [51]\npWin [17]\nUDS-FIM [29]\nSHU-Growth [53]\nSHAU [62]\nPFIMoS [35]\n}"];
+42 [shape=record,style=filled,fillcolor=lightblue,label="{42 (I: 3, E: 31)|Steps=1\nSteps=3\nSteps=5\n|FDPM [61]\nINSTANT [48]\nPre-FUFP [43]\nFUP-HU [44]\nPRE-HUI [42]\nHUPID [65]\nHUI-LIST-INS [45]\nTDUP [40]\nLIHUP [66]\nMPM [63]\nIIHUM [64]\nSWM [9]\nPFP [41]\nTHUI-Mine [13]\nMHUI [37]\nSWIM [49]\nIncmine [11]\nNewMoment [36]\nMFI-TransSW [38]\nMFI-TimeSW [38]\nClostream [60]\nVSW [16]\nLDS [15]\nMAX-FISM [18]\nStreamFCI [56]\nTmoment [51]\npWin [17]\nFEMP [3]\nUDS-FIM [29]\nConPatSet [50]\nRMFIsM [6]\n}"];
+43 [shape=record,style=filled,fillcolor=lightblue,label="{43 (I: 3, E: 28)|Steps=1\nSteps=3\nSteps=5\n|estDec [8]\nINSTANT [48]\nEstMax [58]\nCLICI [20]\nGUIDE [54]\nHUPID [65]\nGENHUI [26]\nFCIMining [7]\nIMHAUI [27]\nMPM [63]\nIIHUM [64]\nMoment [12]\nSWM [9]\nCFI-Stream [25]\nMHUI [37]\nNewMoment [36]\nIHUP [2]\nMFI-TransSW [38]\nFCDT [28]\nClostream [60]\nSWP-Tree [10]\nMAX-FISM [18]\nStreamFCI [56]\nTmoment [51]\nFEMP [3]\nPFIMoS [35]\nConPatSet [50]\nRMFIsM [6]\n}"];
+44 [shape=record,style=filled,fillcolor=lightblue,label="{44 (I: 3, E: 30)|Steps=1\nSteps=3\nSteps=5\n|Lossy Counting [47]\nFP-Stream [19]\nFDPM [61]\nDSM-FI [39]\nFUFP-Tree [24]\nPre-FUFP [43]\nTUF-Streaming [33]\nFUP-HU [44]\nUHS-Stream [22]\nTFUHS-Stream [22]\nPRE-HUI [42]\nHUI-LIST-INS [45]\nTDUP [40]\nLIHUP [66]\nPIHUP [30]\nPFP [41]\nDSTree [34]\nTHUI-Mine [13]\nSWIM [49]\nIncmine [11]\nCPS-tree [55]\nMFI-TimeSW [38]\nUF-Streaming [32]\nSUF-Growth [32]\nVSW [16]\nLDS [15]\npWin [17]\nUDS-FIM [29]\nSHU-Growth [53]\nSHAU [62]\n}"];
+45 [shape=record,style=filled,fillcolor=lightblue,label="{45 (I: 2, E: 58)|Steps=3\nSteps=5\n|Lossy Counting [47]\nFP-Stream [19]\nestDec [8]\nFDPM [61]\nDSM-FI [39]\nINSTANT [48]\nFUFP-Tree [24]\nPre-FUFP [43]\nEstMax [58]\nCLICI [20]\nTUF-Streaming [33]\nGUIDE [54]\nFUP-HU [44]\nUHS-Stream [22]\nTFUHS-Stream [22]\nPRE-HUI [42]\nHUPID [65]\nHUI-LIST-INS [45]\nGENHUI [26]\nFCIMining [7]\nTDUP [40]\nLIHUP [66]\nIMHAUI [27]\nMPM [63]\nPIHUP [30]\nIIHUM [64]\nMoment [12]\nSWM [9]\nPFP [41]\nDSTree [34]\nCFI-Stream [25]\nTHUI-Mine [13]\nMHUI [37]\nSWIM [49]\nIncmine [11]\nNewMoment [36]\nCPS-tree [55]\nIHUP [2]\nMFI-TransSW [38]\nMFI-TimeSW [38]\nUF-Streaming [32]\nSUF-Growth [32]\nFCDT [28]\nClostream [60]\nVSW [16]\nSWP-Tree [10]\nLDS [15]\nMAX-FISM [18]\nStreamFCI [56]\nTmoment [51]\npWin [17]\nFEMP [3]\nUDS-FIM [29]\nSHU-Growth [53]\nSHAU [62]\nPFIMoS [35]\nConPatSet [50]\nRMFIsM [6]\n}"];
+46 [shape=record,style=filled,fillcolor=orange,label="{46 (I: 3, E: 12)|Steps=3\nSteps=4\nSteps=5\n|FP-Stream [19]\nestDec [8]\nFDPM [61]\nDSM-FI [39]\nEstMax [58]\nCLICI [20]\nGUIDE [54]\nUHS-Stream [22]\nTFUHS-Stream [22]\nFCIMining [7]\nIncmine [11]\nSWP-Tree [10]\n}"];
+	1 -> 12
+	2 -> 45
+	3 -> 45
+	4 -> 45
+	5 -> 12
+	5 -> 39
+	6 -> 12
+	7 -> 12
+	7 -> 43
+	8 -> 14
+	8 -> 16
+	8 -> 44
+	9 -> 14
+	9 -> 23
+	9 -> 27
+	9 -> 31
+	9 -> 39
+	9 -> 43
+	10 -> 13
+	10 -> 16
+	10 -> 27
+	10 -> 37
+	11 -> 13
+	12 -> 45
+	13 -> 45
+	14 -> 45
+	15 -> 45
+	16 -> 41
+	17 -> 27
+	17 -> 37
+	17 -> 42
+	18 -> 45
+	19 -> 25
+	20 -> 25
+	21 -> 1
+	21 -> 6
+	21 -> 16
+	21 -> 25
+	21 -> 29
+	21 -> 35
+	21 -> 38
+	21 -> 44
+	21 -> 46
+	22 -> 6
+	22 -> 26
+	22 -> 34
+	22 -> 37
+	22 -> 42
+	23 -> 26
+	24 -> 2
+	24 -> 26
+	25 -> 45
+	26 -> 45
+	27 -> 45
+	28 -> 1
+	28 -> 20
+	28 -> 15
+	28 -> 6
+	28 -> 34
+	28 -> 38
+	28 -> 42
+	28 -> 44
+	28 -> 46
+	29 -> 45
+	30 -> 45
+	31 -> 45
+	32 -> 45
+	33 -> 45
+	34 -> 45
+	35 -> 41
+	36 -> 1
+	36 -> 29
+	36 -> 20
+	36 -> 15
+	36 -> 6
+	36 -> 38
+	36 -> 41
+	36 -> 44
+	37 -> 45
+	38 -> 39
+	39 -> 45
+	40 -> 12
+	40 -> 39
+	40 -> 43
+	41 -> 45
+	42 -> 45
+	43 -> 45
+	44 -> 45
+	46 -> 45
+}

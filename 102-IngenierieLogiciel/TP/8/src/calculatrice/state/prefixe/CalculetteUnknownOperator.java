@@ -9,7 +9,7 @@ public class CalculetteUnknownOperator extends CalculetteException {
 
 	public CalculetteUnknownOperator(String s) {
 		super(s);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 }

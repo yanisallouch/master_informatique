@@ -1,0 +1,69 @@
+Université Montpellier 2
+
+CONDUITE DE PROJET
+
+ 
+
+Découpage d’un projet
+
+Enoncé : « La maison d’éducation »
+
+François est directeur d’une maison d'éducation. des enfants sont à sa charge quand un
+juge décide de les protéger de leur entourage ou de les placer. Ils sont alors soit en internat
+soit en famille d’accueil à l'extérieur de l’internant. Ils restent de 1 à 5 ans et 2 ans en
+moyenne.
+
+Son équipe se compose de 8 éducateurs, d’un psychologue, d’une assitante sociale et de 5
+personnes des services généraux. Il est en contact avec des centres médicaux
+psychopédagogiques, des orthophonistes, des instituteurs, des professeurs des écoles.
+
+Il reçoit les demandes de placement du juge (ordonnance de placement provisoire) valable
+de 6 mois à 2 ans, durée au terme de laquelle il rend un rapport sur le « vécu » de l'enfant
+au juge.
+
+À la suite de ce rapport, le juge peut décider de garder l'enfant en internat, ou bien de le
+placer dans une famille d'accueil. Dès que la décision du juge est connue, le directeur
+transmet le dossier de l'enfant aux éducateurs. Les éducateurs choisissent les familles
+d'accueil qui sont disponibles ou agréées.
+
+Hs les visitent ensuite régulièrement, suivant le comportement des enfants vis-à-vis de
+l’instituteur ou d’autres personnes. Ils perçoivent les comportements ou les
+Caractéristiques des enfants, et les relient à leur passé : événements (accidents, décès de
+proches...) ou situations vécues antérieurement (internat, placement familial). Ils
+essayent de juger les personnes de l'entourage des enfants et les relations qu’elles
+entretiennent avec l'enfant, À chaque visite, un rapport est effectué comprenant tous ces
+éléments, ainsi que des conseils. Le psychologue aide les éducateurs et les familles
+d'accueil à leur demande. Il intervient rarement avec l’enfant, il sert surtout de conscil aux
+autres intervenants.
+
+L’assistante sociale recrute les familles d'accueil. Elle donne l'agrément DDASS aux
+nouvelles familles, Ces agréments seront renouvelés tous les deux ans après consultation
+des éducateurs chargés de visiter les familles. Elle fait un bilan avec elles dans le cas où
+lenfant doit partir (par exemple, si l'enfant fugue constamment ou si la famille d’accueil
+ne remplit pas son rôle).
+
+Les enfants partent quand le juge le décide ou à 18 ans. Jusqu’à 16 ans, ils sont obligés de
+se plier à la décision du juge. Entre 16 et 18 aus, ils peuvent $teéforder avec la DDASS
+Pour rester en placement ou en famille d’accueil. A partir de 18 ans, ils peuvent rester dans
+la famille d’accueil mais celle-ci ne sera plus rémunérée.
+
+Les services généraux gèrent les allocations qui sont versées aux familles d'accueil.
+Celles-ci sont versées dès que l'enfant entre dans la famille et supprimées dès qu’il en
+part (avant 18 ans) ou s’il ÿ reste ct qu’il est majcur (18 aus). Ils sont également chargés
+d'archiver tous les rapports et décisions de justice concernant les enfants,
+
+Questions
+
+1° Identifiez les tâches et les processus du projet et proposez un découpage en WBS.
+
+2° Votre équipe est composée de 3 personnes cn dehors de vous-même, chef de projet, Un
+spécialiste système, un utilisateur averti, et un analyste programmeur. Affectez les
+responsabilités des différentes tâches aux différentes personnes et produisez un OBS en
+disant pourquoi.
+
+3° Si l’approche demandée avait été par « produit » (PBS) proposez un découpage PBS
+en fonction des produits logiciels que vous considérez appropriés à ce projet.
+
+]
+
+ 

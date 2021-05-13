@@ -11,7 +11,7 @@ public class CompteAvecReduc extends CompteForfait {
 
 	public CompteAvecReduc( Compte decore) {
 		super(decore);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override

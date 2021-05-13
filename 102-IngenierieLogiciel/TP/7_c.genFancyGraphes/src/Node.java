@@ -5,7 +5,7 @@ public class Node {
 	public String shape = "";
 		
 	public Node() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	public Node(String label) {

@@ -1,0 +1,8 @@
+f(n:integer, N:integer):integer
+	f:=N; i:=0;
+	while i < n do
+		i:=i+1;
+		if pair(f) then
+			f:= f/2
+		else
+			f:=3*f+1

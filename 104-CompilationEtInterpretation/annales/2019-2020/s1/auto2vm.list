@@ -1,0 +1,146 @@
+(defun auto2vm(auto)
+  (
+  append
+    '(
+      (jump (auto_init auto))
+     )
+    (vm_etats auto)
+    (vm_auto_ok)
+  )
+)
+
+(defun vm_etats(auto)
+  (apply
+    #'append
+    (map
+      'list
+        (vm_etat_callback auto)
+        (auto_etat_liste auto)
+    )
+  )
+)
+
+(defun vm_etats_callback (auto)
+  (lambda (etat)
+    (append
+		     '((label etat))
+		      (if (auto_final_p auto etat)
+				        '(
+						          (move etat R2)
+						          (cmp R0)
+						          (bnull ok)
+				        )
+				        nil ; cas FALSE
+		      )
+		      (vm_read_symbol)
+		      (apply
+				        #'append
+				        (map
+						          'list(vm_transition_callback etat)
+						          (auto_trans_list auto etat)
+				        )
+		      )
+		      (vm_auto_not_ok)
+    )
+  )
+)
+
+(defun vm_read_symbol()
+  '(
+    (car R0 R1)
+    (cdr R0 R0)
+  )
+)
+
+(defun vm_transition_callback (etat)
+  ;; le parametre transition est un doublet (symbole,etat)
+  (lambda (transition)
+    '(
+      (cmp R1 (car transition))
+      (jeq (cdr transition))
+    )
+  )
+)
+
+(defun vm_auto_not_ok ()
+  '(
+    (move nil R0)
+    (halt)
+  )
+)
+
+(defun vm_auto_ok ()
+  '(
+    (label ok)
+    (move R2 R0)
+    (halt)
+  )
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; fonction du sujet que j'ai mock pour tester
+
+(defun auto_init (auto)
+  0
+)
+
+(defun auto_final_p (auto etat)
+  (equal etat 3)
+)
+
+(defun auto_etat_liste (auto)
+  '(0 1 2 3)
+)
+
+;; auto_trans_list foo 0 ==> '((a 1) (b 3))
+
+(defun auto_trans_list (auto etat)
+  (cond
+    ((equal etat '0)
+      '((a 1) (b 3))
+    )
+    ((equal etat '1)
+      '((a 1) (b 3))
+    )
+    ((equal etat '2)
+      '((a 0))
+    )
+    ((equal etat '3)
+      '((a 2) (b 3))
+    )
+    (t (format t "~% value of a is ~d " a))
+  )
+)

@@ -4,7 +4,7 @@ import fake.compiler.product.IGenerator;
 public class GeneratorJAVA implements IGenerator {
 
 	public GeneratorJAVA() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override

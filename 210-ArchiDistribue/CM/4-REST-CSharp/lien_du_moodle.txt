@@ -1,0 +1,13 @@
+https://docs.microsoft.com/fr-fr/aspnet/core/tutorials/first-web-api?view=aspnetcore-5.0&tabs=visual-studio
+
+https://docs.microsoft.com/fr-fr/aspnet/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api
+
+https://docs.microsoft.com/fr-fr/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
+
+https://docs.microsoft.com/fr-fr/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client
+
+https://docs.microsoft.com/fr-fr/aspnet/web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
+
+https://docs.microsoft.com/fr-fr/aspnet/web-api/overview/formats-and-model-binding/media-formatters
+
+https://docs.microsoft.com/fr-fr/aspnet/web-api/overview/formats-and-model-binding/json-and-xml-serialization

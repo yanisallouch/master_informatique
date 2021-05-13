@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+            "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Analyse de durée de vie
+</TITLE>
+
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META name="GENERATOR" content="hevea 1.10">
+<STYLE type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.title{margin:2ex auto;text-align:center}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+DIV TABLE{margin-left:inherit;margin-right:inherit;}
+PRE{text-align:left;margin-left:0ex;margin-right:auto;}
+BLOCKQUOTE{margin-left:4ex;margin-right:4ex;text-align:left;}
+TD P{margin:0px;}
+BODY{background:white;}
+.title{padding:1ex;background:#00B200;}
+.titlemain{padding:1ex;background:#00B200;}
+.section{padding:.5ex;background:#2DE52D;}
+.subsection{padding:0.3ex;background:#66FF66;}
+</STYLE>
+
+<style type="text/css">
+pre, code, tt {font:12pt monospace;*font-size:100%;font-weight: bold;}
+</style>
+</HEAD>
+<BODY >
+<!--HEVEA command line is: hevea -entities -fix -O index.tex -->
+<!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Analyse de durée de vie</H1></TD></TR>
+</TABLE><DIV CLASS="center">
+Voici le <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/cours07.pdf">cours</A> correspondant. La solution se trouve dans les
+fichiers <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/liveness.ml.html">liveness.ml</A> et <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/build.ml.html">build.ml</A>.
+</DIV><!--TOC section Présentation-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Présentation</H2><!--SEC END --><P>Le sujet se trouve dans l&#X2019;archive <TT><A HREF="td7.tar.gz">td7.tar.gz</A></TT>.</P><P>Nous nous intéressons aujourd&#X2019;hui aux deux modules suivants:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize"> 
+<TT>Liveness</TT> effectue l&#X2019;analyse de durée de vie. Consultez son interface <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/liveness.mli.html">liveness.mli</A>.
+Notez, en particulier, que l&#X2019;on s&#X2019;intéresse à la durée de vie des «variables» &#X2013; on entend par là soit un pseudo-registre,
+soit un registre physique. Le sous-module <TT>L</TT>, qui vous est fourni, offre des facilités pour manipuler les ensembles de
+variables.
+</LI><LI CLASS="li-itemize"><TT>Build</TT> exploite cette information pour construire un graphe d&#X2019;interférences. Consultez son interface
+<A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/build.mli.html">build.mli</A>.
+</LI></UL><P>
+On vous fournit des fichiers <TT>liveness.ml</TT> et <TT>build.ml</TT> incomplets.</P><!--TOC section Analyse de durée de vie-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Analyse de durée de vie</H2><!--SEC END --><P>Plaçons-nous dans <TT>liveness.ml</TT>.</P><P>Il vous faut d&#X2019;abord définir les fonctions <FONT COLOR="red"><TT>defined</TT></FONT> et <FONT COLOR="red"><TT>used</TT></FONT>,
+qui indiquent quelles variables sont «tuées» et «engendrées»
+par chaque instruction.</P><P>Réfléchissez bien à l&#X2019;effet de chaque instruction sur les pseudo-registres et
+registres physiques. Rappelez-vous en particulier qu&#X2019;une instruction peut lire
+ou écrire certains registres physiques sans que ceux-ci soient explicitement
+mentionnés par l&#X2019;instruction.</P><P>Définissez ensuite la fonction <FONT COLOR="red"><TT>instruction_semantics</TT></FONT>, qui traduit
+l&#X2019;effet d&#X2019;une instruction sur l&#X2019;ensemble des variables vivantes. L&#X2019;analyse de
+durée de vie est une analyse arrière. Le paramètre <FONT COLOR="red"><TT>liveafter</TT></FONT> est
+l&#X2019;ensemble des variables supposées vivantes <EM>après</EM> l&#X2019;instruction. La
+fonction <FONT COLOR="red"><TT>instruction_semantics</TT></FONT> doit renvoyer l&#X2019;ensemble des variables
+vivantes <EM>avant</EM> l&#X2019;instruction.</P><P>Vous pouvez tester votre code en affichant les registres vivants à chaque
+point du programme <TT><SPAN STYLE="font-variant:small-caps">ERTL</SPAN></TT>:
+</P><PRE CLASS="verbatim"># ./compilo -dertl -dlive test/fact.p
+</PRE><P>Ou bien, pour réduire le nombre de registres physiques et y voir un peu plus clair:
+</P><PRE CLASS="verbatim"># ./compilo -dertl -dlive -few test/fact.p
+</PRE><!--TOC section Calcul des interférences-->
+<H2 CLASS="section"><!--SEC ANCHOR -->Calcul des interférences</H2><!--SEC END --><P>Plaçons-nous dans <TT>build.ml</TT>.</P><P>L&#X2019;analyse de durée de vie étant terminée, nous disposons de la valuation
+<FONT COLOR="red"><TT>liveafter</TT></FONT>. Il s&#X2019;agit d&#X2019;une fonction qui à chaque label <FONT COLOR="red"><TT>l</TT></FONT> associe
+l&#X2019;ensemble des variantes vivantes à la sortie de l&#X2019;instruction située au point
+<FONT COLOR="red"><TT>l</TT></FONT>.</P><P>Un graphe d&#X2019;interférence a pour sommets les variables, et les relie par des
+arêtes d&#X2019;interférence et de préférence. À vous de construire ce graphe, en
+utilisant les fonctions de construction fournies par le module
+<A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/interference.mli.html">interference.mli</A>.</P><!--TOC subsection Construction des arêtes d&#X2019;interférence-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Construction des arêtes d&#X2019;interférence</H3><!--SEC END --><P>Complétez le graphe d&#X2019;interférence en y ajoutant une arête pour tout couple de
+variables distinctes dont l&#X2019;une est définie par une instruction et l&#X2019;autre est
+vivante à la sortie de cette instruction.</P><P>Vous pouvez utiliser la fonction <FONT COLOR="red"><TT>mki</TT></FONT> (voir <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/interference.mli.html">interference.mli</A>).</P><P>Si vous avez installé la boîte à outils
+<A HREF="http://www.graphviz.org/">graphviz</A>, vous pouvez visualiser le graphe
+d&#X2019;interférence obtenu pour une fonction de votre choix (ici la factorielle)
+comme suit:
+</P><PRE CLASS="verbatim"># ./compilo -few -dgraph f test/fact.p | circo -Tps  &gt; fact.eps
+# kghostview fact.eps
+</PRE><P>En principe, à ce point, <TT>make test</TT> doit réussir.</P><!--TOC subsection Le cas particulier des instructions <EM>move</EM>-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Le cas particulier des instructions <EM>move</EM></H3><!--SEC END --><P>L&#X2019;algorithme simple utilisé jusqu&#X2019;ici considère une instruction <EM>move</EM>
+comme une opération unaire quelconque, donc considère que sa source et sa
+destination peuvent interférer. En réalité, parce que <EM>move</EM> est une
+fonction identité, cette interférence n&#X2019;a pas lieu d&#X2019;être. Au contraire, on
+<EM>souhaite</EM> que la source et la destination d&#X2019;un <EM>move</EM> partagent le
+même registre physique si possible.</P><P>Étudiez le code obtenu pour la fonction factorielle. Est-il de bonne qualité?
+Il faut améliorer cela...</P><P>Ajoutez donc à l&#X2019;algorithme précédent un cas particulier pour les instructions
+<EM>move</EM>. N&#X2019;oubliez pas que le langage <TT><SPAN STYLE="font-variant:small-caps">ERTL</SPAN></TT> offre trois instructions
+de copie. Évaluez ensuite le résultat obtenu.</P><!--TOC subsection Construction des arêtes de préférence-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Construction des arêtes de préférence</H3><!--SEC END --><P>On souhaite aller plus loin et ajouter au graphe des arêtes de <EM>préférence</EM>
+pour favoriser la disparition des instructions <EM>move</EM>.</P><P>Vous utiliserez pour cela les fonctions <FONT COLOR="red"><TT>mkppp</TT></FONT> et <FONT COLOR="red"><TT>mkpph</TT></FONT> (voir <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/interference.mli.html">interference.mli</A>).</P><P>Évaluez ensuite le résultat obtenu, par exemple dans le cas de la fonction factorielle.</P><!--TOC subsection Optimisation du code mort-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Optimisation du code mort</H3><!--SEC END --><P>On revient ici dans <TT>liveness.ml</TT>.</P><P>Étudiez l&#X2019;analyse de la variable <FONT COLOR="red"><TT>x</TT></FONT> de la fonction <FONT COLOR="red"><TT>dead</TT></FONT> dans
+<TT>test/dead.p</TT>.
+</P><PRE CLASS="verbatim"># ./compilo -dertl -dlive -few test/dead.p
+</PRE><P>Le pseudo-registre correspondant à <FONT COLOR="red"><TT>x</TT></FONT> est considéré comme vivant après
+les instructions <FONT COLOR="red"><TT>x := 3</TT></FONT> et <FONT COLOR="red"><TT>x := x + x</TT></FONT>. De ce fait, ces
+instructions sont conservées, alors que l&#X2019;on souhaiterait qu&#X2019;elle soient
+éliminées, puisque la valeur de <FONT COLOR="red"><TT>x</TT></FONT> n&#X2019;est pas utilisée. On le constate
+en examinant le code assembleur produit:
+</P><PRE CLASS="verbatim">./compilo -dasm -few test/dead.p
+</PRE><P>Que faire pour améliorer cela?</P><P>Une première amélioration consiste à éliminer une instruction si celle-ci est
+pure et si le pseudo-registre qu&#X2019;elle définit est mort à la sortie de
+l&#X2019;instruction. Pour effectuer cette amélioration, modifiez la définition de la
+fonction <FONT COLOR="red"><TT>eliminable</TT></FONT>. La spécification de cette fonction est donnée en
+commentaire.</P><P>Modifiez le code qui construit le graphe d&#X2019;interférences de façon à
+ignorer les instructions éliminables (qui n&#X2019;ont pas encore
+été éliminées à ce point): elles ne donnent lieu à aucune arête.</P><P>Étudiez ce que cela donne dans le cas de <TT>test/dead.p</TT>. En principe,
+l&#X2019;instruction <FONT COLOR="red"><TT>x := x + x</TT></FONT> doit avoir disparu. Vérifiez-le:
+</P><PRE CLASS="verbatim">./compilo -dasm -few test/dead.p
+</PRE><P>Cependant l&#X2019;instruction <FONT COLOR="red"><TT>x := 3</TT></FONT> est toujours présente.
+Comment expliquez-vous cela?</P><P>Une seconde amélioration consiste à modifier la définition de la fonction
+<FONT COLOR="red"><TT>instruction_semantics</TT></FONT> pour tenir compte (par avance) de l&#X2019;élimination
+des instructions pures.</P><P>Étudiez ce que cela donne dans le cas de <TT>test/dead.p</TT>. Les instructions
+qui concernent <FONT COLOR="red"><TT>x</TT></FONT> doivent avoir totalement disparu.</P><!--TOC subsection Un dernier cas particulier-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Un dernier cas particulier</H3><!--SEC END --><P>Si on le souhaite, il reste à traiter un cas particulier propre à MIPS, à
+savoir le registre physique <CODE>$zero</CODE>, qui contient en permanence la valeur
+zéro. En quelques rares occasions, ce registre physique peut servir à réaliser
+un pseudo-registre. Il est nécessaire pour cela que l&#X2019;on n&#X2019;écrive jamais de
+valeur autre que zéro dans ce pseudo-registre!</P><P>Jusqu&#X2019;ici, par souci de simplicité, le registre physique <CODE>$zero</CODE> a été
+considéré comme non allouable. Si on veut faire mieux, on peut modifier la
+définition de <TT>MIPS.allocatable</TT> pour le rendre allouable. Faites-le.</P><P>La fonction <FONT COLOR="red"><TT>nonzeroable</TT></FONT> (voir <A HREF="http://www.enseignement.polytechnique.fr/informatique/INF564/html/zero.mli.html">zero.mli</A>), qui vous est
+fournie, indique dans quels pseudo-registres une instruction risque d&#X2019;écrire
+une valeur non nulle. Ces pseudo-registres doivent alors être considérés comme
+interférant avec le registre physique <CODE>$zero</CODE>. À vous de construire, dans
+<TT>build.ml</TT>, des arêtes d&#X2019;interférence qui reflètent cela.</P><P>Vérifiez via <TT>make test</TT> que vous n&#X2019;avez pas introduit de bug. Vous pouvez
+également comparer le code produit avec et sans cette optimisation. En
+principe, elle permet d&#X2019;éliminer quelques instructions de la forme
+<CODE>li $zero, 0</CODE>. Le module <TT>ertl2ltlI.ml</TT> détecte ces instructions et
+les élimine au vol.</P><P>Bien sûr, ce travail autour de <CODE>$zero</CODE> est plutôt anecdotique. Disons que
+cela illustre le fait que la notion de coloriage de graphe permet souvent de
+traiter assez facilement les bizarreries de certains processeurs.</P><!--CUT END -->
+<!--HTMLFOOT-->
+<!--ENDHTML-->
+<!--FOOTER-->
+<HR SIZE=2><BLOCKQUOTE CLASS="quote"><EM>Ce document a été traduit de L<sup>A</sup>T<sub>E</sub>X par <A HREF="http://hevea.inria.fr">H<FONT SIZE=2><sup>E</sup></FONT>V<FONT SIZE=2><sup>E</sup></FONT>A</A></EM></BLOCKQUOTE></BODY>
+</HTML>

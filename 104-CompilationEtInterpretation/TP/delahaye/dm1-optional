@@ -1,0 +1,63 @@
+Titre: Exercice (optionnel) du CM1
+Auteur: Yanis Allouch
+Date: 09/09/2020
+UE: HMIN104
+
+Q1) Fonction estCarré(n):bool
+
+f(n: integer):boolean
+	var res: integer; var i: integer;
+	f:=false;
+	if n >= 0 then
+		if n = 0 | n = 1 then
+			f:= true
+		else
+			res:= 0;
+			i:=2;
+			while res <= n do
+				res := i * i;
+				i := i + 1;
+			if res = n then
+				f:= true
+			else
+				skip
+	else
+		skip
+
+Q2) Fonction récursive factorielle(n):int
+
+f(n: integer):integer
+	if n = 0 then
+		f:= 1
+	else
+		if n = 1 then
+			f := n
+		else
+			f:= n * f(n-1)
+
+J'ai traité le cas n = 1 parce qu'il est trivial et que je gagne un empilement d'appel de fonction.
+
+Q3) Programme 1 : alloué un tableau + initialiser (zéro)
+
+var n: integer; var t: array of integer
+
+f(n: integer)
+	var i: integer;
+	i := 0;
+	while n > i do
+		t[i] := read(); i := i + 1
+
+read(n); // j'avais oublié cette ligne de code :)
+t:= new array of integer [n];
+f(n)
+
+Q4) Fonction estToutPositif(tab):bool
+
+f(t: array of integer, n: integer):boolean
+	f := true;
+	while n >= 0 do
+		n := n-1;
+		if t[n-1] < 0 then
+			f := false
+		else
+			skip

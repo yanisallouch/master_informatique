@@ -17,20 +17,20 @@ public class Client {
 			action = sc.nextInt();
 			switch (action) {
 			case 0: {
-				// TODO les commandes execute + lanceur dans lequel je push les "commandes"
+				
 				System.out.println("bidon ?");
 				b1 = sc.nextInt();
 				qte = sc.nextInt();
 				break;
 			}
 			case 1: {
-				// TODO
+				
 				System.out.println("bidon ?");
 				b1 = sc.nextInt();
 				break;
 			}
 			case 2: {
-				// TODO
+				
 				System.out.println("indice bidon 1 ?");
 				b1 = sc.nextInt();
 				System.out.println("indice bidon 2 ?");
@@ -38,8 +38,8 @@ public class Client {
 				break;
 			}
 			case 3: {
-				// TODO
-				System.out.println("undo dernière action");
+				
+				System.out.println("undo derniï¿½re action");
 				break;
 			}
 			case -1: {

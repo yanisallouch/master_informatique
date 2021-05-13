@@ -1,0 +1,26 @@
+Fonction factorielle (en récursif)
+f (n : integer) : integer
+if n = 0 then
+	f : = 1
+else
+	f : = n * f (n * 1)
+Traduction en LIN
+procedure f (1)
+var 8
+f 11 :
+newframe
+sets local (0); $ra
+sets local (4); $s0
+move $s0; $a0
+blez $s0; f 4
+addiu $a0; $s0;-1
+call f
+mul $v0; $s0; $v0
+f 16 :
+gets $ra; local(0)
+gets $s0; local(4)
+delframe
+jr $ra
+f 4 :
+li $v0; 1
+j f 16
